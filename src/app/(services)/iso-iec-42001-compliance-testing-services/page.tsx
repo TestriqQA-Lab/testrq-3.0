@@ -7,6 +7,8 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 import { ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title:
     "ISO/IEC 42001:2023 Compliance Testing Services | AI Governance & AIMS Certification | Testriq",

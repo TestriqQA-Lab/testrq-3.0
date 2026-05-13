@@ -11,6 +11,8 @@ import GamingContactSection from "@/components/sections/GamingContactSection";
 import { Metadata } from "next";
 import StructuredData, { createCanonicalBreadcrumb, gamingTestingServiceSchema } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Gaming App Testing Services" ,
   description: "Launch flawless, secure, and immersive games. Testriq offers expert gaming app testing services across platforms for peak performance and player satisfaction.",

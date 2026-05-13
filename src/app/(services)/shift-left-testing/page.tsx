@@ -15,6 +15,8 @@ import ShiftLeftChallengesSection from "@/components/sections/ShiftLeftChallenge
 import ShiftLeftFAQs from "@/components/sections/ShiftLeftFAQs";
 import ShiftLeftNextStepsSection from "@/components/sections/ShiftLeftNextStepsSection";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/shift-left-testing",

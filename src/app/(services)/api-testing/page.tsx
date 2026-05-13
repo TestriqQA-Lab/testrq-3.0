@@ -16,6 +16,8 @@ import ApiCaseStudies from "@/components/sections/ApiCaseStudies";
 import ApiFAQs from "@/components/sections/ApiFAQs";
 import ApiAnyQuestions from "@/components/sections/ApiAnyQuestions";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/api-testing",

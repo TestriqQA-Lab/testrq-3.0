@@ -15,6 +15,8 @@ import DataAnalysisToolsFramework from "@/components/sections/DataAnalysisToolsF
 import DataAnalysisFAQs from "@/components/sections/DataAnalysisFAQs";
 import DataAnalysisReadyToEnsureQuality from "@/components/sections/DataAnalysisReadyToEnsureQuality";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/data-analysis-services",

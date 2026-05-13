@@ -16,6 +16,8 @@ import RoboticAnyQuestions from "@/components/sections/RoboticAnyQuestions";
 import RoboticComplianceTable from "@/components/sections/RoboticComplianceTable";
 import RoboticRPAServices from "@/components/sections/RoboticRPAServices";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/robotics-testing-services",

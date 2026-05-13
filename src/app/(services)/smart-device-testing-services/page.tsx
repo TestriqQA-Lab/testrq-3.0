@@ -16,6 +16,8 @@ import SmartDeviceFAQs from "@/components/sections/SmartDeviceFAQs";
 import SmartDeviceAnyQuestions from "@/components/sections/SmartDeviceAnyQuestions";
 import SmartDeviceComplianceTable from "@/components/sections/SmartDeviceComplianceTable";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/smart-device-testing-services",

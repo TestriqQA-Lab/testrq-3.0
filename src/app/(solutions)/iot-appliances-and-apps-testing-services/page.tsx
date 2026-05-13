@@ -11,6 +11,8 @@ import IoTContactSection from "@/components/sections/IoTApplianceContactSection"
 import { Metadata } from "next";
 import StructuredData, { createCanonicalBreadcrumb, iotTestingServiceSchema } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "IoT Appliances and apps Testing Services for Smart Devices",
   description: "Testriq offers end-to-end IoT appliances and apps testing services for connected devices, ensuring secure, scalable, and high-performance applications across ecosystems.",

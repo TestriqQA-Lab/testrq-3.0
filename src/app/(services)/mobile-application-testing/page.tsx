@@ -15,6 +15,8 @@ import MobileProvenTestingProcess from "@/components/sections/MobileProvenTestin
 import MobileWhyChooseTestriq from "@/components/sections/MobileWhyChooseTestriq";
 import MobileFAQs from "@/components/sections/MobileFAQs";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/mobile-application-testing",

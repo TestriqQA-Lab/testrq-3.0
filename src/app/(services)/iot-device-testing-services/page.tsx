@@ -17,6 +17,8 @@ import IoTCaseStudies from "@/components/sections/IoTCaseStudies";
 import IoTFAQs from "@/components/sections/IoTFAQs";
 import IoTAnyQuestions from "@/components/sections/IoTAnyQuestions";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/iot-device-testing-services",

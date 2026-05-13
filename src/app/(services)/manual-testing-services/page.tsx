@@ -17,6 +17,8 @@ import ManualTestingCaseStudies from "@/components/sections/ManualTestingCaseStu
 import ManualTestingFAQs from "@/components/sections/ManualTestingFAQs";
 import ManualTestingReadyToEnsureQuality from "@/components/sections/ManualTestingReadyToEnsureQuality";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/manual-testing-services",

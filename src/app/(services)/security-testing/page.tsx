@@ -18,6 +18,8 @@ import SecurityTestingCaseStudies from "@/components/sections/SecurityTestingCas
 import SecurityTestingFAQs from "@/components/sections/SecurityTestingFAQs";
 import SecurityTestingReadyToEnsureQuality from "@/components/sections/SecurityTestingReadyToEnsureQuality";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/security-testing",

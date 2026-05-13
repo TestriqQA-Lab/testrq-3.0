@@ -14,6 +14,8 @@ import BlockchainMethodology from "@/components/sections/BlockchainMethodology";
 import BlockchainFAQs from "@/components/sections/BlockchainFAQs";
 import BlockchainCTA from "@/components/sections/BlockchainCTA";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/blockchain-app-testing-services",

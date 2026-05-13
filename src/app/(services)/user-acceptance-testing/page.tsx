@@ -20,6 +20,8 @@ import UATScenariosSection from "@/components/sections/UATScenariosSection";
 import UATWhyChooseSection from "@/components/sections/UATWhyChooseSection";
 import UATNextStepsSection from "@/components/sections/UATNextStepsSection";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/user-acceptance-testing",

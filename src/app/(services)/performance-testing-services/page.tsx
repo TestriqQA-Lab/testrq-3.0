@@ -15,6 +15,8 @@ import PerformanceTestingToolsFramework from "@/components/sections/PerformanceT
 import PerformanceTestingFAQs from "@/components/sections/PerformanceTestingFAQs";
 import PerformanceTestingReadyToEnsureQuality from "@/components/sections/PerformanceTestingReadyToEnsureQuality";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/performance-testing-services",

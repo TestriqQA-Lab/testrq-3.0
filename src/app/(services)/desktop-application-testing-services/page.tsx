@@ -14,6 +14,8 @@ import DesktopCardSlider from "@/components/sections/DesktopCardSlider";
 import DesktopWhyChooseTestriq from "@/components/sections/DesktopWhyChooseTestriq";
 import DesktopFAQs from "@/components/sections/DesktopFAQs";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/desktop-application-testing-services",

@@ -19,6 +19,8 @@ import AdHocTestingWhyTestriq from "@/components/sections/AdHocTestingWhyTestriq
 import AdHocTestingFAQs from "@/components/sections/AdHocTestingFAQs";
 import AdHocTestingReadyToStart from "@/components/sections/AdHocTestingReadyToStart";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/ad-hoc-testing",

@@ -14,6 +14,8 @@ import ArchitectureMethodologySection from "@/components/sections/ArchitectureMe
 import ArchitectureFAQs from "@/components/sections/ArchitectureFAQs";
 import ArchitectureCTASection from "@/components/sections/ArchitectureCTASection";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/application-architecture-inspection-services",

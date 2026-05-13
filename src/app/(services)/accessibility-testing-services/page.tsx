@@ -14,6 +14,8 @@ import AccessibilityProcessSection from "@/components/sections/AccessibilityProc
 import AccessibilityFAQSection from "@/components/sections/AccessibilityFAQSection";
 import AccessibilityAnyQuestions from "@/components/sections/AccessibilityAnyQuestions";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/accessibility-testing-services",

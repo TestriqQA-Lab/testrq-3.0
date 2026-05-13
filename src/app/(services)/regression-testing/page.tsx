@@ -16,6 +16,8 @@ import RegressionTestingCaseStudies from "@/components/sections/RegressionTestin
 import RegressionTestingReadyToEnsureQuality from "@/components/sections/RegressionTestingReadyToEnsureQuality";
 import RegressionTestingFAQs from "@/components/sections/RegressionTestingFAQs";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/regression-testing",

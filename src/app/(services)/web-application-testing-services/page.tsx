@@ -15,6 +15,8 @@ import WebappWhyChooseTestriq from "@/components/sections/WebappWhyChooseTestriq
 import WebappFAQs from "@/components/sections/WebappFAQs";
 import WebappAnyQuestions from "@/components/sections/WebappAnyQuestions";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/web-application-testing-services",

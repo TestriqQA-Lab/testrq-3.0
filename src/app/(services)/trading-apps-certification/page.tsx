@@ -15,6 +15,8 @@ import StructuredData, {
   websiteSchema,
 } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Trading App Certification",
 

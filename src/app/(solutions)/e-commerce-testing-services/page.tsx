@@ -14,6 +14,8 @@ import EcommercePlatformsSection from "@/components/sections/EcommercePlatformsS
 import EcommerceFAQSection from "@/components/sections/EcommerceFAQSection";
 import EcommerceContactSection from "@/components/sections/EcommerceContactSection";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/e-commerce-testing-services",

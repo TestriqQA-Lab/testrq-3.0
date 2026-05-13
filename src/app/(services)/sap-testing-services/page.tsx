@@ -19,6 +19,8 @@ const SapTestingChallenges = dynamic(
     { ssr: true }
 );
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
     title: "SAP Testing Services: S/4HANA Migrations & Upgrades",
 

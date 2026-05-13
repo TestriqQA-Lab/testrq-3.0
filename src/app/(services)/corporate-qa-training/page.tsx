@@ -5,6 +5,8 @@ import StructuredData, {
   createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Corporate QA Training Services Professional Software Testing",
   description:

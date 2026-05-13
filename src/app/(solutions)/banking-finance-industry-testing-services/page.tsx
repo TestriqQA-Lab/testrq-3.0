@@ -10,6 +10,8 @@ import BankingContactSection from "@/components/sections/BankingContactSection";
 import { Metadata } from "next";
 import StructuredData, { bankingFinanceTestingServiceSchema, createCanonicalBreadcrumb } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Banking & Financial Application Testing Services | testriq",
   description: "Protect your financial ecosystem with Testriq’s BFSI testing services. We ensure 100% audit pass rates, SOC2 Type II compliance, and security that withstands 300x more threats than other sectors.",
