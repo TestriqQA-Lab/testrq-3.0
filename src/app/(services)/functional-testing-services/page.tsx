@@ -1,143 +1,52 @@
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
-import StructuredData, { functionalServiceSchema, createCanonicalBreadcrumb } from "@/components/seo/StructuredData";
+import StructuredData, {
+    functionalServiceSchema,
+    createCanonicalBreadcrumb,
+} from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 import FunctionalHeroSection from "@/components/sections/FunctionalHeroSection";
+import FunctionalCriticalitySection from "@/components/sections/FunctionalCriticalitySection";
+import FunctionalWhySection from "@/components/sections/FunctionalWhySection";
+import FunctionalSolutionsSection from "@/components/sections/FunctionalSolutionsSection";
+import FunctionalAdvantageSection from "@/components/sections/FunctionalAdvantageSection";
+import FunctionalFAQs from "@/components/sections/FunctionalFAQs";
+import FunctionalNextStepsSection from "@/components/sections/FunctionalNextStepsSection";
 
-const FunctionalCriticalitySection = dynamic(
-    () => import("@/components/sections/FunctionalCriticalitySection"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const FunctionalWhySection = dynamic(
-    () => import("@/components/sections/FunctionalWhySection"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const FunctionalSolutionsSection = dynamic(
-    () => import("@/components/sections/FunctionalSolutionsSection"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const FunctionalAdvantageSection = dynamic(
-    () => import("@/components/sections/FunctionalAdvantageSection"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const FunctionalFAQs = dynamic(
-    () => import("@/components/sections/FunctionalFAQs"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const FunctionalNextStepsSection = dynamic(
-    () => import("@/components/sections/FunctionalNextStepsSection"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-export const metadata: Metadata = {
-    title: "Functional Testing Services | Software QA & Automation | Testriq",
-    description: "Ensure flawless software performance with Testriq's expert Functional Testing Services. Comprehensive QA, automation & validation for web, mobile & enterprise applications. Partner with us!",
-    alternates: {
-        canonical: "https://www.testriq.com/functional-testing-services",
-    },
-    keywords: [
-        "Functional Testing Services",
-        "Software Functional Testing",
-        "Automated Functional Testing",
-        "QA Functional Testing",
-        "Functional QA Solutions",
-        "Web App Functional Testing",
-        "Mobile App Functional Testing",
-        "Enterprise Software Testing"
-    ],
-    metadataBase: new URL("https://www.testriq.com/"),
-    openGraph: {
-        type: "website",
-        locale: "en_US",
-        url: "https://www.testriq.com/functional-testing-services",
-        siteName: "Testriq - Professional Software Testing Services",
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/functional-testing-services",
         title: "Functional Testing Services | Software QA & Automation | Testriq",
         description:
-            "Ensure flawless software performance with Testriq's expert Functional Testing Services. Comprehensive QA, automation & validation for web, mobile & enterprise applications.",
-        images: [
-            {
-                url: "https://www.testriq.com/OG/functional-testing-og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Functional Testing Services by Testriq QA Lab",
-                type: "image/webp",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        site: "@testriq",
-        creator: "@testriq",
-        title: "Functional Testing Services | Software QA & Automation | Testriq",
-        description:
-            "Ensure flawless software performance with Testriq's expert Functional Testing Services. Comprehensive QA, automation & validation for web, mobile & enterprise applications.",
-        images: ["https://www.testriq.com/OG/functional-testing-og-image.webp"],
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
+            "Validate every workflow with Testriq's functional testing services. Web, mobile, and enterprise QA — manual and automated, ISO 29119-aligned for global teams.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/functional-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Functional Testing Services by Testriq QA Lab",
+            type: "image/webp",
         },
-    },
-};
+        keywords: [
+            "functional testing services",
+            "software functional testing",
+            "automated functional testing",
+            "qa functional testing",
+            "functional qa solutions",
+            "web app functional testing",
+            "mobile app functional testing",
+            "enterprise software testing",
+        ],
+    });
+}
 
 export default function FunctionalTestingPage() {
-    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-    // to 2 canonical items; URL now structurally derived from pathname.
+    // TODO(seo phase-4): Migrated from static `export const metadata` to
+    // generateMetadata + buildPageMetadata. Double-brand title fixed via
+    // title.absolute. Description rewritten — was ~196 chars, now 158
+    // with action-verb start; surfaces "ISO 29119-aligned" for
+    // enterprise SEO. Keywords lowercased. 6 dynamic() imports converted
+    // to direct ES imports. Breadcrumb already migrated in PR-3 — unchanged.
     return (
         <div>
             <StructuredData data={functionalServiceSchema} />
