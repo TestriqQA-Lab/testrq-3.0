@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
         description:
             "Secure your Web3 stack with Testriq's blockchain testing. Smart contract audits, dApp security testing, and decentralized network validation for enterprises.",
         ogImage: {
-            url: "https://www.testriq.com/OG/Bloak-chain-app-testing-og-image.webp",
+            url: "https://www.testriq.com/OG/Blockchain-app-testing-og-image.webp",
             width: 1200,
             height: 630,
             alt: "Blockchain App Testing Services - Testriq",
@@ -54,10 +54,12 @@ export default function BlockchainAppTesting() {
     //      Now full descriptor (1200x630, alt, image/webp).
     //   6. StructuredData was rendered INSIDE MainLayout. Restructured
     //      to outer <div> wrapper matching the PR-2/PR-3 template.
-    //   7. og:image filename "Bloak-chain-app-testing-og-image.webp"
-    //      KEPT AS-IS (typo "Bloak" → should be "Blockchain"). Renaming
-    //      risks 404 if the asset isn't also renamed in /public/OG/.
-    //      Flagged for follow-up.
+    //   7. og:image filename typo fixed in a follow-up commit:
+    //      "Bloak-chain-app-testing-og-image.webp" had the asset COPIED
+    //      to "Blockchain-app-testing-og-image.webp" in /public/OG/ so
+    //      the old URL still resolves (any social-card cache stays
+    //      valid) while this page now references the correctly-spelled
+    //      asset. The "Bloak" file is kept on disk intentionally.
     //   8. 6 dynamic() imports converted to direct ES imports.
     //   9. "crypto wallet security testing company" keyword trimmed
     //      (drops the "company" keyword-stuffing tail).

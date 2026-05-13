@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
         description:
             "Sync global delivery with Testriq's timezone testing. Real-time QA, follow-the-sun cycles, and localized support for distributed enterprise engineering teams.",
         ogImage: {
-            url: "https://www.testriq.com/OG/time-zone-tresting-og-image.webp",
+            url: "https://www.testriq.com/OG/time-zone-testing-og-image.webp",
             width: 1200,
             height: 630,
             alt: "Time Zone Aligned QA Services - Testriq",
@@ -51,10 +51,12 @@ export default function TimezoneTestingServices() {
     // that's harder to rank). Description rewritten — was ~178 chars,
     // now 159 chars, action-verb start. og:title and twitter:title
     // now mirror page title. Helper added robots block (page had NONE).
-    // ogImage.type "image/webp" added. og:image filename
-    // "time-zone-tresting-og-image.webp" KEPT AS-IS — has typo
-    // ("tresting" → "testing") but renaming risks 404 if the asset
-    // isn't also renamed in /public/OG/. Flagged for follow-up.
+    // ogImage.type "image/webp" added. og:image filename typo fixed
+    // in a follow-up commit: "time-zone-tresting-og-image.webp" had
+    // the asset COPIED to "time-zone-testing-og-image.webp" in
+    // /public/OG/ so the old URL still resolves (any social-card cache
+    // stays valid) while this page now references the correctly-spelled
+    // asset. The "tresting" file is kept on disk intentionally.
     // Keywords lowercased. 6 dynamic() imports converted to direct ES
     // imports. Breadcrumb already migrated in PR-3 — unchanged.
     return (
