@@ -1,4 +1,11 @@
 import React from "react";
+import type { Metadata } from "next";
+import StructuredData, {
+  createCanonicalBreadcrumb,
+  ecommerceTestingServiceSchema,
+} from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
 import EcommerceHeroSection from "@/components/sections/EcommerceHeroSection";
 import EcommerceChallengesSection from "@/components/sections/EcommerceChallengesSection";
 import EcommerceTestingServicesSection from "@/components/sections/EcommerceTestingServicesSection";
@@ -6,70 +13,47 @@ import EcommerceTestingProcessSection from "@/components/sections/EcommerceTesti
 import EcommercePlatformsSection from "@/components/sections/EcommercePlatformsSection";
 import EcommerceFAQSection from "@/components/sections/EcommerceFAQSection";
 import EcommerceContactSection from "@/components/sections/EcommerceContactSection";
-import { Metadata } from "next";
-import StructuredData, { createCanonicalBreadcrumb, ecommerceTestingServiceSchema } from "@/components/seo/StructuredData";
 
-export const metadata: Metadata = {
-  title: "E-Commerce Testing |QA Testing | Testriq",
-  description: "Optimizing conversions and security for e-commerce in 2026. Enterprise-grade testing for Magento, Shopify, and WooCommerce. PCI DSS 4.0 compliant QA for global digital commerce.",
-  keywords: [
-    "e-commerce testing",
-    "online store QA",
-    "shopping cart testing",
-    "payment gateway testing",
-    "mobile commerce testing",
-    "ecommerce security testing",
-    "cross-browser testing",
-    "load testing",
-    "PCI DSS 4.0 compliance",
-    "ecommerce QA services"
-  ],
-  metadataBase: new URL('https://www.testriq.com/'),
-  alternates: {
-    canonical: 'https://www.testriq.com/e-commerce-testing-services',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://www.testriq.com/e-commerce-testing-services',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'E-Commerce Testing |QA Testing | Testriq',
-    description: 'Optimizing conversions and security for e-commerce in 2026. Enterprise-grade testing for Magento, Shopify, and WooCommerce. PCI DSS 4.0 compliant QA for global digital commerce.',
-    images: [
-      {
-        url: 'https://www.testriq.com/OG/E-commerce-Testing-Service-Og.webp',
-        width: 1200,
-        height: 630,
-        alt: 'E-Commerce Testing Services - Testriq',
-      }
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'E-Commerce Testing |QA Testing | Testriq',
-    description: 'Optimizing conversions and security for e-commerce in 2026. Enterprise-grade testing for Magento, Shopify, and WooCommerce. PCI DSS 4.0 compliant QA for global digital commerce.',
-    images: ['https://www.testriq.com/OG/E-commerce-Testing-Service-Twitter.webp'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    pathname: "/e-commerce-testing-services",
+    title: "E-Commerce Testing Services | PCI DSS 4.0 & Platform QA | Testriq",
+    description:
+      "Optimize conversions and security with Testriq's e-commerce testing. PCI DSS 4.0-compliant QA for Magento, Shopify, and WooCommerce digital commerce platforms.",
+    ogImage: {
+      url: "https://www.testriq.com/OG/E-commerce-Testing-Service-Og.webp",
+      width: 1200,
+      height: 630,
+      alt: "E-Commerce Testing Services - Testriq",
+      type: "image/webp",
     },
-  },
-};
-
+    keywords: [
+      "e-commerce testing",
+      "online store qa",
+      "shopping cart testing",
+      "payment gateway testing",
+      "mobile commerce testing",
+      "ecommerce security testing",
+      "cross-browser testing",
+      "load testing",
+      "pci dss 4.0 compliance",
+      "ecommerce qa services",
+    ],
+  });
+}
 
 const EcommerceTestingPage: React.FC = () => {
-  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-  // to 2 canonical items; URL now structurally derived from pathname.
+  // TODO(seo phase-4): Migrated from static `export const metadata` to
+  // generateMetadata + buildPageMetadata. Double-brand title fixed via
+  // title.absolute. Title's missing space ("E-Commerce Testing |QA
+  // Testing") fixed — now "E-Commerce Testing Services | PCI DSS 4.0
+  // & Platform QA | Testriq" with "Services" word added and PCI DSS
+  // surfaced as B2B differentiator. Description rewritten — was ~191
+  // chars with "2026" anchor; now 160 chars, action-verb start, drops
+  // time anchor. twitter:image unified with og:image (was a separate
+  // E-commerce-Testing-Service-Twitter.webp). ogImage.type "image/webp"
+  // added. Keywords lowercased. 0 dynamic() imports — already direct.
+  // Breadcrumb already migrated in PR-3 — unchanged.
   return (
     <div>
       <StructuredData data={ecommerceTestingServiceSchema} />
@@ -85,7 +69,6 @@ const EcommerceTestingPage: React.FC = () => {
         <EcommerceTestingServicesSection />
         <EcommerceTestingProcessSection />
         <EcommercePlatformsSection />
-        {/* <EcommerceCaseStudiesSection /> */}
         <EcommerceFAQSection />
         <EcommerceContactSection />
       </main>
@@ -94,4 +77,3 @@ const EcommerceTestingPage: React.FC = () => {
 };
 
 export default EcommerceTestingPage;
-
