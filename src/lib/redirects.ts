@@ -549,8 +549,12 @@ export const redirects: Redirect[] = [
   { source: "/ecommerce-testing-services", destination: "/e-commerce-testing-services", permanent: true },
   { source: "/database-testing", destination: "/data-analysis-services", permanent: true },
   { source: "/ar-vr-testing-services", destination: "/gaming-app-testing-services", permanent: true },
-  { source: "/accessibility-testing-services", destination: "/web-application-testing-services", permanent: true },
-  { source: "/functional-testing-services", destination: "/manual-testing-services", permanent: true },
+  // /accessibility-testing-services and /functional-testing-services were
+  // removed from this list in Phase 5 (2026-05-13). Earlier they were "cleanup
+  // redirects" pointing 404s at related real pages; since then, actual page
+  // routes exist at both paths (see src/app/(services)/...) and have been
+  // through metadata + breadcrumb migration in PRs 1-4. Keeping the stale
+  // entries here caused sitemap.ts to filter them out via redirectSources.has().
   { source: "/sustainability-testing-services", destination: "/performance-testing-services", permanent: true },
   { source: "/big-data-testing-services", destination: "/data-analysis-services", permanent: true },
   { source: "/compliance-testing-services", destination: "/security-testing", permanent: true },
