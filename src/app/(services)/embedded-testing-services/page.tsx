@@ -1,101 +1,60 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
+import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     embeddedTestingSchema,
     createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-    title: "Embedded Testing Services | Software & Hardware QA | Testriq",
-    description:
-        "Ensure precision & reliability with Testriq’s expert Embedded Testing Services. Comprehensive V&V for automotive, medical, IoT & safety-critical systems. Partner with us!",
-    keywords: [
-        "Embedded Testing Services",
-        "Embedded Software Testing",
-        "Automotive Embedded Testing",
-        "Medical Device Software Testing",
-        "ISO 26262 Compliance",
-        "DO-178C Testing",
-        "V&V Services",
-        "Software-in-the-loop SIL testing",
-        "Model-in-the-loop MIL testing",
-        "Hardware-in-the-loop HIL testing",
-        "RTOS Testing",
-        "Firmware Testing",
-        "SoC Testing",
-        "IoT Device Testing",
-    ],
-    openGraph: {
+import EmbeddedTestingHeroSection from "@/components/sections/EmbeddedTestingHeroSection";
+import EmbeddedComplexity from "@/components/sections/EmbeddedComplexity";
+import EmbeddedCritically from "@/components/sections/EmbeddedCritically";
+import EmbeddedServiceOfferings from "@/components/sections/EmbeddedServiceOfferings";
+import EmbeddedTestriqAdvantage from "@/components/sections/EmbeddedTestriqAdvantage";
+import EmbeddedFAQs from "@/components/sections/EmbeddedFAQs";
+import EmbeddedAnyQuestions from "@/components/sections/EmbeddedAnyQuestions";
+
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/embedded-testing-services",
         title: "Embedded Testing Services | Software & Hardware QA | Testriq",
         description:
-            "Ensure precision & reliability with Testriq’s expert Embedded Testing Services. Comprehensive V&V for automotive, medical, IoT & safety-critical systems.",
-        url: "https://www.testriq.com/embedded-testing-services",
-        type: "website",
-        images: [
-            {
-                url: "https://www.testriq.com/OG/Embedded-testing-service-og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Embedded Testing Services by Testriq",
-            },
+            "Ensure precision and reliability with Testriq's embedded testing services. V&V for automotive (ISO 26262), medical, and IoT safety-critical systems.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/Embedded-testing-service-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Embedded Testing Services by Testriq",
+            type: "image/webp",
+        },
+        keywords: [
+            "embedded testing services",
+            "embedded software testing",
+            "automotive embedded testing",
+            "medical device software testing",
+            "iso 26262 compliance",
+            "do-178c testing",
+            "v&v services",
+            "software-in-the-loop sil testing",
+            "model-in-the-loop mil testing",
+            "hardware-in-the-loop hil testing",
+            "rtos testing",
+            "firmware testing",
+            "soc testing",
+            "iot device testing",
         ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Embedded Testing Services | Software & Hardware QA | Testriq",
-        description:
-            "Ensure precision & reliability with Testriq’s expert Embedded Testing Services. Comprehensive V&V for automotive, medical, IoT & safety-critical systems.",
-        images: ["https://www.testriq.com/OG/Embedded-testing-service-og-image.webp"],
-    },
-    metadataBase: new URL("https://www.testriq.com/"),
-    alternates: {
-        canonical: "https://www.testriq.com/embedded-testing-services",
-    },
-};
-
-const EmbeddedTestingHeroSection = dynamic(
-    () => import("@/components/sections/EmbeddedTestingHeroSection"),
-    {
-        ssr: true,
-        loading: () => <div className="h-screen flex items-center justify-center bg-white"><p className="text-gray-500">Loading Hero...</p></div>,
-    }
-);
-
-const EmbeddedComplexity = dynamic(
-    () => import("@/components/sections/EmbeddedComplexity"),
-    { ssr: true }
-);
-
-const EmbeddedCritically = dynamic(
-    () => import("@/components/sections/EmbeddedCritically"),
-    { ssr: true }
-);
-
-const EmbeddedServiceOfferings = dynamic(
-    () => import("@/components/sections/EmbeddedServiceOfferings"),
-    { ssr: true }
-);
-
-const EmbeddedTestriqAdvantage = dynamic(
-    () => import("@/components/sections/EmbeddedTestriqAdvantage"),
-    { ssr: true }
-);
-
-const EmbeddedFAQs = dynamic(
-    () => import("@/components/sections/EmbeddedFAQs"),
-    { ssr: true }
-);
-
-const EmbeddedAnyQuestions = dynamic(
-    () => import("@/components/sections/EmbeddedAnyQuestions"),
-    { ssr: true }
-);
+    });
+}
 
 export default function EmbeddedTestingPage() {
-    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-    // to 2 canonical items; URL now structurally derived from pathname.
+    // TODO(seo phase-4): Migrated from static `export const metadata` to
+    // generateMetadata + buildPageMetadata. Double-brand title fixed via
+    // title.absolute. Description rewritten — was 159 chars with smart
+    // quote ’, now 149 with regular apostrophe. Helper added the robots
+    // block (page had NONE). Helper expanded the twitter block (was
+    // short-form, missing site/creator). ogImage.type "image/webp" added.
+    // Keywords lowercased. 7 dynamic() imports converted to direct ES
+    // imports. Breadcrumb already migrated in PR-3 — unchanged.
     return (
         <div>
             <StructuredData data={embeddedTestingSchema} />

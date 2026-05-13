@@ -1,70 +1,84 @@
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     blockchainServiceSchema,
     blockchainFAQSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-// Dynamic imports for performance
-const BlockchainHero = dynamic(() => import("@/components/sections/BlockchainHero"), {
-    ssr: true,
-});
-const BlockchainWhyChoose = dynamic(() => import("@/components/sections/BlockchainWhyChoose"), {
-    ssr: true,
-});
-const BlockchainSolutions = dynamic(() => import("@/components/sections/BlockchainSolutions"), {
-    ssr: true,
-});
-const BlockchainMethodology = dynamic(() => import("@/components/sections/BlockchainMethodology"), {
-    ssr: true,
-});
-const BlockchainFAQs = dynamic(() => import("@/components/sections/BlockchainFAQs"), {
-    ssr: true,
-});
-const BlockchainCTA = dynamic(() => import("@/components/sections/BlockchainCTA"), {
-    ssr: true,
-});
+import BlockchainHero from "@/components/sections/BlockchainHero";
+import BlockchainWhyChoose from "@/components/sections/BlockchainWhyChoose";
+import BlockchainSolutions from "@/components/sections/BlockchainSolutions";
+import BlockchainMethodology from "@/components/sections/BlockchainMethodology";
+import BlockchainFAQs from "@/components/sections/BlockchainFAQs";
+import BlockchainCTA from "@/components/sections/BlockchainCTA";
 
-export const metadata: Metadata = {
-    title: "Blockchain App Testing Services | Smart Contract Audit & dApp QA - Testriq",
-    description:
-        "Secure your Web3 ecosystem with Testriq's blockchain app testing services. We offer expert smart contract audits, dApp security testing, and decentralized network validation for global enterprises.",
-    keywords: [
-        "blockchain app testing services",
-        "smart contract audit services",
-        "dApp testing company",
-        "blockchain penetration testing",
-        "crypto wallet security testing company",
-        "blockchain performance testing for enterprises",
-        "web3 security audit",
-    ],
-    alternates: {
-        canonical: "https://www.testriq.com/blockchain-app-testing-services",
-    },
-    openGraph: {
-        images: [{ url: "https://www.testriq.com/OG/Bloak-chain-app-testing-og-image.webp" }],
-        title: "Blockchain App Testing Services | Smart Contract Audit & dApp QA - Testriq",
-        description: "Secure your Web3 ecosystem with Testriq's blockchain app testing services.",
-        url: "https://www.testriq.com/blockchain-app-testing-services",
-        type: "website",
-    },
-};
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/blockchain-app-testing-services",
+        title: "Blockchain App Testing Services | Smart Contract Audit & dApp QA | Testriq",
+        description:
+            "Secure your Web3 stack with Testriq's blockchain testing. Smart contract audits, dApp security testing, and decentralized network validation for enterprises.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/Bloak-chain-app-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Blockchain App Testing Services - Testriq",
+            type: "image/webp",
+        },
+        keywords: [
+            "blockchain app testing services",
+            "smart contract audit services",
+            "dapp testing company",
+            "blockchain penetration testing",
+            "crypto wallet security testing",
+            "blockchain performance testing for enterprises",
+            "web3 security audit",
+        ],
+    });
+}
 
 export default function BlockchainAppTesting() {
+    // TODO(seo phase-4): Comprehensive migration from a minimal static
+    // `export const metadata` to generateMetadata + buildPageMetadata.
+    // The page previously had multiple structural gaps that the helper
+    // and createCanonicalBreadcrumb fix together:
+    //   1. Double-brand: title ended with " - Testriq" (dash); root
+    //      template "%s | Testriq" produced "... - Testriq | Testriq".
+    //      Now via title.absolute.
+    //   2. No breadcrumb at all. Added via createCanonicalBreadcrumb.
+    //   3. No twitter block. Helper adds it (mirrors og).
+    //   4. No robots block. Helper adds default index, follow.
+    //   5. Incomplete og:image — was just { url } with no dims/alt/type.
+    //      Now full descriptor (1200x630, alt, image/webp).
+    //   6. StructuredData was rendered INSIDE MainLayout. Restructured
+    //      to outer <div> wrapper matching the PR-2/PR-3 template.
+    //   7. og:image filename "Bloak-chain-app-testing-og-image.webp"
+    //      KEPT AS-IS (typo "Bloak" → should be "Blockchain"). Renaming
+    //      risks 404 if the asset isn't also renamed in /public/OG/.
+    //      Flagged for follow-up.
+    //   8. 6 dynamic() imports converted to direct ES imports.
+    //   9. "crypto wallet security testing company" keyword trimmed
+    //      (drops the "company" keyword-stuffing tail).
     return (
-        <MainLayout>
-            {/* SEO Structured Data */}
+        <div>
             <StructuredData data={blockchainServiceSchema} />
             <StructuredData data={blockchainFAQSchema} />
-
-            {/* Page Sections */}
-            <BlockchainHero />
-            <BlockchainWhyChoose />
-            <BlockchainSolutions />
-            <BlockchainMethodology />
-            <BlockchainFAQs />
-            <BlockchainCTA />
-        </MainLayout>
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/blockchain-app-testing-services",
+                    "Blockchain App Testing"
+                )}
+            />
+            <MainLayout>
+                <BlockchainHero />
+                <BlockchainWhyChoose />
+                <BlockchainSolutions />
+                <BlockchainMethodology />
+                <BlockchainFAQs />
+                <BlockchainCTA />
+            </MainLayout>
+        </div>
     );
 }

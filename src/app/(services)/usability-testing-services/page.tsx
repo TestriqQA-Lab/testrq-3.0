@@ -1,116 +1,58 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
+import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     usabilityTestingServiceSchema,
     createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+import UsabilityTestingHeroSection from "@/components/sections/UsabilityTestingHeroSection";
+import UsabilityTestingCrucialSection from "@/components/sections/UsabilityTestingCrucialSection";
+import UsabilityTestingAdvantage from "@/components/sections/UsabilityTestingAdvantage";
+import UsabilityTestingServicesGrid from "@/components/sections/UsabilityTestingServicesGrid";
+import UsabilityTestingMethodology from "@/components/sections/UsabilityTestingMethodology";
+import UsabilityTestingFAQs from "@/components/sections/UsabilityTestingFAQs";
+import UsabilityTestingCTASection from "@/components/sections/UsabilityTestingCTASection";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
-    title: "Usability Testing Services | UX Audit & User Testing Company - Testriq",
-    description:
-        "Boost user satisfaction & conversions with Testriq's expert usability testing services. We offer AI-driven UX audits, mobile app usability testing, and comprehensive user research for optimal digital experiences.",
-    keywords: [
-        "Usability Testing Services",
-        "UX Audit Services",
-        "User Testing Company",
-        "Mobile App Usability Testing",
-        "Website Usability Testing",
-        "eCommerce Usability Testing",
-        "AI-Driven UX Audit",
-        "User Research Services",
-        "ISTQB Certified UX Testing",
-        "Remote Usability Testing Agency",
-    ],
-    metadataBase: new URL("https://www.testriq.com/"),
-    alternates: {
-        canonical: "https://www.testriq.com/usability-testing-services",
-    },
-    openGraph: {
-        type: "website",
-        locale: "en_US",
-        url: "https://www.testriq.com/usability-testing-services",
-        siteName: "Testriq - Global UX QA",
-        title: "Usability Testing Services | UX Audit & User Testing Company - Testriq",
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/usability-testing-services",
+        title: "Usability Testing Services | UX Audit & User Research | Testriq",
         description:
-            "Transform your user experience with Testriq's AI-driven usability testing and UX audits. Drive higher engagement and conversion rates.",
-        images: [
-            {
-                url: "https://www.testriq.com/OG/usability-testing-og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Usability Testing Services - Testriq",
-                type: "image/webp",
-            },
+            "Drive engagement with Testriq's usability testing services. UX audits, mobile and web user research, and ISTQB-certified QA for evidence-driven product teams.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/usability-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Usability Testing Services - Testriq",
+            type: "image/webp",
+        },
+        keywords: [
+            "usability testing services",
+            "ux audit services",
+            "user research services",
+            "mobile app usability testing",
+            "website usability testing",
+            "ecommerce usability testing",
+            "ai-driven ux audit",
+            "istqb certified ux testing",
+            "remote usability testing",
         ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        site: "@testriq",
-        creator: "@testriq",
-        title: "Usability Testing Services | UX Audit & User Testing Company - Testriq",
-        description:
-            "Expert usability testing and user research for web and mobile apps. Elevate your UX and drive business growth.",
-        images: ["https://www.testriq.com/OG/usability-testing-og-image.webp"],
-    },
-};
-
-import UsabilityTestingHeroSection from "@/components/sections/UsabilityTestingHeroSection";
-
-const UsabilityTestingCrucialSection = dynamic(
-    () => import("@/components/sections/UsabilityTestingCrucialSection"),
-    {
-        ssr: true,
-        loading: () => <div className="h-[400px] animate-pulse bg-gray-50 rounded-[3rem] m-8" />
-    }
-);
-
-const UsabilityTestingAdvantage = dynamic(
-    () => import("@/components/sections/UsabilityTestingAdvantage"),
-    {
-        ssr: true,
-        loading: () => <div className="h-[500px] animate-pulse bg-white rounded-[3rem] m-8" />
-    }
-);
-
-const UsabilityTestingServicesGrid = dynamic(
-    () => import("@/components/sections/UsabilityTestingServicesGrid"),
-    {
-        ssr: true,
-        loading: () => <div className="h-[800px] animate-pulse bg-gray-50 rounded-[3rem] m-8" />
-    }
-);
-
-const UsabilityTestingMethodology = dynamic(
-    () => import("@/components/sections/UsabilityTestingMethodology"),
-    {
-        ssr: true,
-        loading: () => <div className="h-[500px] animate-pulse bg-white rounded-[3rem] m-8" />
-    }
-);
-
-const UsabilityTestingFAQs = dynamic(
-    () => import("@/components/sections/UsabilityTestingFAQs"),
-    {
-        ssr: true,
-        loading: () => <div className="h-[600px] animate-pulse bg-gray-50 rounded-[3rem] m-8" />
-    }
-);
-
-const UsabilityTestingCTASection = dynamic(
-    () => import("@/components/sections/UsabilityTestingCTASection"),
-    {
-        ssr: true,
-        loading: () => <div className="h-[400px] animate-pulse bg-white rounded-[3rem] m-8" />
-    }
-);
+    });
+}
 
 export default function UsabilityTestingPage() {
-    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-    // breadcrumb reduced from 3 items (intermediate "Services" node pointing at
-    // /services) to 2 canonical items; URL now structurally derived from pathname.
+    // TODO(seo phase-4): Migrated from static `export const metadata` to
+    // generateMetadata + buildPageMetadata. Mixed-separator double-brand
+    // fixed via title.absolute (previous title ended with " - Testriq"
+    // dash). Title dropped "Company" keyword-stuffing tail. The page
+    // previously had THREE different description strings (page ~217
+    // chars, og ~131, twitter ~107); now all mirror the page-level
+    // description rewritten to 159 chars. Keywords lowercased. 6
+    // dynamic() imports converted to direct ES imports. Breadcrumb
+    // already migrated in PR-3 — unchanged.
     return (
         <div className="scroll-smooth">
             <StructuredData data={usabilityTestingServiceSchema} />

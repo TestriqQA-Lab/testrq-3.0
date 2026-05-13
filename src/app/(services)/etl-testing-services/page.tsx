@@ -1,4 +1,11 @@
 import React from "react";
+import type { Metadata } from "next";
+import StructuredData, {
+  createCanonicalBreadcrumb,
+  etlTestingSchema,
+} from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
 import ETLTestingHeroSection from "@/components/sections/ETLTestingHeroSection";
 import ETLComprehensiveSlider from "@/components/sections/ETLComprehensiveSlider";
 import ETLProvenTestingProcess from "@/components/sections/ETLProvenTestingProcess";
@@ -8,79 +15,48 @@ import ETLCaseStudies from "@/components/sections/ETLCaseStudies";
 import ETLFAQs from "@/components/sections/ETLFAQs";
 import ETLAnyQuestions from "@/components/sections/ETLAnyQuestions";
 import ETLComplianceTable from "@/components/sections/ETLComplianceTable";
-import { Metadata } from "next";
-import StructuredData, {
-  createCanonicalBreadcrumb,
-  etlTestingSchema,
-} from "@/components/seo/StructuredData";
 
-export const metadata: Metadata = {
-  title: "Cloud ETL Testing Services & Data Integrity USA | Testriq",
-
-  description:
-    "Expert-led ETL testing services for the 2026 zettabyte era. Specialized in ISO 8000-1:2022 compliance, cloud data migration (Snowflake, Databricks), high-velocity ETL automation, and performance testing for zero-defect pipelines.",
-  keywords: [
-    "Cloud ETL Testing Services",
-    "Data Integrity USA",
-    "ISO 8000-1:2022 Compliance",
-    "ETL Automation Testing",
-    "Snowflake Data Migration Validation",
-    "Source-to-Target Mapping QA",
-    "Big Data Performance Testing",
-    "Data Warehouse Testing Services",
-    "ETL Performance Benchmarking",
-    "Enterprise Data Quality Assurance",
-    "iCEDQ & QuerySurge Validation",
-  ],
-  metadataBase: new URL("https://www.testriq.com/"),
-  alternates: {
-    canonical: "https://www.testriq.com/etl-testing-services",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.testriq.com/etl-testing-services",
-    siteName: "Testriq - Cloud ETL & Data Testing",
-    title:
-      "Cloud ETL Testing Services & Data Integrity USA | Testriq",
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    pathname: "/etl-testing-services",
+    title: "Cloud ETL Testing Services & Data Integrity | Testriq",
     description:
-      "Expert-led ETL testing services for the 2026 zettabyte era. Specialized in ISO 8000-1:2022 compliance, cloud data migration, and automated data validation.",
-    images: [
-      {
-        url: "https://www.testriq.com/OG/ETL-Testing-Service-Og.webp",
-        width: 1200,
-        height: 630,
-        alt: "ETL Testing Services - Testriq",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@testriq",
-    creator: "@testriq",
-    title:
-      "Cloud ETL Testing Services & Data Integrity USA | Testriq",
-    description:
-      "Expert-led ETL testing services for the 2026 zettabyte era. Specialized in ISO 8000-1:2022 compliance, cloud data migration, and automated data validation.",
-    images: ["https://www.testriq.com/OG/ETL-TesTing-Service-Twitter.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      "Validate cloud ETL pipelines with Testriq's testing services. ISO 8000-1 quality, source-to-target mapping QA, and Snowflake/Databricks migration validation.",
+    ogImage: {
+      url: "https://www.testriq.com/OG/ETL-Testing-Service-Og.webp",
+      width: 1200,
+      height: 630,
+      alt: "ETL Testing Services - Testriq",
+      type: "image/webp",
     },
-  },
-};
+    keywords: [
+      "cloud etl testing services",
+      "data integrity testing",
+      "iso 8000-1 compliance",
+      "etl automation testing",
+      "snowflake data migration validation",
+      "source-to-target mapping qa",
+      "big data performance testing",
+      "data warehouse testing services",
+      "etl performance benchmarking",
+      "enterprise data quality assurance",
+      "icedq and querysurge validation",
+    ],
+  });
+}
 
 export default function ETLTestingPage() {
-  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-  // to 2 canonical items; URL now structurally derived from pathname.
+  // TODO(seo phase-4): Migrated from static `export const metadata` to
+  // generateMetadata + buildPageMetadata. Double-brand title fixed via
+  // title.absolute. Title dropped " USA" geo-restriction — was "Cloud
+  // ETL Testing Services & Data Integrity USA | Testriq" which hurt
+  // global SEO. Description rewritten — was ~226 chars with "2026
+  // zettabyte era" time anchor; now 157, action-verb start, drops time
+  // anchor, surfaces Snowflake/Databricks. twitter:image unified with
+  // og:image (was a separate -Twitter.webp with mixed-case typo
+  // "ETL-TesTing-Service-Twitter.webp"). ogImage.type "image/webp"
+  // added. "Data Integrity USA" keyword normalized. Keywords lowercased.
+  // Breadcrumb already migrated in PR-3 — unchanged.
   return (
     <main className="min-h-screen bg-white">
       <StructuredData data={etlTestingSchema} />

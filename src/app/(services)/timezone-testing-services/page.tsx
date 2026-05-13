@@ -1,70 +1,62 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
+import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     timezoneTestingServiceSchema,
     timezoneFAQSchema,
     createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-    title: "Testing in Your Time Zone | Real-Time QA & Follow-the-Sun Testing - Testriq",
-    description:
-        "Accelerate your development with Testriq's Testing in Your Time Zone services. We offer real-time collaboration, follow-the-sun QA, and localized support for global enterprises.",
-    keywords: [
-        "Testing in Your Time Zone",
-        "Real-Time QA Collaboration",
-        "Follow-the-Sun Testing",
-        "Nearshore Software Testing",
-        "Localized QA Support",
-        "Synchronous QA",
-        "Global Delivery Model QA",
-        "24/7 Software Testing",
-        "Agile QA Integration",
-        "Localized UAT Services",
-    ],
-    alternates: {
-        canonical: "https://www.testriq.com/timezone-testing-services",
-    },
-    openGraph: {
-        type: "website",
-        locale: "en_US",
-        url: "https://www.testriq.com/timezone-testing-services",
-        siteName: "Testriq - Time Zone Aligned QA",
-        title: "Testing in Your Time Zone | Real-Time QA & Follow-the-Sun Testing - Testriq",
+import TimezoneTestingHero from "@/components/sections/TimezoneTestingHero";
+import TimezoneAdvantageSection from "@/components/sections/TimezoneAdvantageSection";
+import TimezoneServicesGrid from "@/components/sections/TimezoneServicesGrid";
+import TimezoneMethodology from "@/components/sections/TimezoneMethodology";
+import TimezoneFAQs from "@/components/sections/TimezoneFAQs";
+import TimezoneCTA from "@/components/sections/TimezoneCTA";
+
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/timezone-testing-services",
+        title: "Timezone Testing Services | Follow-the-Sun & Real-Time QA | Testriq",
         description:
-            "Transform your global delivery model with Testriq's real-time QA services. Achieve synchronous engineering excellence with follow-the-sun cycles.",
-        images: [
-            {
-                url: "https://www.testriq.com/OG/time-zone-tresting-og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Time Zone Aligned QA Services - Testriq",
-            },
+            "Sync global delivery with Testriq's timezone testing. Real-time QA, follow-the-sun cycles, and localized support for distributed enterprise engineering teams.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/time-zone-tresting-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Time Zone Aligned QA Services - Testriq",
+            type: "image/webp",
+        },
+        keywords: [
+            "timezone testing services",
+            "real-time qa collaboration",
+            "follow-the-sun testing",
+            "nearshore software testing",
+            "localized qa support",
+            "synchronous qa",
+            "global delivery model qa",
+            "24/7 software testing",
+            "agile qa integration",
+            "localized uat services",
         ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        site: "@testriq",
-        title: "Testing in Your Time Zone | Real-Time QA & Follow-the-Sun Testing - Testriq",
-        description:
-            "Accelerate development with real-time QA collaboration and localized support. Testriq's follow-the-sun model ensures continuous quality.",
-        images: ["https://www.testriq.com/OG/time-zone-tresting-og-image.webp"],
-    },
-};
-
-// Dynamic imports for UI sections
-const TimezoneTestingHero = dynamic(() => import("@/components/sections/TimezoneTestingHero"), { ssr: true });
-const TimezoneAdvantageSection = dynamic(() => import("@/components/sections/TimezoneAdvantageSection"), { ssr: true });
-const TimezoneServicesGrid = dynamic(() => import("@/components/sections/TimezoneServicesGrid"), { ssr: true });
-const TimezoneMethodology = dynamic(() => import("@/components/sections/TimezoneMethodology"), { ssr: true });
-const TimezoneFAQs = dynamic(() => import("@/components/sections/TimezoneFAQs"), { ssr: true });
-const TimezoneCTA = dynamic(() => import("@/components/sections/TimezoneCTA"), { ssr: true });
+    });
+}
 
 export default function TimezoneTestingServices() {
-    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-    // to 2 canonical items; URL now structurally derived from pathname.
+    // TODO(seo phase-4): Migrated from static `export const metadata` to
+    // generateMetadata + buildPageMetadata. Mixed-separator double-brand
+    // fixed via title.absolute (previous title ended with " - Testriq"
+    // dash). New title leads with primary keyword "Timezone Testing
+    // Services" (was "Testing in Your Time Zone" — a sentence fragment
+    // that's harder to rank). Description rewritten — was ~178 chars,
+    // now 159 chars, action-verb start. og:title and twitter:title
+    // now mirror page title. Helper added robots block (page had NONE).
+    // ogImage.type "image/webp" added. og:image filename
+    // "time-zone-tresting-og-image.webp" KEPT AS-IS — has typo
+    // ("tresting" → "testing") but renaming risks 404 if the asset
+    // isn't also renamed in /public/OG/. Flagged for follow-up.
+    // Keywords lowercased. 6 dynamic() imports converted to direct ES
+    // imports. Breadcrumb already migrated in PR-3 — unchanged.
     return (
         <div>
             <StructuredData data={timezoneTestingServiceSchema} />
@@ -75,7 +67,6 @@ export default function TimezoneTestingServices() {
                     "Testing in Your Time Zone"
                 )}
             />
-
             <MainLayout>
                 <TimezoneTestingHero />
                 <TimezoneAdvantageSection />
