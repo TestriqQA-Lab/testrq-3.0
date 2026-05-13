@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@next/bundle-analyzer": "^15.5.3",
+    "@next/bundle-analyzer": "^16.1.6",
     "@sanity/vision": "^5.13.0",
     "@tailwindcss/postcss": "^4",
     "@types/gtag.js": "^0.0.20",
