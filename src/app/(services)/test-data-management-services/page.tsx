@@ -1,105 +1,58 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
+import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     tdmServiceSchema,
     tdmFAQSchema,
     createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-    title: "Test Data Management Services | TDM QA & Synthetic Data Company - Testriq",
-    description:
-        "Optimize your QA with Testriq's Test Data Management services. We offer secure data masking, synthetic data generation, and automated TDM solutions to ensure high-quality testing with total compliance.",
-    keywords: [
-        "Test Data Management Services",
-        "TDM QA",
-        "Synthetic Data Company",
-        "data masking services",
-        "synthetic data generation",
-        "automated TDM solutions",
-        "test data provisioning",
-        "GDPR compliance TDM",
-        "PII data masking",
-        "test data subsetting",
-    ],
-    metadataBase: new URL("https://www.testriq.com/"),
-    alternates: {
-        canonical: "https://www.testriq.com/test-data-management-services",
-    },
-    openGraph: {
-        type: "website",
-        locale: "en_US",
-        url: "https://www.testriq.com/test-data-management-services",
-        siteName: "Testriq - TDM Services",
-        title: "Test Data Management Services | Secure & Scalable Data Solutions",
+import TDMHeroSection from "@/components/sections/TDMHeroSection";
+import TDMAdvantageSection from "@/components/sections/TDMAdvantageSection";
+import TDMServicesSection from "@/components/sections/TDMServicesSection";
+import TDMMethodologySection from "@/components/sections/TDMMethodologySection";
+import TDMFAQs from "@/components/sections/TDMFAQs";
+import TDMCTASection from "@/components/sections/TDMCTASection";
+
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/test-data-management-services",
+        title: "Test Data Management Services | TDM QA & Synthetic Data | Testriq",
         description:
-            "Transform your test data into a competitive advantage with Testriq. AI-powered synthetic data, advanced masking, and compliance-driven TDM.",
-        images: [
-            {
-                url: "https://www.testriq.com/OG/Test-data-management-service-og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Test Data Management Services - Testriq",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        site: "@testriq",
-        creator: "@testriq",
-        title: "Test Data Management Services | TDM QA & Synthetic Data",
-        description:
-            "Optimize QA with secure data masking, synthetic data, and automated TDM solutions from Testriq.",
-        images: ["https://www.testriq.com/OG/Test-data-management-service-og-image.webp"],
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
+            "Power your QA with Testriq's test data management. Secure data masking, synthetic data generation, and GDPR-compliant TDM for safe, scalable testing pipelines.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/Test-data-management-service-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Test Data Management Services - Testriq",
+            type: "image/webp",
         },
-    },
-};
-
-const TDMHeroSection = dynamic(() => import("@/components/sections/TDMHeroSection"), {
-    ssr: true,
-    loading: () => <div className="h-[600px] animate-pulse bg-gray-50" />,
-});
-
-const TDMAdvantageSection = dynamic(() => import("@/components/sections/TDMAdvantageSection"), {
-    ssr: true,
-    loading: () => <div className="h-[400px] animate-pulse bg-gray-50" />,
-});
-
-const TDMServicesSection = dynamic(() => import("@/components/sections/TDMServicesSection"), {
-    ssr: true,
-    loading: () => <div className="h-[800px] animate-pulse bg-gray-50" />,
-});
-
-const TDMMethodologySection = dynamic(() => import("@/components/sections/TDMMethodologySection"), {
-    ssr: true,
-    loading: () => <div className="h-[600px] animate-pulse bg-gray-50" />,
-});
-
-const TDMFAQs = dynamic(() => import("@/components/sections/TDMFAQs"), {
-    ssr: true,
-    loading: () => <div className="h-[500px] animate-pulse bg-gray-50" />,
-});
-
-const TDMCTASection = dynamic(() => import("@/components/sections/TDMCTASection"), {
-    ssr: true,
-    loading: () => <div className="h-[400px] animate-pulse bg-gray-50" />,
-});
+        keywords: [
+            "test data management services",
+            "tdm qa",
+            "synthetic data generation",
+            "data masking services",
+            "automated tdm solutions",
+            "test data provisioning",
+            "gdpr compliance tdm",
+            "pii data masking",
+            "test data subsetting",
+        ],
+    });
+}
 
 export default function TestDataManagementPage() {
-    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-    // to 2 canonical items; URL now structurally derived from pathname.
+    // TODO(seo phase-4): Migrated from static `export const metadata` to
+    // generateMetadata + buildPageMetadata. Mixed-separator double-brand
+    // fixed via title.absolute (previous title ended with " - Testriq"
+    // dash; root template "%s | Testriq" produced "... - Testriq |
+    // Testriq"). Title dropped "Company" keyword-stuffing tail. The page
+    // previously had THREE different title strings (page, og, twitter);
+    // now all mirror the canonical page title. Description rewritten —
+    // was ~205 chars, now 160 chars, action-verb start. ogImage.type
+    // "image/webp" added. Keywords lowercased. 6 dynamic() imports
+    // converted to direct ES imports. Breadcrumb already migrated in
+    // PR-3 — unchanged.
     return (
         <div>
             <StructuredData data={tdmServiceSchema} />
