@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
-import StructuredData, { functionalServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { functionalServiceSchema, createCanonicalBreadcrumb } from "@/components/seo/StructuredData";
 
 import FunctionalHeroSection from "@/components/sections/FunctionalHeroSection";
 
@@ -93,14 +93,6 @@ export const metadata: Metadata = {
         "Mobile App Functional Testing",
         "Enterprise Software Testing"
     ],
-    authors: [{ name: "Testriq QA Lab" }],
-    creator: "Testriq QA Lab LLP",
-    publisher: "Testriq QA Lab LLP",
-    formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
-    },
     metadataBase: new URL("https://www.testriq.com/"),
     openGraph: {
         type: "website",
@@ -140,24 +132,21 @@ export const metadata: Metadata = {
             "max-snippet": -1,
         },
     },
-    verification: {
-        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-        yandex: "ff703971283d110e",
-        yahoo: "0A67349B8CD11BF71173B38572028507",
-    },
 };
 
 export default function FunctionalTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com" },
-        { name: "Services", url: "https://www.testriq.com/functional-testing-services" },
-        { name: "Functional Testing", url: "https://www.testriq.com/functional-testing-services" },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={functionalServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/functional-testing-services",
+                    "Functional Testing"
+                )}
+            />
             <MainLayout>
                 <FunctionalHeroSection />
                 <FunctionalCriticalitySection />

@@ -3,11 +3,11 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
     accessibilityServiceSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-    title: "Acessibility Testing Services | WCAG 2.2 & ADA Compliance | Testriq",
+    title: "Accessibility Testing Services | WCAG 2.2 & ADA Compliance | Testriq",
     description:
         "Ensure your digital products are inclusive with Testriq's expert Accessibility Testing Services. We specialize in WCAG 2.2, Section 508, and ADA compliance.",
     keywords: [
@@ -22,9 +22,6 @@ export const metadata: Metadata = {
         "VPAT accessibility testing",
         "inclusive design testing",
     ],
-    authors: [{ name: "Testriq QA Lab" }],
-    creator: "Testriq QA Lab LLP",
-    publisher: "Testriq QA Lab LLP",
     metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
         canonical: "https://www.testriq.com/accessibility-testing-services",
@@ -36,7 +33,7 @@ export const metadata: Metadata = {
         siteName: "Testriq - Accessibility Testing Services",
         title: "Accessibility Testing Services | Ensuring Digital Inclusion",
         description:
-            "Expert accessibility testing services to ensure yours apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
+            "Expert accessibility testing services to ensure your apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
         images: [
             {
                 url: "https://www.testriq.com/OG/Accessibility-testing-og-image.webp",
@@ -52,7 +49,7 @@ export const metadata: Metadata = {
         creator: "@testriq",
         title: "Accessibility Testing Services | Ensuring Digital Inclusion",
         description:
-            "Expert accessibility testing services to ensure yours apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
+            "Expert accessibility testing services to ensure your apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
         images: ["https://www.testriq.com/OG/Accessibility-testing-og-image.webp"],
     },
     robots: {
@@ -97,19 +94,18 @@ const AccessibilityAnyQuestions = dynamic(
 );
 
 export default function AccessibilityTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com/" },
-        { name: "Services", url: "https://www.testriq.com/accessibility-testing-services" },
-        {
-            name: "Accessibility Testing",
-            url: "https://www.testriq.com/accessibility-testing-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={accessibilityServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/accessibility-testing-services",
+                    "Accessibility Testing"
+                )}
+            />
             <MainLayout>
                 <AccessibilityHeroSection />
                 <AccessibilitySolutionsSection />

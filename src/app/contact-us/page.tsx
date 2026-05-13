@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import StructuredData, {
   contactUsPageSchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 import dynamic from "next/dynamic";
 
@@ -70,14 +70,6 @@ export const metadata: Metadata = {
     "contact software testers",
     "software testing company contact",
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
  metadataBase: new URL('https://www.testriq.com/'),
  alternates: {
   canonical: 'https://www.testriq.com/contact-us',
@@ -112,15 +104,17 @@ export const metadata: Metadata = {
 };
 
 const ContactUsPage: React.FC = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/contact-us" },
-    { name: "Contact Us", url: "https://www.testriq.com/contact-uss" },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node — wrong section
+  // entirely — pointing at /contact-us; terminal item had 404 URL /contact-uss
+  // with extra trailing "s") to 2 canonical items; URL now structurally derived
+  // from pathname.
   return (
     <div className="scroll-smooth">
       <StructuredData data={contactUsPageSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/contact-us", "Contact Us")}
+      />
       <main className="min-h-screen bg-gray-50">
         <ContactHeroSection />
         <ContactMethodsSection />

@@ -11,7 +11,7 @@ import ExploratoryFAQs from "@/components/sections/ExploratoryFAQs";
 import { Metadata } from "next";
 import StructuredData, {
   exploratoryTestingSchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -30,14 +30,6 @@ export const metadata: Metadata = {
     "Agile exploratory testing",
     "Rapid Reporter tools",
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
     canonical: "https://www.testriq.com/exploratory-testing",
@@ -79,26 +71,21 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-    yandex: "ff703971283d110e",
-    yahoo: "0A67349B8CD11BF71173B38572028507",
-  },
 };
 
 export default function ExploratoryTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/services" },
-    {
-      name: "Exploratory Testing",
-      url: "https://www.testriq.com/exploratory-testing",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node pointing at
+  // /services) to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={exploratoryTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/exploratory-testing",
+          "Exploratory Testing"
+        )}
+      />
       <ExploratoryTestingHeroSection />
       <ExploratoryChallenges />
       <ExploratoryVsScripted />

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
-import StructuredData, { apiTestingSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { apiTestingSchema, createCanonicalBreadcrumb } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "API Testing Services & REST API Automation | Testriq",
@@ -19,14 +19,6 @@ export const metadata: Metadata = {
     "Testriq API QA Lab",
     "2026 API Testing Landscape"
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
     canonical: 'https://www.testriq.com/api-testing',
@@ -66,11 +58,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
   },
 };
 
@@ -181,15 +168,15 @@ const ApiToolsFramework = dynamic(
 );
 
 export default function ApiTesting() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/api-testing" },
-    { name: "API Testing", url: "https://www.testriq.com/api-testing" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={apiTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/api-testing", "API Testing")}
+      />
       <MainLayout>
         <ApiTestingHeroSection />
         <ApiComprehensiveSlider />

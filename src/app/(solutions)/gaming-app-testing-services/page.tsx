@@ -9,7 +9,7 @@ import GamingROISection from "@/components/sections/GamingROISection";
 import GamingFAQSection from "@/components/sections/GamingFAQSection";
 import GamingContactSection from "@/components/sections/GamingContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, gamingTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, gamingTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Gaming App Testing Services" ,
@@ -26,14 +26,6 @@ export const metadata: Metadata = {
     "cloud game QA",
     "game launch readiness"
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
     canonical: 'https://www.testriq.com/gaming-app-testing-services',
@@ -73,25 +65,23 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-      google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
-  },
 };
 
 
 
 const GamingTestingPage: React.FC = () => {
-   const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/gaming-app-testing-services" },
-    { name: "Gaming Testing Service", url: "https://www.testriq.com/gaming-app-testing-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
-    <div>  
+    <div>
       <StructuredData data={gamingTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/gaming-app-testing-services",
+          "Gaming Testing Service"
+        )}
+      />
     <main className="min-h-screen bg-white">
       <GamingHeroSection />
       <GamingChallengesSection />

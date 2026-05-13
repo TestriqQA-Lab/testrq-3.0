@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
     embeddedTestingSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -93,22 +93,18 @@ const EmbeddedAnyQuestions = dynamic(
 );
 
 export default function EmbeddedTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com/" },
-        {
-            name: "Services",
-            url: "https://www.testriq.com/embedded-testing-services",
-        },
-        {
-            name: "Embedded Testing Services",
-            url: "https://www.testriq.com/embedded-testing-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={embeddedTestingSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/embedded-testing-services",
+                    "Embedded Testing Services"
+                )}
+            />
             <MainLayout>
                 <EmbeddedTestingHeroSection />
                 <EmbeddedComplexity />

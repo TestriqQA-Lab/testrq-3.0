@@ -7,7 +7,7 @@ import EcommercePlatformsSection from "@/components/sections/EcommercePlatformsS
 import EcommerceFAQSection from "@/components/sections/EcommerceFAQSection";
 import EcommerceContactSection from "@/components/sections/EcommerceContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, ecommerceTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, ecommerceTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "E-Commerce Testing |QA Testing | Testriq",
@@ -24,14 +24,6 @@ export const metadata: Metadata = {
     "PCI DSS 4.0 compliance",
     "ecommerce QA services"
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
     canonical: 'https://www.testriq.com/e-commerce-testing-services',
@@ -71,24 +63,22 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
-  },
 };
 
 
 const EcommerceTestingPage: React.FC = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/e-commerce-testing-services" },
-    { name: "E-Commerce Testing", url: "https://www.testriq.com/e-commerce-testing-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={ecommerceTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/e-commerce-testing-services",
+          "E-Commerce Testing"
+        )}
+      />
       <main className="min-h-screen bg-white">
         <EcommerceHeroSection />
         <EcommerceChallengesSection />

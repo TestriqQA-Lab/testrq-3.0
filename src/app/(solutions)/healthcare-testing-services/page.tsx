@@ -9,7 +9,7 @@ import HealthcareROISection from "@/components/sections/HealthcareROISection";
 import HealthcareFAQSection from "@/components/sections/HealthcareFAQSection";
 import HealthcareContactSection from "@/components/sections/HealthcareContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, healthcareTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, healthcareTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Healthcare Testing Solutions ",
@@ -26,14 +26,6 @@ export const metadata: Metadata = {
     "Medical Software QA",
     "Healthcare QA Services"
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
     canonical: 'https://www.testriq.com/healthcare-testing-services',
@@ -73,23 +65,21 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-  google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
-  },
 };
 
 const HealthcareTestingPage: React.FC = () => {
-    const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/healthcare-testing-services" },
-    { name: "Healthcare Testing Service", url: "https://www.testriq.com/healthcare-testing-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
           <StructuredData data={ healthcareTestingServiceSchema} />
-          <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+          <StructuredData
+            data={createCanonicalBreadcrumb(
+              "/healthcare-testing-services",
+              "Healthcare Testing Service"
+            )}
+          />
 
     <main className="min-h-screen bg-white">
       <HealthcareHeroSection />

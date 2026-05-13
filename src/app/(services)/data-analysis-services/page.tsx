@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   dataAnalysisServiceSchema,
 } from "@/components/seo/StructuredData";
 
@@ -23,14 +23,6 @@ export const metadata: Metadata = {
     "machine learning integration",
     "diagnostic analytics",
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
     canonical: "https://www.testriq.com/data-analysis-services",
@@ -74,11 +66,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-    yandex: "ff703971283d110e",
-    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
 
@@ -184,18 +171,18 @@ const DataAnalysisReadyToEnsureQuality = dynamic(
 
 
 const DataAnalysisPage = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/data-analysis-services" },
-    {
-      name: "Data Analysis Services",
-      url: "https://www.testriq.com/data-analysis-services",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={dataAnalysisServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/data-analysis-services",
+          "Data Analysis Services"
+        )}
+      />
       <DataAnalysisHeroSection />
       <DataAnalysisChallenges />
       <DataAnalysisComprehensiveSlider />

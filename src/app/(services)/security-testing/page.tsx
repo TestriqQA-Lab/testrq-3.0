@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, securityTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, securityTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Security Testing Services & Pen-testing Services | Testriq",
@@ -170,18 +170,15 @@ const SecurityTestingFAQs = dynamic(() => import("@/components/sections/Security
 
 
 export default function SecurityTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/security-testing" },
-    { name: "Security Testing", url: "https://www.testriq.com/security-testing" }
-  ];
-
-
-
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={securityTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/security-testing", "Security Testing")}
+      />
       <MainLayout>
         <SecurityTestingHeroSection />
         <SecurityTestingChallenges />

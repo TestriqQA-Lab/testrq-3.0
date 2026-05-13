@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import StructuredData, {
     architectureServiceSchema,
     architectureFAQSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -23,14 +23,6 @@ export const metadata: Metadata = {
         "distributed systems review",
         "architecture health check",
     ],
-    authors: [{ name: "Testriq QA Lab" }],
-    creator: "Testriq QA Lab LLP",
-    publisher: "Testriq QA Lab LLP",
-    formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
-    },
     metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
         canonical: "https://www.testriq.com/application-architecture-inspection-services",
@@ -105,23 +97,19 @@ const ArchitectureCTASection = dynamic(() => import("@/components/sections/Archi
 });
 
 export default function ArchitectureInspectionPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com/" },
-        {
-            name: "Services",
-            url: "https://www.testriq.com/application-architecture-inspection-services",
-        },
-        {
-            name: "Architecture Inspection",
-            url: "https://www.testriq.com/application-architecture-inspection-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={architectureServiceSchema} />
             <StructuredData data={architectureFAQSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/application-architecture-inspection-services",
+                    "Architecture Inspection"
+                )}
+            />
             <MainLayout>
                 <ArchitectureHeroSection />
                 <ArchitectureAdvantageSection />

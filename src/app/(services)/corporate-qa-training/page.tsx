@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -23,14 +23,6 @@ export const metadata: Metadata = {
     "ISO 29119 training",
     "ISTQB corporate certification",
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
     canonical: "https://www.testriq.com/corporate-qa-training",
@@ -74,11 +66,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-    yandex: "ff703971283d110e",
-    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
 
@@ -226,19 +213,15 @@ const corporateQATrainingServiceSchema = {
 };
 
 export default function CorporateQATrainingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com" },
-    { name: "Services", url: "https://www.testriq.com/corporate-qa-training" },
-    {
-      name: "Corporate QA Training",
-      url: "https://www.testriq.com/corporate-qa-training",
-    },
-  ];
-
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={corporateQATrainingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/corporate-qa-training", "Corporate QA Training")}
+      />
       <MainLayout>
         <CorporateQATrainingHeroSection />
         <CorporateQATrainingChallenges />

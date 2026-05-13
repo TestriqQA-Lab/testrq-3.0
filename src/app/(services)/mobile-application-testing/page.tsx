@@ -1,204 +1,67 @@
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
-import { Metadata } from "next";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   mobileAppTestingSchema,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Ship Faster with Expert Mobile Test Automation | Testriq",
-  description:
-    "Expert-led global mobile app testing services for iOS and Android. Specialized in 5G optimization, security penetration testing, and ISO 29119 compliance for the 2026 mobile landscape.",
-  keywords: [
-    "Global Mobile Application Testing Services",
-    "Mobile App QA 2026",
-    "iOS 19 Testing",
-    "Android 15 Testing",
-    "5G Mobile Performance Testing",
-    "Mobile App Security Penetration Testing",
-    "ISO 29119-3 Compliance",
-    "Automated Mobile Testing Appium",
-    "Fintech Mobile QA Checklist",
-    "OWASP Mobile Top 10",
-  ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://www.testriq.com/"),
-  alternates: {
-    canonical: "https://www.testriq.com/mobile-application-testing",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.testriq.com/mobile-application-testing",
-    siteName: "Testriq - Global Mobile App Testing",
-    title: "Ship Faster with Expert Mobile Test Automation | Testriq",
+import MobileTestingHeroSection from "@/components/sections/MobileTestingHeroSection";
+import MobileComprehensiveSection from "@/components/sections/MobileComprehensive";
+import MobileReadyToEnsureQuality from "@/components/sections/MobileReadyToEnsureQuality";
+import MobileComprehensiveSlider from "@/components/sections/MobileComprehensiveSlider";
+import MobileCardSlider from "@/components/sections/MobileCardSlider";
+import MobileProvenTestingProcess from "@/components/sections/MobileProvenTestingProcess";
+import MobileWhyChooseTestriq from "@/components/sections/MobileWhyChooseTestriq";
+import MobileFAQs from "@/components/sections/MobileFAQs";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    pathname: "/mobile-application-testing",
+    title:
+      "Mobile Application Testing Services | iOS & Android QA | Testriq",
     description:
-      "Safeguard your digital presence with comprehensive mobile app quality assurance. Expert JS/Android testing for 24,000+ device combinations.",
-    images: [
-      {
-        url: "https://www.testriq.com/OG/Mobile_Application-Services-og.webp",
-        width: 1200,
-        height: 630,
-        alt: "Global Mobile App Testing Services - Testriq",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@testriq",
-    creator: "@testriq",
-    title: "Ship Faster with Expert Mobile Test Automation | Testriq",
-    description:
-      "Expert-led mobile app testing for the 2026 landscape. Specialized in 5G, Security, and ISO 29119 compliance.",
-    images: ["https://www.testriq.com/OG/Mobile_Application-Services-Twitter.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      "Validate iOS and Android performance with Testriq's mobile testing services. 5G optimization, security pen-testing, and ISO 29119-compliant QA for global teams.",
+    ogImage: {
+      url: "https://www.testriq.com/OG/Mobile_Application-Services-og.webp",
+      width: 1200,
+      height: 630,
+      alt: "Global Mobile App Testing Services - Testriq",
+      type: "image/webp",
     },
-  },
-  verification: {
-    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-    yandex: "ff703971283d110e",
-    yahoo: "0A67349B8CD11BF71173B38572028507",
-  },
-};
-
-const MobileTestingHeroSection = dynamic(
-  () => import("@/components/sections/MobileTestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const MobileComprehensiveSection = dynamic(
-  () => import("@/components/sections/MobileComprehensive"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const MobileReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/MobileReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const MobileProvenTestingProcess = dynamic(
-  () => import("@/components/sections/MobileProvenTestingProcess"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const MobileWhyChooseTestriq = dynamic(
-  () => import("@/components/sections/MobileWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-// const MobileCaseStudies = dynamic(
-//   () => import("@/components/sections/MobileCaseStudies"),
-//   {
-//     ssr: true,
-//     loading: () => (
-//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-//         <p className="text-gray-500">Loading...</p>
-//       </div>
-//     ),
-//   }
-// );
-
-const MobileFAQs = dynamic(() => import("@/components/sections/MobileFAQs"), {
-  ssr: true,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-      <p className="text-gray-500">Loading...</p>
-    </div>
-  ),
-});
-
-const MobileComprehensiveSlider = dynamic(
-  () => import("@/components/sections/MobileComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const MobileCardSlider = dynamic(
-  () => import("@/components/sections/MobileCardSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+    keywords: [
+      "mobile application testing services",
+      "ios app testing",
+      "android app testing",
+      "5g mobile performance testing",
+      "mobile app security testing",
+      "appium automation testing",
+      "iso 29119-3 compliance",
+      "mobile qa services",
+      "owasp mobile top 10",
+      "fintech mobile qa",
+    ],
+  });
+}
 
 export default function MobileAppTesting() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/mobile-application-testing-services",
-    },
-    {
-      name: "Web Application Testing",
-      url: "https://www.testriq.com/mobile-application-testing-services",
-    },
-  ];
+  // TODO(seo phase-2-followup): Migrated from static `export const metadata` to
+  // generateMetadata + buildPageMetadata. Double-brand title fixed — was "Ship
+  // Faster with Expert Mobile Test Automation | Testriq" + root layout's title
+  // template ("%s | Testriq") producing "...Testriq | Testriq". New title leads
+  // with the primary keyword "Mobile Application Testing Services". Description
+  // rewritten to drop the "2026" time anchor. ogImage.type added; twitter image
+  // unified with og:image. 9 dynamic() imports converted to direct ES imports.
+  // Breadcrumb was already migrated in PR-3 via createCanonicalBreadcrumb.
   return (
     <div>
       <StructuredData data={mobileAppTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/mobile-application-testing",
+          "Mobile Application Testing"
+        )}
+      />
       <MainLayout>
         <MobileTestingHeroSection />
         <MobileComprehensiveSection />
@@ -207,7 +70,6 @@ export default function MobileAppTesting() {
         <MobileCardSlider />
         <MobileProvenTestingProcess />
         <MobileWhyChooseTestriq />
-        {/* <MobileCaseStudies /> */}
         <MobileFAQs />
       </MainLayout>
     </div>

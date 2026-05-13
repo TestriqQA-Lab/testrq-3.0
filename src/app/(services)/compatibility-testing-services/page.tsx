@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import StructuredData, {
     compatibilityTestingServiceSchema,
     compatibilityFAQSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const revalidate = 3600;
@@ -25,14 +25,6 @@ export const metadata: Metadata = {
         "ISO 29119 certified testing",
         "Global QA outsourcing",
     ],
-    authors: [{ name: "Testriq QA Lab" }],
-    creator: "Testriq QA Lab LLP",
-    publisher: "Testriq QA Lab LLP",
-    formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
-    },
     metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
         canonical: "https://www.testriq.com/compatibility-testing-services",
@@ -104,23 +96,19 @@ const CompatibilityTestingReadyToStart = dynamic(
 );
 
 export default function CompatibilityTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com" },
-        {
-            name: "Services",
-            url: "https://www.testriq.com/compatibility-testing-services",
-        },
-        {
-            name: "Compatibility Testing",
-            url: "https://www.testriq.com/compatibility-testing-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={compatibilityTestingServiceSchema} />
             <StructuredData data={compatibilityFAQSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/compatibility-testing-services",
+                    "Compatibility Testing"
+                )}
+            />
             <MainLayout>
                 <CompatibilityTestingHeroSection />
                 <CompatibilityTestingDigitalDiversity />

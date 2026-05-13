@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
     usabilityTestingServiceSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const revalidate = 3600;
@@ -24,9 +24,6 @@ export const metadata: Metadata = {
         "ISTQB Certified UX Testing",
         "Remote Usability Testing Agency",
     ],
-    authors: [{ name: "Testriq QA Lab" }],
-    creator: "Testriq QA Lab LLP",
-    publisher: "Testriq QA Lab LLP",
     metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
         canonical: "https://www.testriq.com/usability-testing-services",
@@ -111,22 +108,18 @@ const UsabilityTestingCTASection = dynamic(
 );
 
 export default function UsabilityTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com" },
-        {
-            name: "Services",
-            url: "https://www.testriq.com/services",
-        },
-        {
-            name: "Usability Testing",
-            url: "https://www.testriq.com/usability-testing-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node pointing at
+    // /services) to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div className="scroll-smooth">
             <StructuredData data={usabilityTestingServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/usability-testing-services",
+                    "Usability Testing"
+                )}
+            />
             <MainLayout>
                 <UsabilityTestingHeroSection />
                 <UsabilityTestingCrucialSection />

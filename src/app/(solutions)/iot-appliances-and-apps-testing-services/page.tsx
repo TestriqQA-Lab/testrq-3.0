@@ -9,7 +9,7 @@ import IoTCaseStudies from "@/components/sections/IoTCaseStudies";
 import IoTFAQSection from "@/components/sections/IoTApplianceFAQSection";
 import IoTContactSection from "@/components/sections/IoTApplianceContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, iotTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, iotTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "IoT Appliances and apps Testing Services for Smart Devices",
@@ -26,14 +26,6 @@ export const metadata: Metadata = {
     "IoT performance testing",
     "IoT automation testing"
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
     canonical: "https://www.testriq.com/iot-appliances-and-apps-testing-services",
@@ -73,25 +65,24 @@ export const metadata: Metadata = {
       "max-snippet": -1
     }
   },
-  verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507', 
-  }
 };
 
 
 const IoTTestingPage: React.FC = () => {
-   const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/iot-appliances-and-apps-testing-servicess" },
-    { name: "iot Testing Service", url: "https://www.testriq.com/iot-appliances-and-apps-testing-servicess" }
-  ];
-
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node had a 404 URL
+  // with extra trailing "s"; terminal item had lowercase "iot" typo and the same
+  // bad URL) to 2 canonical items with corrected casing; URL now structurally
+  // derived from pathname.
   return (
     <div>
             <StructuredData data={iotTestingServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+              data={createCanonicalBreadcrumb(
+                "/iot-appliances-and-apps-testing-services",
+                "IoT Testing Service"
+              )}
+            />
     <main className="min-h-screen bg-white">
       <IoTHeroSection />
       <IoTChallengesSection />

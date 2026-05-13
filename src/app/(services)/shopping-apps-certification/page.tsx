@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   organizationSchema,
   shoppingAppCertificationSchema,
   websiteSchema,
@@ -26,14 +26,6 @@ export const metadata: Metadata = {
     "certified shopping apps",
     "e-commerce platform security",
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
     canonical: "https://www.testriq.com/shopping-apps-certification",
@@ -76,11 +68,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-    yandex: "ff703971283d110e",
-    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
 
@@ -201,23 +188,18 @@ const faqSchema = {
 };
 
 export default function ShoppingAppsCertification() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/shopping-apps-certification",
-    },
-    {
-      name: "Shopping App Certification ",
-      url: "https://www.testriq.com/shopping-apps-certification",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL;
+  // terminal name had trailing whitespace) to 2 canonical items;
+  // URL now structurally derived from pathname.
   return (
     <div className="overflow-hidden">
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={shoppingAppCertificationSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/shopping-apps-certification", "Shopping App Certification")}
+      />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <ShoppingAppHeroSection scrollToId="shopping-app-certification-process" />

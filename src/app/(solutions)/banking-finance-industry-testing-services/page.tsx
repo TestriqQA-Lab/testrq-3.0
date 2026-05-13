@@ -8,7 +8,7 @@ import BankingROISection from "@/components/sections/BankingROISection";
 import BankingFAQSection from "@/components/sections/BankingFAQSection";
 import BankingContactSection from "@/components/sections/BankingContactSection";
 import { Metadata } from "next";
-import StructuredData, { bankingFinanceTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { bankingFinanceTestingServiceSchema, createCanonicalBreadcrumb } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Banking & Financial Application Testing Services | testriq",
@@ -27,14 +27,6 @@ export const metadata: Metadata = {
     "GDPR testing",
     "security testing for banks"
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
     canonical: 'https://www.testriq.com/banking-finance-industry-testing-services',
@@ -74,24 +66,24 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
-  }
 };
 
 
 const BankingFinanceTestingPage: React.FC = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/banking-finance-industry-testing-services" },
-    { name: "Banking FinanceTesting Service", url: "https://www.testriq.com/banking-finance-industry-testing-servicess" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL;
+  // terminal item also had missing space "Banking FinanceTesting Service" and a
+  // 404 URL with extra trailing "s") to 2 canonical items with corrected name;
+  // URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={bankingFinanceTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/banking-finance-industry-testing-services",
+          "Banking Finance Testing Service"
+        )}
+      />
       <main className="min-h-screen bg-white">
         <BankingHeroSection />
         <BankingChallengesSection />

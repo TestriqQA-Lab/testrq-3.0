@@ -10,7 +10,7 @@ import LaunchFastFAQs from "@/components/sections/LaunchFastFAQs";
 import type { Metadata } from "next";
 import StructuredData, {
   launchFastQASchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -31,14 +31,6 @@ export const metadata: Metadata = {
     "automated smoke suite",
     "startup quality assurance",
   ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
     canonical: "https://www.testriq.com/launchfast-qa",
@@ -81,23 +73,18 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-    yandex: "ff703971283d110e",
-    yahoo: "0A67349B8CD11BF71173B38572028507",
-  },
 };
 
 export default function LaunchFastQAPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/launchfast-qa" },
-    { name: "LaunchFast QA", url: "https://www.testriq.com/launchfast-qa" },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={launchFastQASchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/launchfast-qa", "LaunchFast QA")}
+      />
       <LaunchFastQAHeroSection />
       <LaunchFastChallenges />
       <LaunchFastComprehensiveSlider />
