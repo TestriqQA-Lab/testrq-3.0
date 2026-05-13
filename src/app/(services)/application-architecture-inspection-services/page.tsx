@@ -1,105 +1,58 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
+import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     architectureServiceSchema,
     architectureFAQSchema,
     createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-    title: "Application Architecture Inspection | Software Architecture Audit - Testriq",
-    description:
-        "Optimize your system design with Testriq's Application Architecture Inspection services. We offer microservices reviews, technical debt assessments, and cloud-native audits to ensure high-performance software delivery.",
-    keywords: [
-        "Application Architecture Inspection",
-        "Software Architecture Audit",
-        "microservices review",
-        "technical debt assessment",
-        "cloud-native audit",
-        "system design review",
-        "scalability inspection",
-        "legacy modernization audit",
-        "distributed systems review",
-        "architecture health check",
-    ],
-    metadataBase: new URL("https://www.testriq.com/"),
-    alternates: {
-        canonical: "https://www.testriq.com/application-architecture-inspection-services",
-    },
-    openGraph: {
-        type: "website",
-        locale: "en_US",
-        url: "https://www.testriq.com/application-architecture-inspection-services",
-        siteName: "Testriq - Architecture Inspection",
-        title: "Application Architecture Inspection | Scale, Endure, Evolve",
+import ArchitectureHeroSection from "@/components/sections/ArchitectureHeroSection";
+import ArchitectureAdvantageSection from "@/components/sections/ArchitectureAdvantageSection";
+import ArchitectureServicesSection from "@/components/sections/ArchitectureServicesSection";
+import ArchitectureMethodologySection from "@/components/sections/ArchitectureMethodologySection";
+import ArchitectureFAQs from "@/components/sections/ArchitectureFAQs";
+import ArchitectureCTASection from "@/components/sections/ArchitectureCTASection";
+
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/application-architecture-inspection-services",
+        title: "Application Architecture Inspection | Microservices Audit | Testriq",
         description:
-            "Engineering resilience into your digital core. Expert architecture reviews, technical debt audits, and cloud-native validation from Testriq.",
-        images: [
-            {
-                url: "https://www.testriq.com/OG/application-architecture-inspection-services-og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Application Architecture Inspection Services - Testriq",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        site: "@testriq",
-        creator: "@testriq",
-        title: "Application Architecture Inspection | Software Architecture Audit",
-        description:
-            "Optimize system design with expert microservices reviews and technical debt assessments from Testriq.",
-        images: ["https://www.testriq.com/OG/application-architecture-inspection-services-og-image.webp"],
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
+            "Engineer resilience with Testriq's architecture inspection. Microservices reviews, technical-debt audits, and cloud-native validation for scaling teams.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/application-architecture-inspection-services-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Application Architecture Inspection Services - Testriq",
+            type: "image/webp",
         },
-    },
-};
-
-const ArchitectureHeroSection = dynamic(() => import("@/components/sections/ArchitectureHeroSection"), {
-    ssr: true,
-    loading: () => <div className="h-[600px] animate-pulse bg-gray-50" />,
-});
-
-const ArchitectureAdvantageSection = dynamic(() => import("@/components/sections/ArchitectureAdvantageSection"), {
-    ssr: true,
-    loading: () => <div className="h-[400px] animate-pulse bg-gray-50" />,
-});
-
-const ArchitectureServicesSection = dynamic(() => import("@/components/sections/ArchitectureServicesSection"), {
-    ssr: true,
-    loading: () => <div className="h-[800px] animate-pulse bg-gray-50" />,
-});
-
-const ArchitectureMethodologySection = dynamic(() => import("@/components/sections/ArchitectureMethodologySection"), {
-    ssr: true,
-    loading: () => <div className="h-[600px] animate-pulse bg-gray-50" />,
-});
-
-const ArchitectureFAQs = dynamic(() => import("@/components/sections/ArchitectureFAQs"), {
-    ssr: true,
-    loading: () => <div className="h-[500px] animate-pulse bg-gray-50" />,
-});
-
-const ArchitectureCTASection = dynamic(() => import("@/components/sections/ArchitectureCTASection"), {
-    ssr: true,
-    loading: () => <div className="h-[400px] animate-pulse bg-gray-50" />,
-});
+        keywords: [
+            "application architecture inspection",
+            "software architecture audit",
+            "microservices review",
+            "technical debt assessment",
+            "cloud-native audit",
+            "system design review",
+            "scalability inspection",
+            "legacy modernization audit",
+            "distributed systems review",
+            "architecture health check",
+        ],
+    });
+}
 
 export default function ArchitectureInspectionPage() {
-    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-    // to 2 canonical items; URL now structurally derived from pathname.
+    // TODO(seo phase-4): Migrated from static `export const metadata` to
+    // generateMetadata + buildPageMetadata. Double-brand title fixed —
+    // previous title ended with " - Testriq" (dash separator) and the root
+    // layout's template "%s | Testriq" produced "... - Testriq | Testriq".
+    // New title leads with "Application Architecture Inspection", surfaces
+    // "Microservices Audit" as B2B differentiator. Description trimmed
+    // from ~210 chars to 155. ogImage.type "image/webp" added. og:title
+    // and twitter:title now mirror page title. 6 dynamic() imports
+    // converted to direct ES imports. Breadcrumb already migrated in
+    // PR-3 — unchanged.
     return (
         <div>
             <StructuredData data={architectureServiceSchema} />
