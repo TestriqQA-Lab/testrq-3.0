@@ -10,7 +10,7 @@ import WebappTestingHeroSection from "@/components/sections/WebappTestingHeroSec
 import WebappChallenges from "@/components/sections/WebappChallenges";
 import WebappCompliance from "@/components/sections/WebappCompliance";
 import WebappTechStack from "@/components/sections/WebappTechStack";
-import CardSlider from "@/components/sections/CardSlider";
+import CardSlider from "@/components/sections/WebAppCardSlider";
 import WebappWhyChooseTestriq from "@/components/sections/WebappWhyChooseTestriq";
 import WebappFAQs from "@/components/sections/WebappFAQs";
 import WebappAnyQuestions from "@/components/sections/WebappAnyQuestions";
