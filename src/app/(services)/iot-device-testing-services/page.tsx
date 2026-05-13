@@ -1,191 +1,62 @@
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
-import { Metadata } from "next";
 import StructuredData, {
   createCanonicalBreadcrumb,
   iotDeviceTestingSchema,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "IoT Testing Services: Firmware, MQTT & Security | Testriq",
-  description:
-    "Expert IoT testing services for the 2026 connected ecosystem. Specialized in 5G-edge resilience, firmware security (ISO 27404), and protocol compatibility (MQTT/Zigbee) for 21.1B+ devices.",
-  keywords: [
-    "IoT Testing Services",
-    "Firmware Security Testing",
-    "MQTT Protocol Testing",
-    "5G-Edge IoT Resilience",
-    "ISO/IEC 27404 Compliance",
-    "ETSI EN 303 645 IoT Security",
-    "Smart Device Quality Assurance",
-    "Industrial IoT Penetration Testing",
-    "FOTA Update Validation",
-    "Zettabyte Scale Performance Testing",
-  ],
-  metadataBase: new URL("https://www.testriq.com/"),
-  alternates: {
-    canonical: "https://www.testriq.com/iot-device-testing-services",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.testriq.com/iot-device-testing-services",
-    siteName: "Testriq - Global IoT Testing Services",
-    title: "IoT Testing Services: Firmware, MQTT & Security | Testriq",
+import IoTTestingHeroSection from "@/components/sections/IoTTestingHeroSection";
+import IoTComprehensiveSlider from "@/components/sections/IoTComprehensiveSlider";
+import IoTCardSlider from "@/components/sections/IoTCardSlider";
+import IoTProvenTestingProcess from "@/components/sections/IoTProvenTestingProcess";
+import IoTComplianceTable from "@/components/sections/IoTComplianceTable";
+import IoTWhyChooseTestriq from "@/components/sections/IoTWhyChooseTestriq";
+import IoTToolsFramework from "@/components/sections/IoTToolsFramework";
+import IoTCaseStudies from "@/components/sections/IoTCaseStudies";
+import IoTFAQs from "@/components/sections/IoTFAQs";
+import IoTAnyQuestions from "@/components/sections/IoTAnyQuestions";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    pathname: "/iot-device-testing-services",
+    title: "IoT Testing Services | Firmware, MQTT & Smart Device QA | Testriq",
     description:
-      "Ensuring reliability in a 21.1 Billion connected ecosystem. Expert smart device QA, firmware audits, and 5G-edge performance stress testing.",
-    images: [
-      {
-        url: "https://www.testriq.com/OG/IoT-Testing-Services-og.webp",
-        width: 1200,
-        height: 630,
-        alt: "Global IoT Testing Services - Testriq",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@testriq",
-    creator: "@testriq",
-    title: "IoT Testing Services: Firmware, MQTT & Security | Testriq",
-    description:
-      "Expert IoT QA for the 2026 landscape. Specialized in Firmware, Protocols, and Cyber Resilience Act compliance.",
-    images: ["https://www.testriq.com/OG/Iot-Testing_services-twitter.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      "Validate connected devices with Testriq's IoT testing services. Firmware security (ISO 27404), MQTT/Zigbee compatibility, and 5G-edge resilience testing.",
+    ogImage: {
+      url: "https://www.testriq.com/OG/IoT-Testing-Services-og.webp",
+      width: 1200,
+      height: 630,
+      alt: "Global IoT Testing Services - Testriq",
+      type: "image/webp",
     },
-  },
-};
-
-const IoTTestingHeroSection = dynamic(
-  () => import("@/components/sections/IoTTestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTProvenTestingProcess = dynamic(
-  () => import("@/components/sections/IoTProvenTestingProcess"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTWhyChooseTestriq = dynamic(
-  () => import("@/components/sections/IoTWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTCaseStudies = dynamic(
-  () => import("@/components/sections/IoTCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTFAQs = dynamic(() => import("@/components/sections/IoTFAQs"), {
-  ssr: true,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-      <p className="text-gray-500">Loading...</p>
-    </div>
-  ),
-});
-
-const IoTAnyQuestions = dynamic(
-  () => import("@/components/sections/IoTAnyQuestions"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTComprehensiveSlider = dynamic(
-  () => import("@/components/sections/IoTComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTCardSlider = dynamic(
-  () => import("@/components/sections/IoTCardSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTToolsFramework = dynamic(
-  () => import("@/components/sections/IoTToolsFramework"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTComplianceTable = dynamic(
-  () => import("@/components/sections/IoTComplianceTable"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+    keywords: [
+      "iot testing services",
+      "firmware security testing",
+      "mqtt protocol testing",
+      "5g-edge iot resilience",
+      "iso/iec 27404 compliance",
+      "etsi en 303 645 iot security",
+      "smart device quality assurance",
+      "industrial iot penetration testing",
+      "fota update validation",
+      "zettabyte scale performance testing",
+    ],
+  });
+}
 
 export default function IoTDeviceTesting() {
-  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-  // to 2 canonical items; URL now structurally derived from pathname.
+  // TODO(seo phase-4): Migrated from static `export const metadata` to
+  // generateMetadata + buildPageMetadata. Double-brand title fixed via
+  // title.absolute. Title separator normalized from ":" to "|" for
+  // consistency with the rest of the site. Description rewritten — was
+  // ~189 chars with "2026 connected ecosystem" + "21.1B+ devices"
+  // anchors, now 153, action-verb start, surfaces ISO 27404 +
+  // protocols. twitter:image unified with og:image (was a separate
+  // Iot-Testing_services-twitter.webp with mixed underscore/casing).
+  // ogImage.type "image/webp" added. Keywords lowercased. 10 dynamic()
+  // imports converted to direct ES imports. Breadcrumb already migrated
+  // in PR-3 — unchanged.
   return (
     <div>
       <StructuredData data={iotDeviceTestingSchema} />
