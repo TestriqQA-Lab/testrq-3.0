@@ -18,6 +18,7 @@ export default defineType({
                 source: 'name',
                 maxLength: 96,
             },
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'image',
@@ -26,6 +27,16 @@ export default defineType({
             options: {
                 hotspot: true,
             },
+            fields: [
+                {
+                    name: 'alt',
+                    type: 'string',
+                    title: 'Alternative Text',
+                    description: 'Descriptive text for SEO and accessibility.',
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    validation: (Rule: any) => Rule.required(),
+                },
+            ],
         }),
         defineField({
             name: 'bio',
