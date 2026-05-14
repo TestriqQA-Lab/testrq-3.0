@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FaFireAlt, FaMobileAlt, FaSyncAlt, FaDatabase, FaUsers, FaArrowRight } from "react-icons/fa";
 
 const AdHocTestingScenarios: React.FC = () => {
@@ -108,10 +109,5 @@ const AdHocTestingScenarios: React.FC = () => {
         </section>
     );
 };
-
-// Internal Link helper (optional if not using next/link)
-const Link = ({ children, href, className }: { children: React.ReactNode, href: string, className?: string }) => (
-    <a href={href} className={className}>{children}</a>
-);
 
 export default AdHocTestingScenarios;
