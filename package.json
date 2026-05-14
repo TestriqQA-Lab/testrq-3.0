@@ -9,7 +9,7 @@
     "build": "cross-env NODE_OPTIONS='--max-old-space-size=4096' next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build",
+    "analyze": "cross-env ANALYZE=true NODE_OPTIONS='--max-old-space-size=4096' next build",
     "test": "vitest run",
     "test:watch": "vitest"
   },
