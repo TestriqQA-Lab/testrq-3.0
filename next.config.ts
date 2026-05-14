@@ -873,6 +873,20 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Long-lived immutable caching for static assets in /public.
+        // Next.js auto-caches /_next/static/* immutably, but /public/*
+        // files default to max-age=0 — so OG images, logos and favicons
+        // get re-validated by the browser on every visit. These assets
+        // are content-addressed by filename and effectively never change.
+        source: "/:all*(svg|jpg|jpeg|png|webp|gif|ico|woff|woff2|avif)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
 };
