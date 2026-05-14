@@ -848,6 +848,31 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Site-wide baseline security headers. CSP is intentionally NOT set
+        // here yet — it needs an inline-script/style inventory (GA, Apollo,
+        // reCAPTCHA) before a non-breaking policy can be written. Tracked as
+        // the deferred half of F-14 in docs/seo-audit/fix-backlog.md.
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
     ];
   },
 };
