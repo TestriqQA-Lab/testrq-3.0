@@ -46,7 +46,7 @@ const AdHocTestingReadyToStart: React.FC = () => {
                                         <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                                     </button>
                                 </Link>
-                                <Link href="https://calendar.app.google/uUHn8prcXbdqcvVb6" target="_blank" className="w-full sm:w-auto">
+                                <Link href="https://calendar.app.google/uUHn8prcXbdqcvVb6" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                                     <button className="w-full px-6 py-4 sm:px-10 sm:py-5 border-2 border-white/20 hover:border-white text-white rounded-full font-bold transition-all flex items-center justify-center gap-2">
                                         <FaCalendarAlt />
                                         Schedule an Intro

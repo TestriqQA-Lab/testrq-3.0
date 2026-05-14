@@ -84,6 +84,7 @@ const CityTestingCTASection: React.FC<CityTestingCTASectionProps> = ({ cityData 
               <Link
                 href="https://calendar.app.google/uUHn8prcXbdqcvVb6"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer shadow-lg hover:shadow-xl flex items-center"
               >
                 Schedule Free Consultation

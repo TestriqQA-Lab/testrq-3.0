@@ -99,7 +99,7 @@ const AzureTestingCTA: React.FC = () => {
                             </div>
 
                             <div className="grid grid-cols-1 gap-4">
-                                <Link href="https://calendar.app.google/uUHn8prcXbdqcvVb6" target="_blank" className="flex items-center justify-center gap-3 py-4 border-2 border-gray-100 rounded-2xl hover:border-blue-200 hover:bg-blue-50 transition-all font-bold text-gray-700">
+                                <Link href="https://calendar.app.google/uUHn8prcXbdqcvVb6" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 py-4 border-2 border-gray-100 rounded-2xl hover:border-blue-200 hover:bg-blue-50 transition-all font-bold text-gray-700">
                                     <FaCalendarAlt className="text-[#0078d4]" />
                                     <span>Schedule on Calendar</span>
                                 </Link>
