@@ -14,6 +14,8 @@ import TimezoneMethodology from "@/components/sections/TimezoneMethodology";
 import TimezoneFAQs from "@/components/sections/TimezoneFAQs";
 import TimezoneCTA from "@/components/sections/TimezoneCTA";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/timezone-testing-services",

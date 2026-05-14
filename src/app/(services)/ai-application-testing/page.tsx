@@ -8,6 +8,8 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Global AI Testing Services | Reliable Systems for the Future",
   description:

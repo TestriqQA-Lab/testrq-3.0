@@ -19,6 +19,8 @@ const ManagedTestingStrategy = dynamic(() => import("@/components/sections/Manag
 const ManagedTestingFAQs = dynamic(() => import("@/components/sections/ManagedTestingFAQs"), { ssr: true });
 const ManagedTestingReadyToStart = dynamic(() => import("@/components/sections/ManagedTestingReadyToStart"), { ssr: true });
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
     title:
         "Managed Testing Services | QA Outsourcing & Dedicated Teams | Testriq",

@@ -10,6 +10,8 @@ import TelecomContactSection from "@/components/sections/TelecomContactSection";
 import { Metadata } from "next";
 import StructuredData, { createCanonicalBreadcrumb, telecommunicationTestingSchema } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Telecommunication Testing Services",
   description: "Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization.Ensure seamless connectivity with Testriq’s telecom testing services: performance, security, and compliance testing for telecom systems.",

@@ -16,6 +16,8 @@ import ExploratoryToolsFramework from "@/components/sections/ExploratoryToolsFra
 import ExploratoryCaseStudies from "@/components/sections/ExploratoryCaseStudies";
 import ExploratoryFAQs from "@/components/sections/ExploratoryFAQs";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/exploratory-testing",

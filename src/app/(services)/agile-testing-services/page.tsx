@@ -14,6 +14,8 @@ import AgileTestingMethodology from "@/components/sections/AgileTestingMethodolo
 import AgileTestingFAQs from "@/components/sections/AgileTestingFAQs";
 import AgileTestingCTA from "@/components/sections/AgileTestingCTA";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/agile-testing-services",

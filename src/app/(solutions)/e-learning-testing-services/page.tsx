@@ -10,6 +10,8 @@ import ElearningContactSection from "@/components/sections/ElearningContactSecti
 import { Metadata } from "next";
 import StructuredData, { createCanonicalBreadcrumb, elearningTestingServiceSchema } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "E-Learning Testing Services",
   description:

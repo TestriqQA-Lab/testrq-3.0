@@ -14,6 +14,8 @@ import TDMMethodologySection from "@/components/sections/TDMMethodologySection";
 import TDMFAQs from "@/components/sections/TDMFAQs";
 import TDMCTASection from "@/components/sections/TDMCTASection";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/test-data-management-services",

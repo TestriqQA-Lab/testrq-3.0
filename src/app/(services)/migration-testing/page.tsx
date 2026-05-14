@@ -14,6 +14,8 @@ import MigrationAdvantageSection from "@/components/sections/MigrationAdvantageS
 import MigrationFAQs from "@/components/sections/MigrationFAQs";
 import MigrationNextStepsSection from "@/components/sections/MigrationNextStepsSection";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/migration-testing",

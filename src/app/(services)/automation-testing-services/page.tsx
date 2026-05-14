@@ -17,6 +17,8 @@ import AutomationTestingCaseStudies from "@/components/sections/AutomationTestin
 import AutomationTestingFAQs from "@/components/sections/AutomationTestingFAQs";
 import ManualTestingFrameworkArchitecture from "@/components/sections/ManualTestingFrameworkArchitecture";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/automation-testing-services",

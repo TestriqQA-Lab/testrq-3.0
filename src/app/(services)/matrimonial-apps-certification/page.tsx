@@ -9,6 +9,8 @@ import StructuredData, {
 import { Metadata } from "next";
 
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Matrimonial App Certification  ",
 

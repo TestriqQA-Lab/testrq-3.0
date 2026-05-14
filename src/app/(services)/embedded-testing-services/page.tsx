@@ -14,6 +14,8 @@ import EmbeddedTestriqAdvantage from "@/components/sections/EmbeddedTestriqAdvan
 import EmbeddedFAQs from "@/components/sections/EmbeddedFAQs";
 import EmbeddedAnyQuestions from "@/components/sections/EmbeddedAnyQuestions";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/embedded-testing-services",

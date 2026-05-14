@@ -14,6 +14,8 @@ import FunctionalAdvantageSection from "@/components/sections/FunctionalAdvantag
 import FunctionalFAQs from "@/components/sections/FunctionalFAQs";
 import FunctionalNextStepsSection from "@/components/sections/FunctionalNextStepsSection";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/functional-testing-services",

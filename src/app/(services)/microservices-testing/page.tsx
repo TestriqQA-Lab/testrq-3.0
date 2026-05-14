@@ -21,6 +21,8 @@ import MicroservicesWhyChooseSection from "@/components/sections/MicroservicesWh
 import MicroservicesFAQs from "@/components/sections/MicroservicesFAQs";
 import MicroservicesNextStepsSection from "@/components/sections/MicroservicesNextStepsSection";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         pathname: "/microservices-testing",

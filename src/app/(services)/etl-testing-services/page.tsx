@@ -16,6 +16,8 @@ import ETLFAQs from "@/components/sections/ETLFAQs";
 import ETLAnyQuestions from "@/components/sections/ETLAnyQuestions";
 import ETLComplianceTable from "@/components/sections/ETLComplianceTable";
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/etl-testing-services",

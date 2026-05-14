@@ -11,6 +11,8 @@ import QADocumentationReadyToEnsureQuality from '@/components/sections/QADocumen
 import { Metadata } from 'next';
 import StructuredData, { createCanonicalBreadcrumb, qaDocumentationServiceSchema } from '@/components/seo/StructuredData';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Analyze Data to Improve QA Team Performance",
   description: "Testriq provides professional QA documentation services. We bridge the gap between rapid deployment and quality assurance with audit-ready, scalable systems aligning with ISO/IEC/IEEE 29119-3 standards.",

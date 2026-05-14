@@ -11,6 +11,8 @@ import HealthcareContactSection from "@/components/sections/HealthcareContactSec
 import { Metadata } from "next";
 import StructuredData, { createCanonicalBreadcrumb, healthcareTestingServiceSchema } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Healthcare Testing Solutions ",
   description: "Ensure your healthcare software is secure, compliant, and user-friendly. Testriq offers end-to-end healthcare testing services aligned with HIPAA and FDA standards.",
