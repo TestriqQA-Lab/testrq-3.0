@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaUser, FaEnvelope, FaPhone, FaBuilding, FaPaperPlane, FaCheckCircle, FaShieldAlt } from "react-icons/fa";
 import PhoneInput from "react-phone-number-input";
@@ -418,13 +419,13 @@ const PricingFormModal: React.FC<PricingFormModalProps> = ({
                                     {/* Privacy Note */}
                                     <p className="text-[10px] text-gray-400 text-center leading-relaxed">
                                         By submitting, you agree to our{" "}
-                                        <a href="/privacy-policy" className="underline hover:text-gray-600">
+                                        <Link href="/privacy-policy" className="underline hover:text-gray-600">
                                             Privacy Policy
-                                        </a>{" "}
+                                        </Link>{" "}
                                         and{" "}
-                                        <a href="/terms-of-service" className="underline hover:text-gray-600">
+                                        <Link href="/terms-of-service" className="underline hover:text-gray-600">
                                             Terms of Service
-                                        </a>
+                                        </Link>
                                         .
                                     </p>
                                 </form>
