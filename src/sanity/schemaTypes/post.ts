@@ -23,12 +23,14 @@ export default defineType({
                 source: 'title',
                 maxLength: 96,
             },
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'author',
             title: 'Author',
             type: 'reference',
             to: { type: 'author' },
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'mainImage',
@@ -43,6 +45,8 @@ export default defineType({
                     type: 'string',
                     title: 'Alternative Text',
                     description: 'Descriptive text for SEO and accessibility.',
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    validation: (Rule: any) => Rule.required(),
                 },
                 {
                     name: 'title',
@@ -63,6 +67,7 @@ export default defineType({
             title: 'Categories',
             type: 'array',
             of: [{ type: 'reference', to: { type: 'category' } }],
+            validation: (Rule) => Rule.required().min(1),
         }),
         defineField({
             name: 'tags',
