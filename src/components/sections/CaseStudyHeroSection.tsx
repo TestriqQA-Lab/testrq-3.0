@@ -111,6 +111,7 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
                   width={300}
                   height={200}
                   className="object-contain"
+                  priority
                 />
                 <p className="text-gray-600 text-xl py-5">
                   {caseStudy.industry} Success Story
