@@ -831,6 +831,12 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/iot-device-connectivity-testing", destination: "/blog/tag/iot-testing", permanent: true },
       { source: "/blog/tag/challenges-in-software-testing", destination: "/blog/tag/qa-strategy", permanent: true },
       { source: "/blog/tag/ios-automation-strategies", destination: "/blog/tag/ios-testing", permanent: true },
+
+      // F-68 (Phase 10): two city pages discovered as 404 in GSC are not
+      // present in CityData.tsx; redirect to the locations hub until/unless
+      // they're restored as genuine local pages.
+      { source: "/software-qa-testing-services-in-madinat-zayed", destination: "/locations-we-serve", permanent: true },
+      { source: "/software-qa-testing-services-in-gurugram", destination: "/locations-we-serve", permanent: true },
     ];
   },
 
