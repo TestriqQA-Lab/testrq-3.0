@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { sanityGetPostBySlug, sanityGetRelatedPosts, sanityGetCategories, sanityGetAllPostSlugs, Post } from "@/lib/sanity-data-adapter";
 import { extractHeadings } from "@/lib/utils";
-import StructuredData from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 import { Suspense } from "react";
 import RelatedPosts from "@/components/sections/RelatedPosts";
@@ -65,6 +65,35 @@ function PostStructuredData({ post }: { post: Post }) {
   };
 
   return <StructuredData data={articleSchema} />;
+}
+
+// F-42: BreadcrumbList for blog post pages.
+// Chain: Home → Blog → {category} → {post}. The category step is skipped when
+// the post has no real Sanity categories — the adapter falls back to a
+// "technology-stack" slug for category-less posts, but that route 404s in
+// production, so emitting it as a breadcrumb item would point Google at a
+// dead URL. We only include the category step when post.categories[0] is a
+// real entry from Sanity.
+function PostBreadcrumbStructuredData({ post }: { post: Post }) {
+  const items: Array<{ name: string; url: string }> = [
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Blog", url: "https://www.testriq.com/blog" },
+  ];
+
+  const primaryCategory = post.categories?.[0];
+  if (primaryCategory?.slug && primaryCategory?.name) {
+    items.push({
+      name: primaryCategory.name,
+      url: `https://www.testriq.com/blog/category/${primaryCategory.slug}`,
+    });
+  }
+
+  items.push({
+    name: post.title,
+    url: `https://www.testriq.com/blog/post/${post.slug}`,
+  });
+
+  return <StructuredData data={createBreadcrumbSchema(items)} />;
 }
 
 type Props = {
@@ -143,6 +172,7 @@ export default async function BlogPostPage({ params }: Props) {
       <MainLayout>
         {/* Custom Structured Data from WordPress */}
         <PostStructuredData post={post} />
+        <PostBreadcrumbStructuredData post={post} />
 
         {/* Blog Post Hero Section with dynamic post data */}
         <BlogPostHeroSection post={post} />
