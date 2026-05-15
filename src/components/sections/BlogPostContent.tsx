@@ -4,7 +4,7 @@ import { FaFont } from "react-icons/fa";
 import { slugify } from "@/lib/utils";
 import { PortableText } from "@portabletext/react";
 import { Post } from "@/lib/sanity-data-adapter";
-import { urlFor } from "@/lib/sanity";
+import { sanityImage } from "@/lib/sanity-image";
 import ContactCTA from "@/components/ui/ContactCTA";
 import Link from "next/link";
 import ShareArticle from "@/components/ui/ShareArticle";
@@ -63,7 +63,7 @@ const components = {
         <figure className="relative w-full my-10 flex flex-col items-center">
           <div className="relative overflow-hidden rounded-2xl shadow-xl border border-slate-100/50 bg-slate-50 w-full max-w-4xl max-h-[70vh] flex items-center justify-center transition-all duration-300 hover:shadow-2xl hover:border-slate-200/80">
             <Image
-              src={urlFor(value).width(1200).quality(90).url()}
+              src={sanityImage(value, { width: 1200, quality: 90 })}
               alt={value.alt || "Blog image"}
               title={value.title || value.alt || "Blog image"}
               width={width}

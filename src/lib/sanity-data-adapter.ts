@@ -1,7 +1,18 @@
 
-import { client, urlFor } from './sanity';
+import { client } from './sanity';
+import { sanityImage } from './sanity-image';
 import { groq } from "next-sanity";
+import { unstable_cache } from 'next/cache';
 import * as queries from './sanity-queries';
+
+// F-48: shared revalidate window for blog-route data fetches. Matches the
+// 60s `export const revalidate = 60` on each blog page.tsx — except those
+// pages access searchParams.page for pagination, which forces Next into
+// Dynamic Rendering and silently ignores the page-level revalidate. The
+// fetches below are still wrapped with unstable_cache so the expensive
+// GROQ round-trip is only paid once per 60s across all requests, even
+// though page-level rendering remains per-request.
+const BLOG_DATA_REVALIDATE_SECONDS = 60;
 // Define the interfaces that your components expect
 export interface Category {
     id: string;
@@ -230,7 +241,7 @@ export function adaptSanityPost(sanityPost: any): Post {
         categorySlug: primaryCategory?.slug?.current || 'technology-stack',
         categoryColor,
         author: sanityPost.author?.name || 'Testriq Team',
-        authorImage: sanityPost.author?.image ? urlFor(sanityPost.author.image).width(60).height(60).url() : 'https://placehold.co/60x60/png',
+        authorImage: sanityPost.author?.image ? sanityImage(sanityPost.author.image, { width: 60, height: 60 }) : 'https://placehold.co/60x60/png',
         authorImageRaw: sanityPost.author?.image || null,
         authorBio: sanityPost.author?.bio || 'QA Expert',
         authorLinkedin: sanityPost.author?.linkedin || null,
@@ -242,7 +253,7 @@ export function adaptSanityPost(sanityPost: any): Post {
         dateISO: sanityPost.publishedAt || new Date().toISOString(),
         modifiedISO: sanityPost._updatedAt || new Date().toISOString(),
         readTime: estimateReadTime(sanityPost.body || sanityPost.excerpt),
-        image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).width(1200).quality(90).url() : 'https://placehold.co/1200x675/png',
+        image: sanityPost.mainImage ? sanityImage(sanityPost.mainImage, { width: 1200, quality: 90 }) : 'https://placehold.co/1200x675/png',
         mainImage: sanityPost.mainImage || null,
         mainImageAlt: sanityPost.mainImage?.alt || sanityPost.title || '',
         mainImageTitle: sanityPost.mainImage?.title || '',
@@ -285,10 +296,22 @@ export function adaptSanityPost(sanityPost: any): Post {
 
 // --- Data Fetching Functions ---
 
+// F-48: data-cache layer over the GROQ fetch. Cache key includes the limit
+// so /blog (no limit, full list) and HomeInsightSection (limit 3) are
+// independent cache entries. Tag `posts` so a future webhook (F-32) can
+// invalidate.
+const fetchPostsRaw = unstable_cache(
+    async (limit?: number) => {
+        const query = limit ? groq`${queries.postsQuery}[0...${limit}]` : queries.postsQuery;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        return (await client.fetch(query)) as any[];
+    },
+    ['sanity:posts'],
+    { revalidate: BLOG_DATA_REVALIDATE_SECONDS, tags: ['posts'] },
+);
+
 export async function sanityGetPosts(limit?: number): Promise<Post[]> {
-    const query = limit ? groq`${queries.postsQuery}[0...${limit}]` : queries.postsQuery;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const posts: any[] = await client.fetch(query);
+    const posts = await fetchPostsRaw(limit);
     return posts.map(adaptSanityPost);
 }
 
@@ -304,9 +327,17 @@ export async function sanityGetPostBySlug(slug: string) {
     }
 }
 
-export async function sanityGetCategories(): Promise<Category[]> {
+// F-48: cached — used by sidebar of every blog page + /blog/categories.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const fetchCategoriesRaw = unstable_cache(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const categories: any[] = await client.fetch(queries.categoriesQuery);
+    async (): Promise<any[]> => await client.fetch(queries.categoriesQuery),
+    ['sanity:categories'],
+    { revalidate: BLOG_DATA_REVALIDATE_SECONDS, tags: ['categories'] },
+);
+
+export async function sanityGetCategories(): Promise<Category[]> {
+    const categories = await fetchCategoriesRaw();
     return categories.map(adaptSanityCategory);
 }
 
@@ -366,7 +397,7 @@ export function adaptSanityPage(sanityPage: any): Page {
             month: 'short',
             day: 'numeric'
         }) : '',
-        image: sanityPage.mainImage ? urlFor(sanityPage.mainImage).url() : null,
+        image: sanityPage.mainImage ? sanityImage(sanityPage.mainImage) : null,
         seo: {
             title: sanityPage.seo?.metaTitle || sanityPage.title || '',
             description: sanityPage.seo?.metaDescription || '',
@@ -375,15 +406,26 @@ export function adaptSanityPage(sanityPage: any): Page {
     };
 }
 
+// F-48: cached. Cache key is the category slug — each /blog/category/X is
+// an independent entry. Tag includes both `categories` and `posts` so a
+// future webhook can invalidate this entry when either changes.
+const fetchCategoryDataRaw = unstable_cache(
+    async (categorySlug: string) => {
+        const category = await client.fetch(queries.categoryBySlugQuery, { slug: categorySlug });
+        if (!category) return null;
+        const posts = await client.fetch(queries.postsByCategoryQuery, { categorySlug });
+        return { category, posts };
+    },
+    ['sanity:category-data'],
+    { revalidate: BLOG_DATA_REVALIDATE_SECONDS, tags: ['categories', 'posts'] },
+);
+
 export async function sanityGetAdaptedCategoryData(categorySlug: string) {
-    const category = await client.fetch(queries.categoryBySlugQuery, { slug: categorySlug });
-    if (!category) return null;
-
-    const posts = await client.fetch(queries.postsByCategoryQuery, { categorySlug });
-
+    const raw = await fetchCategoryDataRaw(categorySlug);
+    if (!raw) return null;
     return {
-        category: adaptSanityCategory(category),
-        posts: posts.map(adaptSanityPost),
+        category: adaptSanityCategory(raw.category),
+        posts: raw.posts.map(adaptSanityPost),
         pageInfo: { hasNextPage: false } // Basic support for now
     };
 }
@@ -394,36 +436,48 @@ export async function sanitySearchPosts(term: string): Promise<Post[]> {
     return posts.map(adaptSanityPost);
 }
 
+// F-48: cached. Cache key = tag slug; each /blog/tag/X gets its own
+// 60s-TTL entry. Tag list `tags` + `posts` for future webhook invalidation.
+const fetchTagDataRaw = unstable_cache(
+    async (tagSlug: string) => {
+        // We have tagsQuery but not tagBySlugQuery — inline the by-slug query
+        // here rather than adding to sanity-queries (one-off use).
+        const tagQuery = `*[_type == "tag" && slug.current == $tagSlug][0]`;
+        const tag = await client.fetch(tagQuery, { tagSlug });
+        if (!tag) return null;
+        const posts = await client.fetch(queries.postsByTagQuery, { tagSlug });
+        return { tag, posts };
+    },
+    ['sanity:tag-data'],
+    { revalidate: BLOG_DATA_REVALIDATE_SECONDS, tags: ['tags', 'posts'] },
+);
+
 export async function sanityGetPostsByTag(tagSlug: string) {
-    // Determine tag details - typically we'd fetch the tag too or just use the slug for the title fallback
-    // For full parity we need the tag object. 
-    // Let's assume we can fetch the tag or infer it. 
-    // The WP version returns { tag: ..., posts: ... }
-
-    // Let's verify queries available. We have tagsQuery but not tagBySlugQuery.
-    // Let's create a quick query here or reuse.
-    const tagQuery = `*[_type == "tag" && slug.current == $tagSlug][0]`;
-    const tag = await client.fetch(tagQuery, { tagSlug });
-
-    if (!tag) return { tag: null, posts: [] };
-
-    const posts = await client.fetch(queries.postsByTagQuery, { tagSlug });
-
+    const raw = await fetchTagDataRaw(tagSlug);
+    if (!raw) return { tag: null, posts: [] };
     return {
         tag: {
-            id: tag.slug.current,
-            name: tag.title,
-            slug: tag.slug.current,
-            description: `Explore all articles tagged with ${tag.title}.`,
-            count: posts.length
+            id: raw.tag.slug.current,
+            name: raw.tag.title,
+            slug: raw.tag.slug.current,
+            description: `Explore all articles tagged with ${raw.tag.title}.`,
+            count: raw.posts.length
         },
-        posts: posts.map(adaptSanityPost) // Return adapted posts directly
+        posts: raw.posts.map(adaptSanityPost) // Return adapted posts directly
     };
 }
 
-export async function sanityGetTags(): Promise<Tag[]> {
+// F-48: cached — used by sidebars across blog routes.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const fetchTagsRaw = unstable_cache(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const tags: any[] = await client.fetch(queries.tagsQuery);
+    async (): Promise<any[]> => await client.fetch(queries.tagsQuery),
+    ['sanity:tags'],
+    { revalidate: BLOG_DATA_REVALIDATE_SECONDS, tags: ['tags'] },
+);
+
+export async function sanityGetTags(): Promise<Tag[]> {
+    const tags = await fetchTagsRaw();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return tags.map((t: any) => ({
         id: t.slug.current,

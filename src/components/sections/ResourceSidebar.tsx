@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaEnvelope, FaDownload, FaTag, FaFolderOpen, FaNewspaper, FaChevronRight } from "react-icons/fa";
-import { urlFor } from "@/lib/sanity";
+import { sanityImage } from "@/lib/sanity-image";
 
 interface ResourceSidebarProps {
     relatedPosts?: {
@@ -45,7 +45,7 @@ const ResourceSidebar = ({ relatedPosts: propRelatedPosts, categories: propCateg
         if (typeof p.image === 'string') {
             imageUrl = p.image;
         } else if (p.image) {
-            imageUrl = urlFor(p.image).width(400).url();
+            imageUrl = sanityImage(p.image, { width: 400 });
         }
 
         return {

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FaLinkedinIn, FaFacebookF, FaHome, FaChevronRight } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Post } from "@/lib/sanity-data-adapter";
-import { urlFor } from "@/lib/sanity";
+import { sanityImage } from "@/lib/sanity-image";
 import { decodeHtmlEntities } from "@/lib/utils";
 
 interface BlogPostHeroSectionProps {
@@ -39,9 +39,9 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
     const rawDescription = post?.excerpt || post?.seo?.description || "Master enterprise-grade performance testing with proven methodologies, industry best practices, and real-world strategies trusted by Fortune 500 companies.";
     // Clean the description by stripping HTML tags and decoding HTML entities
     const description = decodeHtmlEntities(stripHtmlTags(rawDescription));
-    const imageUrl = post?.mainImage ? urlFor(post.mainImage).width(1600).quality(90).auto('format').url() : (post?.image || "/blog-demo/hero_performance_dashboard_1769850360523.png");
+    const imageUrl = post?.mainImage ? sanityImage(post.mainImage, { width: 1600, quality: 90 }) : (post?.image || "/blog-demo/hero_performance_dashboard_1769850360523.png");
     const author = post?.author || "Testriq QA Team";
-    const authorImage = post?.authorImageRaw ? urlFor(post.authorImageRaw).width(96).url() : (post?.authorImage || null);
+    const authorImage = post?.authorImageRaw ? sanityImage(post.authorImageRaw, { width: 96 }) : (post?.authorImage || null);
     const authorBio = post?.authorBio;
     const authorLinkedin = post?.authorLinkedin;
     const date = post?.date || "January 31, 2026";

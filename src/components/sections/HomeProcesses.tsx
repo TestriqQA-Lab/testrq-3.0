@@ -1,4 +1,12 @@
-"use client";
+// F-21: was a 'use client' component but used zero React/Next interactive
+// APIs (no useState / useEffect / event handlers / framer-motion / etc.).
+// Converted to a Server Component so the 5-card process methodology +
+// CTA renders in the initial HTML payload — saves the hydration cost on
+// the homepage critical path (Phase 1's F-12 worst Lighthouse mobile 51).
+//
+// 216 other components exhibit the same anti-pattern site-wide; tracked
+// as F-21.1 for a systematic sweep that requires per-file verification
+// (some listings may import client-only libraries the heuristic missed).
 
 import Link from "next/link";
 import React from "react";
