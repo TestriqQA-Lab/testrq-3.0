@@ -2677,27 +2677,15 @@ export const aboutPageSchema = {
           }
         }
       ]
-    },
-    // ENTITY 3: Breadcrumbs (Site Hierarchy)
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.testriq.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "About Us",
-          "item": "https://www.testriq.com/about-us"
-        }
-      ]
     }
+    // F-44.2: BreadcrumbList intentionally NOT in @graph — page-side
+    // createCanonicalBreadcrumb (in src/app/about-us/page.tsx) is the single
+    // source of truth, matching the F-44 pattern. Removed an "About Us"
+    // BreadcrumbList block here that was double-rendering on /about-us
+    // alongside the page-side breadcrumb (which had its own lowercase
+    // "about Page" typo, fixed in the same PR).
   ]
-};;
+};
 
 // Service Schema for our Team Page
 export const ourTeamPageSchema = {
@@ -2912,25 +2900,13 @@ export const caseStudiesSchema = {
           }
         ]
       }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.testriq.com/case-studies/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.testriq.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Case Studies",
-          "item": "https://www.testriq.com/case-studies"
-        }
-      ]
     }
+    // F-44.2: BreadcrumbList intentionally NOT in @graph — page-side
+    // createCanonicalBreadcrumb (in src/app/case-studies/page.tsx) is the
+    // single source of truth. Removed a "Case Studies" BreadcrumbList block
+    // here that was double-rendering on /case-studies — the page-side and
+    // schema-internal blocks emitted identical content, but Google's
+    // BreadcrumbList rich-result rules treat duplicates as conflicting.
   ]
 };
 
