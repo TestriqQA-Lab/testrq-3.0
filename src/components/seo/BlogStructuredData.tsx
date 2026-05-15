@@ -37,7 +37,7 @@ export default function BlogStructuredData({
         "url": "https://www.testriq.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.testriq.com/images/testriq-logo.png",
+          "url": "https://www.testriq.com/testriq-logo.png",
           "width": 200,
           "height": 60
         },
@@ -195,7 +195,7 @@ export default function BlogStructuredData({
     "url": "https://www.testriq.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.testriq.com/images/testriq-logo.png",
+      "url": "https://www.testriq.com/testriq-logo.png",
       "width": 200,
       "height": 60
     },
