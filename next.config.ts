@@ -110,6 +110,44 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // F-48: Edge cache for /blog index. The page accesses searchParams
+      // (for ?page= pagination), which forces Next.js into Dynamic Rendering
+      // and silently ignores its `export const revalidate = 60`. This header
+      // restores edge caching at the Vercel CDN: 60s fresh, then up to a
+      // day of stale-while-revalidate so cold-cache-miss requests don't
+      // block on a fresh Sanity fetch. /blog/search is intentionally NOT
+      // matched here — its query is user-input-driven and shouldn't be
+      // shared between users.
+      {
+        source: "/blog",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=60, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      // F-48: Same edge-cache strategy for blog category + tag pages.
+      // Both routes also access searchParams (for ?page= pagination) and
+      // share the same data-shape concerns as /blog itself.
+      {
+        source: "/blog/category/:category",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=60, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/blog/tag/:tag",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=60, stale-while-revalidate=86400",
+          },
+        ],
+      },
     ];
   },
 };
