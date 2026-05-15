@@ -186,7 +186,14 @@ const ApiWhyChooseTestriq: React.FC = () => {
                     <p className="text-white/90 mb-4 text-sm leading-relaxed">
                       {benefit.description}
                     </p>
-                    <Link href="/contact-us" className="flex justify-center items-center gap-2 mx-auto bg-white/20 text-white px-4 py-2 rounded-lg font-semibold hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm">
+                    {/* F-38: aria-label disambiguates the generic "Learn More" link —
+                        multiple benefit cards link to the same /contact-us, screen
+                        readers need per-card context. */}
+                    <Link
+                      href="/contact-us"
+                      aria-label={`Learn more about ${benefit.shortTitle}`}
+                      className="flex justify-center items-center gap-2 mx-auto bg-white/20 text-white px-4 py-2 rounded-lg font-semibold hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm"
+                    >
                       <span>Learn More</span>
                       <FaArrowRight className="w-4 h-4" />
                     </Link>

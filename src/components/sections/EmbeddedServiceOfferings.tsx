@@ -39,13 +39,15 @@ const EmbeddedServiceOfferings: React.FC = () => {
                             <h3 className="text-xl font-bold mb-4 group-hover:text-brand-blue transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                            <p className="text-gray-400 text-sm leading-relaxed">
                                 {service.desc}
                             </p>
-                            <div className="flex items-center text-brand-blue text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span>Learn More</span>
-                                <FaCheckCircle className="ml-2" />
-                            </div>
+                            {/* F-38: removed the hover-revealed "Learn More" affordance —
+                                it was a non-link <span> that visually implied navigation
+                                but did nothing on click. Misleading + a11y issue (no link
+                                semantics, no destination, no keyboard target). The card
+                                itself is informational; section-level CTAs live elsewhere
+                                on the page. */}
                         </div>
                     ))}
                 </div>
