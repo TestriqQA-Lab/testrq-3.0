@@ -1,5 +1,6 @@
 
-import { client, urlFor } from './sanity';
+import { client } from './sanity';
+import { sanityImage } from './sanity-image';
 import { groq } from "next-sanity";
 import * as queries from './sanity-queries';
 // Define the interfaces that your components expect
@@ -230,7 +231,7 @@ export function adaptSanityPost(sanityPost: any): Post {
         categorySlug: primaryCategory?.slug?.current || 'technology-stack',
         categoryColor,
         author: sanityPost.author?.name || 'Testriq Team',
-        authorImage: sanityPost.author?.image ? urlFor(sanityPost.author.image).width(60).height(60).url() : 'https://placehold.co/60x60/png',
+        authorImage: sanityPost.author?.image ? sanityImage(sanityPost.author.image, { width: 60, height: 60 }) : 'https://placehold.co/60x60/png',
         authorImageRaw: sanityPost.author?.image || null,
         authorBio: sanityPost.author?.bio || 'QA Expert',
         authorLinkedin: sanityPost.author?.linkedin || null,
@@ -242,7 +243,7 @@ export function adaptSanityPost(sanityPost: any): Post {
         dateISO: sanityPost.publishedAt || new Date().toISOString(),
         modifiedISO: sanityPost._updatedAt || new Date().toISOString(),
         readTime: estimateReadTime(sanityPost.body || sanityPost.excerpt),
-        image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).width(1200).quality(90).url() : 'https://placehold.co/1200x675/png',
+        image: sanityPost.mainImage ? sanityImage(sanityPost.mainImage, { width: 1200, quality: 90 }) : 'https://placehold.co/1200x675/png',
         mainImage: sanityPost.mainImage || null,
         mainImageAlt: sanityPost.mainImage?.alt || sanityPost.title || '',
         mainImageTitle: sanityPost.mainImage?.title || '',
@@ -366,7 +367,7 @@ export function adaptSanityPage(sanityPage: any): Page {
             month: 'short',
             day: 'numeric'
         }) : '',
-        image: sanityPage.mainImage ? urlFor(sanityPage.mainImage).url() : null,
+        image: sanityPage.mainImage ? sanityImage(sanityPage.mainImage) : null,
         seo: {
             title: sanityPage.seo?.metaTitle || sanityPage.title || '',
             description: sanityPage.seo?.metaDescription || '',

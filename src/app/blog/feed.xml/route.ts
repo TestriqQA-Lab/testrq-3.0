@@ -1,5 +1,5 @@
 import { sanityGetPosts, Post } from '@/lib/sanity-data-adapter';
-import { urlFor } from '@/lib/sanity';
+import { sanityImage } from '@/lib/sanity-image';
 
 // Revalidate the RSS feed every 60 seconds (matches blog page revalidation)
 export const revalidate = 60;
@@ -79,7 +79,7 @@ function portableTextToHtml(content: any): string {
 
             // Handle inline images
             if (block._type === 'image' && block.asset) {
-                const imgUrl = urlFor(block).width(800).quality(80).url();
+                const imgUrl = sanityImage(block, { width: 800, quality: 80 });
                 const alt = block.alt || '';
                 return `<figure><img src="${imgUrl}" alt="${escapeXml(alt)}" />${block.caption ? `<figcaption>${escapeXml(block.caption)}</figcaption>` : ''}</figure>`;
             }
