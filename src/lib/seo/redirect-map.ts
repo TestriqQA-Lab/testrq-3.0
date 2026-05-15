@@ -15,10 +15,30 @@
  *
  * Extracted: 2026-05-15. Total entries at extraction: 760.
  */
+/**
+ * Mirrors the public shape Next.js documents for entries returned from
+ * the `redirects()` config. The `has` / `missing` predicates let a redirect
+ * match conditionally on query / header / cookie / host (used here for
+ * paginated-redirect entries like `/blog/blog?page=15` → `/blog`).
+ *
+ * Kept inline rather than importing the internal `Redirect` type from
+ * `next/dist/lib/load-custom-routes` — that path is private and shifts
+ * across Next versions.
+ */
+type RedirectPredicate = {
+    type: "query" | "header" | "cookie" | "host";
+    key?: string;
+    value?: string;
+};
+
 export interface RedirectRule {
     source: string;
     destination: string;
     permanent: boolean;
+    has?: RedirectPredicate[];
+    missing?: RedirectPredicate[];
+    locale?: false;
+    basePath?: false;
 }
 
 export const redirects: RedirectRule[] = [
