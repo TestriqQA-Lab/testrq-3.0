@@ -15,31 +15,22 @@
  *
  * Extracted: 2026-05-15. Total entries at extraction: 760.
  */
-/**
- * Mirrors the public shape Next.js documents for entries returned from
- * the `redirects()` config. The `has` / `missing` predicates let a redirect
- * match conditionally on query / header / cookie / host (used here for
- * paginated-redirect entries like `/blog/blog?page=15` → `/blog`).
- *
- * Kept inline rather than importing the internal `Redirect` type from
- * `next/dist/lib/load-custom-routes` — that path is private and shifts
- * across Next versions.
- */
-type RedirectPredicate = {
-    type: "query" | "header" | "cookie" | "host";
-    key?: string;
-    value?: string;
-};
+import type { NextConfig } from "next";
 
-export interface RedirectRule {
-    source: string;
-    destination: string;
-    permanent: boolean;
-    has?: RedirectPredicate[];
-    missing?: RedirectPredicate[];
-    locale?: false;
-    basePath?: false;
-}
+/**
+ * Derived from Next.js's own `redirects()` return type so this file's array
+ * is structurally identical to what next.config.ts expects — no drift
+ * possible across Next versions, no need to manually mirror RouteHas's
+ * discriminated unions for `has`/`missing` predicates (the `host` variant
+ * forbids `key` while the `query`/`header`/`cookie` variants require it,
+ * which a hand-rolled type can't easily capture).
+ *
+ * Practical alias `RedirectRule` lets the redirects array below stay
+ * readable; imports of `RedirectRule` elsewhere keep the same name as the
+ * extracted type from F-15's first iteration.
+ */
+type RedirectsReturn = Awaited<ReturnType<NonNullable<NextConfig["redirects"]>>>;
+export type RedirectRule = RedirectsReturn[number];
 
 export const redirects: RedirectRule[] = [
       {
