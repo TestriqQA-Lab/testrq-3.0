@@ -2,8 +2,9 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { sanityGetAdaptedCategoryData } from "@/lib/sanity-data-adapter";
+import { normalizeBlogSlug } from "@/lib/blog-slug";
 
 export const revalidate = 60; // Revalidate every minute
 export const dynamicParams = true; // Allow on-demand rendering for new/unknown categories
@@ -65,8 +66,12 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const { category } = await params;
   const resolvedSearchParams = await searchParams;
   const currentPage = Number(resolvedSearchParams.page) || 1;
-  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
-  const normalizedCategory = decodeURIComponent(category).toLowerCase().trim();
+  // F-66 + F-34: aggressive normalisation that strips WP-import artifacts
+  // (Title-Case spaces, ampersands, etc.). The page-default branch
+  // permanentRedirect()s when normalised differs from incoming, so the
+  // metadata branch is only reached for canonical URLs — but we recompute
+  // the same `normalizedCategory` for the Sanity lookup + canonical URL.
+  const normalizedCategory = normalizeBlogSlug(category);
 
   const categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
 
@@ -83,9 +88,11 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const categoryName = categoryData.category.name;
   const categoryDescription = categoryData.category.description || `Explore expert articles and insights about ${categoryName} testing. Learn best practices, tutorials, and industry insights from Testriq's ISTQB certified experts.`;
 
+  // F-66 + F-34: emit canonical URL using the normalised slug, not the raw
+  // request param.
   const canonicalUrl = currentPage > 1
-    ? `https://www.testriq.com/blog/category/${category}?page=${currentPage}`
-    : `https://www.testriq.com/blog/category/${category}`;
+    ? `https://www.testriq.com/blog/category/${normalizedCategory}?page=${currentPage}`
+    : `https://www.testriq.com/blog/category/${normalizedCategory}`;
 
   return {
     title: `${categoryName} | Insights & Best Practices`,
@@ -108,13 +115,13 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     openGraph: {
       title: `${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`,
       description: categoryDescription,
-      url: `https://www.testriq.com/blog/category/${category}`,
+      url: `https://www.testriq.com/blog/category/${normalizedCategory}`,
       siteName: "Testriq",
       locale: "en_US",
       type: "website",
       images: [
         {
-          url: `https://www.testriq.com/images/categories/${category}-og.jpg`,
+          url: `https://www.testriq.com/images/categories/${normalizedCategory}-og.jpg`,
           width: 1200,
           height: 630,
           alt: `${categoryName} Testing Articles - Testriq Blog`,
@@ -125,7 +132,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       card: "summary_large_image",
       title: `${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`,
       description: categoryDescription,
-      images: [`https://www.testriq.com/images/categories/${category}-twitter.jpg`],
+      images: [`https://www.testriq.com/images/categories/${normalizedCategory}-twitter.jpg`],
       creator: "@testriq",
       site: "@testriq",
     },
@@ -138,8 +145,13 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
-  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
-  const normalizedCategory = decodeURIComponent(category).toLowerCase().trim();
+  // F-66 + F-34: aggressive slug normalisation that strips WP-import
+  // artifacts (Title-Case spaces, ampersands, etc.). If the incoming URL
+  // slug isn't already canonical, 308-redirect to the canonical form.
+  const normalizedCategory = normalizeBlogSlug(category);
+  if (normalizedCategory !== category) {
+    permanentRedirect(`/blog/category/${normalizedCategory}`);
+  }
   const categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
 
   if (!categoryData) {
@@ -156,7 +168,7 @@ export default async function CategoryPage({ params }: Props) {
           type="category"
           title={`${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`}
           description={categoryDescription}
-          url={`https://www.testriq.com/blog/category/${category}`}
+          url={`https://www.testriq.com/blog/category/${normalizedCategory}`}
           categoryName={categoryName}
           postCount={categoryData.posts.length}
         />
