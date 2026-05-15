@@ -359,53 +359,62 @@ const ContactHeroSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="contact-fullName"
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
+                        aria-invalid={!!fullNameError}
+                        aria-describedby={fullNameError ? "contact-fullName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? "border-red-500" : "border-gray-300"
                           }`}
                         placeholder="John Doe"
                       />
                     </div>
                     {fullNameError && (
-                      <p className="text-red-500 text-xs mt-1">{fullNameError}</p>
+                      <p id="contact-fullName-error" role="alert" className="text-red-500 text-xs mt-1">{fullNameError}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Email *
                     </label>
                     <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="contact-businessEmail"
                         type="email"
                         name="businessEmail"
+                        autoComplete="email"
+                        inputMode="email"
                         value={formData.businessEmail}
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
+                        aria-invalid={!!emailError}
+                        aria-describedby={emailError ? "contact-businessEmail-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? "border-red-500" : "border-gray-300"
                           }`}
                         placeholder="john@company.com"
                       />
                     </div>
                     {emailError && (
-                      <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                      <p id="contact-businessEmail-error" role="alert" className="text-red-500 text-xs mt-1">{emailError}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Phone *
                     </label>
                     <div className="relative">
@@ -418,31 +427,37 @@ const ContactHeroSection: React.FC = () => {
                           }`}
                         placeholder="Enter phone number"
                         numberInputProps={{
+                          id: "contact-businessPhone",
+                          autoComplete: "tel",
+                          "aria-invalid": !!phoneError,
+                          "aria-describedby": phoneError ? "contact-businessPhone-error" : undefined,
                           className:
                             "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300",
                         }}
                       />
                     </div>
                     {phoneError && (
-                      <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                      <p id="contact-businessPhone-error" role="alert" className="text-red-500 text-xs mt-1">{phoneError}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-companyStage" className="block text-sm font-medium text-gray-700 mb-2">
                       What stage is your company? *
                     </label>
                     <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="contact-companyStage"
                         name="companyStage"
                         value={formData.companyStage}
                         onChange={handleInputChange}
                         onBlur={() => validateCompanyStage(formData.companyStage)}
                         required
+                        aria-invalid={!!companyStageError}
+                        aria-describedby={companyStageError ? "contact-companyStage-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${companyStageError ? "border-red-500" : "border-gray-300"
                           }`}
-                        aria-label="Select your company stage"
                       >
                         <option value="">Select your company stage</option>
                         <option value="early_stage_startup">
@@ -458,21 +473,23 @@ const ContactHeroSection: React.FC = () => {
                       </select>
                     </div>
                     {companyStageError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="contact-companyStage-error" role="alert" className="text-red-500 text-xs mt-1">
                         {companyStageError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-howDidYouHear" className="block text-sm font-medium text-gray-700 mb-2">
                       How did you hear of us? (Upto 50 characters) *
                     </label>
                     <div className="relative">
-                      <FaComments className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaComments className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="contact-howDidYouHear"
                         type="text"
                         name="howDidYouHear"
+                        autoComplete="off"
                         value={formData.howDidYouHear}
                         onChange={handleInputChange}
                         onBlur={() =>
@@ -480,6 +497,8 @@ const ContactHeroSection: React.FC = () => {
                         }
                         required
                         maxLength={50}
+                        aria-invalid={!!howDidYouHearError}
+                        aria-describedby={howDidYouHearError ? "contact-howDidYouHear-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${howDidYouHearError
                           ? "border-red-500"
                           : "border-gray-300"
@@ -488,29 +507,33 @@ const ContactHeroSection: React.FC = () => {
                       />
                     </div>
                     {howDidYouHearError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="contact-howDidYouHear-error" role="alert" className="text-red-500 text-xs mt-1">
                         {howDidYouHearError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message *
                     </label>
                     <textarea
+                      id="contact-message"
                       name="message"
+                      autoComplete="off"
                       value={formData.message}
                       onChange={handleInputChange}
                       onBlur={() => validateMessage(formData.message)}
                       required
                       rows={4}
+                      aria-invalid={!!messageError}
+                      aria-describedby={messageError ? "contact-message-error" : undefined}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? "border-red-500" : "border-gray-300"
                         }`}
                       placeholder="Tell us about your project, testing needs, or any questions you have..."
                     />
                     {messageError && (
-                      <p className="text-red-500 text-xs mt-1">{messageError}</p>
+                      <p id="contact-message-error" role="alert" className="text-red-500 text-xs mt-1">{messageError}</p>
                     )}
                   </div>
 
