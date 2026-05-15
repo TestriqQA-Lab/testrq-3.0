@@ -200,7 +200,7 @@ export const websiteSchema = {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://www.testriq.com/search?q={search_term_string}"
+      "urlTemplate": "https://www.testriq.com/blog/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -5393,7 +5393,7 @@ export const pricingServiceSchema = {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://www.testriq.com/search?q={search_term_string}"
+          "urlTemplate": "https://www.testriq.com/blog/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
