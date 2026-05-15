@@ -38,6 +38,25 @@ const BlogPostContent = dynamic(
 
 // Custom Structured Data Component for Individual Posts
 function PostStructuredData({ post }: { post: Post }) {
+  // F-46: enrich BlogPosting.author with @id (page-local entity ref) and any
+  // additional Person fields Sanity gave us (image, description/bio, sameAs
+  // LinkedIn) so author is more than a bare {Person, name}. Full author-page
+  // entities with stable URLs come in F-52 (E-E-A-T author authority); this
+  // is the safe interim that doesn't require new routes.
+  const postUrl = `https://www.testriq.com/blog/post/${post.slug}`;
+  const isPlaceholderAuthorImage =
+    !post.authorImage || post.authorImage.includes("placehold.co");
+  const author = {
+    "@type": "Person",
+    "@id": `${postUrl}#author`,
+    name: post.author,
+    ...(isPlaceholderAuthorImage ? {} : { image: post.authorImage }),
+    ...(post.authorBio ? { description: post.authorBio } : {}),
+    ...(post.authorLinkedin
+      ? { url: post.authorLinkedin, sameAs: [post.authorLinkedin] }
+      : {}),
+  };
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -46,21 +65,26 @@ function PostStructuredData({ post }: { post: Post }) {
     "image": post.image ? [post.image] : [],
     "datePublished": post.dateISO,
     "dateModified": post.modifiedISO,
-    "author": [{
-      "@type": "Person",
-      "name": post.author,
-    }],
+    "author": [author],
     "publisher": {
       "@type": "Organization",
+      // F-46: link publisher to the canonical site Organization @id (the
+      // same anchor used by JobPosting.hiringOrganization in F-40, and the
+      // anchor organizationSchema-side work in F-46.1 will need to define).
+      "@id": "https://www.testriq.com/#organization",
       "name": "Testriq QA Lab",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.testriq.com/logo.png"
+        // F-46: was /logo.png → 404 in production. /testriq-logo.png returns
+        // 200. F-46.1 tracks the broader site-wide logo-URL audit (the same
+        // broken /logo.png appears in organizationSchema + several other
+        // schemas in StructuredData.tsx and BlogStructuredData.tsx).
+        "url": "https://www.testriq.com/testriq-logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.testriq.com/blog/post/${post.slug}`
+      "@id": postUrl
     }
   };
 
