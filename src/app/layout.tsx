@@ -138,7 +138,9 @@ export default function RootLayout({
         <ApolloTracking /> {/* Render the ApolloTracking component here */}
 
         <RecaptchaProvider>
-          <Navbar />
+          <header>
+            <Navbar />
+          </header>
           <main className="flex-grow">{children}</main>
           <Footer />
           {/* <TawkToScript /> */}

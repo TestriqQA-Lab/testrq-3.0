@@ -355,7 +355,10 @@ export async function generateMetadata({ params }: PageProps) {
     const canonicalUrl = `https://www.testriq.com/${caseStudy.slug}`;
 
     return {
-      title: pageTitle,
+      // Bypass root layout's title.template ("%s | Testriq") because pageTitle
+      // already ends with "| Testriq QA Lab" / "| Testriq" — without `absolute`
+      // the title becomes "...Case Study | Testriq QA Lab | Testriq" (F-71).
+      title: { absolute: pageTitle },
       description: pageDescription,
       keywords: metadata?.keywords || ["software testing", "QA", "case study", caseStudy.industry.toLowerCase(), caseStudy.client.toLowerCase()],
       authors: metadata?.authors || [{ name: "Testriq QA Lab" }],
@@ -413,7 +416,10 @@ export async function generateMetadata({ params }: PageProps) {
   const ogImageUrl = getCityOgImage(resolvedParams.slug);
 
   return {
-    title: pageTitle,
+    // Bypass root layout's title.template — CityData entries already end with
+    // "| Testriq", so without `absolute` the rendered <title> doubles to
+    // "...| Testriq | Testriq" (F-71, verified live on /pune etc.).
+    title: { absolute: pageTitle },
     description: pageDescription,
     keywords: cityData.metadata.keywords,
     alternates: { canonical: canonicalUrl },
