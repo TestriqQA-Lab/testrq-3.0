@@ -104,11 +104,11 @@ function parseSalary(salary: string | undefined): JsonLd | undefined {
  */
 function buildJobLocationFields(
     location: string,
-): Pick<JsonLd, "jobLocation" | "applicantLocationRequirements" | "jobLocationType"> {
+): Partial<Pick<JsonLd, "jobLocation" | "applicantLocationRequirements" | "jobLocationType">> {
     const trimmed = location.trim();
     const isRemote = /\bremote\b/i.test(trimmed);
     const isHybrid = /\bhybrid\b/i.test(trimmed);
-    const fields: Pick<JsonLd, "jobLocation" | "applicantLocationRequirements" | "jobLocationType"> = {};
+    const fields: Partial<Pick<JsonLd, "jobLocation" | "applicantLocationRequirements" | "jobLocationType">> = {};
 
     if (isRemote || isHybrid) {
         fields.jobLocationType = "TELECOMMUTE";
