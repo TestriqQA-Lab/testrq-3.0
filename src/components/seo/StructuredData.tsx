@@ -126,7 +126,7 @@ export const organizationSchema = {
   "name": "Testriq QA Lab",
   "alternateName": "Testriq",
   "url": "https://www.testriq.com",
-  "logo": "https://www.testriq.com/logo.png",
+  "logo": "https://www.testriq.com/testriq-logo.png",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "foundingDate": "2010",
   "contactPoint": {
@@ -213,7 +213,7 @@ export const productServiceSchema = {
   "name": "Testriq QA Lab - Comprehensive Software Testing Services",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "url": "https://www.testriq.com/",
-  "image": "https://www.testriq.com/logo.png",
+  "image": "https://www.testriq.com/testriq-logo.png",
   "brand": {
     "@type": "Brand",
     "name": "Testriq QA Lab"
@@ -289,7 +289,7 @@ export const webAppTestingServiceSchema = {
       "provider": {
         "@type": "ProfessionalService",
         "name": "Testriq QA Lab",
-        "image": "https://www.testriq.com/assets/images/logo.png",
+        "image": "https://www.testriq.com/testriq-logo.png",
         "telephone": "+91-915-2929-343",
         "address": {
           "@type": "PostalAddress",
@@ -791,7 +791,7 @@ export const iotDeviceTestingSchema = {
         "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
+        "logo": "https://www.testriq.com/testriq-logo.png",
         "sameAs": [
           "https://www.linkedin.com/company/testriq-qa-lab/",
           "https://clutch.co/profile/testriq-qa-lab"
@@ -1039,9 +1039,9 @@ export const manualTestingServiceSchema = {
         "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
+        "logo": "https://www.testriq.com/testriq-logo.png"
       },
-      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "image": "https://www.testriq.com/testriq-logo.png",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
@@ -1139,11 +1139,11 @@ export const automationTestingServiceSchema = {
         "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
+        "logo": "https://www.testriq.com/testriq-logo.png"
       },
       "areaServed": "Worldwide",
       "description": "Transform your testing strategy with AI-powered automation. We use Selenium, Playwright, and API automation to reduce testing time by 80% and improve coverage.",
-      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "image": "https://www.testriq.com/testriq-logo.png",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
@@ -1690,9 +1690,9 @@ export const securityTestingServiceSchema = {
         "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
+        "logo": "https://www.testriq.com/testriq-logo.png"
       },
-      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "image": "https://www.testriq.com/testriq-logo.png",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
@@ -2598,7 +2598,7 @@ export const aboutPageSchema = {
       "url": "https://www.testriq.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.testriq.com/images/logo.png",
+        "url": "https://www.testriq.com/testriq-logo.png",
         "width": 112,
         "height": 112
       },
@@ -2781,7 +2781,7 @@ export const caseStudiesSchema = {
       "url": "https://www.testriq.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.testriq.com/logo.png"
+        "url": "https://www.testriq.com/testriq-logo.png"
       }
     },
     {
@@ -3219,9 +3219,9 @@ export const datingAppCertificationSchema = {
     "@type": "Organization",
     "name": "TESTRIQ QA Lab",
     "url": "https://www.testriq.com",
-    "logo": "https://www.testriq.com/logo.png"
+    "logo": "https://www.testriq.com/testriq-logo.png"
   },
-  "image": "https://www.testriq.com/logo.png",
+  "image": "https://www.testriq.com/testriq-logo.png",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
@@ -3424,7 +3424,7 @@ export const shoppingAppCertificationSchema = {
     "@type": "Organization",
     name: "TESTRIQ QA Lab",
     url: "https://www.testriq.com",
-    logo: "https://www.testriq.com/logo.png",
+    logo: "https://www.testriq.com/testriq-logo.png",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-9004988859",
@@ -3473,7 +3473,7 @@ export const sapTestingSchema = {
         "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
+        "logo": "https://www.testriq.com/testriq-logo.png",
         "sameAs": [
           "https://www.linkedin.com/company/testriq-qa-lab/",
           "https://clutch.co/profile/testriq-qa-lab"
@@ -3566,7 +3566,7 @@ export const usabilityTestingServiceSchema = {
       "provider": {
         "@type": "ProfessionalService",
         "name": "Testriq QA Lab",
-        "image": "https://www.testriq.com/logo.png",
+        "image": "https://www.testriq.com/testriq-logo.png",
         "telephone": "+91-915-2929-343",
         "address": {
           "@type": "PostalAddress",
@@ -3653,7 +3653,7 @@ export const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Testriq QA Lab",
-  "image": "https://www.testriq.com/logo.png",
+  "image": "https://www.testriq.com/testriq-logo.png",
   "url": "https://www.testriq.com",
   "telephone": "+91-915-2929-343",
   "address": {
@@ -3921,7 +3921,7 @@ export const uatServiceSchema = {
       "provider": {
         "@type": "ProfessionalService",
         "name": "Testriq QA Lab",
-        "image": "https://www.testriq.com/assets/images/logo.png",
+        "image": "https://www.testriq.com/testriq-logo.png",
         "telephone": "+91-915-2929-343",
         "address": {
           "@type": "PostalAddress",
@@ -4719,7 +4719,7 @@ export const iso42001ComplianceTestingSchema = {
         "@type": "ProfessionalService",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "image": "https://www.testriq.com/assets/images/logo.png",
+        "image": "https://www.testriq.com/testriq-logo.png",
         "telephone": "+91-915-2929-343",
         "address": {
           "@type": "PostalAddress",
