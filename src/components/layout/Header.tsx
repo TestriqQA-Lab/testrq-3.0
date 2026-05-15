@@ -463,7 +463,7 @@ const Navbar = () => {
                                       href={service.link}
                                       onClick={() => handleLinkClick(service.link, item.label)}
                                     >
-                                      <span className={`flex items-center gap-2 text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-2 hover:bg-blue-50/30 px-2 rounded-md transition-colors ${activeLink === service.link ? "text-[theme(color.brand.blue)] font-medium" : ""}`}>
+                                      <span className={`flex items-center gap-2 min-h-[44px] text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-2 hover:bg-blue-50/30 px-2 rounded-md transition-colors ${activeLink === service.link ? "text-[theme(color.brand.blue)] font-medium" : ""}`}>
                                         <span className="w-1 h-1 rounded-full bg-gray-300"></span>
                                         {service.label}
                                       </span>
@@ -490,7 +490,7 @@ const Navbar = () => {
                               aria-label={"label" in subItem ? subItem.label : subItem.heading}
                             >
                               <span
-                                className={`block px-3 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer rounded-md ${activeLink ===
+                                className={`flex items-center min-h-[44px] px-3 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer rounded-md ${activeLink ===
                                   ("link" in subItem ? subItem.link : "#")
                                   ? "text-[theme(color.brand.blue)]"
                                   : ""

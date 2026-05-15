@@ -124,7 +124,7 @@ const Footer = () => {
                 <FaPhoneAlt className="h-4 w-4 text-brand-blue" />
                 <Link
                   href="tel:+919152929343"
-                  className="hover:text-brand-blue transition-colors"
+                  className="inline-block py-2 -my-1 hover:text-brand-blue transition-colors"
                 >
                   (+91) 915-2929-343
                 </Link>
@@ -133,7 +133,7 @@ const Footer = () => {
                 <FaEnvelope className="h-4 w-4 text-brand-blue" />
                 <Link
                   href="mailto:contact@testriq.com"
-                  className="hover:text-brand-blue transition-colors"
+                  className="inline-block py-2 -my-1 hover:text-brand-blue transition-colors"
                 >
                   contact@testriq.com
                 </Link>
@@ -202,7 +202,7 @@ const Footer = () => {
                 <li key={service.title}>
                   <Link
                     href={service.path}
-                    className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    className="block py-2.5 -my-1 text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1"
                     aria-label={service.title}
                   >
                     {service.title}
@@ -222,7 +222,7 @@ const Footer = () => {
                 <li key={service.title}>
                   <Link
                     href={service.path}
-                    className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    className="block py-2.5 -my-1 text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1"
                     aria-label={service.title}
                   >
                     {service.title}
@@ -242,7 +242,7 @@ const Footer = () => {
                 <li key={link.title}>
                   <Link
                     href={link.path}
-                    className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    className="block py-2.5 -my-1 text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1"
                     aria-label={link.title}
                   >
                     {link.title}
@@ -300,25 +300,25 @@ const Footer = () => {
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
               <Link
                 href="/privacy-policy"
-                className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
+                className="inline-block py-2 -my-1 px-1 text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms-of-service"
-                className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
+                className="inline-block py-2 -my-1 px-1 text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Terms Of Service
               </Link>
               <Link
                 href="/cookies-policy"
-                className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
+                className="inline-block py-2 -my-1 px-1 text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Cookies Policy
               </Link>
               <Link
                 href="/website-map"
-                className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
+                className="inline-block py-2 -my-1 px-1 text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap
               </Link>
