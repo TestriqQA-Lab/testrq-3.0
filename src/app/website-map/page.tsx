@@ -2,11 +2,37 @@ import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
 import { sanityGetPosts as getAllPosts, sanityGetCategories as getAllCategories, sanityGetTags as getAllTags, Post, Category, Tag } from "@/lib/sanity-data-adapter";
 import { Metadata } from "next";
+// F-31: replace the hardcoded 13-entry `manualLinks` array (which already
+// listed only 6 of 45 services + 1 of 7 solutions) with auto-discovery from
+// the App Router filesystem, mirroring the same fix PR #15 applied to the
+// XML sitemap. Same `discoverRoutes` helper now powers both — single source
+// of truth, no more drift when a new service/solution lands.
+import { discoverRoutes, slugToTitle } from "@/lib/seo/discover-routes";
+
+// Match sitemap.ts revalidation cadence — the HTML sitemap is a low-volatility
+// page that benefits from caching but should pick up filesystem changes within
+// the hour.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
     title: "Sitemap | Testriq QA Lab",
-    description: "Complete list of articles, categories, and tags on Testriq.com",
+    description: "Complete list of pages, services, solutions, articles, categories, and tags on Testriq.com",
 };
+
+// Top-level routes that aren't part of an App Router group like `(services)`
+// or `(solutions)` and so don't show up in `discoverRoutes`. These are the
+// stable evergreen routes — keep this list tight and curated.
+const corePages: { slug: string; title: string }[] = [
+    { slug: "about-us", title: "About Us" },
+    { slug: "our-team", title: "Our Team" },
+    { slug: "contact-us", title: "Contact Us" },
+    { slug: "careers", title: "Careers" },
+    { slug: "technology-stack", title: "Technology Stack" },
+    { slug: "case-studies", title: "Case Studies" },
+    { slug: "pricing", title: "Pricing" },
+    { slug: "roi-calculator", title: "ROI Calculator" },
+    { slug: "locations-we-serve", title: "Locations We Serve" },
+];
 
 export default async function SitemapPage() {
     // Fetch all content recursively
@@ -23,23 +49,17 @@ export default async function SitemapPage() {
         postsByCategory[post.category].push(post);
     });
 
-    // Manual links for non-blog pages that need internal linking
-    const manualLinks = [
-        { title: "Telecommunications Testing Services", href: "/telecommunications-testing-services" },
-        { title: "Home Facts Case Study", href: "/home-facts-case-study" },
-        { title: "About Us", href: "/about-us" },
-        { title: "Our Team", href: "/our-team" },
-        { title: "Contact Us", href: "/contact-us" },
-        { title: "Careers", href: "/careers" },
-        { title: "Technology Stack", href: "/technology-stack" },
-        // Core Services
-        { title: "LaunchFast QA", href: "/launchfast-qa" },
-        { title: "Exploratory Testing", href: "/exploratory-testing" },
-        { title: "Web Application Testing", href: "/web-application-testing-services" },
-        { title: "Mobile App Testing", href: "/mobile-application-testing" },
-        { title: "IoT Device Testing", href: "/iot-device-testing-services" },
-        { title: "AI Application Testing", href: "/ai-application-testing" },
-    ];
+    // Auto-discovered service + solution route slugs (45 services + 7
+    // solutions on disk as of Sprint 2). slugToTitle handles QA/IoT/AI/SaaS
+    // acronyms so display strings read naturally.
+    const services = discoverRoutes("src/app/(services)").map((slug) => ({
+        slug,
+        title: slugToTitle(slug),
+    }));
+    const solutions = discoverRoutes("src/app/(solutions)").map((slug) => ({
+        slug,
+        title: slugToTitle(slug),
+    }));
 
     return (
         <MainLayout>
@@ -53,20 +73,59 @@ export default async function SitemapPage() {
 
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-                            {/* Column 1: Core Pages, Categories & Tags */}
+                            {/* Column 1: Core Pages, Services, Solutions, Categories & Tags */}
                             <div className="space-y-12">
                                 <section>
                                     <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2 pb-2 border-b border-gray-200">
-                                        Core Pages & Services
+                                        Core Pages
+                                        <span className="text-sm font-normal text-gray-500 ml-auto">{corePages.length}</span>
                                     </h2>
                                     <ul className="space-y-2">
-                                        {manualLinks.map((link, idx) => (
-                                            <li key={idx}>
+                                        {corePages.map((page) => (
+                                            <li key={page.slug}>
                                                 <Link
-                                                    href={link.href}
+                                                    href={`/${page.slug}`}
                                                     className="text-gray-700 hover:text-blue-600 hover:underline decoration-blue-200 underline-offset-2 text-sm block py-1 font-medium"
                                                 >
-                                                    {link.title}
+                                                    {page.title}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+
+                                <section>
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2 pb-2 border-b border-gray-200">
+                                        Services
+                                        <span className="text-sm font-normal text-gray-500 ml-auto">{services.length}</span>
+                                    </h2>
+                                    <ul className="space-y-2">
+                                        {services.map((service) => (
+                                            <li key={service.slug}>
+                                                <Link
+                                                    href={`/${service.slug}`}
+                                                    className="text-gray-700 hover:text-blue-600 hover:underline decoration-blue-200 underline-offset-2 text-sm block py-1 font-medium"
+                                                >
+                                                    {service.title}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+
+                                <section>
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2 pb-2 border-b border-gray-200">
+                                        Industry Solutions
+                                        <span className="text-sm font-normal text-gray-500 ml-auto">{solutions.length}</span>
+                                    </h2>
+                                    <ul className="space-y-2">
+                                        {solutions.map((solution) => (
+                                            <li key={solution.slug}>
+                                                <Link
+                                                    href={`/${solution.slug}`}
+                                                    className="text-gray-700 hover:text-blue-600 hover:underline decoration-blue-200 underline-offset-2 text-sm block py-1 font-medium"
+                                                >
+                                                    {solution.title}
                                                 </Link>
                                             </li>
                                         ))}
