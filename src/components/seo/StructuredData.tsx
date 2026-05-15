@@ -5374,14 +5374,13 @@ export const pricingServiceSchema = {
         "https://twitter.com/testriq",
         "https://www.facebook.com/testriq.lab/",
         "https://www.instagram.com/testriq/"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "ratingCount": "425",
-        "reviewCount": "425"
-      }
+      ]
+      // F-41: AggregateRating removed (was hardcoded ratingValue 4.8 / ratingCount 425
+      // with no real Review data anywhere in the codebase). Google's structured-data
+      // guidelines require AggregateRating to reflect genuine, verifiable user reviews;
+      // self-asserted ratings with no on-page Review content are a manual-action vector.
+      // Re-add ONLY when fed by a real review source (G2/Clutch import or Sanity review
+      // documents) AND the underlying Review entries are also rendered on-page.
     },
     {
       "@type": "WebSite",
