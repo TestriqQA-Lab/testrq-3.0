@@ -126,11 +126,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
       >
-        {/* Google reCAPTCHA v3 Script */}
+        {/* Google reCAPTCHA v3 Script.
+            F-25: strategy was "afterInteractive" — eagerly competing with hydration
+            on every route, including the ~95 % of pages that have no form. Dropped
+            to "lazyOnload" so the script loads after the rest of the page (window.load)
+            settles. RecaptchaContext gates executeRecaptcha behind isRecaptchaReady,
+            so any form submit before the script lands is a no-op rather than an error
+            (consistent with reCAPTCHA v3 invisible-on-action semantics). */}
         {recaptchaSiteKey && (
           <Script
             src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}&onload=onloadCallback`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
         )}
 
