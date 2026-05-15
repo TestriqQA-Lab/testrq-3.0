@@ -1116,30 +1116,13 @@ export const manualTestingServiceSchema = {
           }
         }
       ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.testriq.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://www.testriq.com/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Manual Testing",
-          "item": "https://www.testriq.com/manual-testing-services"
-        }
-      ]
     }
+    // F-44: BreadcrumbList intentionally NOT in @graph — page-side
+    // createCanonicalBreadcrumb (PR-3) is the single source of truth for
+    // service-page breadcrumbs. Previously this constant emitted a stale
+    // 3-item Pattern D breadcrumb (Home → Services → Manual Testing
+    // pointing at /services, a 308 redirect), causing /manual-testing-services
+    // to render two conflicting BreadcrumbList JSON-LD blocks in production.
   ]
 };
 
@@ -1233,30 +1216,11 @@ export const automationTestingServiceSchema = {
           }
         }
       ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.testriq.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://www.testriq.com/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Automation Testing",
-          "item": "https://www.testriq.com/automation-testing-services"
-        }
-      ]
     }
+    // F-44: BreadcrumbList intentionally NOT in @graph — page-side
+    // createCanonicalBreadcrumb (PR-3) is the single source of truth.
+    // Removed stale Pattern D (Home → Services → Automation Testing pointing
+    // at /services 308 redirect) that was double-emitting on production.
   ]
 };
 
@@ -1803,30 +1767,11 @@ export const securityTestingServiceSchema = {
           }
         }
       ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.testriq.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://www.testriq.com/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Security Testing",
-          "item": "https://www.testriq.com/security-testing"
-        }
-      ]
     }
+    // F-44: BreadcrumbList intentionally NOT in @graph — page-side
+    // createCanonicalBreadcrumb (PR-3) is the single source of truth.
+    // Removed stale Pattern D (Home → Services → Security Testing pointing
+    // at /services 308 redirect) that was double-emitting on production.
   ]
 };
 
@@ -3601,30 +3546,11 @@ export const sapTestingSchema = {
           }
         }
       ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.testriq.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://www.testriq.com/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "SAP Testing",
-          "item": "https://www.testriq.com/sap-testing-services"
-        }
-      ]
     }
+    // F-44: BreadcrumbList intentionally NOT in @graph — page-side
+    // createCanonicalBreadcrumb (PR-3) is the single source of truth.
+    // Removed stale Pattern D (Home → Services → SAP Testing pointing at
+    // /services 308 redirect) that was double-emitting on production.
   ]
 };
 

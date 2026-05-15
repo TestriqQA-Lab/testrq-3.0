@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { sanityGetPostBySlug, sanityGetRelatedPosts, sanityGetCategories, sanityGetAllPostSlugs, Post } from "@/lib/sanity-data-adapter";
 import { extractHeadings } from "@/lib/utils";
-import StructuredData from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 import { Suspense } from "react";
 import RelatedPosts from "@/components/sections/RelatedPosts";
@@ -38,6 +38,25 @@ const BlogPostContent = dynamic(
 
 // Custom Structured Data Component for Individual Posts
 function PostStructuredData({ post }: { post: Post }) {
+  // F-46: enrich BlogPosting.author with @id (page-local entity ref) and any
+  // additional Person fields Sanity gave us (image, description/bio, sameAs
+  // LinkedIn) so author is more than a bare {Person, name}. Full author-page
+  // entities with stable URLs come in F-52 (E-E-A-T author authority); this
+  // is the safe interim that doesn't require new routes.
+  const postUrl = `https://www.testriq.com/blog/post/${post.slug}`;
+  const isPlaceholderAuthorImage =
+    !post.authorImage || post.authorImage.includes("placehold.co");
+  const author = {
+    "@type": "Person",
+    "@id": `${postUrl}#author`,
+    name: post.author,
+    ...(isPlaceholderAuthorImage ? {} : { image: post.authorImage }),
+    ...(post.authorBio ? { description: post.authorBio } : {}),
+    ...(post.authorLinkedin
+      ? { url: post.authorLinkedin, sameAs: [post.authorLinkedin] }
+      : {}),
+  };
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -46,25 +65,59 @@ function PostStructuredData({ post }: { post: Post }) {
     "image": post.image ? [post.image] : [],
     "datePublished": post.dateISO,
     "dateModified": post.modifiedISO,
-    "author": [{
-      "@type": "Person",
-      "name": post.author,
-    }],
+    "author": [author],
     "publisher": {
       "@type": "Organization",
+      // F-46: link publisher to the canonical site Organization @id (the
+      // same anchor used by JobPosting.hiringOrganization in F-40, and the
+      // anchor organizationSchema-side work in F-46.1 will need to define).
+      "@id": "https://www.testriq.com/#organization",
       "name": "Testriq QA Lab",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.testriq.com/logo.png"
+        // F-46: was /logo.png → 404 in production. /testriq-logo.png returns
+        // 200. F-46.1 tracks the broader site-wide logo-URL audit (the same
+        // broken /logo.png appears in organizationSchema + several other
+        // schemas in StructuredData.tsx and BlogStructuredData.tsx).
+        "url": "https://www.testriq.com/testriq-logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.testriq.com/blog/post/${post.slug}`
+      "@id": postUrl
     }
   };
 
   return <StructuredData data={articleSchema} />;
+}
+
+// F-42: BreadcrumbList for blog post pages.
+// Chain: Home → Blog → {category} → {post}. The category step is skipped when
+// the post has no real Sanity categories — the adapter falls back to a
+// "technology-stack" slug for category-less posts, but that route 404s in
+// production, so emitting it as a breadcrumb item would point Google at a
+// dead URL. We only include the category step when post.categories[0] is a
+// real entry from Sanity.
+function PostBreadcrumbStructuredData({ post }: { post: Post }) {
+  const items: Array<{ name: string; url: string }> = [
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Blog", url: "https://www.testriq.com/blog" },
+  ];
+
+  const primaryCategory = post.categories?.[0];
+  if (primaryCategory?.slug && primaryCategory?.name) {
+    items.push({
+      name: primaryCategory.name,
+      url: `https://www.testriq.com/blog/category/${primaryCategory.slug}`,
+    });
+  }
+
+  items.push({
+    name: post.title,
+    url: `https://www.testriq.com/blog/post/${post.slug}`,
+  });
+
+  return <StructuredData data={createBreadcrumbSchema(items)} />;
 }
 
 type Props = {
@@ -143,6 +196,7 @@ export default async function BlogPostPage({ params }: Props) {
       <MainLayout>
         {/* Custom Structured Data from WordPress */}
         <PostStructuredData post={post} />
+        <PostBreadcrumbStructuredData post={post} />
 
         {/* Blog Post Hero Section with dynamic post data */}
         <BlogPostHeroSection post={post} />

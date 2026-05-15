@@ -2,8 +2,9 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { sanityGetPostsByTag, sanityGetTags } from "@/lib/sanity-data-adapter";
+import { normalizeBlogSlug } from "@/lib/blog-slug";
 
 export const revalidate = 60; // Revalidate every minute
 export const dynamicParams = true; // Allow on-demand rendering for new tags
@@ -62,8 +63,12 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const { tag } = await params;
   const resolvedSearchParams = await searchParams;
   const currentPage = Number(resolvedSearchParams.page) || 1;
-  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
-  const normalizedTag = decodeURIComponent(tag).toLowerCase().trim();
+  // F-66 + F-34: aggressive normalisation that strips WP-import artifacts
+  // (parens, ampersands, periods, mixed case). The page-default branch
+  // permanentRedirect()s when normalised differs from incoming, so the
+  // metadata branch is only reached for canonical URLs — but we recompute
+  // the same `normalizedTag` here for the Sanity lookup + canonical URL.
+  const normalizedTag = normalizeBlogSlug(tag);
 
   const tagData = await sanityGetPostsByTag(normalizedTag);
 
@@ -81,9 +86,12 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const tagName = tagData.tag.name;
   const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq's ISTQB certified experts.`;
 
+  // F-66 + F-34: emit canonical URL using the normalised slug, not the raw
+  // request param — guards against case-variant or punctuation-variant
+  // duplicates self-canonicalising to their own URL.
   const canonicalUrl = currentPage > 1
-    ? `https://www.testriq.com/blog/tag/${tag}?page=${currentPage}`
-    : `https://www.testriq.com/blog/tag/${tag}`;
+    ? `https://www.testriq.com/blog/tag/${normalizedTag}?page=${currentPage}`
+    : `https://www.testriq.com/blog/tag/${normalizedTag}`;
 
   return {
     title: `${tagName}|Testriq Blog`,
@@ -106,13 +114,13 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     openGraph: {
       title: `${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`,
       description: tagDescription,
-      url: `https://www.testriq.com/blog/tag/${tag}`,
+      url: `https://www.testriq.com/blog/tag/${normalizedTag}`,
       siteName: "Testriq",
       locale: "en_US",
       type: "website",
       images: [
         {
-          url: `https://www.testriq.com/images/tags/${tag}-og.jpg`,
+          url: `https://www.testriq.com/images/tags/${normalizedTag}-og.jpg`,
           width: 1200,
           height: 630,
           alt: `${tagName} Articles - Testriq Blog`,
@@ -123,7 +131,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       card: "summary_large_image",
       title: `${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`,
       description: tagDescription,
-      images: [`https://www.testriq.com/images/tags/${tag}-twitter.jpg`],
+      images: [`https://www.testriq.com/images/tags/${normalizedTag}-twitter.jpg`],
       creator: "@testriq",
       site: "@testriq",
     },
@@ -136,8 +144,14 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function TagPage({ params }: Props) {
   const { tag } = await params;
-  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
-  const normalizedTag = decodeURIComponent(tag).toLowerCase().trim();
+  // F-66 + F-34: aggressive slug normalisation that strips WP-import
+  // artifacts (parens, ampersands, periods, mixed case). If the incoming
+  // URL slug isn't already canonical, 308-redirect to the canonical form
+  // so all crawler / GSC / inbound traffic resolves to one URL per tag.
+  const normalizedTag = normalizeBlogSlug(tag);
+  if (normalizedTag !== tag) {
+    permanentRedirect(`/blog/tag/${normalizedTag}`);
+  }
   const tagData = await sanityGetPostsByTag(normalizedTag);
 
   // Only 404 if the tag itself doesn't exist in Sanity.
@@ -157,7 +171,7 @@ export default async function TagPage({ params }: Props) {
           type="tag"
           title={`${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`}
           description={tagDescription}
-          url={`https://www.testriq.com/blog/tag/${tag}`}
+          url={`https://www.testriq.com/blog/tag/${normalizedTag}`}
           tagName={tagName}
           postCount={adaptedPosts.length}
         />
