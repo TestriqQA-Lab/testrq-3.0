@@ -110,8 +110,12 @@ const AICardSlider: React.FC = () => {
                 </ul>
               </div>
 
+              {/* F-38: aria-label disambiguates the generic "Learn More" anchor —
+                  multiple cards on the page emit identical link text, leaving
+                  screen-reader users with no per-card context. */}
               <Link
                 href={`blog/post${type.action}`}
+                aria-label={`Learn more about ${type.title}`}
                 className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300"
               >
                 <span>Learn More</span>

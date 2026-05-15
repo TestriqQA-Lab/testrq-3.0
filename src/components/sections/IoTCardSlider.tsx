@@ -103,8 +103,11 @@ const IoTCardSlider: React.FC = () => {
                 </ul>
               </div>
 
+              {/* F-38: aria-label disambiguates the generic "Learn More" anchor —
+                  multiple cards on the page emit identical link text. */}
               <Link
                 href={type.action}
+                aria-label={`Learn more about ${type.title}`}
                 className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300"
               >
                 <span>Learn More</span>

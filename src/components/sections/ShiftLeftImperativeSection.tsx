@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaShieldAlt, FaRocket, FaUserCheck } from "react-icons/fa";
+import { FaShieldAlt, FaRocket, FaUserCheck, FaCertificate } from "react-icons/fa";
 
 const ShiftLeftImperativeSection: React.FC = () => {
     const cards = [
@@ -38,13 +38,14 @@ const ShiftLeftImperativeSection: React.FC = () => {
                             Testriq champions a transformative Shift-Left approach that redefines how quality is achieved. By integrating testing activities from the initial stages of design, we minimize the accumulation of technical debt.
                         </p>
 
+                        {/* F-22: removed the pravatar.cc fake-faces avatar cluster (4 random
+                            stranger photos used as "expert" social proof — misleading + raw <img>
+                            with no width/height → CLS + 3rd-party host not in remotePatterns).
+                            Replaced with a credential badge + the same headline/subline copy,
+                            which is the actual trust signal the section needs. */}
                         <div className="pt-4 flex items-center gap-4">
-                            <div className="flex -space-x-3">
-                                {[1, 2, 3, 4].map((i) => (
-                                    <div key={i} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center overflow-hidden">
-                                        <img src={`https://i.pravatar.cc/150?u=${i + 20}`} alt="Expert" />
-                                    </div>
-                                ))}
+                            <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                                <FaCertificate className="w-6 h-6 text-brand-blue" aria-hidden="true" />
                             </div>
                             <div className="text-sm">
                                 <div className="font-bold text-gray-900">15+ Years of Experience</div>

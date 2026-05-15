@@ -26,7 +26,7 @@ const structuredData = {
       "name": "Testriq QA Lab LLP",
       "alternateName": "Testriq",
       "url": "https://www.testriq.com/",
-      "logo": "https://www.testriq.com/logo.png",
+      "logo": "https://www.testriq.com/testriq-logo.png",
       "description": "Leading software testing company providing comprehensive QA services across multiple locations including web application testing, mobile app testing, API testing, and test automation services.",
       "address": {
         "@type": "PostalAddress",

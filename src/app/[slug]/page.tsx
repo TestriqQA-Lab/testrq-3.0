@@ -177,7 +177,7 @@ function generateCaseStudySchema(caseStudy: CaseStudy) {
       "name": "Testriq QA Lab",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.testriq.com/logo.png"
+        "url": "https://www.testriq.com/testriq-logo.png"
       }
     },
 
@@ -234,10 +234,10 @@ function generateCitySchema(cityData: CityData) {
     "url": `https://www.testriq.com/${cityData.slug}`,
     "telephone": "+91 915-2929-343",
     "email": "contact@testriq.com",
-    "image": "https://www.testriq.com/logo.png", // Adding a default image for LocalBusiness schema
+    "image": "https://www.testriq.com/testriq-logo.png", // Adding a default image for LocalBusiness schema
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.testriq.com/logo.png"
+      "url": "https://www.testriq.com/testriq-logo.png"
     },
     "address": {
       "@type": "PostalAddress",

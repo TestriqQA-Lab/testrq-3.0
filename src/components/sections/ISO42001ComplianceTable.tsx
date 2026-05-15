@@ -165,7 +165,11 @@ const ISO42001ComplianceTable: React.FC = () => {
                   <FaTimesCircle className="text-red-400 text-lg" />
                 )}
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">{row.area}</h4>
+              {/* F-37: was h4 — would have skipped h3 (parent is h2 at L83). Mobile
+                  card row title sits at the same logical level as the desktop table's
+                  Area column header, which is a thead <th> not a heading. Promoting
+                  to h3 makes the document outline strictly sequential h2 → h3. */}
+              <h3 className="font-bold text-gray-900 mb-2">{row.area}</h3>
               <p className="text-gray-600 text-sm mb-3">{row.requirements}</p>
               <div className="bg-emerald-50 rounded-xl p-3">
                 <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">

@@ -72,9 +72,15 @@ const DatingAppCompetitiveAdvantage = () => {
                 >
                   <Award className="w-6 h-6 text-brand-blue mr-4 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">
+                    {/* F-37: was h4 — created an h2 → h3 → h4 → h3 outline that
+                        backtracked to h3 ("Industry Statistics" at L86). Each item
+                        here is a list-item label, not a section heading. Demoted to
+                        a styled <p> (visually identical) so the section outline stays
+                        strictly h2 → h3 (Market Differentiation / Industry Statistics
+                        as siblings). */}
+                    <p className="font-bold text-gray-900 mb-2">
                       {item.advantage}
-                    </h4>
+                    </p>
                     <p className="text-gray-600">{item.description}</p>
                   </div>
                 </motion.div>

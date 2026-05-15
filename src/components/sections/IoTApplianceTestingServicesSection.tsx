@@ -339,9 +339,12 @@ const IoTTestingServicesSection: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <FaCog className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">
+              {/* F-37: was h4 — list-item label inside the h3 "Complete IoT
+                  Ecosystem Coverage" section. Demoted to styled <p> so the outline
+                  stays strictly h2 → h3 across all sibling sections. */}
+              <p className="text-xl font-bold text-gray-900 mb-2">
                 Edge Devices
-              </h4>
+              </p>
               <p className="text-gray-600 text-sm">
                 Sensors, actuators, smart devices, and embedded systems
               </p>
@@ -351,9 +354,12 @@ const IoTTestingServicesSection: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <FaNetworkWired className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">
+              {/* F-37: was h4 — list-item label inside the h3 "Complete IoT
+                  Ecosystem Coverage" section. Demoted to styled <p> so the outline
+                  stays strictly h2 → h3 across all sibling sections. */}
+              <p className="text-xl font-bold text-gray-900 mb-2">
                 Connectivity
-              </h4>
+              </p>
               <p className="text-gray-600 text-sm">
                 WiFi, Bluetooth, Zigbee, LoRaWAN, cellular networks
               </p>
@@ -363,9 +369,12 @@ const IoTTestingServicesSection: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <FaDesktop className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">
+              {/* F-37: was h4 — list-item label inside the h3 "Complete IoT
+                  Ecosystem Coverage" section. Demoted to styled <p> so the outline
+                  stays strictly h2 → h3 across all sibling sections. */}
+              <p className="text-xl font-bold text-gray-900 mb-2">
                 Edge Computing
-              </h4>
+              </p>
               <p className="text-gray-600 text-sm">
                 Local processing, real-time analytics, edge gateways
               </p>
@@ -375,11 +384,14 @@ const IoTTestingServicesSection: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <FaCloud className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">
+              {/* F-37: was h4 — list-item label inside the h3 "Complete IoT
+                  Ecosystem Coverage" section. Demoted to styled <p> so the outline
+                  stays strictly h2 → h3 across all sibling sections. */}
+              <p className="text-xl font-bold text-gray-900 mb-2">
                 <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">
                   Cloud Platforms
                 </Link>
-              </h4>
+              </p>
               <p className="text-gray-600 text-sm">
                 AWS IoT, Azure IoT, Google Cloud IoT, custom platforms
               </p>
@@ -395,9 +407,11 @@ const IoTTestingServicesSection: React.FC = () => {
               <div className="flex items-start gap-3">
                 <FaShieldAlt className="w-8 h-8 text-blue-200 mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-xl mb-1">
+                  {/* F-37: was h4 — list-item label inside the h3 "IoT Industry
+                      Expertise" section. Demoted to styled <p> for strict h2 → h3 outline. */}
+                  <p className="font-semibold text-xl mb-1">
                     Security-First Approach
-                  </h4>
+                  </p>
                   <p className="text-blue-100 text-lg">
                     Comprehensive{" "}
                     <Link href="/security-testing">security testing</Link> to
@@ -412,9 +426,11 @@ const IoTTestingServicesSection: React.FC = () => {
               <div className="flex items-start gap-3">
                 <FaChartLine className="w-8 h-8 text-blue-200 mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-xl mb-1">
+                  {/* F-37: was h4 — list-item label inside the h3 "IoT Industry
+                      Expertise" section. Demoted to styled <p> for strict h2 → h3 outline. */}
+                  <p className="font-semibold text-xl mb-1">
                     Scalability Experts
-                  </h4>
+                  </p>
                   <p className="text-blue-100 text-lg">
                     Testing IoT systems that scale from hundreds to millions of
                     connected devices.
@@ -424,9 +440,11 @@ const IoTTestingServicesSection: React.FC = () => {
               <div className="flex items-start gap-3">
                 <FaSync className="w-8 h-8 text-blue-200 mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-xl mb-1">
+                  {/* F-37: was h4 — list-item label inside the h3 "IoT Industry
+                      Expertise" section. Demoted to styled <p> for strict h2 → h3 outline. */}
+                  <p className="font-semibold text-xl mb-1">
                     Real-World Testing
-                  </h4>
+                  </p>
                   <p className="text-blue-100 text-lg">
                     Testing in actual deployment conditions with real network
                     constraints and environmental factors.

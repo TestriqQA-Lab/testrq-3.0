@@ -160,9 +160,14 @@ const AboutFAQ = dynamic(
 );
 
 export default function AboutUs() {
+  // F-44.2: terminal name was "about Page" (lowercase + redundant "Page"
+  // suffix) — long-standing typo flagged in PR-3 audit. Fixed to sentence
+  // case "About Us" matching the page title. The matching aboutPageSchema
+  // BreadcrumbList block was also removed in this PR so /about-us emits
+  // exactly one canonical BreadcrumbList instead of two.
   const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
-    { name: "about Page", url: "https://www.testriq.com/about-us" }
+    { name: "About Us", url: "https://www.testriq.com/about-us" }
   ];
   return (
     <div>
