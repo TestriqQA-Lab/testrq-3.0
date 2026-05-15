@@ -1,7 +1,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
-import StructuredData, { careersPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import { buildCareersPageSchema } from "@/components/seo/jobPostingSchema";
 import { sanityGetAllJobOpenings } from "@/lib/sanity-data-adapter";
 
 // ISR: revalidate every 60 seconds
@@ -162,7 +163,7 @@ const CareersPage = async () => {
   ];
   return (
     <div>
-      <StructuredData data={careersPageSchema} />
+      <StructuredData data={buildCareersPageSchema(jobOpenings)} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <main className="min-h-screen bg-gray-50">
         <CareersHeroSection />

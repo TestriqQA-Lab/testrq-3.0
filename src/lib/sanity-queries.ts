@@ -177,8 +177,12 @@ export const relatedCaseStudiesQuery = groq`*[_type == "caseStudy" && slug.curre
 // =============================================
 
 // Query for fetching all active job postings
+// _createdAt + _updatedAt are projected so the JobPosting JSON-LD builder
+// can populate datePosted + a sensible validThrough (F-40).
 export const allJobPostingsQuery = groq`*[_type == "jobPosting" && isActive == true] | order(_createdAt desc) {
   _id,
+  _createdAt,
+  _updatedAt,
   title,
   slug,
   location,
@@ -197,6 +201,8 @@ export const allJobPostingsQuery = groq`*[_type == "jobPosting" && isActive == t
 // Query for fetching a single job posting by slug
 export const jobPostingBySlugQuery = groq`*[_type == "jobPosting" && slug.current == $slug][0] {
   _id,
+  _createdAt,
+  _updatedAt,
   title,
   slug,
   location,

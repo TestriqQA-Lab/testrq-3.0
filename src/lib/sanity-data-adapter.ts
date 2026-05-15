@@ -722,6 +722,11 @@ export interface SanityJobOpening {
     color?: string;
     salary?: string;
     department?: string;
+    // ISO 8601 timestamps from Sanity (used by F-40 JobPosting JSON-LD
+    // builder for datePosted / validThrough). Optional so existing UI
+    // code that doesn't need them keeps compiling.
+    createdAt?: string;
+    updatedAt?: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -740,6 +745,8 @@ export function adaptSanityJobPosting(raw: any, index: number): SanityJobOpening
         color: raw.color || 'from-green-400 to-green-600',
         salary: raw.salary || undefined,
         department: raw.department || undefined,
+        createdAt: raw._createdAt || undefined,
+        updatedAt: raw._updatedAt || undefined,
     };
 }
 
