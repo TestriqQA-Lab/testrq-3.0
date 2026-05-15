@@ -3,7 +3,7 @@ import { getCityData, getAllCities, CityData } from '@/app/lib/CityData';
 import { sanityGetCaseStudyBySlug, sanityGetAllCaseStudySlugs, sanityGetRelatedCaseStudies, CaseStudy } from '@/lib/sanity-data-adapter';
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
-import StructuredData from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema, createFAQSchema } from "@/components/seo/StructuredData";
 import CityTestingHeroSection from '@/components/sections/CityTestingHeroSection';
 import CityTestingServicesSection from '@/components/sections/CityTestingServicesSection';
 import CityTestingProcessSection from '@/components/sections/CityTestingProcessSection';
@@ -472,11 +472,18 @@ export default async function SlugPage({ params }: PageProps) {
   }
   if (caseStudy) {
     const caseStudySchema = generateCaseStudySchema(caseStudy);
+    // F-43: BreadcrumbList for case study pages — Home → Case Studies → {title}.
+    const caseStudyBreadcrumb = createBreadcrumbSchema([
+      { name: "Home", url: "https://www.testriq.com/" },
+      { name: "Case Studies", url: "https://www.testriq.com/case-studies" },
+      { name: caseStudy.title, url: `https://www.testriq.com/${caseStudy.slug}` },
+    ]);
     const relatedCaseStudies = await sanityGetRelatedCaseStudies(caseStudy.slug, 2);
 
     return (
       <div>
         <StructuredData data={caseStudySchema} />
+        <StructuredData data={caseStudyBreadcrumb} />
         <MainLayout>
           <CaseStudyHeroSection caseStudy={caseStudy} />
           <CaseStudyOverviewSection caseStudy={caseStudy} />
@@ -503,10 +510,26 @@ export default async function SlugPage({ params }: PageProps) {
   }
 
   const citySchema = generateCitySchema(cityData);
+  // F-43: BreadcrumbList for city pages — Home → Locations We Serve → {city}.
+  // /locations-we-serve is the live cities hub (verified 200) — also the 308
+  // redirect target for the F-68 broken-city URLs, so it's the right parent.
+  const cityBreadcrumb = createBreadcrumbSchema([
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Locations We Serve", url: "https://www.testriq.com/locations-we-serve" },
+    { name: cityData.name, url: `https://www.testriq.com/${cityData.slug}` },
+  ]);
+  // F-43: FAQPage for city pages — drawn from the FAQ section the page already
+  // renders (CityTestingFAQsSection). Skip if a city has no FAQ entries (defensive).
+  const cityFAQSchema =
+    cityData.faqsContent?.faqs && cityData.faqsContent.faqs.length > 0
+      ? createFAQSchema(cityData.faqsContent.faqs)
+      : null;
 
   return (
     <div className="city-page">
       <StructuredData data={citySchema} />
+      <StructuredData data={cityBreadcrumb} />
+      {cityFAQSchema && <StructuredData data={cityFAQSchema} />}
       <CityTestingHeroSection cityData={cityData} />
       <CityTestingServicesSection cityData={cityData} />
       <CityTestingProcessSection cityData={cityData} />
