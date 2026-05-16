@@ -274,9 +274,15 @@ export function adaptSanityPost(sanityPost: any): Post {
         tags: sanityPost.tags?.filter((t: any) => t).map((t: any) => t.title) || [],
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         tagsData: sanityPost.tags?.filter((t: any) => t).map((t: any) => ({ name: t.title, slug: t.slug?.current })) || [],
+        // F-60.1 — read the new shared `seoFields` shape with fallback to
+        // the legacy {metaTitle, metaDescription, metaKeywords-string} shape
+        // for posts whose dataset hasn't been migrated yet. After the
+        // migration script runs and the dataset is fully converted, the
+        // legacy fallbacks can be removed in a cleanup PR.
         seo: {
-            title: sanityPost.seo?.metaTitle || sanityPost.title,
+            title: sanityPost.seo?.title || sanityPost.seo?.metaTitle || sanityPost.title,
             description: (() => {
+                if (sanityPost.seo?.description) return sanityPost.seo.description;
                 if (sanityPost.seo?.metaDescription) return sanityPost.seo.metaDescription;
                 if (sanityPost.excerpt) return sanityPost.excerpt;
 
@@ -289,6 +295,11 @@ export function adaptSanityPost(sanityPost: any): Post {
             })(),
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             keywords: (() => {
+                // New shape: keywords is an array of strings → join to csv
+                if (Array.isArray(sanityPost.seo?.keywords) && sanityPost.seo.keywords.length > 0) {
+                    return sanityPost.seo.keywords.join(', ');
+                }
+                // Legacy shape: metaKeywords is a comma-separated string
                 if (sanityPost.seo?.metaKeywords) return sanityPost.seo.metaKeywords;
                 if (sanityPost.tags && sanityPost.tags.length > 0) {
                     return sanityPost.tags.map((t: any) => t.title).join(', ');
@@ -471,9 +482,12 @@ export function adaptSanityPage(sanityPage: any): Page {
             day: 'numeric'
         }) : '',
         image: sanityPage.mainImage ? sanityImage(sanityPage.mainImage) : null,
+        // F-60.1 — read new seoFields shape with legacy fallback. Note: no
+        // `page` document type exists in the schema currently; this adapter
+        // is kept for defensive future use.
         seo: {
-            title: sanityPage.seo?.metaTitle || sanityPage.title || '',
-            description: sanityPage.seo?.metaDescription || '',
+            title: sanityPage.seo?.title || sanityPage.seo?.metaTitle || sanityPage.title || '',
+            description: sanityPage.seo?.description || sanityPage.seo?.metaDescription || '',
             keywords: ''
         }
     };
@@ -697,61 +711,74 @@ export function adaptSanityCaseStudy(raw: any): CaseStudy {
         duration: raw.duration || '',
         description: raw.description || '',
         image: raw.image || '',
-        metadata: {
-            title: raw.seoMetadata?.title || raw.title || '',
-            description: raw.seoMetadata?.description || raw.description || '',
-            keywords: raw.seoMetadata?.keywords || [],
-            authors: [{ name: 'Testriq QA Lab' }],
-            creator: 'Testriq QA Lab LLP',
-            publisher: 'Testriq QA Lab LLP',
-            formatDetection: { email: false, address: false, telephone: false },
-            metadataBase: 'https://www.testriq.com/',
-            alternates: {
-                canonical: raw.seoMetadata?.canonicalUrl || `https://www.testriq.com/${slug}`,
-            },
-            openGraph: {
-                type: 'article',
-                locale: 'en_US',
-                url: raw.seoMetadata?.canonicalUrl || `https://www.testriq.com/${slug}`,
-                siteName: 'Testriq - QA Case Studies',
-                title: raw.seoMetadata?.openGraph?.title || raw.seoMetadata?.title || '',
-                description: raw.seoMetadata?.openGraph?.description || raw.seoMetadata?.description || '',
-                images: raw.seoMetadata?.openGraph?.imageUrl
-                    ? [{
-                        url: raw.seoMetadata.openGraph.imageUrl,
-                        width: 1200,
-                        height: 630,
-                        alt: raw.seoMetadata.openGraph.imageAlt || '',
-                    }]
-                    : [],
-            },
-            twitter: {
-                card: 'summary_large_image',
-                site: '@testriq',
-                creator: '@testriq',
-                title: raw.seoMetadata?.twitter?.title || raw.seoMetadata?.title || '',
-                description: raw.seoMetadata?.twitter?.description || raw.seoMetadata?.description || '',
-                images: raw.seoMetadata?.twitter?.imageUrl
-                    ? [raw.seoMetadata.twitter.imageUrl]
-                    : [],
-            },
-            robots: {
-                index: true,
-                follow: true,
-                googleBot: {
+        // F-60.1 — case studies migrated from `seoMetadata` (with nested
+        // openGraph/twitter) to `seo` (seoFields shape) + sibling
+        // `openGraph` and `twitter` fields on caseStudy. Read both shapes
+        // with fallback so the adapter works regardless of whether a given
+        // document has been migrated yet. After the migration script runs
+        // and the dataset is fully converted, the seoMetadata.* fallbacks
+        // can be removed in a cleanup PR.
+        metadata: (() => {
+            const seoBase = raw.seo || raw.seoMetadata || {};
+            const og = raw.openGraph || raw.seoMetadata?.openGraph || {};
+            const tw = raw.twitter || raw.seoMetadata?.twitter || {};
+            const canonical = seoBase.canonicalUrl || `https://www.testriq.com/${slug}`;
+            return {
+                title: seoBase.title || raw.title || '',
+                description: seoBase.description || raw.description || '',
+                keywords: seoBase.keywords || [],
+                authors: [{ name: 'Testriq QA Lab' }],
+                creator: 'Testriq QA Lab LLP',
+                publisher: 'Testriq QA Lab LLP',
+                formatDetection: { email: false, address: false, telephone: false },
+                metadataBase: 'https://www.testriq.com/',
+                alternates: {
+                    canonical,
+                },
+                openGraph: {
+                    type: 'article',
+                    locale: 'en_US',
+                    url: canonical,
+                    siteName: 'Testriq - QA Case Studies',
+                    title: og.title || seoBase.title || '',
+                    description: og.description || seoBase.description || '',
+                    images: og.imageUrl
+                        ? [{
+                            url: og.imageUrl,
+                            width: 1200,
+                            height: 630,
+                            alt: og.imageAlt || '',
+                        }]
+                        : [],
+                },
+                twitter: {
+                    card: 'summary_large_image' as const,
+                    site: '@testriq',
+                    creator: '@testriq',
+                    title: tw.title || seoBase.title || '',
+                    description: tw.description || seoBase.description || '',
+                    images: tw.imageUrl
+                        ? [tw.imageUrl]
+                        : [],
+                },
+                robots: {
                     index: true,
                     follow: true,
-                    'max-video-preview': -1,
-                    'max-image-preview': 'large',
-                    'max-snippet': -1,
+                    googleBot: {
+                        index: true,
+                        follow: true,
+                        'max-video-preview': -1,
+                        'max-image-preview': 'large',
+                        'max-snippet': -1,
+                    },
                 },
-            },
-            verification: {
-                google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-                yandex: 'ff703971283d110e',
-                yahoo: '0A67349B8CD11BF71173B38572028507',
-            },
-        },
+                verification: {
+                    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+                    yandex: 'ff703971283d110e',
+                    yahoo: '0A67349B8CD11BF71173B38572028507',
+                },
+            };
+        })(),
         overview: {
             clientBackground: raw.overview?.clientBackground || '',
             projectScope: raw.overview?.projectScope || '',
