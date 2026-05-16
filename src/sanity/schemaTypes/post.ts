@@ -96,20 +96,17 @@ export default defineType({
             type: 'text',
             description: 'Raw HTML content migrated from outdated sources. If present, this overrides the Body field.',
         }),
+        // F-60.1 — migrated to shared `seoFields` shape (was an inline object
+        // with metaTitle/metaDescription/metaKeywords-string). Existing 338
+        // posts retain their old shape in the dataset until the migration
+        // script (src/scripts/migrate-post-seo-to-seoFields.ts) runs. The
+        // adapter (src/lib/sanity-data-adapter.ts) reads BOTH shapes via
+        // fallback during the transition window so nothing breaks if the
+        // schema deploys before the migration script runs.
         defineField({
             name: 'seo',
             title: 'SEO',
-            type: 'object',
-            fields: [
-                defineField({ name: 'metaTitle', title: 'Meta Title', type: 'string' }),
-                defineField({ name: 'metaDescription', title: 'Meta Description', type: 'text' }),
-                defineField({
-                    name: 'metaKeywords',
-                    title: 'Meta Keywords',
-                    type: 'string',
-                    description: 'Comma separated keywords for SEO.'
-                }),
-            ]
+            type: 'seoFields',
         }),
     ],
 
