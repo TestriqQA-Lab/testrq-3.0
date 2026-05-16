@@ -39,22 +39,43 @@ const BlogPostContent = dynamic(
 
 // Custom Structured Data Component for Individual Posts
 function PostStructuredData({ post }: { post: Post }) {
-  // F-46: enrich BlogPosting.author with @id (page-local entity ref) and any
-  // additional Person fields Sanity gave us (image, description/bio, sameAs
-  // LinkedIn) so author is more than a bare {Person, name}. Full author-page
-  // entities with stable URLs come in F-52 (E-E-A-T author authority); this
-  // is the safe interim that doesn't require new routes.
+  // F-52: BlogPosting.author now points at the canonical author-page entity
+  // (`/author/<slug>#person`) instead of the page-local `#author` interim
+  // introduced by F-46. The `/author/[slug]` route emits the full Person
+  // schema for that @id. We also surface `url` (author page) and combine
+  // linkedin + author.sameAs[] for richer Person.sameAs, plus author
+  // credentials → hasCredential. Posts without an author.slug (legacy/missing
+  // Sanity data) fall back to the F-46 page-local @id so JSON-LD stays valid.
   const postUrl = `https://www.testriq.com/blog/post/${post.slug}`;
+  const authorPageUrl = post.authorSlug
+    ? `https://www.testriq.com/author/${post.authorSlug}`
+    : null;
+  const authorAtId = authorPageUrl ? `${authorPageUrl}#person` : `${postUrl}#author`;
   const isPlaceholderAuthorImage =
     !post.authorImage || post.authorImage.includes("placehold.co");
+  const authorSameAs = Array.from(
+    new Set(
+      [post.authorLinkedin, ...(post.authorSameAs || [])].filter(
+        (u): u is string => typeof u === "string" && u.length > 0
+      )
+    )
+  );
   const author = {
     "@type": "Person",
-    "@id": `${postUrl}#author`,
+    "@id": authorAtId,
     name: post.author,
+    ...(authorPageUrl ? { url: authorPageUrl } : {}),
     ...(isPlaceholderAuthorImage ? {} : { image: post.authorImage }),
     ...(post.authorBio ? { description: post.authorBio } : {}),
-    ...(post.authorLinkedin
-      ? { url: post.authorLinkedin, sameAs: [post.authorLinkedin] }
+    ...(authorSameAs.length ? { sameAs: authorSameAs } : {}),
+    ...(post.authorCredentials && post.authorCredentials.length
+      ? {
+          hasCredential: post.authorCredentials.map((c) => ({
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "Certification",
+            name: c,
+          })),
+        }
       : {}),
   };
 

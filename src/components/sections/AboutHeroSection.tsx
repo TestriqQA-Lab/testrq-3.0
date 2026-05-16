@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { FaCheckCircle, FaInfoCircle, FaHome, FaChevronRight } from "react-icons/fa";
+import { FaCheckCircle, FaHome, FaChevronRight } from "react-icons/fa";
+import { FaCertificate } from "react-icons/fa6";
 
 const AboutHeroSection = () => {
   return (
@@ -24,11 +25,25 @@ const AboutHeroSection = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between">
           {/* Left Section */}
           <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center xl:text-left">
-            <div className="inline-flex items-center bg-brand-blue px-5 gap-2 rounded-full py-2 mb-4">
-              <FaInfoCircle className="text-white" />
-              <span className=" text-white text-base md:text-sm">
-                About Testriq
-              </span>
+            <div className="flex flex-wrap justify-center xl:justify-start gap-2 mb-4">
+              <div className="inline-flex items-center bg-brand-blue px-5 py-2 rounded-full gap-2">
+                <FaCertificate className="text-white" />
+                <span className="text-white text-base md:text-sm">
+                  ISTQB Certified
+                </span>
+              </div>
+              <div className="inline-flex items-center bg-brand-blue px-5 py-2 rounded-full gap-2">
+                <FaCertificate className="text-white" />
+                <span className="text-white text-base md:text-sm">
+                  ISO 9001
+                </span>
+              </div>
+              <div className="inline-flex items-center bg-brand-blue px-5 py-2 rounded-full gap-2">
+                <FaCertificate className="text-white" />
+                <span className="text-white text-base md:text-sm">
+                  ISO 27001
+                </span>
+              </div>
             </div>
 
             <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">

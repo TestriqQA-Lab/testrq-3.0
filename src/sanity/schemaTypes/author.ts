@@ -48,6 +48,20 @@ export default defineType({
             title: 'LinkedIn URL',
             type: 'url',
         }),
+        defineField({
+            name: 'credentials',
+            title: 'Credentials',
+            type: 'array',
+            of: [{ type: 'string' }],
+            description: 'Certifications, degrees, awards — one per entry (e.g., "ISTQB Certified Tester", "M.S. Computer Science"). Surfaced on /author/[slug] and in BlogPosting Person schema.',
+        }),
+        defineField({
+            name: 'sameAs',
+            title: 'Profile URLs (sameAs)',
+            type: 'array',
+            of: [{ type: 'url' }],
+            description: 'Public profile URLs for schema.org Person.sameAs — Twitter/X, GitHub, ORCID, personal site, conference talks, etc. LinkedIn is auto-included from the LinkedIn URL field above.',
+        }),
     ],
     preview: {
         select: {

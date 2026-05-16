@@ -159,7 +159,18 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
                             className="rounded-full ring-2 ring-amber-500/30"
                           />
                           <div>
-                            <div className="text-sm font-semibold text-white">{post.author}</div>
+                            <div className="text-sm font-semibold text-white">
+                              {post.authorSlug ? (
+                                <Link
+                                  href={`/author/${post.authorSlug}`}
+                                  className="hover:text-amber-400 hover:underline transition-colors"
+                                >
+                                  {post.author}
+                                </Link>
+                              ) : (
+                                post.author
+                              )}
+                            </div>
                             <div className="flex items-center gap-2 text-xs text-slate-400">
                               <span>{post.date}</span>
                               <span>·</span>
@@ -346,7 +357,18 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
                               height={32}
                               className="rounded-full ring-2 ring-blue-500/20"
                             />
-                            <span className="text-sm text-slate-300 font-medium">{post.author}</span>
+                            <span className="text-sm text-slate-300 font-medium">
+                              {post.authorSlug ? (
+                                <Link
+                                  href={`/author/${post.authorSlug}`}
+                                  className="hover:text-blue-400 hover:underline transition-colors"
+                                >
+                                  {post.author}
+                                </Link>
+                              ) : (
+                                post.author
+                              )}
+                            </span>
                           </div>
                           <span className="text-xs text-slate-500 flex items-center gap-1">
                             <FaClock className="w-3 h-3" />
