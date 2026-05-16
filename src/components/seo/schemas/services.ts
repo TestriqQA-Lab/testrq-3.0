@@ -510,37 +510,11 @@ export const iotDeviceTestingSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the most critical challenge in testing IoT devices in 2026?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The most critical challenge is device diversity and interoperability across 21.1 billion active devices. We use ISO/IEC 29119 to ensure flawless Multi-Vendor Connectivity."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How to test IoT connection in remote locations?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We use network conditioners to simulate satellite/cellular handovers and signal jammers to test device performance in 'dead zones' and high-interference environments."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is security testing for medical IoT devices so important?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Medical IoT breaches directly impact patient safety. Compliance with the Cyber Resilience Act (CRA) and HIPAA is essential for ransomware defense and data privacy."
-          }
-        }
-      ]
-    },
-
+    }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /iot-device-testing-services
+    // is the single source of truth, mirroring the IoTFAQs UI content
+    // (5 Q&As vs 3 abbreviated embedded). Removed embedded duplicate.
   ]
 };
 
@@ -1813,40 +1787,16 @@ export const sapTestingSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Why is SAP testing critical for S/4HANA migration?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SAP S/4HANA migration involves complex data transformation and process re-engineering. Comprehensive testing ensures business continuity and data integrity during the transition."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you support SAP test automation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we specialize in SAP automation using Tricentis Tosca, Worksoft Certify, and UFT One to accelerate regression cycles and reduce business risk."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you handle SAP integration testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We validate end-to-end data flow between SAP modules and non-SAP systems via middleware like SAP PO/PI and CPI, ensuring seamless enterprise connectivity."
-          }
-        }
-      ]
     }
     // F-44: BreadcrumbList intentionally NOT in @graph — page-side
     // createCanonicalBreadcrumb (PR-3) is the single source of truth.
     // Removed stale Pattern D (Home → Services → SAP Testing pointing at
     // /services 308 redirect) that was double-emitting on production.
+    //
+    // F-44.1: FAQPage also intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /sap-testing-services is the
+    // single source of truth, mirroring the SapFAQs UI content (5 Q&As vs
+    // 3 stale embedded). Removed embedded duplicate.
   ]
 };
 

@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import StructuredData, {
   createCanonicalBreadcrumb,
+  createFaqPageSchema,
   roboticTestingSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -60,6 +61,30 @@ export default function RoboticTestingPage() {
   // standard). Other keywords lowercased. Section components were
   // already direct imports — no dynamic→direct conversion needed.
   // Breadcrumb already migrated in PR-3 — unchanged.
+  // F-44.1 batch 4: plain-text mirror of RoboticFAQs UI content for FAQPage JSON-LD.
+  const faqsForSchema = [
+    {
+      question: "What is the difference between RPA and traditional test automation?",
+      answer: "The differences between RPA and traditional test automation lie in their integration level. RPA copies human actions directly through the user interface, making it perfect for legacy systems. Traditional automation integrates directly into backend APIs and scripts for long-term stability in the SDLC.",
+    },
+    {
+      question: "How do you implement robotic testing for legacy enterprise systems?",
+      answer: "When implementing robotic testing for legacy enterprise systems, we use RPA bots to interact with the presentation layer. We provide complete workflow automation and data validation for your systems. This approach avoids the high cost and risk of changing your backend code.",
+    },
+    {
+      question: "What are the benefits of ISO 10218-1:2026 for my business?",
+      answer: "The updated ISO 10218-1:2026 standard makes functional safety requirements explicit rather than implied. This process prepares your robots for global export and reduces the risk of expensive recalls and safety incidents.",
+    },
+    {
+      question: "Can robotic testing validate data from end to end?",
+      answer: "Yes. To validate data from end to end, we configure bots to extract information from emails, ERPs, and spreadsheets, then verify that the data remains consistent across all your software systems. Our data validation protocols ensure 100% integrity.",
+    },
+    {
+      question: "What is 'Physical AI' in 2026 robotics?",
+      answer: "Physical AI refers to the trend where robots use Generative AI and simulation to 'train' themselves in virtual environments. Fixed code is replaced by learned experience, making robots much more adaptable in changing, real-world environments.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={roboticTestingSchema} />
@@ -69,6 +94,7 @@ export default function RoboticTestingPage() {
           "Robotic Testing Services"
         )}
       />
+      <StructuredData data={createFaqPageSchema(faqsForSchema)} />
       <RoboticTestingHeroSection />
       <RoboticComplianceTable />
       <RoboticComprehensiveSlider />
