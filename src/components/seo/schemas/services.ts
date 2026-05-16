@@ -1860,36 +1860,11 @@ export const usabilityTestingServiceSchema = {
           }
         ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are the benefits of professional usability testing services?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Professional usability testing services significantly enhance user satisfaction, reduce development costs by identifying issues early, improve conversion rates, and strengthen brand loyalty. It ensures your product is intuitive, efficient, and enjoyable for its target audience."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a usability audit cost for a mobile app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The cost of a usability audit for a mobile app varies based on scope, complexity, and desired depth of analysis. Testriq offers customized quotes following an initial consultation to understand your specific needs and provide an ROI-focused solution."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is usability testing important for software development?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Usability testing is crucial for software development as it validates design decisions, uncovers critical user pain points, and ensures the final product meets user expectations. It minimizes rework, accelerates market adoption, and ultimately drives business success."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /usability-testing-services is
+    // the single source of truth, mirroring the UsabilityTestingFAQs UI
+    // content (4 Q&As vs 3 embedded). Removed embedded duplicate.
   ]
 };
 
@@ -2090,28 +2065,11 @@ export const uatServiceSchema = {
           }
         ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is User Acceptance Testing (UAT) and why is it important?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "User Acceptance Testing (UAT) is the final phase of software testing where actual end-users and business stakeholders validate that the software meets their business requirements. It's important because it identifies business misalignment and user experience issues that technical testing often misses."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does UAT differ from functional testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Functional testing checks if the software works according to technical specifications. UAT validates if the software actually meets user needs and enables business workflows. Functional is done by QA pros; UAT is done by end-users."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /user-acceptance-testing is the
+    // single source of truth, mirroring the UATFAQs UI content (4 Q&As vs
+    // 2 embedded). Removed embedded duplicate.
   ]
 };
 
