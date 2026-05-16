@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { draftMode } from "next/headers";
 import { sanityGetPostBySlug, sanityGetRelatedPosts, sanityGetCategories, sanityGetAllPostSlugs, Post } from "@/lib/sanity-data-adapter";
 import { extractHeadings } from "@/lib/utils";
 import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
@@ -126,7 +127,10 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = await sanityGetPostBySlug(slug);
+  // F-64: when draftMode is enabled (editor preview session), fetch via the
+  // preview client so the metadata matches the draft body the page renders.
+  const { isEnabled: draft } = await draftMode();
+  const post = await sanityGetPostBySlug(slug, draft);
 
   if (!post) {
     return {
@@ -181,7 +185,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = await sanityGetPostBySlug(slug);
+  // F-64: route through the preview client when in draftMode so editors see
+  // the unpublished draft instead of (or in absence of) the published doc.
+  const { isEnabled: isDraft } = await draftMode();
+  const post = await sanityGetPostBySlug(slug, isDraft);
 
   if (!post) {
     notFound();
@@ -193,6 +200,24 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      {/* F-64: visible-only-to-editors banner when draftMode is active.
+          Server-rendered (no client JS), so it shows on initial paint. The
+          "Exit preview" link hits /api/draft-mode/disable to clear the
+          cookie. Slug ?slug=... so the user lands back here after exit. */}
+      {isDraft && (
+        <div className="sticky top-0 z-50 bg-amber-500 text-amber-950 text-sm font-medium px-4 py-2 flex items-center justify-center gap-3 shadow-md">
+          <span aria-hidden="true">📝</span>
+          <span>
+            Preview mode active — you&apos;re viewing the latest draft from Sanity, not the published version.
+          </span>
+          <a
+            href={`/api/draft-mode/disable?slug=/blog/post/${post.slug}`}
+            className="ml-2 inline-block rounded bg-amber-950 px-3 py-1 text-xs font-semibold text-amber-50 hover:bg-amber-800 transition-colors"
+          >
+            Exit preview
+          </a>
+        </div>
+      )}
       <MainLayout>
         {/* Custom Structured Data from WordPress */}
         <PostStructuredData post={post} />

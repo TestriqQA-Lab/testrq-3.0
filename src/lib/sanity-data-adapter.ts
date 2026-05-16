@@ -1,5 +1,6 @@
 
 import { client } from './sanity';
+import { previewClient } from './sanity-preview';
 import { sanityImage } from './sanity-image';
 import { groq } from "next-sanity";
 import { unstable_cache } from 'next/cache';
@@ -315,11 +316,15 @@ export async function sanityGetPosts(limit?: number): Promise<Post[]> {
     return posts.map(adaptSanityPost);
 }
 
-export async function sanityGetPostBySlug(slug: string) {
-    console.log(`Fetching post for slug: ${slug}`);
+export async function sanityGetPostBySlug(slug: string, draft = false) {
+    // F-64: when `draft` is true, route the fetch through the preview
+    // client (useCdn:false, perspective:'drafts') so editors browsing in
+    // Next's draftMode see unpublished changes. When false (the default),
+    // behavior is unchanged from before — production-CDN client serving
+    // published documents only. Backwards-compatible signature.
+    const c = draft ? previewClient : client;
     try {
-        const post = await client.fetch(queries.postBySlugQuery, { slug });
-        console.log(`Sanity fetch result for ${slug}:`, post ? "Found" : "Not Found");
+        const post = await c.fetch(queries.postBySlugQuery, { slug });
         return post ? adaptSanityPost(post) : null;
     } catch (error) {
         console.error("Error fetching post by slug:", error);
