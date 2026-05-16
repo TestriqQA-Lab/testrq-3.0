@@ -68,55 +68,14 @@ export const webAppTestingServiceSchema = {
           }
         ]
       }
-    },
-
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What types of web applications do you test?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We test all types of web applications, including e-commerce platforms, SaaS applications, content management systems, social media platforms, educational portals, healthcare apps, and custom web solutions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does web application testing typically take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Web application testing typically takes 1-4 weeks, depending on the application's complexity. Simple applications may require 5-7 days, while complex platforms like SaaS or e-commerce may take 2-4 weeks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What testing tools and technologies do you use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We use industry-leading tools like Selenium, Cypress, and Playwright for functional testing; JMeter and K6 for performance testing; OWASP ZAP and Burp Suite for security testing."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide automated testing for web applications?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we provide automated testing using tools like Selenium, Cypress, and TestCafe to ensure rapid, repeatable validation of functionality, performance, and regression scenarios."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you ensure cross-browser compatibility?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We ensure cross-browser compatibility by testing on major browsers (Chrome, Firefox, Safari, Edge) and their versions using tools like BrowserStack and Sauce Labs."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /web-application-testing-services
+    // is the single source of truth, mirroring the WebappFAQs UI content.
+    // Removed stale generic Q&As ("what types of web apps", "how long does
+    // testing take", etc.) that were NOT in the visible UI (violating
+    // Google's FAQPage content-must-match-visible-UI policy).
   ]
-
 };
 
 export const aiTestingServiceSchema = {
@@ -800,35 +759,6 @@ export const manualTestingServiceSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "When should I choose manual testing over automated testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Manual testing is essential for User Experience (UX), Exploratory testing, and finding visual or cultural issues that automation scripts miss. It is also the standard for User Acceptance Testing (UAT)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you perform Accessibility (WCAG) testing manually?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. While we use tools for basic checks, our expert testers manually validate screen reader navigation, keyboard traps, and color contrast to ensure full WCAG 2.1 compliance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between Manual and Exploratory testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Manual testing often follows a script. Exploratory testing is unscripted and relies on the tester's creativity to find 'edge cases'—unexpected scenarios that break the software."
-          }
-        }
-      ]
     }
     // F-44: BreadcrumbList intentionally NOT in @graph — page-side
     // createCanonicalBreadcrumb (PR-3) is the single source of truth for
@@ -836,6 +766,13 @@ export const manualTestingServiceSchema = {
     // 3-item Pattern D breadcrumb (Home → Services → Manual Testing
     // pointing at /services, a 308 redirect), causing /manual-testing-services
     // to render two conflicting BreadcrumbList JSON-LD blocks in production.
+    //
+    // F-44.1: FAQPage also intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on the service page is the single
+    // source of truth, mirroring the UI FAQ component content. Previously
+    // this constant embedded its own FAQPage with stale generic Q&As that
+    // were NOT visible in the page UI (violating Google's FAQPage policy
+    // that requires content to match what users see).
   ]
 };
 
@@ -899,40 +836,17 @@ export const automationTestingServiceSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Automation testing and why is it important?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Automation testing ensures your applications meet top quality standards by running tests automatically. It helps detect issues early, cut costs by up to 50%, and reduces testing time by 80%."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What tools do you use for Automation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We use industry-leading tools including Selenium WebDriver, Playwright, Cypress, TestCafe, and Appium, integrated with CI/CD tools like Jenkins and Azure DevOps."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "When should I implement Automation testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Automation is best implemented for regression testing, repetitive tasks, large-scale data-driven testing, and stable features where manual testing becomes a bottleneck."
-          }
-        }
-      ]
     }
     // F-44: BreadcrumbList intentionally NOT in @graph — page-side
     // createCanonicalBreadcrumb (PR-3) is the single source of truth.
     // Removed stale Pattern D (Home → Services → Automation Testing pointing
     // at /services 308 redirect) that was double-emitting on production.
+    //
+    // F-44.1: FAQPage also intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on the service page is the single
+    // source of truth, mirroring the UI FAQ component content. Removed stale
+    // generic Q&As that were NOT visible in the AutomationTestingFAQs UI
+    // (violating Google's FAQPage policy that content must match visible UI).
   ]
 };
 
@@ -1280,40 +1194,18 @@ export const securityTestingServiceSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the Testriq SecureGuard™ Framework?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SecureGuard™ is our proprietary hybrid testing methodology that combines AI-driven automated scanning (SAST/DAST) with manual ethical hacking to uncover zero-day vulnerabilities with zero false positives."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide a 'Safe-to-Host' Certificate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Upon successful remediation and re-testing of identified vulnerabilities, we issue a formal 'Safe-to-Host' certificate required for third-party audits, payment gateway integration, and regulatory compliance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does your Security TCoE (Center of Excellence) work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our Security TCoE is a dedicated R&D unit staffed by CISSP and CEH certified researchers who monitor global CVE databases 24/7 to update our threat models against emerging cyber attacks."
-          }
-        }
-      ]
     }
     // F-44: BreadcrumbList intentionally NOT in @graph — page-side
     // createCanonicalBreadcrumb (PR-3) is the single source of truth.
     // Removed stale Pattern D (Home → Services → Security Testing pointing
     // at /services 308 redirect) that was double-emitting on production.
+    //
+    // F-44.1: FAQPage also intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on the service page is the single
+    // source of truth, mirroring the UI FAQ component content. Removed stale
+    // SecureGuard™ / Safe-to-Host Q&As that were NOT in the
+    // SecurityTestingFAQs UI (violating Google's FAQPage content-must-match-
+    // visible-UI policy).
   ]
 };
 
