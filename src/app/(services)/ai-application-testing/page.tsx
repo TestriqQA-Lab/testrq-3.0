@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import StructuredData, {
   aiTestingServiceSchema,
   createCanonicalBreadcrumb,
+  createFaqPageSchema,
 } from "@/components/seo/StructuredData";
 import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
@@ -118,6 +119,26 @@ export default function AIApplicationTesting() {
   // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
   // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
   // to 2 canonical items; URL now structurally derived from pathname.
+  // F-44.1 batch 2: plain-text mirror of AIFAQs UI content for FAQPage JSON-LD.
+  const faqsForSchema = [
+    {
+      question: "What is the difference between traditional testing and AI testing?",
+      answer: "Traditional software quality assurance relies on fixed, predictable logic. Conversely, machine learning testing evaluates variable outcomes, requiring statistical validation to ensure reasoning remains safe and accurate.",
+    },
+    {
+      question: "How does the EU AI Act affect AI testing services?",
+      answer: "The EU AI Act (2026) mandates strict tests for high-risk AI. Companies must now prove their AI is safe and record their impact checks to stay compliant. Our services provide the necessary 'Declaration of Conformity' and technical documentation for EU market entry.",
+    },
+    {
+      question: "Why is AI model validation necessary for Gen-AI?",
+      answer: "AI models remain vulnerable to prompt injection and data errors. We use AI model validation and Red-Teaming to find these weak spots. We simulate attacks to stop hackers from stealing your data or breaking your safety rules.",
+    },
+    {
+      question: "What is the NIST AI RMF?",
+      answer: "The NIST AI RMF is a set of US rules for managing AI risks. Companies use it to prove their AI is fair, safe, and easy to explain. It helps build trust with users and clients.",
+    },
+  ];
+
   return (
     <div>
       <StructuredData data={aiTestingServiceSchema} />
@@ -127,6 +148,7 @@ export default function AIApplicationTesting() {
           "AI Application Testing"
         )}
       />
+      <StructuredData data={createFaqPageSchema(faqsForSchema)} />
       <MainLayout>
         <AITestingHeroSection />
         <AIComprehensiveSlider />
