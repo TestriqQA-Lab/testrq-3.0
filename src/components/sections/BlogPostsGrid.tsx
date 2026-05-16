@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaCalendarAlt,
   FaClock,
@@ -13,14 +13,19 @@ import {
   FaTrophy,
 } from "react-icons/fa";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Post } from "@/lib/sanity-data-adapter";
 import { getBlogPosts } from "@/app/blog/actions";
 import { decodeHtmlEntities } from "@/lib/utils";
 
+// F-48.1 — `currentPage` prop removed. Initial render is always page 1;
+// pagination state derives from the URL via `useSearchParams()` so the
+// server component (page.tsx) can stay Static. The component reads
+// `?page=N` on mount + on every history change; whenever it differs from
+// the currently-rendered page, it fires the getBlogPosts Server Action
+// and swaps in the new posts.
 interface BlogPostsGridProps {
   initialPosts: Post[];
-  currentPage: number;
   totalPages: number;
   featuredPosts: Post[];
   trendingPosts: Post[];
@@ -28,39 +33,71 @@ interface BlogPostsGridProps {
 
 const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
   initialPosts,
-  currentPage,
   totalPages,
   featuredPosts,
   trendingPosts
 }) => {
-  // Client-side state for pagination
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const urlPage = Number(searchParams.get("page")) || 1;
+
+  // Client-side state for pagination. `page` reflects what's currently
+  // RENDERED — it converges to `urlPage` via the effect below.
   const [posts, setPosts] = useState<Post[]>(initialPosts);
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState<number>(1);
   const [totalPagesState, setTotalPages] = useState(totalPages);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handlePageChange = async (newPage: number) => {
+  // F-48.1 — On mount + every time the `?page=` query param changes
+  // (browser back/forward, deep link, manual navigation), refetch.
+  // Skipped when the URL says page 1 because the server already
+  // rendered page 1 into initialPosts.
+  useEffect(() => {
+    if (urlPage === page) return;
+    if (urlPage < 1 || urlPage > totalPagesState) return;
+
+    let cancelled = false;
+    setIsLoading(true);
+
+    getBlogPosts(urlPage)
+      .then(({ posts: newPosts, totalPages: newTotalPages }) => {
+        if (cancelled) return;
+        setPosts(newPosts);
+        setPage(urlPage);
+        setTotalPages(newTotalPages);
+      })
+      .catch((err) => {
+        console.error("Failed to change page:", err);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [urlPage]);
+
+  const handlePageChange = (newPage: number) => {
     if (newPage === page || newPage < 1 || newPage > totalPagesState) return;
 
-    setIsLoading(true);
-    try {
-      // 1. Fetch new data
-      const { posts: newPosts, totalPages: newTotalPages } = await getBlogPosts(newPage);
+    // URL-sync the new page. The effect above watches for this and does
+    // the actual data fetch + scroll, so we keep the click handler purely
+    // declarative (just changes the URL, doesn't fetch).
+    const params = new URLSearchParams(searchParams.toString());
+    if (newPage === 1) {
+      params.delete("page");
+    } else {
+      params.set("page", String(newPage));
+    }
+    const queryString = params.toString();
+    router.push(queryString ? `?${queryString}` : "?", { scroll: false });
 
-      // 2. Update state
-      setPosts(newPosts);
-      setPage(newPage);
-      setTotalPages(newTotalPages);
-
-      // 3. Scroll to grid section
-      const gridSection = document.getElementById('all-articles');
-      if (gridSection) {
-        gridSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    } catch (err) {
-      console.error("Failed to change page:", err);
-    } finally {
-      setIsLoading(false);
+    // Scroll to grid section so the new page's posts are immediately in view.
+    const gridSection = document.getElementById("all-articles");
+    if (gridSection) {
+      gridSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 

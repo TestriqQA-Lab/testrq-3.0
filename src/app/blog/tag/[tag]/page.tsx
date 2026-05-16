@@ -56,13 +56,15 @@ const TagSidebar = dynamic(
 
 type Props = {
   params: Promise<{ tag: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+// F-48.1 — Removed `searchParams` param from generateMetadata. Previously
+// the `?page=N` read promoted this route to Dynamic Rendering and silently
+// overrode F-48 Layer 1 Cache-Control headers. Pagination is fully client-
+// driven inside the tag posts grid; the canonical URL always points at
+// the base tag page regardless of which page the visitor is on.
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { tag } = await params;
-  const resolvedSearchParams = await searchParams;
-  const currentPage = Number(resolvedSearchParams.page) || 1;
   // F-66 + F-34: aggressive normalisation that strips WP-import artifacts
   // (parens, ampersands, periods, mixed case). The page-default branch
   // permanentRedirect()s when normalised differs from incoming, so the
@@ -88,10 +90,9 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
   // F-66 + F-34: emit canonical URL using the normalised slug, not the raw
   // request param — guards against case-variant or punctuation-variant
-  // duplicates self-canonicalising to their own URL.
-  const canonicalUrl = currentPage > 1
-    ? `https://www.testriq.com/blog/tag/${normalizedTag}?page=${currentPage}`
-    : `https://www.testriq.com/blog/tag/${normalizedTag}`;
+  // duplicates self-canonicalising to their own URL. F-48.1: no `?page=`
+  // variant — pagination is a UX affordance, not a separate indexable resource.
+  const canonicalUrl = `https://www.testriq.com/blog/tag/${normalizedTag}`;
 
   return {
     title: `${tagName}|Testriq Blog`,
