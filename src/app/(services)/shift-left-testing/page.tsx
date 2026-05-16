@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     createBreadcrumbSchema,
+    createFaqPageSchema,
     shiftLeftServiceSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -60,10 +61,35 @@ export default function ShiftLeftTestingPage() {
         },
     ];
 
+    // F-44.1 batch 3: plain-text mirror of ShiftLeftFAQs UI content for FAQPage JSON-LD.
+    const faqsForSchema = [
+        {
+            question: "What is shift-left testing and why is it important?",
+            answer: "Shift-left testing is the practice of moving testing activities earlier in the software development lifecycle, ideally starting from the requirements and design phases. It is important because it helps catch defects when they are easiest and cheapest to fix, significantly reducing the overall cost of quality, accelerating delivery, and improving reliability.",
+        },
+        {
+            question: "How to implement shift-left testing in an Agile environment?",
+            answer: "Involving QA professionals in requirements gathering, encouraging developers to write unit tests, automating testing within the CI/CD pipeline, and fostering a collaborative culture where quality is a shared responsibility are key steps.",
+        },
+        {
+            question: "What are the benefits of shift-left testing for businesses?",
+            answer: "Benefits include faster time-to-market, significant cost savings by minimizing expensive post-release fixes, reduction in technical debt, and higher customer satisfaction through more reliable software.",
+        },
+        {
+            question: "What is the difference between shift-left and shift-right testing?",
+            answer: "Shift-left focuses on pre-production testing to prevent defects. Shift-right involves testing in production (monitoring, A/B testing) to gather real-world feedback and identify live-environment issues.",
+        },
+        {
+            question: "How does shift-left testing reduce software development costs?",
+            answer: "By resolving defects at their earliest stages, companies avoid the exponential increase in fix costs. Catching an issue during design is often 100x cheaper than fixing it after it has reached production.",
+        },
+    ];
+
     return (
         <div>
             <StructuredData data={shiftLeftServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData data={createFaqPageSchema(faqsForSchema)} />
             <MainLayout>
                 <ShiftLeftHeroSection />
                 <ShiftLeftImperativeSection />

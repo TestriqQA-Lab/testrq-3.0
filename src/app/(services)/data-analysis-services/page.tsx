@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import StructuredData, {
   createCanonicalBreadcrumb,
+  createFaqPageSchema,
   dataAnalysisServiceSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -57,6 +58,30 @@ const DataAnalysisPage = () => {
   // "zebabtyte" keyword typo fixed to "zettabyte". Other keywords
   // lowercased. 8 dynamic() imports converted to direct ES imports.
   // Breadcrumb already migrated in PR-3 — unchanged.
+  // F-44.1 batch 3: plain-text mirror of DataAnalysisFAQs UI content for FAQPage JSON-LD.
+  const faqsForSchema = [
+    {
+      question: "What is the difference between descriptive and prescriptive analytics?",
+      answer: "Descriptive analytics summarizes past data to show 'What happened.' Prescriptive analytics goes even further. It uses predictive models to suggest the best steps to reach a specific goal.",
+    },
+    {
+      question: "Why should I outsource my data analyzing and modeling to Testriq?",
+      answer: "Outsourcing to a dedicated analytics consulting firm like Testriq solves the global talent shortage. You get access to certified data scientists and an ISO 8000-aligned workflow. This provides elite results without the overhead of an in-house team.",
+    },
+    {
+      question: "How does analyzing data improve customer retention?",
+      answer: "By utilizing diagnostic analytics, we identify the 'churn signals' in your customer data. This allows you to implement data-driven strategies that proactively engage at-risk customers before they leave.",
+    },
+    {
+      question: "Do you handle both structured and unstructured data?",
+      answer: "Yes. Our solutions process both structured data like SQL databases and unstructured data such as emails and PDFs. This integration provides a 360-degree view of your entire business environment.",
+    },
+    {
+      question: "What are the best data visualization tools for my business?",
+      answer: "The choice depends on your scale. For startups, we often recommend custom business intelligence dashboards via Power BI or Tableau. For larger enterprises, we may implement Looker or D3.js for deeper, more interactive data insights services.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={dataAnalysisServiceSchema} />
@@ -66,6 +91,7 @@ const DataAnalysisPage = () => {
           "Data Analysis Services"
         )}
       />
+      <StructuredData data={createFaqPageSchema(faqsForSchema)} />
       <DataAnalysisHeroSection />
       <DataAnalysisChallenges />
       <DataAnalysisComprehensiveSlider />

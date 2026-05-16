@@ -3,6 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
   createCanonicalBreadcrumb,
+  createFaqPageSchema,
 } from "@/components/seo/StructuredData";
 
 export const revalidate = 3600;
@@ -218,12 +219,38 @@ export default function CorporateQATrainingPage() {
   // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
   // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
   // to 2 canonical items; URL now structurally derived from pathname.
+
+  // F-44.1 batch 3: plain-text mirror of CorporateQATrainingFAQs UI content for FAQPage JSON-LD.
+  const faqsForSchema = [
+    {
+      question: "What is the best way to set up a QA training program for your organization?",
+      answer: "Setting up a successful program starts with a technical workforce development audit. First, identify specific gaps in your CI/CD pipeline integration. Then, choose a provider that offers customized QA bootcamps instead of generic courses.",
+    },
+    {
+      question: "How do you measure the ROI of corporate software QA training?",
+      answer: "We measure ROI through 'Defect Detection Efficiency' and 'Time-to-Market' metrics. By following ISO 29119 standards, companies often reduce post-release bugs by 30-60%. This results in significantly lower maintenance costs.",
+    },
+    {
+      question: "Do you offer ISTQB certification for teams?",
+      answer: "Yes. Our QA courses prepare teams for ISTQB Foundation and Advanced certifications. This creates a 'common language' of testing across your entire organization.",
+    },
+    {
+      question: "Is online corporate QA training effective for remote teams?",
+      answer: "Absolutely. We use interactive virtual labs and real-time collaboration tools for our remote QA training. This ensures our online sessions are just as rigorous and hands-on as our on-site workshops.",
+    },
+    {
+      question: "What is the difference between Manual vs. Automation testing training?",
+      answer: "Manual testing training focuses on exploratory techniques, UX, and human-centric edge cases. Automation training focuses on building scalable test automation frameworks and integrating them into your CI/CD pipeline for rapid feedback.",
+    },
+  ];
+
   return (
     <div>
       <StructuredData data={corporateQATrainingServiceSchema} />
       <StructuredData
         data={createCanonicalBreadcrumb("/corporate-qa-training", "Corporate QA Training")}
       />
+      <StructuredData data={createFaqPageSchema(faqsForSchema)} />
       <MainLayout>
         <CorporateQATrainingHeroSection />
         <CorporateQATrainingChallenges />
