@@ -435,47 +435,56 @@ const GamingContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="gaming-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="gaming-fullName"
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
+                        aria-invalid={!!fullNameError}
+                        aria-describedby={fullNameError ? "gaming-fullName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Your Name"
                       />
                     </div>
-                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                    {fullNameError && <p id="gaming-fullName-error" role="alert" className="text-red-500 text-xs mt-1">{fullNameError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="gaming-businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Email *
                     </label>
                     <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="gaming-businessEmail"
                         type="email"
                         name="businessEmail"
+                        autoComplete="email"
+                        inputMode="email"
                         value={formData.businessEmail}
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
+                        aria-invalid={!!emailError}
+                        aria-describedby={emailError ? "gaming-businessEmail-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Email Address"
                       />
                     </div>
-                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                    {emailError && <p id="gaming-businessEmail-error" role="alert" className="text-red-500 text-xs mt-1">{emailError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="gaming-businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Phone *
                     </label>
                     <div className="relative">
@@ -486,45 +495,58 @@ const GamingContactSection: React.FC = () => {
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
                         className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Enter phone number"
-                        inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300"
+                        numberInputProps={{
+                          id: "gaming-businessPhone",
+                          autoComplete: "tel",
+                          "aria-invalid": !!phoneError,
+                          "aria-describedby": phoneError ? "gaming-businessPhone-error" : undefined,
+                          className: "w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300",
+                        }}
                       />
                     </div>
-                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                    {phoneError && <p id="gaming-businessPhone-error" role="alert" className="text-red-500 text-xs mt-1">{phoneError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="gaming-companyStudioName" className="block text-sm font-medium text-gray-700 mb-2">
                       Company/Studio Name *
                     </label>
                     <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="gaming-companyStudioName"
                         type="text"
                         name="companyStudioName"
+                        autoComplete="organization"
                         value={formData.companyStudioName}
                         onChange={handleInputChange}
                         onBlur={() => validateCompanyStudioName(formData.companyStudioName)}
                         required
+                        aria-invalid={!!companyStudioNameError}
+                        aria-describedby={companyStudioNameError ? "gaming-companyStudioName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300 ${companyStudioNameError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Company/Studio Name"
                       />
                     </div>
-                    {companyStudioNameError && <p className="text-red-500 text-xs mt-1">{companyStudioNameError}</p>}
+                    {companyStudioNameError && <p id="gaming-companyStudioName-error" role="alert" className="text-red-500 text-xs mt-1">{companyStudioNameError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="gaming-gameType" className="block text-sm font-medium text-gray-700 mb-2">
                       Game Type *
                     </label>
                     <div className="relative">
-                      <FaGamepad className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaGamepad className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="gaming-gameType"
                         name="gameType"
+                        autoComplete="off"
                         value={formData.gameType}
                         onChange={handleInputChange}
                         onBlur={() => validateGameType(formData.gameType)}
                         required
-                        aria-label="Select Game Type"
+                        aria-invalid={!!gameTypeError}
+                        aria-describedby={gameTypeError ? "gaming-gameType-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300 appearance-none ${gameTypeError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select Game Type</option>
@@ -542,22 +564,25 @@ const GamingContactSection: React.FC = () => {
                         <option value="other">Other</option>
                       </select>
                     </div>
-                    {gameTypeError && <p className="text-red-500 text-xs mt-1">{gameTypeError}</p>}
+                    {gameTypeError && <p id="gaming-gameType-error" role="alert" className="text-red-500 text-xs mt-1">{gameTypeError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="gaming-targetPlatforms" className="block text-sm font-medium text-gray-700 mb-2">
                       Target Platforms *
                     </label>
                     <div className="relative">
-                      <FaDesktop className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaDesktop className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="gaming-targetPlatforms"
                         name="targetPlatforms"
+                        autoComplete="off"
                         value={formData.targetPlatforms}
                         onChange={handleInputChange}
                         onBlur={() => validateTargetPlatforms(formData.targetPlatforms)}
                         required
-                        aria-label="Select Target Platforms"
+                        aria-invalid={!!targetPlatformsError}
+                        aria-describedby={targetPlatformsError ? "gaming-targetPlatforms-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300 appearance-none ${targetPlatformsError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select Target Platforms</option>
@@ -574,27 +599,31 @@ const GamingContactSection: React.FC = () => {
                         <option value="multiple">Multiple Platforms</option>
                       </select>
                     </div>
-                    {targetPlatformsError && <p className="text-red-500 text-xs mt-1">{targetPlatformsError}</p>}
+                    {targetPlatformsError && <p id="gaming-targetPlatforms-error" role="alert" className="text-red-500 text-xs mt-1">{targetPlatformsError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="gaming-projectDetails" className="block text-sm font-medium text-gray-700 mb-2">
                       Project Details *
                     </label>
                     <div className="relative">
-                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <textarea
+                        id="gaming-projectDetails"
                         name="projectDetails"
+                        autoComplete="off"
                         value={formData.projectDetails}
                         onChange={handleInputChange}
                         onBlur={() => validateProjectDetails(formData.projectDetails)}
                         required
                         rows={4}
+                        aria-invalid={!!projectDetailsError}
+                        aria-describedby={projectDetailsError ? "gaming-projectDetails-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300 resize-none ${projectDetailsError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Tell us about your game testing project, development stage, timeline, specific testing requirements, and any concerns..."
                       />
                     </div>
-                    {projectDetailsError && <p className="text-red-500 text-xs mt-1">{projectDetailsError}</p>}
+                    {projectDetailsError && <p id="gaming-projectDetails-error" role="alert" className="text-red-500 text-xs mt-1">{projectDetailsError}</p>}
                   </div>
 
                   <button

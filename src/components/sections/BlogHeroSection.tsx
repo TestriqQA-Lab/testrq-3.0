@@ -287,22 +287,27 @@ const BlogHeroSection: React.FC = () => {
             </div>
 
             {/* Search Bar */}
-            <form onSubmit={handleSearch} className="w-full max-w-2xl">
+            <form onSubmit={handleSearch} role="search" className="w-full max-w-2xl">
+              <label htmlFor="blogHero-search" className="sr-only">
+                Search blog articles
+              </label>
               <div className={`relative transition-all duration-300 ${isSearchFocused ? 'scale-[1.01]' : ''}`}>
                 <div className={`absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 rounded-2xl transition-all duration-300 ${isSearchFocused ? 'opacity-30 blur-lg' : 'opacity-0'}`} />
                 <div className="relative flex items-center bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10">
                   <div className="pl-5 pr-3">
-                    <FaSearch className="w-5 h-5 text-slate-400" />
+                    <FaSearch className="w-5 h-5 text-slate-400" aria-hidden="true" />
                   </div>
                   <input
-                    type="text"
+                    id="blogHero-search"
+                    type="search"
+                    name="q"
+                    autoComplete="off"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setIsSearchFocused(true)}
                     onBlur={() => setIsSearchFocused(false)}
                     placeholder="Search articles, tutorials, guides..."
                     className="w-full px-2 py-4 bg-transparent text-slate-100 placeholder-slate-500 focus:outline-none text-base"
-                    aria-label="Search blog"
                   />
                   <button
                     type="submit"
