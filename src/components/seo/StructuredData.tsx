@@ -1748,6 +1748,25 @@ export const createBreadcrumbSchema = (items: Array<{ name: string, url: string 
 });
 
 /**
+ * F-44.1 helper: build a FAQPage JSON-LD entity from a `{question, answer}` array.
+ * Used by service / solution / tool / comparison pages to surface their UI FAQ
+ * content into structured data for rich-result eligibility. Plain-text answers
+ * only — strip JSX / Markdown before passing in.
+ */
+export const createFaqPageSchema = (faqs: Array<{ question: string; answer: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer,
+    },
+  })),
+});
+
+/**
  * Build a canonical 2-item BreadcrumbList (Home → this page) for any Testriq
  * service or solution page. The page URL is derived from `pathname` via
  * `buildCanonicalUrl`, so:
@@ -1907,28 +1926,11 @@ export const functionalServiceSchema = {
           }
         ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are functional testing services?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Functional testing services verify that a software system or application behaves according to its specified functional requirements and meets intended business needs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is functional testing important for software?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It identifies defects early, validates fulfillment of user requirements, and ensures changes do not break existing functionality, reducing costly fixes in production."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /functional-testing-services
+    // is the single source of truth, mirroring the FunctionalFAQs UI content
+    // (5 Q&As vs 2 embedded). Removed embedded duplicate.
   ]
 };
 

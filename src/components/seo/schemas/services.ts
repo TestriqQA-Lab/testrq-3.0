@@ -68,55 +68,14 @@ export const webAppTestingServiceSchema = {
           }
         ]
       }
-    },
-
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What types of web applications do you test?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We test all types of web applications, including e-commerce platforms, SaaS applications, content management systems, social media platforms, educational portals, healthcare apps, and custom web solutions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does web application testing typically take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Web application testing typically takes 1-4 weeks, depending on the application's complexity. Simple applications may require 5-7 days, while complex platforms like SaaS or e-commerce may take 2-4 weeks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What testing tools and technologies do you use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We use industry-leading tools like Selenium, Cypress, and Playwright for functional testing; JMeter and K6 for performance testing; OWASP ZAP and Burp Suite for security testing."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide automated testing for web applications?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we provide automated testing using tools like Selenium, Cypress, and TestCafe to ensure rapid, repeatable validation of functionality, performance, and regression scenarios."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you ensure cross-browser compatibility?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We ensure cross-browser compatibility by testing on major browsers (Chrome, Firefox, Safari, Edge) and their versions using tools like BrowserStack and Sauce Labs."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /web-application-testing-services
+    // is the single source of truth, mirroring the WebappFAQs UI content.
+    // Removed stale generic Q&As ("what types of web apps", "how long does
+    // testing take", etc.) that were NOT in the visible UI (violating
+    // Google's FAQPage content-must-match-visible-UI policy).
   ]
-
 };
 
 export const aiTestingServiceSchema = {
@@ -551,37 +510,11 @@ export const iotDeviceTestingSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the most critical challenge in testing IoT devices in 2026?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The most critical challenge is device diversity and interoperability across 21.1 billion active devices. We use ISO/IEC 29119 to ensure flawless Multi-Vendor Connectivity."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How to test IoT connection in remote locations?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We use network conditioners to simulate satellite/cellular handovers and signal jammers to test device performance in 'dead zones' and high-interference environments."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is security testing for medical IoT devices so important?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Medical IoT breaches directly impact patient safety. Compliance with the Cyber Resilience Act (CRA) and HIPAA is essential for ransomware defense and data privacy."
-          }
-        }
-      ]
-    },
-
+    }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /iot-device-testing-services
+    // is the single source of truth, mirroring the IoTFAQs UI content
+    // (5 Q&As vs 3 abbreviated embedded). Removed embedded duplicate.
   ]
 };
 
@@ -800,35 +733,6 @@ export const manualTestingServiceSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "When should I choose manual testing over automated testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Manual testing is essential for User Experience (UX), Exploratory testing, and finding visual or cultural issues that automation scripts miss. It is also the standard for User Acceptance Testing (UAT)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you perform Accessibility (WCAG) testing manually?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. While we use tools for basic checks, our expert testers manually validate screen reader navigation, keyboard traps, and color contrast to ensure full WCAG 2.1 compliance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between Manual and Exploratory testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Manual testing often follows a script. Exploratory testing is unscripted and relies on the tester's creativity to find 'edge cases'—unexpected scenarios that break the software."
-          }
-        }
-      ]
     }
     // F-44: BreadcrumbList intentionally NOT in @graph — page-side
     // createCanonicalBreadcrumb (PR-3) is the single source of truth for
@@ -836,6 +740,13 @@ export const manualTestingServiceSchema = {
     // 3-item Pattern D breadcrumb (Home → Services → Manual Testing
     // pointing at /services, a 308 redirect), causing /manual-testing-services
     // to render two conflicting BreadcrumbList JSON-LD blocks in production.
+    //
+    // F-44.1: FAQPage also intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on the service page is the single
+    // source of truth, mirroring the UI FAQ component content. Previously
+    // this constant embedded its own FAQPage with stale generic Q&As that
+    // were NOT visible in the page UI (violating Google's FAQPage policy
+    // that requires content to match what users see).
   ]
 };
 
@@ -899,40 +810,17 @@ export const automationTestingServiceSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Automation testing and why is it important?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Automation testing ensures your applications meet top quality standards by running tests automatically. It helps detect issues early, cut costs by up to 50%, and reduces testing time by 80%."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What tools do you use for Automation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We use industry-leading tools including Selenium WebDriver, Playwright, Cypress, TestCafe, and Appium, integrated with CI/CD tools like Jenkins and Azure DevOps."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "When should I implement Automation testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Automation is best implemented for regression testing, repetitive tasks, large-scale data-driven testing, and stable features where manual testing becomes a bottleneck."
-          }
-        }
-      ]
     }
     // F-44: BreadcrumbList intentionally NOT in @graph — page-side
     // createCanonicalBreadcrumb (PR-3) is the single source of truth.
     // Removed stale Pattern D (Home → Services → Automation Testing pointing
     // at /services 308 redirect) that was double-emitting on production.
+    //
+    // F-44.1: FAQPage also intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on the service page is the single
+    // source of truth, mirroring the UI FAQ component content. Removed stale
+    // generic Q&As that were NOT visible in the AutomationTestingFAQs UI
+    // (violating Google's FAQPage policy that content must match visible UI).
   ]
 };
 
@@ -1280,40 +1168,18 @@ export const securityTestingServiceSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the Testriq SecureGuard™ Framework?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SecureGuard™ is our proprietary hybrid testing methodology that combines AI-driven automated scanning (SAST/DAST) with manual ethical hacking to uncover zero-day vulnerabilities with zero false positives."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide a 'Safe-to-Host' Certificate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Upon successful remediation and re-testing of identified vulnerabilities, we issue a formal 'Safe-to-Host' certificate required for third-party audits, payment gateway integration, and regulatory compliance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does your Security TCoE (Center of Excellence) work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our Security TCoE is a dedicated R&D unit staffed by CISSP and CEH certified researchers who monitor global CVE databases 24/7 to update our threat models against emerging cyber attacks."
-          }
-        }
-      ]
     }
     // F-44: BreadcrumbList intentionally NOT in @graph — page-side
     // createCanonicalBreadcrumb (PR-3) is the single source of truth.
     // Removed stale Pattern D (Home → Services → Security Testing pointing
     // at /services 308 redirect) that was double-emitting on production.
+    //
+    // F-44.1: FAQPage also intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on the service page is the single
+    // source of truth, mirroring the UI FAQ component content. Removed stale
+    // SecureGuard™ / Safe-to-Host Q&As that were NOT in the
+    // SecurityTestingFAQs UI (violating Google's FAQPage content-must-match-
+    // visible-UI policy).
   ]
 };
 
@@ -1921,40 +1787,16 @@ export const sapTestingSchema = {
         ]
       },
 
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Why is SAP testing critical for S/4HANA migration?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SAP S/4HANA migration involves complex data transformation and process re-engineering. Comprehensive testing ensures business continuity and data integrity during the transition."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you support SAP test automation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we specialize in SAP automation using Tricentis Tosca, Worksoft Certify, and UFT One to accelerate regression cycles and reduce business risk."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you handle SAP integration testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We validate end-to-end data flow between SAP modules and non-SAP systems via middleware like SAP PO/PI and CPI, ensuring seamless enterprise connectivity."
-          }
-        }
-      ]
     }
     // F-44: BreadcrumbList intentionally NOT in @graph — page-side
     // createCanonicalBreadcrumb (PR-3) is the single source of truth.
     // Removed stale Pattern D (Home → Services → SAP Testing pointing at
     // /services 308 redirect) that was double-emitting on production.
+    //
+    // F-44.1: FAQPage also intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /sap-testing-services is the
+    // single source of truth, mirroring the SapFAQs UI content (5 Q&As vs
+    // 3 stale embedded). Removed embedded duplicate.
   ]
 };
 
@@ -2018,36 +1860,11 @@ export const usabilityTestingServiceSchema = {
           }
         ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are the benefits of professional usability testing services?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Professional usability testing services significantly enhance user satisfaction, reduce development costs by identifying issues early, improve conversion rates, and strengthen brand loyalty. It ensures your product is intuitive, efficient, and enjoyable for its target audience."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a usability audit cost for a mobile app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The cost of a usability audit for a mobile app varies based on scope, complexity, and desired depth of analysis. Testriq offers customized quotes following an initial consultation to understand your specific needs and provide an ROI-focused solution."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is usability testing important for software development?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Usability testing is crucial for software development as it validates design decisions, uncovers critical user pain points, and ensures the final product meets user expectations. It minimizes rework, accelerates market adoption, and ultimately drives business success."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /usability-testing-services is
+    // the single source of truth, mirroring the UsabilityTestingFAQs UI
+    // content (4 Q&As vs 3 embedded). Removed embedded duplicate.
   ]
 };
 
@@ -2248,28 +2065,11 @@ export const uatServiceSchema = {
           }
         ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is User Acceptance Testing (UAT) and why is it important?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "User Acceptance Testing (UAT) is the final phase of software testing where actual end-users and business stakeholders validate that the software meets their business requirements. It's important because it identifies business misalignment and user experience issues that technical testing often misses."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does UAT differ from functional testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Functional testing checks if the software works according to technical specifications. UAT validates if the software actually meets user needs and enables business workflows. Functional is done by QA pros; UAT is done by end-users."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /user-acceptance-testing is the
+    // single source of truth, mirroring the UATFAQs UI content (4 Q&As vs
+    // 2 embedded). Removed embedded duplicate.
   ]
 };
 
@@ -2560,59 +2360,10 @@ export const iso42001ComplianceTestingSchema = {
           "price": "0"
         }
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is ISO/IEC 42001:2023 and who needs it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ISO/IEC 42001:2023 is the first international standard for Artificial Intelligence Management Systems (AIMS). It provides a certifiable framework for organizations that develop, provide, or use AI-based products and services. Any organization seeking to demonstrate responsible AI governance can benefit from this certification."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does ISO/IEC 42001 relate to the EU AI Act and NIST AI RMF?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ISO/IEC 42001:2023 serves as a management system standard that can help organizations demonstrate compliance with multiple regulatory frameworks. The EU AI Act and NIST AI RMF share common objectives with ISO 42001, making it a gold standard bridge for global AI regulatory compliance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between ISO 42001 and ISO 27001?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "While ISO 27001 focuses on Information Security Management Systems (ISMS), ISO 42001 specifically addresses AI Management Systems (AIMS). ISO 42001 extends beyond security to cover AI-specific concerns like bias, fairness, explainability, ethical use, societal impact, and AI lifecycle management."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to achieve ISO/IEC 42001 certification?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The timeline typically ranges from 3-6 months depending on your organization's current AI maturity level. Organizations with existing management systems like ISO 27001 or ISO 9001 may accelerate this timeline."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are the Annex A controls in ISO/IEC 42001:2023?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Annex A contains 38 controls organized across multiple domains including AI policy, AI impact assessment, data management for AI, AI system lifecycle, and third-party/supplier management. These controls provide specific implementation requirements that complement the main clauses (4-10) of the standard."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Testriq help with both compliance testing and certification preparation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Testriq provides end-to-end support from initial gap analysis through testing execution, remediation guidance, and pre-certification audit simulation. Our 98% first-pass certification rate demonstrates the effectiveness of our approach."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /iso-iec-42001-compliance-testing-services
+    // is the single source of truth, mirroring the ISO42001FAQs UI content
+    // (8 Q&As vs 6 embedded). Removed embedded duplicate.
   ]
 };

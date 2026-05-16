@@ -11,6 +11,7 @@ import SapAnyQuestions from "@/components/sections/SapAnyQuestions";
 import { Metadata } from "next";
 import StructuredData, {
     createCanonicalBreadcrumb,
+    createFaqPageSchema,
     sapTestingSchema,
 } from "@/components/seo/StructuredData";
 
@@ -87,6 +88,31 @@ export default function SapTestingPage() {
     // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
     // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
     // to 2 canonical items; URL now structurally derived from pathname.
+
+    // F-44.1 batch 4: plain-text mirror of SapFAQs UI content for FAQPage JSON-LD.
+    const faqsForSchema = [
+        {
+            question: "What are the main challenges of performance testing in SAP environments?",
+            answer: "SAP performance testing presents several unique challenges. Key obstacles include simulating realistic Fiori tile launches and managing overlapping batch jobs. Aligned with ISO 29119, we recommend mirroring production environments to avoid 'blind spots'.",
+        },
+        {
+            question: "How do I find SAP testing services for S/4HANA migration projects?",
+            answer: "Searching for SAP S/4HANA migration services? Prioritize vendors who combine migration testing with ISO 29119 compliance. You should also ensure they use automated data validation tools for a smooth transition from legacy ECC.",
+        },
+        {
+            question: "Can you automate SAP Fiori applications?",
+            answer: "Yes. Effective SAP Fiori automation requires the right tools and strategy. You can use model-based tools like Tosca or script-based frameworks like Selenium. Both methods need specialized logic to handle Fiori's dynamic UI elements.",
+        },
+        {
+            question: "What are the best SAP testing tools for ECC to S/4HANA migration?",
+            answer: "Top SAP testing tools for S/4HANA migrations serve specific roles. Tricentis Tosca leads in automation, while SAP Solution Manager (SolMan) handles lifecycle management. For performance validation, LoadRunner remains the industry standard.",
+        },
+        {
+            question: "Is SAP test automation cost-effective for B2B?",
+            answer: "Cost-effective SAP test automation helps B2B organizations reduce manual effort by up to 80% and accelerates release cycles by 40%. This significantly lowers the Total Cost of Ownership (TCO) for your SAP landscape.",
+        },
+    ];
+
     return (
         <main className="min-h-screen bg-white">
             <StructuredData data={sapTestingSchema} />
@@ -96,6 +122,7 @@ export default function SapTestingPage() {
                     "SAP Testing"
                 )}
             />
+            <StructuredData data={createFaqPageSchema(faqsForSchema)} />
             <SapTestingHeroSection />
             <SapTestingChallenges />
             <SapComprehensiveSlider />

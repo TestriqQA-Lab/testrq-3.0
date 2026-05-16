@@ -9,7 +9,7 @@ import QADocumentationCaseStudies from '@/components/sections/QADocumentationCas
 import QADocumentationFAQs from '@/components/sections/QADocumentationFAQs';
 import QADocumentationReadyToEnsureQuality from '@/components/sections/QADocumentationReadyToEnsureQuality';
 import { Metadata } from 'next';
-import StructuredData, { createCanonicalBreadcrumb, qaDocumentationServiceSchema } from '@/components/seo/StructuredData';
+import StructuredData, { createCanonicalBreadcrumb, createFaqPageSchema, qaDocumentationServiceSchema } from '@/components/seo/StructuredData';
 
 export const revalidate = 3600;
 
@@ -74,6 +74,26 @@ const QADocumentationServicesPage = () => {
   // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
   // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
   // to 2 canonical items; URL now structurally derived from pathname.
+  // F-44.1 batch 4: plain-text mirror of QADocumentationFAQs UI content for FAQPage JSON-LD.
+  const faqsForSchema = [
+    {
+      question: "What are the essential components of QA documentation?",
+      answer: "The core parts are the Master Test Plan and Test Case Specifications. We also include the RTM, Defect Reports, and a final Test Summary Report. All these should ideally follow the ISO/IEC/IEEE 29119-3 standard for global consistency.",
+    },
+    {
+      question: "Why is documentation important in QA?",
+      answer: "Documentation ensures traceability, facilitates knowledge transfer, satisfies regulatory audits (like FDA or ISO), and provides a baseline for automated testing. Without it, software quality becomes 'tribal knowledge,' which is a major risk for scaling companies.",
+    },
+    {
+      question: "Can you provide QA documentation for regulatory compliance audits?",
+      answer: "Yes. We specialize in creating 'Audit-Ready' artifacts. We provide validation protocols and traceability matrices. These assets meet the strict requirements of FDA 21 CFR Part 11 and HIPAA.",
+    },
+    {
+      question: "Do you offer templates for comprehensive QA documentation?",
+      answer: "Yes, we provide a full suite of QA documentation templates. You can customize these to fit your specific tech stack and industry needs.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={qaDocumentationServiceSchema} />
@@ -83,6 +103,7 @@ const QADocumentationServicesPage = () => {
           "QA Documentation Services"
         )}
       />
+      <StructuredData data={createFaqPageSchema(faqsForSchema)} />
       <QADocumentationHeroSection />
       <QADocumentationChallenges />
       <QADocumentationComprehensiveSlider />

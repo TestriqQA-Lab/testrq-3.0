@@ -3,6 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     functionalServiceSchema,
     createCanonicalBreadcrumb,
+    createFaqPageSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -49,6 +50,30 @@ export default function FunctionalTestingPage() {
     // with action-verb start; surfaces "ISO 29119-aligned" for
     // enterprise SEO. Keywords lowercased. 6 dynamic() imports converted
     // to direct ES imports. Breadcrumb already migrated in PR-3 — unchanged.
+    // F-44.1 batch 2: plain-text mirror of FunctionalFAQs UI content for FAQPage JSON-LD.
+    const faqsForSchema = [
+        {
+            question: "What are functional testing services?",
+            answer: "Functional testing services verify that a software system or application behaves according to its specified functional requirements and meets intended business needs. These services validate the system's features, capabilities, user interactions, and data manipulation to ensure it performs as expected in real-world scenarios.",
+        },
+        {
+            question: "Why is functional testing important for software?",
+            answer: "Functional testing is crucial for software because it identifies defects early in the development cycle, validates that the application fulfills user requirements, and ensures changes do not break existing functionality. It improves system reliability, enhances user experience, and helps ensure regulatory compliance.",
+        },
+        {
+            question: "What is the difference between functional and non-functional testing?",
+            answer: "Functional testing validates what the system does (behavior e.g., login, search). Non-functional testing measures how the system performs (e.g., speed, security, scalability). While functional testing checks actions against requirements, non-functional testing focuses on site attributes like performance and load capacity.",
+        },
+        {
+            question: "How to choose a functional testing service provider?",
+            answer: "Consider their expertise in your industry, approach to test automation (Selenium, Appium, etc.), cross-platform compatibility, and ability to integrate with your existing development workflows. Look for providers offering flexible scripting, custom reporting, and strong CI/CD integration capabilities.",
+        },
+        {
+            question: "What are the key types of functional testing?",
+            answer: "Key types include Unit Testing, Integration Testing, System Testing, User Acceptance Testing (UAT), Regression Testing, Smoke Testing, Sanity Testing, Black Box Testing, and White Box Testing. Each serves a unique purpose in the QA lifecycle to ensure comprehensive validation.",
+        },
+    ];
+
     return (
         <div>
             <StructuredData data={functionalServiceSchema} />
@@ -58,6 +83,7 @@ export default function FunctionalTestingPage() {
                     "Functional Testing"
                 )}
             />
+            <StructuredData data={createFaqPageSchema(faqsForSchema)} />
             <MainLayout>
                 <FunctionalHeroSection />
                 <FunctionalCriticalitySection />
