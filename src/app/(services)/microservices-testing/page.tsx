@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     createBreadcrumbSchema,
+    createFaqPageSchema,
     microservicesServiceSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -66,10 +67,35 @@ export default function MicroservicesTestingPage() {
         },
     ];
 
+    // F-44.1 batch 2: plain-text mirror of MicroservicesFAQs UI content for FAQPage JSON-LD.
+    const faqsForSchema = [
+        {
+            question: "What is microservices testing and why is it complex?",
+            answer: "Microservices testing is the comprehensive validation of independently deployable services in a distributed system architecture. It is complex because a single transaction might cross 10+ services, multiple databases, and various network protocols, making simple unit tests insufficient for system-wide reliability.",
+        },
+        {
+            question: "How does contract testing work in a microservices architecture?",
+            answer: "Contract testing ensures that service consumers and providers agree on the structure of their APIs. Consumer side: defines expectations (contracts) for the provider. Provider side: validates its implementation against those contracts. Prevention: if a provider changes a field, the contract test fails in CI/CD before breaking the consumer.",
+        },
+        {
+            question: "Is it possible to test microservices without a dedicated stage environment?",
+            answer: "Yes, through Service Virtualization (mocking dependencies with WireMock) and Contract Testing. These techniques allow developers to validate services in isolation or thin environments, drastically reducing the need for heavy, shared staging clusters.",
+        },
+        {
+            question: "What are the benefits of chaos engineering for distributed systems?",
+            answer: "Resilience Validation: ensures the system survives pod failures and network spikes. Incident Preparedness: trains teams to respond to failures before they happen in production. Confidence: provides proof that 'Circuit Breakers' and 'Retries' actually work under load.",
+        },
+        {
+            question: "How do you handle data consistency testing across services?",
+            answer: "We implement Saga pattern validation and eventual consistency audits. We use specialized test data management to ensure that distributed transactions settle correctly across multiple database-per-service instances.",
+        },
+    ];
+
     return (
         <div>
             <StructuredData data={microservicesServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData data={createFaqPageSchema(faqsForSchema)} />
             <MainLayout>
                 <MicroservicesHeroSection />
                 <MicroservicesWhatIsSection />

@@ -1926,28 +1926,11 @@ export const functionalServiceSchema = {
           }
         ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are functional testing services?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Functional testing services verify that a software system or application behaves according to its specified functional requirements and meets intended business needs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is functional testing important for software?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It identifies defects early, validates fulfillment of user requirements, and ensures changes do not break existing functionality, reducing costly fixes in production."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /functional-testing-services
+    // is the single source of truth, mirroring the FunctionalFAQs UI content
+    // (5 Q&As vs 2 embedded). Removed embedded duplicate.
   ]
 };
 
