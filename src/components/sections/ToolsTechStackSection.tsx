@@ -1,4 +1,9 @@
-"use client";
+// F-21.1 — Converted to Server Component. F-21 heuristic + manual audit
+// confirmed zero interactive APIs (no useState/useEffect/useRef/event
+// handlers/framer-motion/swiper/react-hook-form/react-select/etc.). Renders
+// pure JSX from a static `techStack` data structure. Removing the
+// `'use client'` directive moves ~14KB of icons (FaIcons + SiIcons) +
+// component code off the client bundle for every route that imports this.
 
 import Link from "next/link";
 import Image from "next/image";
