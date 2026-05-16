@@ -35,5 +35,14 @@ export default defineType({
             title: 'Icon',
             type: 'string',
         }),
+        // F-60: shared SEO field group — gives editors per-category meta
+        // controls (title / description / keywords / canonical / noindex)
+        // for the /blog/category/[slug] route. Falls back to category name +
+        // auto-description when fields are blank.
+        defineField({
+            name: 'seo',
+            title: 'SEO',
+            type: 'seoFields',
+        }),
     ],
 })
