@@ -59,13 +59,15 @@ const CategorySidebar = dynamic(
 
 type Props = {
   params: Promise<{ category: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+// F-48.1 — Removed `searchParams` param from generateMetadata. Previously
+// the `?page=N` read promoted this route to Dynamic Rendering and silently
+// overrode F-48 Layer 1 Cache-Control headers. Pagination is fully client-
+// driven inside CategoryPostsGrid; the canonical URL always points at the
+// base category page regardless of which page the visitor is on.
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
-  const resolvedSearchParams = await searchParams;
-  const currentPage = Number(resolvedSearchParams.page) || 1;
   // F-66 + F-34: aggressive normalisation that strips WP-import artifacts
   // (Title-Case spaces, ampersands, etc.). The page-default branch
   // permanentRedirect()s when normalised differs from incoming, so the
@@ -89,10 +91,9 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const categoryDescription = categoryData.category.description || `Explore expert articles and insights about ${categoryName} testing. Learn best practices, tutorials, and industry insights from Testriq's ISTQB certified experts.`;
 
   // F-66 + F-34: emit canonical URL using the normalised slug, not the raw
-  // request param.
-  const canonicalUrl = currentPage > 1
-    ? `https://www.testriq.com/blog/category/${normalizedCategory}?page=${currentPage}`
-    : `https://www.testriq.com/blog/category/${normalizedCategory}`;
+  // request param. F-48.1: no `?page=` variant — pagination is a UX
+  // affordance, not a separate indexable resource.
+  const canonicalUrl = `https://www.testriq.com/blog/category/${normalizedCategory}`;
 
   return {
     title: `${categoryName} | Insights & Best Practices`,
