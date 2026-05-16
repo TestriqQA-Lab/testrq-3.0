@@ -418,47 +418,56 @@ const IoTApplianceContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="iot-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="iot-fullName"
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
+                        aria-invalid={!!fullNameError}
+                        aria-describedby={fullNameError ? "iot-fullName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Your Name"
                       />
                     </div>
-                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                    {fullNameError && <p id="iot-fullName-error" role="alert" className="text-red-500 text-xs mt-1">{fullNameError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="iot-businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Email *
                     </label>
                     <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="iot-businessEmail"
                         type="email"
                         name="businessEmail"
+                        autoComplete="email"
+                        inputMode="email"
                         value={formData.businessEmail}
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
+                        aria-invalid={!!emailError}
+                        aria-describedby={emailError ? "iot-businessEmail-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Email Address"
                       />
                     </div>
-                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                    {emailError && <p id="iot-businessEmail-error" role="alert" className="text-red-500 text-xs mt-1">{emailError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="iot-businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Phone *
                     </label>
                     <div className="relative">
@@ -466,50 +475,62 @@ const IoTApplianceContactSection: React.FC = () => {
                         international
                         countryCallingCodeEditable={false}
                         defaultCountry="IN"
-                        title="Phone Number"
                         value={formData.businessPhone}
                         onChange={handlePhoneChange}
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
                         className={`w-full border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Phone Number"
+                        numberInputProps={{
+                          id: "iot-businessPhone",
+                          autoComplete: "tel",
+                          "aria-invalid": !!phoneError,
+                          "aria-describedby": phoneError ? "iot-businessPhone-error" : undefined,
+                        }}
                       />
                     </div>
-                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                    {phoneError && <p id="iot-businessPhone-error" role="alert" className="text-red-500 text-xs mt-1">{phoneError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="iot-companyName" className="block text-sm font-medium text-gray-700 mb-2">
                       Company Name *
                     </label>
                     <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="iot-companyName"
                         type="text"
                         name="companyName"
+                        autoComplete="organization"
                         value={formData.companyName}
                         onChange={handleInputChange}
                         onBlur={() => validateCompanyName(formData.companyName)}
                         required
+                        aria-invalid={!!companyNameError}
+                        aria-describedby={companyNameError ? "iot-companyName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyNameError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Company Name"
                       />
                     </div>
-                    {companyNameError && <p className="text-red-500 text-xs mt-1">{companyNameError}</p>}
+                    {companyNameError && <p id="iot-companyName-error" role="alert" className="text-red-500 text-xs mt-1">{companyNameError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="iot-iotSolutionType" className="block text-sm font-medium text-gray-700 mb-2">
                       IoT Solution Type *
                     </label>
                     <div className="relative">
-                      <FaCog className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaCog className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="iot-iotSolutionType"
                         name="iotSolutionType"
+                        autoComplete="off"
                         value={formData.iotSolutionType}
                         onChange={handleInputChange}
                         onBlur={() => validateIotSolutionType(formData.iotSolutionType)}
                         required
-                        aria-label="IoT Solution Type"
+                        aria-invalid={!!iotSolutionTypeError}
+                        aria-describedby={iotSolutionTypeError ? "iot-iotSolutionType-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${iotSolutionTypeError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select IoT Solution Type</option>
@@ -524,47 +545,58 @@ const IoTApplianceContactSection: React.FC = () => {
                         <option value="other">Other</option>
                       </select>
                     </div>
-                    {iotSolutionTypeError && <p className="text-red-500 text-xs mt-1">{iotSolutionTypeError}</p>}
+                    {iotSolutionTypeError && <p id="iot-iotSolutionType-error" role="alert" className="text-red-500 text-xs mt-1">{iotSolutionTypeError}</p>}
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <fieldset
+                    aria-invalid={!!testingRequirementsError}
+                    aria-describedby={testingRequirementsError ? "iot-testingRequirements-error" : undefined}
+                  >
+                    <legend className="block text-sm font-medium text-gray-700 mb-2">
                       Testing Requirements *
-                    </label>
+                    </legend>
                     <div className="space-y-2">
-                      {testingRequirementOptions.map((option, index) => (
-                        <label key={index} className="flex items-center">
-                          <input
-                            type="checkbox"
-                            checked={formData.testingRequirements.includes(option)}
-                            onChange={() => handleCheckboxChange(option)}
-                            className="rounded border-gray-300 text-[theme(color.brand.blue)] focus:ring-[theme(color.brand.blue)]"
-                          />
-                          <span className="ml-2 text-gray-700">{option}</span>
-                        </label>
-                      ))}
+                      {testingRequirementOptions.map((option, index) => {
+                        const checkboxId = `iot-testingRequirements-${index}`;
+                        return (
+                          <div key={index} className="flex items-center">
+                            <input
+                              id={checkboxId}
+                              type="checkbox"
+                              checked={formData.testingRequirements.includes(option)}
+                              onChange={() => handleCheckboxChange(option)}
+                              className="rounded border-gray-300 text-[theme(color.brand.blue)] focus:ring-[theme(color.brand.blue)]"
+                            />
+                            <label htmlFor={checkboxId} className="ml-2 text-gray-700">{option}</label>
+                          </div>
+                        );
+                      })}
                     </div>
-                    {testingRequirementsError && <p className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
-                  </div>
+                    {testingRequirementsError && <p id="iot-testingRequirements-error" role="alert" className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
+                  </fieldset>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="iot-projectDetails" className="block text-sm font-medium text-gray-700 mb-2">
                       Project Details *
                     </label>
                     <div className="relative">
-                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <textarea
+                        id="iot-projectDetails"
                         name="projectDetails"
+                        autoComplete="off"
                         value={formData.projectDetails}
                         onChange={handleInputChange}
                         onBlur={() => validateProjectDetails(formData.projectDetails)}
                         required
                         rows={4}
+                        aria-invalid={!!projectDetailsError}
+                        aria-describedby={projectDetailsError ? "iot-projectDetails-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${projectDetailsError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Tell us about your IoT solution, number of devices, protocols used, timeline, and any specific testing challenges you're facing..."
                       />
                     </div>
-                    {projectDetailsError && <p className="text-red-500 text-xs mt-1">{projectDetailsError}</p>}
+                    {projectDetailsError && <p id="iot-projectDetails-error" role="alert" className="text-red-500 text-xs mt-1">{projectDetailsError}</p>}
                   </div>
 
                   <button

@@ -142,7 +142,13 @@ const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ }) => {
               onSubmit={(e) => handleSubmitReply(e, comment.id)}
               className="mt-4"
             >
+              <label htmlFor={`comments-reply-${comment.id}`} className="sr-only">
+                Reply to {comment.author}
+              </label>
               <textarea
+                id={`comments-reply-${comment.id}`}
+                name="reply"
+                autoComplete="off"
                 value={replyContent}
                 onChange={(e) => setReplyContent(e.target.value)}
                 placeholder="Write a reply..."
@@ -199,7 +205,13 @@ const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ }) => {
             <FaUser className="w-5 h-5 text-gray-600" />
           </div>
           <form onSubmit={handleSubmitComment} className="flex-1">
+            <label htmlFor="comments-newComment" className="sr-only">
+              Your comment
+            </label>
             <textarea
+              id="comments-newComment"
+              name="comment"
+              autoComplete="off"
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               placeholder="Share your thoughts about this article..."

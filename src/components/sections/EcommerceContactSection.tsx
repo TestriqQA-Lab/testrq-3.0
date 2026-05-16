@@ -382,55 +382,64 @@ const EcommerceContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="ecommerce-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="ecommerce-fullName"
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
+                        aria-invalid={!!fullNameError}
+                        aria-describedby={fullNameError ? "ecommerce-fullName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? "border-red-500" : "border-gray-200"
                           }`}
                         placeholder="Your Name"
                       />
                     </div>
                     {fullNameError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="ecommerce-fullName-error" role="alert" className="text-red-500 text-xs mt-1">
                         {fullNameError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="ecommerce-businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Email *
                     </label>
                     <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="ecommerce-businessEmail"
                         type="email"
                         name="businessEmail"
+                        autoComplete="email"
+                        inputMode="email"
                         value={formData.businessEmail}
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
+                        aria-invalid={!!emailError}
+                        aria-describedby={emailError ? "ecommerce-businessEmail-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? "border-red-500" : "border-gray-200"
                           }`}
                         placeholder="Email Address"
                       />
                     </div>
                     {emailError && (
-                      <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                      <p id="ecommerce-businessEmail-error" role="alert" className="text-red-500 text-xs mt-1">{emailError}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="ecommerce-businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Phone *
                     </label>
                     <div className="relative">
@@ -444,28 +453,38 @@ const EcommerceContactSection: React.FC = () => {
                         className={`w-full phone-input-container ${phoneError ? "border-red-500" : "border-gray-200"
                           }`}
                         placeholder="Enter phone number"
-                        inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
+                        numberInputProps={{
+                          id: "ecommerce-businessPhone",
+                          autoComplete: "tel",
+                          "aria-invalid": !!phoneError,
+                          "aria-describedby": phoneError ? "ecommerce-businessPhone-error" : undefined,
+                          className: "w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300",
+                        }}
                       />
                     </div>
                     {phoneError && (
-                      <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                      <p id="ecommerce-businessPhone-error" role="alert" className="text-red-500 text-xs mt-1">{phoneError}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="ecommerce-companyName" className="block text-sm font-medium text-gray-700 mb-2">
                       Company Name *
                     </label>
                     <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="ecommerce-companyName"
                         type="text"
                         placeholder="Company Name"
                         name="companyName"
+                        autoComplete="organization"
                         value={formData.companyName}
                         onChange={handleInputChange}
                         onBlur={() => validateCompanyName(formData.companyName)}
                         required
+                        aria-invalid={!!companyNameError}
+                        aria-describedby={companyNameError ? "ecommerce-companyName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyNameError
                           ? "border-red-500"
                           : "border-gray-200"
@@ -473,27 +492,30 @@ const EcommerceContactSection: React.FC = () => {
                       />
                     </div>
                     {companyNameError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="ecommerce-companyName-error" role="alert" className="text-red-500 text-xs mt-1">
                         {companyNameError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="ecommerce-platform" className="block text-sm font-medium text-gray-700 mb-2">
                       Select Your Platform *
                     </label>
                     <div className="relative">
-                      <FaShoppingCart className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaShoppingCart className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="ecommerce-platform"
                         name="platform"
+                        autoComplete="off"
                         value={formData.platform}
                         onChange={handleInputChange}
                         onBlur={() => validatePlatform(formData.platform)}
                         required
+                        aria-invalid={!!platformError}
+                        aria-describedby={platformError ? "ecommerce-platform-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${platformError ? "border-red-500" : "border-gray-200"
                           }`}
-                        aria-label="Select Your E-Commerce Platform"
                       >
                         <option value="">Select Your Platform</option>
                         <option value="shopify">Shopify</option>
@@ -505,32 +527,36 @@ const EcommerceContactSection: React.FC = () => {
                       </select>
                     </div>
                     {platformError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="ecommerce-platform-error" role="alert" className="text-red-500 text-xs mt-1">
                         {platformError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="ecommerce-message" className="block text-sm font-medium text-gray-700 mb-2">
                       Tell us about your testing needs... *
                     </label>
                     <div className="relative">
-                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <textarea
+                        id="ecommerce-message"
                         name="message"
+                        autoComplete="off"
                         value={formData.message}
                         onChange={handleInputChange}
                         onBlur={() => validateMessage(formData.message)}
                         placeholder="Tell us about your testing needs..."
                         rows={4}
                         required
+                        aria-invalid={!!messageError}
+                        aria-describedby={messageError ? "ecommerce-message-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? "border-red-500" : "border-gray-200"
                           }`}
                       ></textarea>
                     </div>
                     {messageError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="ecommerce-message-error" role="alert" className="text-red-500 text-xs mt-1">
                         {messageError}
                       </p>
                     )}
