@@ -20,5 +20,12 @@ export default defineType({
             },
             validation: (Rule) => Rule.required(),
         }),
+        // F-60: shared SEO field group — gives editors per-tag meta controls
+        // for the /blog/tag/[slug] route. Same pattern as category.
+        defineField({
+            name: 'seo',
+            title: 'SEO',
+            type: 'seoFields',
+        }),
     ],
 })
