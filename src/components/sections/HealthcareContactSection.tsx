@@ -451,47 +451,56 @@ const HealthcareContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="healthcare-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="healthcare-fullName"
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
+                        aria-invalid={!!fullNameError}
+                        aria-describedby={fullNameError ? "healthcare-fullName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Your Name"
                       />
                     </div>
-                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                    {fullNameError && <p id="healthcare-fullName-error" role="alert" className="text-red-500 text-xs mt-1">{fullNameError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="healthcare-businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Email *
                     </label>
                     <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="healthcare-businessEmail"
                         type="email"
                         name="businessEmail"
+                        autoComplete="email"
+                        inputMode="email"
                         value={formData.businessEmail}
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
+                        aria-invalid={!!emailError}
+                        aria-describedby={emailError ? "healthcare-businessEmail-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Email Address"
                       />
                     </div>
-                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                    {emailError && <p id="healthcare-businessEmail-error" role="alert" className="text-red-500 text-xs mt-1">{emailError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="healthcare-businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Phone *
                     </label>
                     <div className="relative">
@@ -502,45 +511,58 @@ const HealthcareContactSection: React.FC = () => {
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
                         className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Enter phone number"
-                        inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300"
+                        numberInputProps={{
+                          id: "healthcare-businessPhone",
+                          autoComplete: "tel",
+                          "aria-invalid": !!phoneError,
+                          "aria-describedby": phoneError ? "healthcare-businessPhone-error" : undefined,
+                          className: "w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300",
+                        }}
                       />
                     </div>
-                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                    {phoneError && <p id="healthcare-businessPhone-error" role="alert" className="text-red-500 text-xs mt-1">{phoneError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="healthcare-healthcareOrganization" className="block text-sm font-medium text-gray-700 mb-2">
                       Healthcare Organization *
                     </label>
                     <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="healthcare-healthcareOrganization"
                         type="text"
                         name="healthcareOrganization"
+                        autoComplete="organization"
                         value={formData.healthcareOrganization}
                         onChange={handleInputChange}
                         onBlur={() => validateHealthcareOrganization(formData.healthcareOrganization)}
                         required
+                        aria-invalid={!!healthcareOrganizationError}
+                        aria-describedby={healthcareOrganizationError ? "healthcare-healthcareOrganization-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 ${healthcareOrganizationError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Healthcare Organization Name"
                       />
                     </div>
-                    {healthcareOrganizationError && <p className="text-red-500 text-xs mt-1">{healthcareOrganizationError}</p>}
+                    {healthcareOrganizationError && <p id="healthcare-healthcareOrganization-error" role="alert" className="text-red-500 text-xs mt-1">{healthcareOrganizationError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="healthcare-healthcareSoftwareType" className="block text-sm font-medium text-gray-700 mb-2">
                       Healthcare Software Type *
                     </label>
                     <div className="relative">
-                      <FaHeartbeat className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaHeartbeat className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="healthcare-healthcareSoftwareType"
                         name="healthcareSoftwareType"
+                        autoComplete="off"
                         value={formData.healthcareSoftwareType}
                         onChange={handleInputChange}
                         onBlur={() => validateHealthcareSoftwareType(formData.healthcareSoftwareType)}
                         required
-                        aria-label="Select Healthcare Software Type"
+                        aria-invalid={!!healthcareSoftwareTypeError}
+                        aria-describedby={healthcareSoftwareTypeError ? "healthcare-healthcareSoftwareType-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 appearance-none ${healthcareSoftwareTypeError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select Healthcare Software Type</option>
@@ -555,22 +577,25 @@ const HealthcareContactSection: React.FC = () => {
                         <option value="other">Other</option>
                       </select>
                     </div>
-                    {healthcareSoftwareTypeError && <p className="text-red-500 text-xs mt-1">{healthcareSoftwareTypeError}</p>}
+                    {healthcareSoftwareTypeError && <p id="healthcare-healthcareSoftwareType-error" role="alert" className="text-red-500 text-xs mt-1">{healthcareSoftwareTypeError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="healthcare-testingRequirements" className="block text-sm font-medium text-gray-700 mb-2">
                       Testing Requirements *
                     </label>
                     <div className="relative">
-                      <FaShieldAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaShieldAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="healthcare-testingRequirements"
                         name="testingRequirements"
+                        autoComplete="off"
                         value={formData.testingRequirements}
                         onChange={handleInputChange}
                         onBlur={() => validateTestingRequirements(formData.testingRequirements)}
                         required
-                        aria-label="Select Testing Requirements"
+                        aria-invalid={!!testingRequirementsError}
+                        aria-describedby={testingRequirementsError ? "healthcare-testingRequirements-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 appearance-none ${testingRequirementsError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select Testing Requirements</option>
@@ -584,27 +609,31 @@ const HealthcareContactSection: React.FC = () => {
                         <option value="comprehensive">Comprehensive Testing</option>
                       </select>
                     </div>
-                    {testingRequirementsError && <p className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
+                    {testingRequirementsError && <p id="healthcare-testingRequirements-error" role="alert" className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="healthcare-projectDetails" className="block text-sm font-medium text-gray-700 mb-2">
                       Project Details *
                     </label>
                     <div className="relative">
-                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <textarea
+                        id="healthcare-projectDetails"
                         name="projectDetails"
+                        autoComplete="off"
                         value={formData.projectDetails}
                         onChange={handleInputChange}
                         onBlur={() => validateProjectDetails(formData.projectDetails)}
                         required
                         rows={4}
+                        aria-invalid={!!projectDetailsError}
+                        aria-describedby={projectDetailsError ? "healthcare-projectDetails-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 resize-none ${projectDetailsError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Tell us about your healthcare testing project, compliance requirements, timeline, and any specific concerns..."
                       />
                     </div>
-                    {projectDetailsError && <p className="text-red-500 text-xs mt-1">{projectDetailsError}</p>}
+                    {projectDetailsError && <p id="healthcare-projectDetails-error" role="alert" className="text-red-500 text-xs mt-1">{projectDetailsError}</p>}
                   </div>
 
                   <button

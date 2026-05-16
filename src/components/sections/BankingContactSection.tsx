@@ -399,47 +399,56 @@ const BankingContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="banking-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="banking-fullName"
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
+                        aria-invalid={!!fullNameError}
+                        aria-describedby={fullNameError ? "banking-fullName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Your Name"
                       />
                     </div>
-                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                    {fullNameError && <p id="banking-fullName-error" role="alert" className="text-red-500 text-xs mt-1">{fullNameError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="banking-businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Email *
                     </label>
                     <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="banking-businessEmail"
                         type="email"
                         name="businessEmail"
+                        autoComplete="email"
+                        inputMode="email"
                         value={formData.businessEmail}
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
+                        aria-invalid={!!emailError}
+                        aria-describedby={emailError ? "banking-businessEmail-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Email Address"
                       />
                     </div>
-                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                    {emailError && <p id="banking-businessEmail-error" role="alert" className="text-red-500 text-xs mt-1">{emailError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="banking-businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Phone *
                     </label>
                     <div className="relative">
@@ -447,50 +456,62 @@ const BankingContactSection: React.FC = () => {
                         international
                         countryCallingCodeEditable={false}
                         defaultCountry="IN"
-                        title="Phone Number"
                         value={formData.businessPhone}
                         onChange={handlePhoneChange}
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
                         className={`w-full border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Phone Number"
+                        numberInputProps={{
+                          id: "banking-businessPhone",
+                          autoComplete: "tel",
+                          "aria-invalid": !!phoneError,
+                          "aria-describedby": phoneError ? "banking-businessPhone-error" : undefined,
+                        }}
                       />
                     </div>
-                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                    {phoneError && <p id="banking-businessPhone-error" role="alert" className="text-red-500 text-xs mt-1">{phoneError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="banking-companyInstitution" className="block text-sm font-medium text-gray-700 mb-2">
                       Company/Institution *
                     </label>
                     <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="banking-companyInstitution"
                         type="text"
                         name="companyInstitution"
+                        autoComplete="organization"
                         value={formData.companyInstitution}
                         onChange={handleInputChange}
                         onBlur={() => validateCompanyInstitution(formData.companyInstitution)}
                         required
+                        aria-invalid={!!companyInstitutionError}
+                        aria-describedby={companyInstitutionError ? "banking-companyInstitution-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyInstitutionError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Your Financial Institution"
                       />
                     </div>
-                    {companyInstitutionError && <p className="text-red-500 text-xs mt-1">{companyInstitutionError}</p>}
+                    {companyInstitutionError && <p id="banking-companyInstitution-error" role="alert" className="text-red-500 text-xs mt-1">{companyInstitutionError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="banking-testingRequirements" className="block text-sm font-medium text-gray-700 mb-2">
                       Testing Requirements *
                     </label>
                     <div className="relative">
-                      <FaClipboardList className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaClipboardList className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="banking-testingRequirements"
                         name="testingRequirements"
+                        autoComplete="off"
                         value={formData.testingRequirements}
                         onChange={handleInputChange}
                         onBlur={() => validateTestingRequirements(formData.testingRequirements)}
                         required
-                        aria-label="Testing Requirements"
+                        aria-invalid={!!testingRequirementsError}
+                        aria-describedby={testingRequirementsError ? "banking-testingRequirements-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${testingRequirementsError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select your primary need</option>
@@ -503,27 +524,31 @@ const BankingContactSection: React.FC = () => {
                         <option value="comprehensive-testing">Comprehensive Testing Strategy</option>
                       </select>
                     </div>
-                    {testingRequirementsError && <p className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
+                    {testingRequirementsError && <p id="banking-testingRequirements-error" role="alert" className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="banking-message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message *
                     </label>
                     <div className="relative">
-                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <textarea
+                        id="banking-message"
                         name="message"
+                        autoComplete="off"
                         value={formData.message}
                         onChange={handleInputChange}
                         onBlur={() => validateMessage(formData.message)}
                         required
                         rows={4}
+                        aria-invalid={!!messageError}
+                        aria-describedby={messageError ? "banking-message-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Please describe your testing requirements, compliance needs, and any specific challenges you're facing..."
                       />
                     </div>
-                    {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
+                    {messageError && <p id="banking-message-error" role="alert" className="text-red-500 text-xs mt-1">{messageError}</p>}
                   </div>
 
                   <button

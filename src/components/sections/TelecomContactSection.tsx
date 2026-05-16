@@ -387,47 +387,56 @@ const TelecomContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="telecom-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="telecom-fullName"
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
+                        aria-invalid={!!fullNameError}
+                        aria-describedby={fullNameError ? "telecom-fullName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Your Name"
                       />
                     </div>
-                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                    {fullNameError && <p id="telecom-fullName-error" role="alert" className="text-red-500 text-xs mt-1">{fullNameError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="telecom-businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Email *
                     </label>
                     <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="telecom-businessEmail"
                         type="email"
                         name="businessEmail"
+                        autoComplete="email"
+                        inputMode="email"
                         value={formData.businessEmail}
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
+                        aria-invalid={!!emailError}
+                        aria-describedby={emailError ? "telecom-businessEmail-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Email Address"
                       />
                     </div>
-                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                    {emailError && <p id="telecom-businessEmail-error" role="alert" className="text-red-500 text-xs mt-1">{emailError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="telecom-businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Phone *
                     </label>
                     <div className="relative">
@@ -435,50 +444,62 @@ const TelecomContactSection: React.FC = () => {
                         international
                         countryCallingCodeEditable={false}
                         defaultCountry="IN"
-                        title="Phone Number"
                         value={formData.businessPhone}
                         onChange={handlePhoneChange}
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
                         className={`w-full border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Phone Number"
+                        numberInputProps={{
+                          id: "telecom-businessPhone",
+                          autoComplete: "tel",
+                          "aria-invalid": !!phoneError,
+                          "aria-describedby": phoneError ? "telecom-businessPhone-error" : undefined,
+                        }}
                       />
                     </div>
-                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                    {phoneError && <p id="telecom-businessPhone-error" role="alert" className="text-red-500 text-xs mt-1">{phoneError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="telecom-companyOrganization" className="block text-sm font-medium text-gray-700 mb-2">
                       Company/Organization *
                     </label>
                     <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="telecom-companyOrganization"
                         type="text"
                         name="companyOrganization"
+                        autoComplete="organization"
                         value={formData.companyOrganization}
                         onChange={handleInputChange}
                         onBlur={() => validateCompanyOrganization(formData.companyOrganization)}
                         required
+                        aria-invalid={!!companyOrganizationError}
+                        aria-describedby={companyOrganizationError ? "telecom-companyOrganization-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyOrganizationError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Your Telecom Company"
                       />
                     </div>
-                    {companyOrganizationError && <p className="text-red-500 text-xs mt-1">{companyOrganizationError}</p>}
+                    {companyOrganizationError && <p id="telecom-companyOrganization-error" role="alert" className="text-red-500 text-xs mt-1">{companyOrganizationError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="telecom-testingRequirements" className="block text-sm font-medium text-gray-700 mb-2">
                       Testing Requirements *
                     </label>
                     <div className="relative">
-                      <FaClipboardList className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaClipboardList className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="telecom-testingRequirements"
                         name="testingRequirements"
+                        autoComplete="off"
                         value={formData.testingRequirements}
                         onChange={handleInputChange}
                         onBlur={() => validateTestingRequirements(formData.testingRequirements)}
                         required
-                        aria-label="Testing Requirements"
+                        aria-invalid={!!testingRequirementsError}
+                        aria-describedby={testingRequirementsError ? "telecom-testingRequirements-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${testingRequirementsError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select your primary need</option>
@@ -491,27 +512,31 @@ const TelecomContactSection: React.FC = () => {
                         <option value="comprehensive-software-qa">Comprehensive Software QA</option>
                       </select>
                     </div>
-                    {testingRequirementsError && <p className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
+                    {testingRequirementsError && <p id="telecom-testingRequirements-error" role="alert" className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="telecom-message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message *
                     </label>
                     <div className="relative">
-                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <textarea
+                        id="telecom-message"
                         name="message"
+                        autoComplete="off"
                         value={formData.message}
                         onChange={handleInputChange}
                         onBlur={() => validateMessage(formData.message)}
                         required
                         rows={4}
+                        aria-invalid={!!messageError}
+                        aria-describedby={messageError ? "telecom-message-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Please describe your telecom software testing requirements, performance goals, and any specific platforms you are working with..."
                       />
                     </div>
-                    {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
+                    {messageError && <p id="telecom-message-error" role="alert" className="text-red-500 text-xs mt-1">{messageError}</p>}
                   </div>
 
                   <button

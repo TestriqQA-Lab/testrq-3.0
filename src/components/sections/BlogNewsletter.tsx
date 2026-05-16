@@ -162,24 +162,30 @@ const BlogNewsletter: React.FC = () => {
 
                   <form onSubmit={handleSubscribe} className="space-y-6">
                     {error && (
-                      <div className="bg-red-50 border border-red-100 rounded-xl p-4 text-red-600 text-sm">
+                      <div id="newsletter-email-error" role="alert" className="bg-red-50 border border-red-100 rounded-xl p-4 text-red-600 text-sm">
                         {error}
                       </div>
                     )}
 
                     <div>
-                      <label className="block text-slate-700 text-sm font-medium mb-2">
+                      <label htmlFor="newsletter-email" className="block text-slate-700 text-sm font-medium mb-2">
                         Email address
                       </label>
                       <div className={`relative transition-all duration-300 ${isFocused ? 'scale-[1.02]' : ''}`}>
                         <div className={`absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl transition-all duration-300 ${isFocused ? 'opacity-10 blur-sm' : 'opacity-0'}`} />
                         <input
+                          id="newsletter-email"
                           type="email"
+                          name="email"
+                          autoComplete="email"
+                          inputMode="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           onFocus={() => setIsFocused(true)}
                           onBlur={() => setIsFocused(false)}
                           placeholder="you@company.com"
+                          aria-invalid={!!error}
+                          aria-describedby={error ? "newsletter-email-error" : undefined}
                           className="relative w-full px-5 py-4 bg-white border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-400 text-lg"
                           required
                           disabled={isSubmitting}
@@ -187,10 +193,10 @@ const BlogNewsletter: React.FC = () => {
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-slate-700 text-sm font-medium mb-3">
+                    <fieldset>
+                      <legend className="block text-slate-700 text-sm font-medium mb-3">
                         Interests (optional)
-                      </label>
+                      </legend>
                       <div className="grid grid-cols-2 gap-2">
                         {availableInterests.map((interest) => {
                           const isSelected = interests.includes(interest.name);
@@ -200,18 +206,19 @@ const BlogNewsletter: React.FC = () => {
                               type="button"
                               onClick={() => handleInterestChange(interest.name)}
                               disabled={isSubmitting}
+                              aria-pressed={isSelected}
                               className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all border ${isSelected
                                 ? 'bg-blue-50 border-blue-300 text-blue-700'
                                 : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50'
                                 }`}
                             >
-                              <span>{interest.icon}</span>
+                              <span aria-hidden="true">{interest.icon}</span>
                               {interest.name}
                             </button>
                           );
                         })}
                       </div>
-                    </div>
+                    </fieldset>
 
                     <button
                       type="submit"

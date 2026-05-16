@@ -437,55 +437,64 @@ const ElearningContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="elearning-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="elearning-fullName"
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
+                        aria-invalid={!!fullNameError}
+                        aria-describedby={fullNameError ? "elearning-fullName-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? "border-red-500" : "border-gray-200"
                           }`}
                         placeholder="Your Name"
                       />
                     </div>
                     {fullNameError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="elearning-fullName-error" role="alert" className="text-red-500 text-xs mt-1">
                         {fullNameError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="elearning-businessEmail" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Email *
                     </label>
                     <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="elearning-businessEmail"
                         type="email"
                         name="businessEmail"
+                        autoComplete="email"
+                        inputMode="email"
                         value={formData.businessEmail}
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
+                        aria-invalid={!!emailError}
+                        aria-describedby={emailError ? "elearning-businessEmail-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? "border-red-500" : "border-gray-200"
                           }`}
                         placeholder="Email Address"
                       />
                     </div>
                     {emailError && (
-                      <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                      <p id="elearning-businessEmail-error" role="alert" className="text-red-500 text-xs mt-1">{emailError}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="elearning-businessPhone" className="block text-sm font-medium text-gray-700 mb-2">
                       Business Phone *
                     </label>
                     <div className="relative">
@@ -499,27 +508,37 @@ const ElearningContactSection: React.FC = () => {
                         className={`w-full phone-input-container ${phoneError ? "border-red-500" : "border-gray-200"
                           }`}
                         placeholder="Enter phone number"
-                        inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
+                        numberInputProps={{
+                          id: "elearning-businessPhone",
+                          autoComplete: "tel",
+                          "aria-invalid": !!phoneError,
+                          "aria-describedby": phoneError ? "elearning-businessPhone-error" : undefined,
+                          className: "w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300",
+                        }}
                       />
                     </div>
                     {phoneError && (
-                      <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                      <p id="elearning-businessPhone-error" role="alert" className="text-red-500 text-xs mt-1">{phoneError}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="elearning-institution" className="block text-sm font-medium text-gray-700 mb-2">
                       Institution/Organization *
                     </label>
                     <div className="relative">
-                      <FaUniversity className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <FaUniversity className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <input
+                        id="elearning-institution"
                         type="text"
                         name="institution"
+                        autoComplete="organization"
                         value={formData.institution}
                         onChange={handleInputChange}
                         onBlur={() => validateInstitution(formData.institution)}
                         required
+                        aria-invalid={!!institutionError}
+                        aria-describedby={institutionError ? "elearning-institution-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${institutionError
                           ? "border-red-500"
                           : "border-gray-200"
@@ -528,27 +547,30 @@ const ElearningContactSection: React.FC = () => {
                       />
                     </div>
                     {institutionError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="elearning-institution-error" role="alert" className="text-red-500 text-xs mt-1">
                         {institutionError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="elearning-platformType" className="block text-sm font-medium text-gray-700 mb-2">
                       Select Your Platform Type *
                     </label>
                     <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="elearning-platformType"
                         name="platformType"
+                        autoComplete="off"
                         value={formData.platformType}
                         onChange={handleInputChange}
                         onBlur={() =>
                           validatePlatformType(formData.platformType)
                         }
-                        aria-label="Select Your Platform Type"
                         required
+                        aria-invalid={!!platformTypeError}
+                        aria-describedby={platformTypeError ? "elearning-platformType-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${platformTypeError
                           ? "border-red-500"
                           : "border-gray-200"
@@ -569,27 +591,30 @@ const ElearningContactSection: React.FC = () => {
                       </select>
                     </div>
                     {platformTypeError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="elearning-platformType-error" role="alert" className="text-red-500 text-xs mt-1">
                         {platformTypeError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="elearning-numberOfUsers" className="block text-sm font-medium text-gray-700 mb-2">
                       Number of Users *
                     </label>
                     <div className="relative">
-                      <FaUsers className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <FaUsers className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" aria-hidden="true" />
                       <select
+                        id="elearning-numberOfUsers"
                         name="numberOfUsers"
+                        autoComplete="off"
                         value={formData.numberOfUsers}
                         onChange={handleInputChange}
                         onBlur={() =>
                           validateNumberOfUsers(formData.numberOfUsers)
                         }
-                        aria-label="Select Number of Users"
                         required
+                        aria-invalid={!!numberOfUsersError}
+                        aria-describedby={numberOfUsersError ? "elearning-numberOfUsers-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${numberOfUsersError
                           ? "border-red-500"
                           : "border-gray-200"
@@ -603,32 +628,36 @@ const ElearningContactSection: React.FC = () => {
                       </select>
                     </div>
                     {numberOfUsersError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="elearning-numberOfUsers-error" role="alert" className="text-red-500 text-xs mt-1">
                         {numberOfUsersError}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="elearning-message" className="block text-sm font-medium text-gray-700 mb-2">
                       Tell us about Testing need *
                     </label>
                     <div className="relative">
-                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" aria-hidden="true" />
                       <textarea
+                        id="elearning-message"
                         name="message"
+                        autoComplete="off"
                         value={formData.message}
                         onChange={handleInputChange}
                         onBlur={() => validateMessage(formData.message)}
                         required
                         rows={4}
+                        aria-invalid={!!messageError}
+                        aria-describedby={messageError ? "elearning-message-error" : undefined}
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? "border-red-500" : "border-gray-200"
                           }`}
                         placeholder="Tell us about your e-learning testing needs..."
                       />
                     </div>
                     {messageError && (
-                      <p className="text-red-500 text-xs mt-1">
+                      <p id="elearning-message-error" role="alert" className="text-red-500 text-xs mt-1">
                         {messageError}
                       </p>
                     )}

@@ -511,13 +511,16 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6">
               {/* Search */}
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="careers-search" className="block text-sm font-medium text-gray-700 mb-2">
                   Search Positions
                 </label>
                 <div className="relative">
-                  <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                  <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" aria-hidden="true" />
                   <input
-                    type="text"
+                    id="careers-search"
+                    type="search"
+                    name="search"
+                    autoComplete="off"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="Search by title, skills, or keywords..."
@@ -611,12 +614,14 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                         Personal Information
                       </h4>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="careers-fullName" className="block text-sm font-medium text-gray-700 mb-2">
                           Full Name *
                         </label>
                         <input
+                          id="careers-fullName"
                           type="text"
                           name="fullName"
+                          autoComplete="name"
                           value={formData.fullName}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
@@ -625,12 +630,15 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="careers-email" className="block text-sm font-medium text-gray-700 mb-2">
                           Email *
                         </label>
                         <input
+                          id="careers-email"
                           type="email"
                           name="email"
+                          autoComplete="email"
+                          inputMode="email"
                           value={formData.email}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
@@ -639,28 +647,34 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="careers-phone" className="block text-sm font-medium text-gray-700 mb-2">
                           Phone Number
                         </label>
                         <input
+                          id="careers-phone"
                           type="tel"
                           name="phone"
+                          autoComplete="tel"
                           value={formData.phone}
                           onChange={handleInputChange}
+                          aria-invalid={!!phoneError}
+                          aria-describedby={phoneError ? "careers-phone-error" : undefined}
                           className={`w-full px-3 py-2 sm:px-4 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${phoneError ? "border-red-500" : "border-gray-300"
                             }`}
                           placeholder="+91 9876543210 or 9876543210"
                         />
                         {phoneError && (
-                          <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+                          <p id="careers-phone-error" role="alert" className="text-red-500 text-sm mt-1">{phoneError}</p>
                         )}
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="careers-location" className="block text-sm font-medium text-gray-700 mb-2">
                           Location *
                         </label>
                         <select
+                          id="careers-location"
                           name="location"
+                          autoComplete="address-level2"
                           value={formData.location}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
@@ -695,8 +709,14 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                         </select>
                         {formData.location === "Others" && (
                           <div className="mt-2">
+                            <label htmlFor="careers-customLocation" className="sr-only">
+                              Custom location
+                            </label>
                             <input
+                              id="careers-customLocation"
                               type="text"
+                              name="customLocation"
+                              autoComplete="address-level2"
                               value={customLocation}
                               onChange={(e) => setCustomLocation(e.target.value)}
                               className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
@@ -708,11 +728,13 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                       </div>
                       {/* Skills and Tools - Full width */}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="careers-skillsToolsFramework" className="block text-sm font-medium text-gray-700 mb-2">
                           Skills, Tools & Frameworks *
                         </label>
                         <textarea
+                          id="careers-skillsToolsFramework"
                           name="skillsToolsFramework"
+                          autoComplete="off"
                           value={formData.skillsToolsFramework}
                           onChange={handleInputChange}
                           rows={4}
@@ -730,11 +752,13 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                         Professional Information
                       </h4>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="careers-experience" className="block text-sm font-medium text-gray-700 mb-2">
                           Total Experience *
                         </label>
                         <select
+                          id="careers-experience"
                           name="experience"
+                          autoComplete="off"
                           value={formData.experience}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
@@ -750,12 +774,14 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="careers-currentCTC" className="block text-sm font-medium text-gray-700 mb-2">
                             Current CTC
                           </label>
                           <input
+                            id="careers-currentCTC"
                             type="text"
                             name="currentCTC"
+                            autoComplete="off"
                             value={formData.currentCTC}
                             onChange={handleInputChange}
                             className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
@@ -763,12 +789,14 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="careers-expectedCTC" className="block text-sm font-medium text-gray-700 mb-2">
                             Expected CTC
                           </label>
                           <input
+                            id="careers-expectedCTC"
                             type="text"
                             name="expectedCTC"
+                            autoComplete="off"
                             value={formData.expectedCTC}
                             onChange={handleInputChange}
                             className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
@@ -779,11 +807,13 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
 
                       {/* Notice Period */}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="careers-noticePeriod" className="block text-sm font-medium text-gray-700 mb-2">
                           Notice Period
                         </label>
                         <select
+                          id="careers-noticePeriod"
                           name="noticePeriod"
+                          autoComplete="off"
                           value={formData.noticePeriod}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
@@ -799,13 +829,16 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
 
                       {/* Domain Knowledge - Mobile optimized dropdown */}
                       <div ref={domainDropdownRef}>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <span id="careers-domainKnowledge-label" className="block text-sm font-medium text-gray-700 mb-2">
                           Domain Knowledge
-                        </label>
+                        </span>
                         <div className="relative">
                           <button
                             type="button"
                             onClick={() => setShowDomainDropdown(!showDomainDropdown)}
+                            aria-haspopup="listbox"
+                            aria-expanded={showDomainDropdown}
+                            aria-labelledby="careers-domainKnowledge-label"
                             className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-left flex items-center justify-between text-sm sm:text-base min-h-[44px] touch-manipulation"
                           >
                             <span className="text-gray-500">
@@ -813,25 +846,31 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                                 ? `${formData.domainKnowledge.length} selected`
                                 : "Select domains"}
                             </span>
-                            <FaCaretDown className="w-4 h-4 text-gray-400" />
+                            <FaCaretDown className="w-4 h-4 text-gray-400" aria-hidden="true" />
                           </button>
 
                           {showDomainDropdown && (
-                            <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                              {domainKnowledgeOptions.map((option) => (
-                                <label
-                                  key={option}
-                                  className="flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer text-sm touch-manipulation"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    checked={formData.domainKnowledge.includes(option)}
-                                    onChange={() => handleDomainKnowledgeChange(option)}
-                                    className="mr-2 rounded"
-                                  />
-                                  {option}
-                                </label>
-                              ))}
+                            <div role="listbox" aria-multiselectable="true" aria-labelledby="careers-domainKnowledge-label" className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                              {domainKnowledgeOptions.map((option, idx) => {
+                                const checkboxId = `careers-domainKnowledge-${idx}`;
+                                return (
+                                  <div
+                                    key={option}
+                                    className="flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer text-sm touch-manipulation"
+                                  >
+                                    <input
+                                      id={checkboxId}
+                                      type="checkbox"
+                                      checked={formData.domainKnowledge.includes(option)}
+                                      onChange={() => handleDomainKnowledgeChange(option)}
+                                      className="mr-2 rounded"
+                                    />
+                                    <label htmlFor={checkboxId} className="flex-1 cursor-pointer">
+                                      {option}
+                                    </label>
+                                  </div>
+                                );
+                              })}
                             </div>
                           )}
                         </div>
@@ -858,14 +897,14 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                       </div>
                       {/* Resume Upload - Mobile optimized */}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="resume-upload-input" className="block text-sm font-medium text-gray-700 mb-2">
                           Resume/CV * (PDF only, max 5MB)
                         </label>
                         <div className="border-2 border-dashed border-gray-300 rounded-lg p-2 sm:p-6 text-center hover:border-blue-400 transition-colors duration-300 cursor-pointer" onClick={() => document.getElementById('resume-upload-input')?.click()}>
                           {resumeFile ? (
                             <div className="flex items-center justify-between bg-green-50 p-2 rounded-lg">
                               <div className="flex items-center gap-2">
-                                <FaFileAlt className="w-2 h-2 text-green-600" />
+                                <FaFileAlt className="w-2 h-2 text-green-600" aria-hidden="true" />
                                 <span className="text-sm text-green-700 font-medium truncate">
                                   {resumeFile.name}
                                 </span>
@@ -873,14 +912,15 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                               <button
                                 type="button"
                                 onClick={(e) => { e.stopPropagation(); setResumeFile(null); }}
+                                aria-label="Remove uploaded resume"
                                 className="ml-1 text-red-500 hover:text-red-700 p-1"
                               >
-                                <FaTrash className="w-3 h-3" />
+                                <FaTrash className="w-3 h-3" aria-hidden="true" />
                               </button>
                             </div>
                           ) : (
                             <div>
-                              <FaUpload className="w-4 h-4 sm:w-12 sm:h-12 text-gray-400 mx-auto mb-2 sm:mb-4" />
+                              <FaUpload className="w-4 h-4 sm:w-12 sm:h-12 text-gray-400 mx-auto mb-2 sm:mb-4" aria-hidden="true" />
                               <p className="text-gray-600 mb-2 text-sm sm:text-base">
                                 Click to upload or drag and drop
                               </p>
@@ -889,6 +929,7 @@ const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ j
                           )}
                           <input
                             id="resume-upload-input"
+                            name="resume"
                             type="file"
                             accept=".pdf"
                             onChange={handleFileUpload}
