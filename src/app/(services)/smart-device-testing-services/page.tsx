@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import StructuredData, {
   createCanonicalBreadcrumb,
+  createFaqPageSchema,
   smartDeviceTestingSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -60,6 +61,30 @@ export default function SmartDeviceTestingPage() {
   // "IoT Device Testing USA" normalized to "iot device testing". Other
   // keywords lowercased. Section components were already direct imports.
   // Breadcrumb already migrated in PR-3 — unchanged.
+  // F-44.1 batch 4: plain-text mirror of SmartDeviceFAQs UI content for FAQPage JSON-LD.
+  const faqsForSchema = [
+    {
+      question: "What are the best practices for IoT security testing in 2026?",
+      answer: "To meet 2026 security standards, you must implement m-TLS device identities and secure all OTA updates. Additionally, regular penetration testing is essential to find and patch firmware vulnerabilities before they can be exploited in the field.",
+    },
+    {
+      question: "How to test compatibility between Alexa and smart plugs?",
+      answer: "To validate Alexa and smart plug integration, we model the link between the smart home hub and the hardware. We ensure commands trigger without delay and that the companion app always reflects the real-time state of the device, even under poor network conditions.",
+    },
+    {
+      question: "Why is battery life optimization critical for wearable health trackers?",
+      answer: "Performance testing for wearable health trackers is vital because users expect a 'set it and forget it' experience. Inefficient sensor polling frequency or background syncs can cause battery consumption issues that lead to high product return rates and brand dissatisfaction.",
+    },
+    {
+      question: "What is the role of Digital Twin Simulation in IoT testing?",
+      answer: "Digital Twin Simulation allows us to create a virtual replica of your device and its environment. This approach is essential for scalability testing. We provide rigorous design validation to ensure your cloud backend meets the demands of high-density device deployments, modeling up to one million concurrent connections before hardware launch.",
+    },
+    {
+      question: "How do you perform sensor accuracy testing?",
+      answer: "Sensor accuracy testing involves comparing device data (motion, heart rate, temperature) against 'Gold Standard' medical or industrial equipment. We test devices across various high-intensity scenarios, such as workouts for wearables, ensuring that data variance remains within a strict 5% margin.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={smartDeviceTestingSchema} />
@@ -69,6 +94,7 @@ export default function SmartDeviceTestingPage() {
           "Smart Device Testing Service"
         )}
       />
+      <StructuredData data={createFaqPageSchema(faqsForSchema)} />
       <SmartDeviceTestingHeroSection />
       <SmartDeviceComplianceTable />
       <SmartDeviceComprehensiveSlider />

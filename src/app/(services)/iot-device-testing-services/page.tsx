@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
   createCanonicalBreadcrumb,
+  createFaqPageSchema,
   iotDeviceTestingSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -59,6 +60,30 @@ export default function IoTDeviceTesting() {
   // ogImage.type "image/webp" added. Keywords lowercased. 10 dynamic()
   // imports converted to direct ES imports. Breadcrumb already migrated
   // in PR-3 — unchanged.
+  // F-44.1 batch 4: plain-text mirror of IoTFAQs UI content for FAQPage JSON-LD.
+  const faqsForSchema = [
+    {
+      question: "What is the most critical challenge in testing IoT devices in 2026?",
+      answer: "The most critical challenge is device diversity and interoperability. To ensure your product works across various protocols (Zigbee, MQTT) and firmware versions, we use a standardized ISO/IEC 29119 approach for consistent test design.",
+    },
+    {
+      question: "How to test IoT connection in remote locations?",
+      answer: "To test IoT connection in remote locations, we use network simulators to inject packet loss, jitter, and high latency. We also perform field testing to validate how the device handles Radio Frequency (RF) interference and satellite/cellular handovers using advanced network analyzers.",
+    },
+    {
+      question: "Why is security testing for medical IoT devices so important?",
+      answer: "Security testing for medical IoT devices is vital because a breach can directly impact patient safety. Adhering to HIPAA and the Cyber Resilience Act (CRA) ensures we encrypt patient data and harden devices against OT ransomware and unauthorized firmware tampering.",
+    },
+    {
+      question: "What are the benefits of automating firmware regression tests for smart sensors?",
+      answer: "Automating firmware regression tests ensures that every new update (FOTA) does not break existing features. Automation slashes testing cycles from weeks to hours, speeding up development and getting your IoT products to market faster.",
+    },
+    {
+      question: "How do you perform performance testing for smart home ecosystems?",
+      answer: "We simulate a connected device environment where multiple smart devices (lights, thermostats, cameras) interact simultaneously. We measure edge computing latency and the cloud backend's ability to handle data spikes without service degradation under peak workloads.",
+    },
+  ];
+
   return (
     <div>
       <StructuredData data={iotDeviceTestingSchema} />
@@ -68,6 +93,7 @@ export default function IoTDeviceTesting() {
           "IoT Testing Service"
         )}
       />
+      <StructuredData data={createFaqPageSchema(faqsForSchema)} />
       <MainLayout>
         <IoTTestingHeroSection />
         <IoTComprehensiveSlider />
