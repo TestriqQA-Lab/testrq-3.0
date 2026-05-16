@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     createBreadcrumbSchema,
+    createFaqPageSchema,
     performanceTestingServiceSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -61,10 +62,31 @@ export default function PerformanceTestingPage() {
         },
     ];
 
+    // F-44.1: plain-text mirror of PerformanceTestingFAQs UI content for FAQPage JSON-LD.
+    const faqsForSchema = [
+        {
+            question: "What is the difference between Load Testing and Stress Testing?",
+            answer: "Load testing services evaluate system behavior under expected traffic to verify SLAs. Stress testing solutions involve pushing the system to its breaking point to identify weaknesses and recovery protocols.",
+        },
+        {
+            question: "Why is ISO/IEC/IEEE 29119 important for performance testing?",
+            answer: "This standard provides a globally recognized framework for precise software performance analysis. It ensures testing is risk-based, documented, and follows repeatable processes that satisfy international auditors.",
+        },
+        {
+            question: "Which performance testing tools are best for web applications?",
+            answer: "Tool selection depends on your technology stack. JMeter excels at protocol-heavy testing, while k6 and Gatling are ideal for CI/CD integration and developer-friendly scripting.",
+        },
+        {
+            question: "How do you identify performance bottlenecks?",
+            answer: "We combine load generation with APM tools (New Relic, Dynatrace) to track resource usage (CPU, RAM, Disk I/O). We identify API latency, slow database queries, and inefficient load balancing.",
+        },
+    ];
+
     return (
         <div>
             <StructuredData data={performanceTestingServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData data={createFaqPageSchema(faqsForSchema)} />
             <MainLayout>
                 <PerformanceTestingHeroSection />
                 <PerformanceTestingChallenges />

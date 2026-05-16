@@ -1748,6 +1748,25 @@ export const createBreadcrumbSchema = (items: Array<{ name: string, url: string 
 });
 
 /**
+ * F-44.1 helper: build a FAQPage JSON-LD entity from a `{question, answer}` array.
+ * Used by service / solution / tool / comparison pages to surface their UI FAQ
+ * content into structured data for rich-result eligibility. Plain-text answers
+ * only — strip JSX / Markdown before passing in.
+ */
+export const createFaqPageSchema = (faqs: Array<{ question: string; answer: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer,
+    },
+  })),
+});
+
+/**
  * Build a canonical 2-item BreadcrumbList (Home → this page) for any Testriq
  * service or solution page. The page URL is derived from `pathname` via
  * `buildCanonicalUrl`, so:

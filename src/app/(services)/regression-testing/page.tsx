@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     createBreadcrumbSchema,
+    createFaqPageSchema,
     regressionTestingServiceSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -63,10 +64,35 @@ export default function RegressionTestingPage() {
         },
     ];
 
+    // F-44.1: plain-text mirror of RegressionTestingFAQs UI content for FAQPage JSON-LD.
+    const faqsForSchema = [
+        {
+            question: "What is the main difference between unit testing and regression testing?",
+            answer: "Unit testing validates individual components in isolation, usually by developers. Regression testing validates the entire system to ensure that these individual changes didn't break existing features.",
+        },
+        {
+            question: "How do you reduce regression testing time with automation?",
+            answer: "We use Regression Test Selection (RTS) to find the most vital tests. Our team then runs them in parallel using cloud environments to save you time. This reduces execution time by up to 80%.",
+        },
+        {
+            question: "What is visual regression testing?",
+            answer: "Visual regression testing focuses on the UI's appearance. We analyze images to find unintended layout shifts and font changes. These visual tools catch color mismatches that standard functional tests often miss.",
+        },
+        {
+            question: "Why is impact analysis important in regression testing?",
+            answer: "Avoid slow, full regression cycles by targeting only the code that changed. Our impact analysis ensures you maintain high quality while significantly cutting execution costs.",
+        },
+        {
+            question: "How do you handle flaky tests in automated regression testing?",
+            answer: "We use 'retry' logic and stabilize environments to stop flaky tests. By regularly pruning your test suite, we ensure your results are always reliable and accurate.",
+        },
+    ];
+
     return (
         <div>
             <StructuredData data={regressionTestingServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData data={createFaqPageSchema(faqsForSchema)} />
             <MainLayout>
                 <RegressionTestingHeroSection />
                 <RegressionTestingComprehensiveSlider />

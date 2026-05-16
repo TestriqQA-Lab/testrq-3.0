@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     createBreadcrumbSchema,
+    createFaqPageSchema,
     manualTestingServiceSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -66,10 +67,35 @@ export default function ManualTestingPage() {
         },
     ];
 
+    // F-44.1: plain-text mirror of ManualTestingFAQs UI content for FAQPage JSON-LD.
+    const faqsForSchema = [
+        {
+            question: "Why is manual testing still important in 2026?",
+            answer: "AI is rising, but manual testing remains vital. It handles exploratory work and complex logic. This is where 'human-in-the-loop' intuition is vital for finding what scripts miss. It fills the coverage gaps that automation cannot reach in complex micro-services architectures.",
+        },
+        {
+            question: "How does ISO/IEC/IEEE 29119 improve manual testing?",
+            answer: "This international standard provides a structured, risk-based framework. It ensures manual testing is never ad-hoc. It follows a repeatable process for planning, design, and reporting. This approach increases visibility for stakeholders and makes your software more reliable.",
+        },
+        {
+            question: "Can manual testing fit into a CI/CD pipeline?",
+            answer: "Yes. We use the ISO 29119-2 standard to create repeatable test processes. This allows us to sync manual regression with your fast release cycles. You get high-quality results without losing speed.",
+        },
+        {
+            question: "What is the cost of outsourcing manual testing?",
+            answer: "Outsourcing manual testing is more cost-effective than building an in-house team. It removes the extra costs of tool licensing and specialized training. Plus, it makes it easier to scale during busy development periods.",
+        },
+        {
+            question: "Does Testriq provide manual testing for mobile apps?",
+            answer: "Yes, we offer manual testing for both iOS and Android. We use real devices from our global farm to ensure your app works across all OS versions and screen sizes.",
+        },
+    ];
+
     return (
         <div>
             <StructuredData data={manualTestingServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData data={createFaqPageSchema(faqsForSchema)} />
             <MainLayout>
                 <ManualTestingHeroSection />
                 <ManualTestingComprehensiveSlider />
