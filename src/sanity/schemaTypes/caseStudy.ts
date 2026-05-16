@@ -48,43 +48,41 @@ export default defineType({
             description: 'Path to image in /public folder, e.g. /Canva_Logo.png',
         }),
 
-        // --- SEO Metadata ---
+        // --- SEO ---
+        // F-60.1 — migrated to shared `seoFields` shape. Previously named
+        // `seoMetadata` and embedded openGraph/twitter as nested objects;
+        // now the base fields (title/description/keywords/canonicalUrl) live
+        // under `seo: seoFields` and `openGraph` + `twitter` are top-level
+        // siblings on caseStudy (since they are caseStudy-specific richer
+        // features beyond the generic seoFields shape used by post/category/
+        // tag). Existing case-study documents retain their old shape under
+        // `seoMetadata` until the migration script
+        // (src/scripts/migrate-casestudy-seo-to-seoFields.ts) runs. The
+        // adapter reads BOTH shapes via fallback during the transition.
         defineField({
-            name: 'seoMetadata',
-            title: 'SEO Metadata',
+            name: 'seo',
+            title: 'SEO',
+            type: 'seoFields',
+        }),
+        defineField({
+            name: 'openGraph',
+            title: 'Open Graph',
             type: 'object',
             fields: [
-                defineField({ name: 'title', title: 'Meta Title', type: 'string' }),
-                defineField({ name: 'description', title: 'Meta Description', type: 'text' }),
-                defineField({
-                    name: 'keywords',
-                    title: 'Keywords',
-                    type: 'array',
-                    of: [{ type: 'string' }],
-                    options: { layout: 'tags' },
-                }),
-                defineField({ name: 'canonicalUrl', title: 'Canonical URL', type: 'url' }),
-                defineField({
-                    name: 'openGraph',
-                    title: 'Open Graph',
-                    type: 'object',
-                    fields: [
-                        defineField({ name: 'title', title: 'OG Title', type: 'string' }),
-                        defineField({ name: 'description', title: 'OG Description', type: 'text' }),
-                        defineField({ name: 'imageUrl', title: 'OG Image URL', type: 'string' }),
-                        defineField({ name: 'imageAlt', title: 'OG Image Alt', type: 'string' }),
-                    ],
-                }),
-                defineField({
-                    name: 'twitter',
-                    title: 'Twitter',
-                    type: 'object',
-                    fields: [
-                        defineField({ name: 'title', title: 'Twitter Title', type: 'string' }),
-                        defineField({ name: 'description', title: 'Twitter Description', type: 'text' }),
-                        defineField({ name: 'imageUrl', title: 'Twitter Image URL', type: 'string' }),
-                    ],
-                }),
+                defineField({ name: 'title', title: 'OG Title', type: 'string' }),
+                defineField({ name: 'description', title: 'OG Description', type: 'text' }),
+                defineField({ name: 'imageUrl', title: 'OG Image URL', type: 'string' }),
+                defineField({ name: 'imageAlt', title: 'OG Image Alt', type: 'string' }),
+            ],
+        }),
+        defineField({
+            name: 'twitter',
+            title: 'Twitter',
+            type: 'object',
+            fields: [
+                defineField({ name: 'title', title: 'Twitter Title', type: 'string' }),
+                defineField({ name: 'description', title: 'Twitter Description', type: 'text' }),
+                defineField({ name: 'imageUrl', title: 'Twitter Image URL', type: 'string' }),
             ],
         }),
 
