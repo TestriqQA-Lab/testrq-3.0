@@ -145,6 +145,43 @@ export const organizationSchema = {
     "https://x.com/testriq",
     "https://github.com/TestriqQA-Lab"
   ],
+  "award": [
+    "ISTQB Certified Testing Professionals",
+    "ISO 9001:2015 Certified — Quality Management System",
+    "ISO/IEC 27001:2022 Certified — Information Security Management"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "ISTQB Certified Tester",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "International Software Testing Qualifications Board",
+        "url": "https://www.istqb.org/"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "ISO 9001:2015 — Quality Management System",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "International Organization for Standardization",
+        "url": "https://www.iso.org/iso-9001-quality-management.html"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "ISO/IEC 27001:2022 — Information Security Management System",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "International Organization for Standardization",
+        "url": "https://www.iso.org/standard/27001"
+      }
+    }
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Software Testing Services",
