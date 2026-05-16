@@ -1,4 +1,8 @@
-// F-21.1 — Converted to Server Component. Audited for zero interactive APIs.
+"use client";
+// F-21.1 — REVERTED. This file uses `next/dynamic` with `ssr: false`, which
+// is only allowed inside Client Components. The wrapper components themselves
+// are pure passthroughs to dynamic() — but the dynamic() call site itself
+// requires a Client Component context, so `'use client'` is kept.
 import dynamic from 'next/dynamic';
 
 export const BlogHeroSection = dynamic(
