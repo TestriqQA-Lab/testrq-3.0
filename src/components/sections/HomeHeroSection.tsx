@@ -19,11 +19,25 @@ const Hero = () => {
         <div className="flex flex-col xl:flex-row items-center xl:items-start justify-between">
           {/* Left Section */}
           <div className="w-full md:w-full text-center md:content-center xl:text-left">
-            <div className="inline-flex items-center bg-brand-blue px-5 py-2 rounded-full gap-2">
-              <FaCertificate className="text-white" />
-              <span className="  text-white text-base md:text-sm">
-                ISTQB Certified Experts
-              </span>
+            <div className="flex flex-wrap justify-center xl:justify-start gap-2">
+              <div className="inline-flex items-center bg-brand-blue px-5 py-2 rounded-full gap-2">
+                <FaCertificate className="text-white" />
+                <span className="text-white text-base md:text-sm">
+                  ISTQB Certified
+                </span>
+              </div>
+              <div className="inline-flex items-center bg-brand-blue px-5 py-2 rounded-full gap-2">
+                <FaCertificate className="text-white" />
+                <span className="text-white text-base md:text-sm">
+                  ISO 9001
+                </span>
+              </div>
+              <div className="inline-flex items-center bg-brand-blue px-5 py-2 rounded-full gap-2">
+                <FaCertificate className="text-white" />
+                <span className="text-white text-base md:text-sm">
+                  ISO 27001
+                </span>
+              </div>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4 mt-3">
