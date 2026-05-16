@@ -41,6 +41,7 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
     const description = decodeHtmlEntities(stripHtmlTags(rawDescription));
     const imageUrl = post?.mainImage ? sanityImage(post.mainImage, { width: 1600, quality: 90 }) : (post?.image || "/blog-demo/hero_performance_dashboard_1769850360523.png");
     const author = post?.author || "Testriq QA Team";
+    const authorSlug = post?.authorSlug;
     const authorImage = post?.authorImageRaw ? sanityImage(post.authorImageRaw, { width: 96 }) : (post?.authorImage || null);
     const authorBio = post?.authorBio;
     const authorLinkedin = post?.authorLinkedin;
@@ -170,7 +171,16 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
                         </div>
                         <div>
                             <div className="font-semibold text-gray-900 flex items-center gap-2">
-                                {author}
+                                {authorSlug ? (
+                                    <Link
+                                        href={`/author/${authorSlug}`}
+                                        className="hover:text-brand-blue hover:underline transition-colors"
+                                    >
+                                        {author}
+                                    </Link>
+                                ) : (
+                                    author
+                                )}
                                 {authorLinkedin && (
                                     <a
                                         href={authorLinkedin}
