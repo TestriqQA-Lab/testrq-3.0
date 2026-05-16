@@ -852,6 +852,172 @@ export const healthcareTestingServiceSchema = {
   }
 };
 
+// F-82: Service Schema for SaaS platform Testing Service (Cycle 2 Sprint 6).
+// Closes Phase 13 industry-vertical gap — SaaS is a high-volume B2B buyer
+// category that the existing (solutions)/ tree (BFSI / healthcare / edtech /
+// ecom / gaming / iot / telecom) doesn't address. A separate /saas-testing-
+// services *service* page exists but treats SaaS as a service offering, not
+// an industry vertical with its own buyer journey.
+export const saasPlatformTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "SaaS Platform Testing Services",
+  "description": "Testriq provides end-to-end QA for B2B and B2C SaaS platforms — multi-tenant testing, subscription billing validation, SOC 2 / GDPR compliance, API contract testing, integration regression, scalability load testing, and zero-downtime release validation for continuous-delivery SaaS teams.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "SaaS Platform QA Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "SaaS Platform Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Multi-Tenant Isolation Testing",
+          "description": "Validates data isolation, role-based access, and per-tenant configuration boundaries to prevent cross-tenant leakage in shared-database SaaS architectures."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Subscription & Billing QA",
+          "description": "End-to-end testing of trial/upgrade/downgrade/cancel flows, proration edge cases, Stripe / Chargebee / Recurly webhook reliability, and dunning sequences."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SOC 2 & GDPR Compliance Testing",
+          "description": "Pre-audit validation of access controls, audit-log completeness, encryption-at-rest/in-transit, data-residency, and DSAR (Data Subject Access Request) workflows."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Contract & Integration Testing",
+          "description": "Schema-driven Pact / OpenAPI contract tests across public APIs, webhooks, and partner integrations to prevent breaking changes during continuous delivery."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Scalability & Load Testing",
+          "description": "Burst-load and sustained-load simulation to validate auto-scaling policies, database connection pools, and queue throughput at enterprise tenant volumes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Zero-Downtime Release Validation",
+          "description": "Blue-green / canary deploy verification, feature-flag matrix testing, and synthetic-monitor smoke suites that gate production rollouts."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/OnlineOnly",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
+// F-82: Service Schema for Manufacturing / Industry 4.0 Testing Service.
+// Closes Phase 13 industry-vertical gap — Manufacturing + Industrial IoT was
+// missing from (solutions)/ despite a substantial buyer-intent search surface
+// around IEC 61508 / IEC 62443 / OPC UA / MES / SCADA / digital-twin QA.
+export const manufacturingIndustryTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Manufacturing & Industry 4.0 Testing Services",
+  "description": "Testriq delivers QA for manufacturing software and Industry 4.0 systems — MES / SCADA validation, IEC 61508 / IEC 62443 functional-safety and cyber-security testing, OPC UA / MQTT protocol QA, digital-twin simulation testing, predictive-maintenance analytics validation, and ERP-shopfloor integration testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Manufacturing & Industry 4.0 QA Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Manufacturing Industry Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "MES / SCADA System Testing",
+          "description": "Functional, integration, and failover testing of Manufacturing Execution Systems and SCADA stacks, including PLC ↔ HMI ↔ historian data-path validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IEC 62443 OT Cyber-security Testing",
+          "description": "Penetration testing and segmentation audits for operational-technology (OT) networks per IEC 62443 security levels SL1–SL4, including DMZ + jump-host validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IEC 61508 Functional-Safety Validation",
+          "description": "SIL-rated software validation per IEC 61508 / ISO 26262 for safety-critical industrial control applications, with fault-injection and HAZOP-driven test design."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Industrial IoT Protocol Testing",
+          "description": "Interoperability and conformance testing for OPC UA, MQTT, Modbus, and PROFINET on real shop-floor and lab-bench device matrices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Digital-Twin & Simulation QA",
+          "description": "Validation of digital-twin models against physical asset telemetry, including parity testing, drift detection, and predictive-maintenance ML model accuracy."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "ERP ↔ Shopfloor Integration Testing",
+          "description": "End-to-end QA of SAP / Oracle / Dynamics ERP integration with MES, including BOM sync, work-order propagation, and inventory-movement reconciliation."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/OnlineOnly",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
 // Service Schema for gaming Testing Service
 export const gamingTestingServiceSchema = {
   "@context": "https://schema.org",
