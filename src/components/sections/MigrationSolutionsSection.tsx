@@ -1,5 +1,4 @@
-"use client";
-
+// F-21.1 — Converted to Server Component. Audited for zero interactive APIs.
 import React from "react";
 import { FaServer, FaCloud, FaDatabase, FaMobileAlt, FaRocket, FaShieldAlt, FaCogs, FaTools, FaFileAlt, FaLock, FaGlobe, FaSearch, FaProjectDiagram, FaTachometerAlt, FaSitemap } from "react-icons/fa";
 

@@ -1,4 +1,4 @@
-"use client";
+// F-21.1 — Converted to Server Component. Audited for zero interactive APIs.
 // /home/ubuntu/updated_BlogPostHeader.tsx
 import Image from "next/image";
 import React from "react";
