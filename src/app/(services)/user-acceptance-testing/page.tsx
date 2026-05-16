@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     createBreadcrumbSchema,
+    createFaqPageSchema,
     uatServiceSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -63,10 +64,31 @@ export default function UserAcceptanceTestingPage() {
         },
     ];
 
+    // F-44.1 batch 5: plain-text mirror of UATFAQs UI content for FAQPage JSON-LD.
+    const faqsForSchema = [
+        {
+            question: "What is User Acceptance Testing (UAT) and why is it important?",
+            answer: "User Acceptance Testing (UAT) is the final phase of software testing where actual end-users and business stakeholders validate that the software meets their business requirements. It's important because it identifies business misalignment and user experience issues that technical testing often misses, ensuring the software actually delivers business value.",
+        },
+        {
+            question: "What are the key steps in the UAT process?",
+            answer: "The UAT process typically follows 6 key steps: Planning (scope & criteria), Test Case Development (business scenarios), Team Selection & Training (facilitating users), Test Execution (collecting feedback), Issue Resolution (prioritizing bypasses/fixes), and Sign-Off (deployment readiness confirmation).",
+        },
+        {
+            question: "How does UAT differ from functional testing?",
+            answer: "Functional testing checks if the software works according to technical specifications (the mechanics). UAT validates if the software actually meets user needs and enables business workflows (the value). Functional is done by QA pros; UAT is done by end-users.",
+        },
+        {
+            question: "Who should be involved in User Acceptance Testing?",
+            answer: "Key participants include End-Users (provide feedback), Business Analysts (facilitate), Product Owners (strategic decisions), Operations Teams (readiness), and specialized UAT service providers like Testriq who manage the entire lifecycle.",
+        },
+    ];
+
     return (
         <div>
             <StructuredData data={uatServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData data={createFaqPageSchema(faqsForSchema)} />
             <MainLayout>
                 <UATHeroSection />
                 <UATWhatIsSection />
