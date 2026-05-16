@@ -3,6 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
   desktopAppTestingSchema,
   createCanonicalBreadcrumb,
+  createFaqPageSchema,
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -57,6 +58,30 @@ export default function DesktopAppTesting() {
   // ogImage.type "image/webp" added. Keywords lowercased. 7 dynamic()
   // imports converted to direct ES imports. Breadcrumb already migrated
   // in PR-3 — unchanged.
+  // F-44.1 batch 3: plain-text mirror of DesktopFAQs UI content for FAQPage JSON-LD.
+  const faqsForSchema = [
+    {
+      question: "What are the best practices for desktop application performance testing?",
+      answer: "To test desktop performance effectively, we first establish a baseline on a 'clean' OS. We then simulate resource-heavy background tasks and monitor for memory leaks during extended 'soak' periods, ensuring optimal performance.",
+    },
+    {
+      question: "How to test desktop software without an internet connection?",
+      answer: "To ensure a reliable user experience, we test local data caching and offline stability. We then confirm that all data syncs correctly the moment the application reconnects to the internet.",
+    },
+    {
+      question: "What is the difference between .EXE and .MSI package testing?",
+      answer: ".EXE and .MSI package testing focus on different installers. Our MSI testing evaluates database-driven logic and rollback safety. Meanwhile, we validate EXE files by focusing on custom wrapper scripts and user-permission prompts.",
+    },
+    {
+      question: "Can I use Selenium for desktop app testing?",
+      answer: "Selenium is primarily for web browsers. Appium (WinAppDriver) and TestComplete are our preferred tools for Windows 11 UI automation. They provide the deep integration needed to handle native desktop elements.",
+    },
+    {
+      question: "Why is hardware compatibility (RAM, CPU, GPU) testing important?",
+      answer: "Desktop applications interact directly with local system resources. Hardware compatibility testing is essential for enterprise software to ensure stability across legacy CPUs and diverse GPU configurations.",
+    },
+  ];
+
   return (
     <div>
       <StructuredData data={desktopAppTestingSchema} />
@@ -66,6 +91,7 @@ export default function DesktopAppTesting() {
           "Desktop Application Service"
         )}
       />
+      <StructuredData data={createFaqPageSchema(faqsForSchema)} />
       <MainLayout>
         <DesktopTestingHeroSection />
         <DesktopChallenges />
