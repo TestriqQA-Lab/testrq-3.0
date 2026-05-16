@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { BlogHeroSection } from "@/components/client-wrappers/BlogClientComponents";
 import BlogPostsGrid from "@/components/sections/BlogPostsGrid";
 import MainLayout from "@/components/layout/MainLayout";
@@ -7,16 +8,19 @@ import { sanityGetPostsBySlugs, sanityGetAllPostSlugs, Post } from "@/lib/sanity
 
 export const revalidate = 60; // Revalidate every minute
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}): Promise<Metadata> {
-  const resolvedSearchParams = await searchParams;
-  const currentPage = Number(resolvedSearchParams.page) || 1;
-  const canonicalUrl = currentPage > 1
-    ? `https://www.testriq.com/blog?page=${currentPage}`
-    : "https://www.testriq.com/blog";
+// F-48.1 — Make /blog Static. We removed the server-side `searchParams.page`
+// read (which previously auto-promoted this route to Dynamic Rendering and
+// silently overrode F-48 Layer 1 Cache-Control headers). The server now
+// always renders page 1; pagination is fully client-driven via
+// useSearchParams + the existing getBlogPosts Server Action inside
+// BlogPostsGrid. Result: route becomes Static → next.config.ts's
+// `public, s-maxage=60, stale-while-revalidate=86400` finally applies →
+// Vercel-Cache flips from MISS to HIT.
+export async function generateMetadata(): Promise<Metadata> {
+  // Canonical always points at the base `/blog` URL. Pagination is a UX
+  // affordance, not a separate indexable resource — Google should treat
+  // `?page=2` URLs as variants of `/blog`, not standalone canonicals.
+  const canonicalUrl = "https://www.testriq.com/blog";
 
   return {
     title: "Software Testing Blog | QA Insights & Best Practices",
@@ -66,13 +70,10 @@ export async function generateMetadata({
     category: "Technology",
   };
 }
-export default async function BlogPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}) {
-  const resolvedSearchParams = await searchParams;
-  const currentPage = Number(resolvedSearchParams.page) || 1;
+// F-48.1 — No `searchParams` prop. Always renders page 1's posts. Client
+// component (BlogPostsGrid) handles per-page navigation via the getBlogPosts
+// Server Action triggered by useSearchParams changes.
+export default async function BlogPage() {
   const postsPerPage = 9;
 
   let currentPosts: Post[] = [];
@@ -85,19 +86,17 @@ export default async function BlogPage({
     const allSlugs = await sanityGetAllPostSlugs();
     totalPages = Math.ceil(allSlugs.length / postsPerPage);
 
-    // 2. Get slugs for current page
-    const pageSlugs = allSlugs.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
+    // 2. Page 1 slugs only — pagination is client-driven from here
+    const pageSlugs = allSlugs.slice(0, postsPerPage);
 
-    // 3. Fetch posts by slugs - sanity adapter returns ADAPTED posts
+    // 3. Fetch posts by slugs — sanity adapter returns ADAPTED posts
     if (pageSlugs.length > 0) {
       currentPosts = await sanityGetPostsBySlugs(pageSlugs);
     }
 
-    // 4. For Featured/Trending, we only try to fetch on Page 1 to save resources.
-    if (currentPage === 1) {
-      featuredPosts = currentPosts.filter(p => p.featured);
-      trendingPosts = currentPosts.filter(p => p.trending);
-    }
+    // 4. Featured + Trending are page-1 only by design (above-the-fold UX)
+    featuredPosts = currentPosts.filter(p => p.featured);
+    trendingPosts = currentPosts.filter(p => p.trending);
 
   } catch (error) {
     console.error("Error fetching paginated posts:", error);
@@ -113,13 +112,29 @@ export default async function BlogPage({
       />
       <BlogHeroSection />
 
-      <BlogPostsGrid
-        initialPosts={currentPosts}
-        currentPage={currentPage}
-        totalPages={totalPages}
-        featuredPosts={featuredPosts}
-        trendingPosts={trendingPosts}
-      />
+      {/* F-48.1 — Suspense boundary is REQUIRED because BlogPostsGrid uses
+          useSearchParams(); without this, the whole route would silently
+          opt back into Dynamic Rendering and the Cache-Control header win
+          would be lost. The fallback uses the same posts grid pre-rendered
+          with page-1 data — visually identical, so users never see a
+          loading state on first paint. */}
+      <Suspense
+        fallback={
+          <BlogPostsGrid
+            initialPosts={currentPosts}
+            totalPages={totalPages}
+            featuredPosts={featuredPosts}
+            trendingPosts={trendingPosts}
+          />
+        }
+      >
+        <BlogPostsGrid
+          initialPosts={currentPosts}
+          totalPages={totalPages}
+          featuredPosts={featuredPosts}
+          trendingPosts={trendingPosts}
+        />
+      </Suspense>
     </MainLayout>
   );
 }
