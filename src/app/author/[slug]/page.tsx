@@ -74,7 +74,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = `${author.name} — QA Author & Software Testing Expert | Testriq`;
+  // Root layout's title.template = "%s | Testriq" appends the brand, so the
+  // page title intentionally omits "| Testriq". OG / Twitter titles bypass
+  // the template, so they get the branded variant.
+  const pageTitle = `${author.name} — QA Author & Software Testing Expert`;
+  const brandedTitle = `${pageTitle} | Testriq`;
   const description = clip(
     author.bio ||
       `Articles by ${author.name} on software testing, QA strategy, and quality engineering — published by Testriq, an ISTQB / ISO 9001 / ISO 27001 certified QA partner.`,
@@ -86,11 +90,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `${SITE_URL}/testriq-logo.png`;
 
   return {
-    title,
+    title: pageTitle,
     description,
     alternates: { canonical: canonicalUrl },
     openGraph: {
-      title,
+      title: brandedTitle,
       description,
       type: "profile",
       url: canonicalUrl,
@@ -100,7 +104,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: brandedTitle,
       description,
       images: [ogImage],
       creator: "@testriq",
