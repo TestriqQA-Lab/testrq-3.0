@@ -1,5 +1,4 @@
-'use client'
-
+// F-21.1 — Converted to Server Component. Audited for zero interactive APIs.
 import { NextStudio } from 'next-sanity/studio'
 import config from '../../../../sanity.config'
 

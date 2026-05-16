@@ -1,5 +1,7 @@
 "use client";
-
+// F-21.1 — REVERTED. This file uses styled-jsx (<style jsx>), which only
+// works inside Client Components. The F-21.1 heuristic missed this pattern.
+// Keeping "use client" so styled-jsx can register its runtime style injection.
 import Link from "next/link";
 import React from "react";
 import {

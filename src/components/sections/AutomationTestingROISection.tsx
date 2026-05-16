@@ -1,5 +1,4 @@
-"use client";
-
+// F-21.1 — Converted to Server Component. Audited for zero interactive APIs.
 import React from "react";
 import Link from "next/link";
 import { FaChartLine, FaCheckCircle, FaRobot, FaCogs, FaUsers } from "react-icons/fa";
