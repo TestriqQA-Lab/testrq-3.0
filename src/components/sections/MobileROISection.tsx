@@ -1,5 +1,4 @@
-"use client";
-
+// F-21.1 — Converted to Server Component. Audited for zero interactive APIs.
 import React from "react";
 import { FaDollarSign, FaClock, FaUsers, FaChartLine, FaShieldAlt, FaRocket } from "react-icons/fa";
 
