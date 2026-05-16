@@ -2452,59 +2452,10 @@ export const iso42001ComplianceTestingSchema = {
           "price": "0"
         }
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is ISO/IEC 42001:2023 and who needs it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ISO/IEC 42001:2023 is the first international standard for Artificial Intelligence Management Systems (AIMS). It provides a certifiable framework for organizations that develop, provide, or use AI-based products and services. Any organization seeking to demonstrate responsible AI governance can benefit from this certification."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does ISO/IEC 42001 relate to the EU AI Act and NIST AI RMF?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ISO/IEC 42001:2023 serves as a management system standard that can help organizations demonstrate compliance with multiple regulatory frameworks. The EU AI Act and NIST AI RMF share common objectives with ISO 42001, making it a gold standard bridge for global AI regulatory compliance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between ISO 42001 and ISO 27001?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "While ISO 27001 focuses on Information Security Management Systems (ISMS), ISO 42001 specifically addresses AI Management Systems (AIMS). ISO 42001 extends beyond security to cover AI-specific concerns like bias, fairness, explainability, ethical use, societal impact, and AI lifecycle management."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to achieve ISO/IEC 42001 certification?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The timeline typically ranges from 3-6 months depending on your organization's current AI maturity level. Organizations with existing management systems like ISO 27001 or ISO 9001 may accelerate this timeline."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are the Annex A controls in ISO/IEC 42001:2023?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Annex A contains 38 controls organized across multiple domains including AI policy, AI impact assessment, data management for AI, AI system lifecycle, and third-party/supplier management. These controls provide specific implementation requirements that complement the main clauses (4-10) of the standard."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Testriq help with both compliance testing and certification preparation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Testriq provides end-to-end support from initial gap analysis through testing execution, remediation guidance, and pre-certification audit simulation. Our 98% first-pass certification rate demonstrates the effectiveness of our approach."
-          }
-        }
-      ]
     }
+    // F-44.1: FAQPage intentionally NOT in @graph — page-side
+    // createFaqPageSchema(faqsForSchema) on /iso-iec-42001-compliance-testing-services
+    // is the single source of truth, mirroring the ISO42001FAQs UI content
+    // (8 Q&As vs 6 embedded). Removed embedded duplicate.
   ]
 };
