@@ -17,6 +17,8 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | ord
 }`;
 
 // Query for fetching a single post by slug
+// F-52: dereference author.credentials + author.sameAs so BlogPosting.author
+// JSON-LD can render the full Person entity (linked to /author/[slug]#person).
 export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0] {
   _id,
   title,
@@ -26,7 +28,7 @@ export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][
   body,
   publishedAt,
   _updatedAt,
-  "author": author->{name, slug, image, bio, linkedin},
+  "author": author->{name, slug, image, bio, linkedin, credentials, sameAs},
   "categories": categories[]->{title, slug, colorTheme, icon, description},
   "tags": tags[]->{title, slug},
   seo
@@ -104,6 +106,39 @@ export const searchPostsQuery = groq`*[_type == "post" && (
   publishedAt,
   _updatedAt,
   "author": author->{name, slug, image, bio},
+  "categories": categories[]->{title, slug, colorTheme, icon, description},
+  "tags": tags[]->{title, slug}
+}`;
+
+// =============================================
+// Author Queries (F-52)
+// =============================================
+
+// Fetch a single author by slug — used by /author/[slug] route.
+export const authorBySlugQuery = groq`*[_type == "author" && slug.current == $slug][0] {
+  _id,
+  name,
+  slug,
+  image,
+  bio,
+  linkedin,
+  credentials,
+  sameAs
+}`;
+
+// All author slugs — used by generateStaticParams for /author/[slug].
+export const authorSlugsQuery = groq`*[_type == "author" && defined(slug.current)][].slug.current`;
+
+// All posts by author slug — used by /author/[slug] post-grid section.
+export const postsByAuthorQuery = groq`*[_type == "post" && author->slug.current == $authorSlug && defined(slug.current)] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  mainImage,
+  excerpt,
+  publishedAt,
+  _updatedAt,
+  "author": author->{name, slug, image, bio, linkedin},
   "categories": categories[]->{title, slug, colorTheme, icon, description},
   "tags": tags[]->{title, slug}
 }`;

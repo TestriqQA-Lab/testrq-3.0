@@ -44,9 +44,12 @@ export interface Post {
     categorySlug: string;
     categoryColor: string;
     author: string;
+    authorSlug?: string;
     authorImage: string;
     authorBio: string;
     authorLinkedin?: string;
+    authorCredentials?: string[];
+    authorSameAs?: string[];
     date: string;
     dateISO: string;
     modifiedISO: string;
@@ -242,10 +245,13 @@ export function adaptSanityPost(sanityPost: any): Post {
         categorySlug: primaryCategory?.slug?.current || 'technology-stack',
         categoryColor,
         author: sanityPost.author?.name || 'Testriq Team',
+        authorSlug: sanityPost.author?.slug?.current || undefined,
         authorImage: sanityPost.author?.image ? sanityImage(sanityPost.author.image, { width: 60, height: 60 }) : 'https://placehold.co/60x60/png',
         authorImageRaw: sanityPost.author?.image || null,
         authorBio: sanityPost.author?.bio || 'QA Expert',
         authorLinkedin: sanityPost.author?.linkedin || null,
+        authorCredentials: Array.isArray(sanityPost.author?.credentials) ? sanityPost.author.credentials : [],
+        authorSameAs: Array.isArray(sanityPost.author?.sameAs) ? sanityPost.author.sameAs : [],
         date: new Date(sanityPost.publishedAt || new Date().toISOString()).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'short',
@@ -363,6 +369,68 @@ export async function sanityGetPostsBySlugs(slugs: string[]): Promise<Post[]> {
 
 export async function sanityGetAllPostSlugs() {
     return await client.fetch(queries.postSlugsQuery);
+}
+
+// =============================================
+// Author helpers (F-52)
+// =============================================
+
+export interface Author {
+    id: string;
+    name: string;
+    slug: string;
+    image: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    imageRaw: any;
+    bio: string;
+    linkedin?: string | null;
+    credentials: string[];
+    sameAs: string[];
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function adaptSanityAuthor(raw: any): Author {
+    return {
+        id: raw?._id || raw?.slug?.current || 'unknown',
+        name: raw?.name || 'Testriq Team',
+        slug: raw?.slug?.current || '',
+        image: raw?.image ? sanityImage(raw.image, { width: 256, height: 256, quality: 90 }) : '',
+        imageRaw: raw?.image || null,
+        bio: raw?.bio || '',
+        linkedin: raw?.linkedin || null,
+        credentials: Array.isArray(raw?.credentials) ? raw.credentials.filter(Boolean) : [],
+        sameAs: Array.isArray(raw?.sameAs) ? raw.sameAs.filter(Boolean) : [],
+    };
+}
+
+export async function sanityGetAuthorBySlug(slug: string): Promise<Author | null> {
+    try {
+        const raw = await client.fetch(queries.authorBySlugQuery, { slug });
+        return raw ? adaptSanityAuthor(raw) : null;
+    } catch (error) {
+        console.error("Error fetching author by slug:", error);
+        return null;
+    }
+}
+
+export async function sanityGetAllAuthorSlugs(): Promise<string[]> {
+    try {
+        return (await client.fetch(queries.authorSlugsQuery)) || [];
+    } catch (error) {
+        console.error("Error fetching author slugs:", error);
+        return [];
+    }
+}
+
+export async function sanityGetPostsByAuthor(authorSlug: string): Promise<Post[]> {
+    try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const posts: any[] = await client.fetch(queries.postsByAuthorQuery, { authorSlug });
+        return posts.map(adaptSanityPost);
+    } catch (error) {
+        console.error("Error fetching posts by author:", error);
+        return [];
+    }
 }
 
 export async function sanityGetTotalPostCount() {
