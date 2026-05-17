@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-
 const UATTypesSection: React.FC = () => {
     const types = [
         {
@@ -46,14 +44,10 @@ const UATTypesSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {types.map((type, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 }}
-                            className="bg-slate-50 border border-slate-200 rounded-2xl p-8 text-left hover:shadow-xl hover:border-blue-400 transition-all group"
-                        >
+                        <div
+      key={idx}
+      className="bg-slate-50 border border-slate-200 rounded-2xl p-8 text-left hover:shadow-xl hover:border-blue-400 transition-all group"
+    >
                             <div className="flex justify-between items-start mb-6">
                                 <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{type.title}</h3>
                                 <span className="text-[10px] uppercase font-black bg-blue-100 text-blue-700 px-2 py-1 rounded">TYPE-0{idx + 1}</span>
@@ -76,7 +70,7 @@ const UATTypesSection: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

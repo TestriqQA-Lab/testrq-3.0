@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-
 const FunctionalAnimation: React.FC = () => {
     return (
         <div className="relative w-full h-[400px] bg-slate-50 rounded-[2rem] overflow-hidden flex items-center justify-center p-8 border border-gray-100 shadow-inner">
@@ -10,11 +8,9 @@ const FunctionalAnimation: React.FC = () => {
                 {/* Input Module */}
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col items-center">
                     <div className="w-16 h-16 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center relative overflow-hidden">
-                        <motion.div
-                            className="w-full h-1 bg-brand-blue/10 absolute top-0"
-                            animate={{ x: ["-100%", "100%"] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        />
+                        <div
+      className="w-full h-1 bg-brand-blue/10 absolute top-0"
+     />
                         <div className="grid grid-cols-2 gap-1 p-2">
                             {[1, 2, 3, 4].map((i) => (
                                 <div key={i} className="w-2 h-2 bg-gray-200 rounded-full" />
@@ -27,17 +23,13 @@ const FunctionalAnimation: React.FC = () => {
                 {/* Processing Logic */}
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="w-32 h-32 bg-white rounded-3xl border-2 border-brand-blue/20 relative flex items-center justify-center shadow-lg">
-                        <motion.div
-                            className="absolute inset-0 rounded-3xl border-2 border-brand-blue border-dashed"
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                        />
+                        <div
+      className="absolute inset-0 rounded-3xl border-2 border-brand-blue border-dashed"
+     />
                         <div className="relative z-10 space-y-2">
-                            <motion.div
-                                className="w-12 h-1 bg-green-400 rounded-full mx-auto"
-                                animate={{ opacity: [1, 0.4, 1] }}
-                                transition={{ duration: 1, repeat: Infinity }}
-                            />
+                            <div
+      className="w-12 h-1 bg-green-400 rounded-full mx-auto"
+     />
                             <div className="text-[10px] font-black text-brand-blue uppercase tracking-tighter text-center">Validating...</div>
                         </div>
                     </div>
@@ -46,41 +38,34 @@ const FunctionalAnimation: React.FC = () => {
                 {/* Validated Output */}
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col items-center">
                     <div className="w-16 h-16 bg-green-50 rounded-xl border-2 border-green-100 flex items-center justify-center shadow-sm">
-                        <motion.svg
-                            className="w-8 h-8 text-green-500"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            initial={{ scale: 0.5, opacity: 0 }}
-                            animate={{ scale: [0.5, 1, 0.5], opacity: [0, 1, 0] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        >
+                        <svg
+      className="w-8 h-8 text-green-500"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </motion.svg>
+                        </svg>
                     </div>
                     <span className="text-[10px] font-bold text-green-600 uppercase mt-2 tracking-widest">Expected Result</span>
                 </div>
 
                 {/* Data Flow Lines */}
                 <svg className="absolute inset-0 w-full h-full -z-0 pointer-events-none" style={{ filter: "drop-shadow(0 0 4px rgba(37, 168, 224, 0.2))" }}>
-                    <motion.path
-                        d="M 64 80 L 160 80"
-                        stroke="#25A8E0"
-                        strokeWidth="2"
-                        strokeDasharray="4 4"
-                        fill="none"
-                        animate={{ strokeDashoffset: [-20, 0] }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                    />
-                    <motion.path
-                        d="M 288 80 L 384 80"
-                        stroke="#10b981"
-                        strokeWidth="2"
-                        strokeDasharray="4 4"
-                        fill="none"
-                        animate={{ strokeDashoffset: [-20, 0] }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                    />
+                    <path
+      d="M 64 80 L 160 80"
+      stroke="#25A8E0"
+      strokeWidth="2"
+      strokeDasharray="4 4"
+      fill="none"
+     />
+                    <path
+      d="M 288 80 L 384 80"
+      stroke="#10b981"
+      strokeWidth="2"
+      strokeDasharray="4 4"
+      fill="none"
+     />
                 </svg>
             </div>
 

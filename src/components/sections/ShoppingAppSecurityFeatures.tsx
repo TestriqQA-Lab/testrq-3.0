@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Lock,
   Shield,
@@ -144,13 +143,9 @@ const ShoppingAppSecurityFeatures: React.FC = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             <span className="text-brand-blue">Advanced Security</span> for
             Shopping Apps
@@ -167,19 +162,15 @@ const ShoppingAppSecurityFeatures: React.FC = () => {
             </Link>
             , and customer protection.
           </p>
-        </motion.div>
+        </div>
 
         {/* Security Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {securityFeatures.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`${feature.bgColor} rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
-            >
+            <div
+      key={index}
+      className={`${feature.bgColor} rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
+    >
               <div className={`${feature.color} mb-4`}>{feature.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {feature.title}
@@ -195,18 +186,14 @@ const ShoppingAppSecurityFeatures: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
+        <div
+      className="text-center mt-16"
+    >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">
               Ready for Our Security Seal?
@@ -227,7 +214,7 @@ const ShoppingAppSecurityFeatures: React.FC = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

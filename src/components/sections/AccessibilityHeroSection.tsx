@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaAccessibleIcon, FaUniversalAccess } from "react-icons/fa";
 import AccessibilityAnimation from "@/components/animations/AccessibilityAnimation";
 
@@ -15,43 +14,31 @@ const AccessibilityHeroSection: React.FC = () => {
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="max-w-2xl">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md mb-8 ring-1 ring-white/20"
-                        >
+                        <div
+      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md mb-8 ring-1 ring-white/20"
+    >
                             <FaAccessibleIcon className="text-white" />
                             <span className="text-sm font-medium tracking-wide">
                                 Ensuring Digital Inclusion
                             </span>
-                        </motion.div>
+                        </div>
 
-                        <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8"
-                        >
+                        <h1
+      className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8"
+    >
                             Accessibility <br />
                             <span className="text-white">Testing Services.</span>
-                        </motion.h1>
+                        </h1>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-lg md:text-2xl text-white leading-relaxed mb-10 max-w-2xl"
-                        >
+                        <p
+      className="text-lg md:text-2xl text-white leading-relaxed mb-10 max-w-2xl"
+    >
                             Making digital experiences usable for everyone. Testriq specializes in comprehensive Web accessibility testing and WCAG compliance testing for a truly inclusive digital landscape.
-                        </motion.p>
+                        </p>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.6 }}
-                            className="flex flex-col sm:flex-row gap-6"
-                        >
+                        <div
+      className="flex flex-col sm:flex-row gap-6"
+    >
                             <button
                                 onClick={() => (window.location.href = "/contact-us")}
                                 className="px-8 py-4 bg-white text-brand-blue font-bold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300"
@@ -64,20 +51,17 @@ const AccessibilityHeroSection: React.FC = () => {
                                 </div>
                                 <span className="text-sm">Trusted by <br /><strong>150+ Companies</strong></span>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                     {/* Animation Side */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="hidden lg:block relative"
-                    >
+                    <div
+      className="hidden lg:block relative"
+    >
                         {/* Decorative background glow behind the animation */}
                         <div className="absolute inset-0 bg-blue-400/20 blur-[100px] rounded-full mix-blend-screen scale-75"></div>
                         <AccessibilityAnimation />
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

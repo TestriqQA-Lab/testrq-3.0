@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
     FaDesktop, FaMobile, FaExternalLinkAlt, FaGlobe, FaWindows,
     FaMicrochip, FaTag, FaAward, FaShoppingCart, FaCloud,
@@ -44,15 +43,10 @@ const CompatibilityTestingServicesSection: React.FC = () => {
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
-                            whileHover={{ y: -5 }}
-                            className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-300"
-                        >
+                        <div
+      key={index}
+      className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-300 transition-transform"
+    >
                             <div className="text-brand-blue text-2xl mb-4 bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center">
                                 {service.icon}
                             </div>
@@ -60,21 +54,18 @@ const CompatibilityTestingServicesSection: React.FC = () => {
                             <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">
                                 {service.desc}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
 
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="p-6 bg-brand-blue rounded-2xl shadow-lg flex flex-col items-center justify-center text-center space-y-4 col-span-full xl:col-span-1"
-                    >
+                    <div
+      className="p-6 bg-brand-blue rounded-2xl shadow-lg flex flex-col items-center justify-center text-center space-y-4 col-span-full xl:col-span-1"
+    >
                         <h4 className="text-white font-bold text-xl">Custom Requirements?</h4>
                         <p className="text-blue-50 text-sm">We tailor our strategy to your specific platform matrix.</p>
                         <Link href="/contact-us" className="bg-white text-brand-blue px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-50 transition-colors">
                             Talk to an Expert
                         </Link>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

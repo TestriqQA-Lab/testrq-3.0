@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaCheck, FaArrowUp, FaGlobe, FaClock } from "react-icons/fa";
 
 const CyberSecurityROISection: React.FC = () => {
@@ -46,14 +45,10 @@ const CyberSecurityROISection: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {benefits.map((benefit, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="group p-8 rounded-3xl bg-gray-50 hover:bg-white hover:shadow-2xl border border-transparent hover:border-gray-100 transition-all duration-500 h-full flex flex-col"
-                        >
+                        <div
+      key={index}
+      className="group p-8 rounded-3xl bg-gray-50 hover:bg-white hover:shadow-2xl border border-transparent hover:border-gray-100 transition-all duration-500 h-full flex flex-col"
+    >
                             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
                                 {benefit.icon}
                             </div>
@@ -65,7 +60,7 @@ const CyberSecurityROISection: React.FC = () => {
                                 <span className="text-xs font-black text-brand-blue uppercase tracking-widest block mb-1">IMPACT</span>
                                 <span className="text-lg font-extrabold text-gray-900">{benefit.impact}</span>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 

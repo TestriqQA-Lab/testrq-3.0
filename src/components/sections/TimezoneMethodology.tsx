@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-
 const steps = [
     {
         number: "01",
@@ -50,14 +48,10 @@ const TimezoneMethodology: React.FC = () => {
 
                     <div className="space-y-12 md:space-y-24">
                         {steps.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}
-                                className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
-                            >
+                            <div
+      key={index}
+      className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+    >
                                 <div className="md:w-1/2 flex justify-center md:justify-end md:px-12">
                                     <div className={`text-right ${index % 2 !== 0 ? 'md:text-left' : 'md:text-right'}`}>
                                         <span className="text-5xl md:text-7xl font-black text-slate-800 mb-4 block leading-none">
@@ -75,7 +69,7 @@ const TimezoneMethodology: React.FC = () => {
                                 </div>
 
                                 <div className="md:w-1/2" />
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

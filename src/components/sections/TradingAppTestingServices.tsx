@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Smartphone,
   Globe,
@@ -138,13 +137,9 @@ const TradingAppTestingServices = () => {
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Comprehensive{" "}
             <span className="text-brand-blue">Testing Services</span>
@@ -154,19 +149,15 @@ const TradingAppTestingServices = () => {
             platforms, covering every aspect from ultra-low latency to
             regulatory compliance.
           </p>
-        </motion.div>
+        </div>
 
         {/* Testing Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {testingServices.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`${service.bgColor} ${service.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
-            >
+            <div
+      key={index}
+      className={`${service.bgColor} ${service.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
+    >
               <div className={`${service.color} mb-4`}>{service.icon}</div>
 
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -185,32 +176,24 @@ const TradingAppTestingServices = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Testing Process */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-xl p-8 shadow-lg mb-16"
-        >
+        <div
+      className="bg-white rounded-xl p-8 shadow-lg mb-16"
+    >
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Our Trading App Testing Process
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testingProcess.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center relative"
-              >
+              <div
+      key={index}
+      className="text-center relative"
+    >
                 <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
                   {step.step}
                 </div>
@@ -226,19 +209,15 @@ const TradingAppTestingServices = () => {
                     <ArrowRight className="w-6 h-6" />
                   </div>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Performance Metrics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8"
-        >
+        <div
+      className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8"
+    >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">
               Performance Metrics We Deliver
@@ -273,20 +252,16 @@ const TradingAppTestingServices = () => {
                 icon: <CheckCircle className="w-6 h-6" />,
               },
             ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center bg-white/10 rounded-lg p-4"
-              >
+              <div
+      key={index}
+      className="text-center bg-white/10 rounded-lg p-4"
+    >
                 <div className="text-white mb-2 flex justify-center">
                   {item.icon}
                 </div>
                 <div className="text-2xl font-bold mb-1">{item.metric}</div>
                 <div className="text-blue-100 text-sm">{item.label}</div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -298,7 +273,7 @@ const TradingAppTestingServices = () => {
               </button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaHistory, FaCloud, FaChartLine, FaUserShield } from "react-icons/fa";
 
 const ArchitectureAdvantageSection: React.FC = () => {
@@ -42,20 +41,16 @@ const ArchitectureAdvantageSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {advantages.map((adv, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-100"
-                        >
+                        <div
+      key={index}
+      className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-100"
+    >
                             <div className="text-[theme(color.brand.blue)] mb-6">
                                 {adv.icon}
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-4">{adv.title}</h3>
                             <p className="text-gray-600 leading-relaxed">{adv.description}</p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

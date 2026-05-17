@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaClipboardList, FaFileAlt, FaUserTie, FaPlayCircle, FaTools, FaCheckDouble } from "react-icons/fa";
 
 const UATProcessSection: React.FC = () => {
@@ -63,14 +62,10 @@ const UATProcessSection: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
                         {steps.map((step, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="relative flex flex-col items-center text-center group"
-                            >
+                            <div
+      key={idx}
+      className="relative flex flex-col items-center text-center group"
+    >
                                 <div className={`w-28 h-28 rounded-3xl ${step.color === 'blue' ? 'bg-blue-600 shadow-blue-200' : 'bg-slate-900 shadow-slate-300'} text-white flex items-center justify-center text-3xl mb-6 shadow-xl relative z-10 transition-transform group-hover:-translate-y-2 duration-300`}>
                                     {step.icon}
                                     <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full border-4 border-slate-50 bg-white flex items-center justify-center text-sm font-black text-gray-900">
@@ -84,7 +79,7 @@ const UATProcessSection: React.FC = () => {
                                 <p className="text-sm text-gray-600 leading-relaxed font-medium">
                                     {step.description}
                                 </p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaCheckCircle, FaShieldAlt, FaClock, FaAward } from "react-icons/fa";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 
@@ -26,43 +25,32 @@ const PricingHeroSection: React.FC = () => {
                 <Breadcrumb items={[{ label: "Pricing & Packages" }]} />
 
                 <div className="text-center mt-12 mb-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center bg-blue-500/20 text-blue-400 gap-2 px-5 py-2.5 rounded-full mb-8 border border-blue-500/30"
-                    >
+                    <div
+      className="inline-flex items-center bg-blue-500/20 text-blue-400 gap-2 px-5 py-2.5 rounded-full mb-8 border border-blue-500/30"
+    >
                         <span className="text-sm font-bold uppercase tracking-wider">No Fluff. Just Results.</span>
-                    </motion.div>
+                    </div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight tracking-tight"
-                    >
+                    <h1
+      className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight tracking-tight"
+    >
                         Quality Assurance <br />
                         <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
                             Packaged for Growth
                         </span>
-                    </motion.h1>
+                    </h1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12"
-                    >
+                    <p
+      className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12"
+    >
                         Transparent, predictable pricing for world-class software testing.
                         Choose your tier. Scale as you grow. No hidden fees.
-                    </motion.p>
+                    </p>
 
                     {/* Trust Badges */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="flex flex-wrap justify-center gap-4 md:gap-6"
-                    >
+                    <div
+      className="flex flex-wrap justify-center gap-4 md:gap-6"
+    >
                         {trustBadges.map((badge, i) => (
                             <div
                                 key={i}
@@ -72,7 +60,7 @@ const PricingHeroSection: React.FC = () => {
                                 <span className="text-white/90 text-sm font-medium">{badge.text}</span>
                             </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaGraduationCap, FaTools, FaUniversalAccess, FaUserCheck, FaCode } from "react-icons/fa";
 
 const AccessibilityProcessSection: React.FC = () => {
@@ -54,14 +53,10 @@ const AccessibilityProcessSection: React.FC = () => {
 
                     <div className="space-y-6">
                         {pillars.map((pillar, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="flex gap-6 p-6 rounded-3xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
-                            >
+                            <div
+      key={index}
+      className="flex gap-6 p-6 rounded-3xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+    >
                                 <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-300/20 flex items-center justify-center">
                                     <pillar.icon className="text-2xl text-white" />
                                 </div>
@@ -69,7 +64,7 @@ const AccessibilityProcessSection: React.FC = () => {
                                     <h3 className="text-xl font-bold mb-2">{pillar.title}</h3>
                                     <p className="text-white leading-relaxed">{pillar.text}</p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

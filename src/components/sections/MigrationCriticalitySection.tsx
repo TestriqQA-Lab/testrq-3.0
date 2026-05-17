@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaExclamationTriangle, FaShieldAlt, FaSyncAlt } from "react-icons/fa";
 
 const MigrationCriticalitySection: React.FC = () => {
@@ -53,11 +52,10 @@ const MigrationCriticalitySection: React.FC = () => {
 
                     <div className="grid sm:grid-cols-1 gap-6">
                         {risks.map((risk, index) => (
-                            <motion.div
-                                key={index}
-                                whileHover={{ x: 10 }}
-                                className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start group hover:border-brand-blue transition-colors"
-                            >
+                            <div
+      key={index}
+      className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start group hover:border-brand-blue transition-colors"
+    >
                                 <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors">
                                     {risk.icon}
                                 </div>
@@ -65,7 +63,7 @@ const MigrationCriticalitySection: React.FC = () => {
                                     <h3 className="text-lg font-bold text-gray-900 mb-2">{risk.title}</h3>
                                     <p className="text-gray-600 text-sm leading-relaxed">{risk.description}</p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

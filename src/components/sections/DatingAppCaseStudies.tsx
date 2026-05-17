@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { FaTrophy } from "react-icons/fa";
 
 const DatingAppCaseStudies = () => {
@@ -69,19 +68,14 @@ const DatingAppCaseStudies = () => {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className={`bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transition-all duration-300 ${
+            <div
+      key={index}
+      className={`bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transition-all duration-300 ${
                 activeTestimonial === index
                   ? "ring-2 ring-brand-blue scale-105"
                   : ""
-              }`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ scale: 1.02 }}
-            >
+              } hover:scale-102 transition-transform`}
+    >
               <div className="text-6xl mb-6">{testimonial.image}</div>
 
               <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -102,7 +96,7 @@ const DatingAppCaseStudies = () => {
                   )
                 )}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

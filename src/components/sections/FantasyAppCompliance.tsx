@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Globe,
   FileText,
@@ -113,13 +112,9 @@ const FantasyAppCompliance = () => {
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Global <span className="text-brand-blue">Compliance Standards</span>
           </h2>
@@ -127,19 +122,15 @@ const FantasyAppCompliance = () => {
             Ensure your fantasy sports app aligns with international privacy,
             security, and fair gaming regulations — and builds trust with players worldwide.
           </p>
-        </motion.div>
+        </div>
 
         {/* Compliance Areas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {complianceAreas.map((area, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`${area.bgColor} ${area.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300`}
-            >
+            <div
+      key={index}
+      className={`${area.bgColor} ${area.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300`}
+    >
               <div className="flex items-start gap-4 mb-4">
                 <div className={`${area.color}`}>{area.icon}</div>
                 <div>
@@ -177,32 +168,24 @@ const FantasyAppCompliance = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Compliance Checklist */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-gray-50 rounded-xl p-8"
-        >
+        <div
+      className="bg-gray-50 rounded-xl p-8"
+    >
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Fantasy App Compliance Checklist
           </h3>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {complianceChecklist.map((category, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg p-6 shadow-sm"
-              >
+              <div
+      key={index}
+      className="bg-white rounded-lg p-6 shadow-sm"
+    >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 bg-brand-blue text-white rounded-lg flex items-center justify-center">
                     <Scale className="w-4 h-4" />
@@ -220,19 +203,15 @@ const FantasyAppCompliance = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Compliance Assessment CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
+        <div
+      className="text-center mt-16"
+    >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <AlertCircle className="w-8 h-8" />
@@ -251,7 +230,7 @@ const FantasyAppCompliance = () => {
               </button> */}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

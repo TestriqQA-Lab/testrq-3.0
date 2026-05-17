@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaUsers, FaSync, FaHandshake, FaMapMarkerAlt, FaRocket } from "react-icons/fa";
 
 const services = [
@@ -47,14 +46,10 @@ const TimezoneServicesGrid: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className={`p-8 rounded-2xl border border-gray-100 bg-slate-50 hover:bg-white hover:border-blue-100 hover:shadow-xl transition-all duration-300 group ${index === services.length - 1 ? 'md:col-span-2 lg:col-span-1' : ''}`}
-                        >
+                        <div
+      key={index}
+      className={`p-8 rounded-2xl border border-gray-100 bg-slate-50 hover:bg-white hover:border-blue-100 hover:shadow-xl transition-all duration-300 group ${index === services.length - 1 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+    >
                             <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                                 {service.icon}
                             </div>
@@ -64,7 +59,7 @@ const TimezoneServicesGrid: React.FC = () => {
                             <p className="text-gray-600 leading-relaxed">
                                 {service.description}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

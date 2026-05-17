@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Globe,
   FileText,
@@ -134,13 +133,9 @@ const TradingAppCompliance = () => {
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Global{" "}
             <span className="text-brand-blue">Compliance Standards</span>
@@ -149,19 +144,15 @@ const TradingAppCompliance = () => {
             Ensure your trading app meets international regulatory requirements and industry 
             standards across different jurisdictions and financial markets.
           </p>
-        </motion.div>
+        </div>
 
         {/* Compliance Standards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {complianceStandards.map((standard, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`${standard.bgColor} ${standard.borderColor} border-2 rounded-xl p-8 hover:shadow-lg transition-all duration-300`}
-            >
+            <div
+      key={index}
+      className={`${standard.bgColor} ${standard.borderColor} border-2 rounded-xl p-8 hover:shadow-lg transition-all duration-300`}
+    >
               <div className={`${standard.color} mb-4`}>
                 {standard.icon}
               </div>
@@ -203,32 +194,24 @@ const TradingAppCompliance = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Data Protection Standards */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-gray-50 rounded-xl p-8 mb-16"
-        >
+        <div
+      className="bg-gray-50 rounded-xl p-8 mb-16"
+    >
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Data Protection & Privacy Standards
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {dataProtectionStandards.map((standard, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg p-6 shadow-md"
-              >
+              <div
+      key={index}
+      className="bg-white rounded-lg p-6 shadow-md"
+    >
                 <h4 className="text-lg font-bold text-gray-900 mb-3">
                   {standard.title}
                 </h4>
@@ -266,32 +249,24 @@ const TradingAppCompliance = () => {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Compliance Checklist */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-16"
-        >
+        <div
+      className="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-16"
+    >
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Comprehensive Compliance Checklist
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {complianceChecklist.map((category, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+              <div
+      key={index}
+    >
                 <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <AlertCircle className="w-5 h-5 text-brand-blue" />
                   {category.category}
@@ -305,19 +280,15 @@ const TradingAppCompliance = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8"
-        >
+        <div
+      className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8"
+    >
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">
               Compliance Gap Assessment
@@ -336,7 +307,7 @@ const TradingAppCompliance = () => {
               </button> */}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

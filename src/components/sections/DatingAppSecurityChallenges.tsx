@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { AlertTriangle, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -59,14 +58,10 @@ const DatingAppSecurityChallenges = () => {
             </h3>
             <div className="space-y-6">
               {securityThreats.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-red-50 border border-red-200 p-6 rounded-xl"
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
+                <div
+      key={index}
+      className="bg-red-50 border border-red-200 p-6 rounded-xl"
+    >
                   <div className="flex items-start">
                     <AlertTriangle className="w-6 h-6 text-red-600 mr-4 mt-1 flex-shrink-0" />
                     <div>
@@ -79,7 +74,7 @@ const DatingAppSecurityChallenges = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -90,17 +85,13 @@ const DatingAppSecurityChallenges = () => {
             </h3>
             <div className="space-y-4">
               {specializedSecurityReasons.map((reason, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
+                <div
+      key={index}
+      className="flex items-center"
+    >
                   <CheckCircle className="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" />
                   <span className="text-gray-700">{reason}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

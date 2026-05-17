@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaShieldAlt, FaHistory, FaProjectDiagram } from "react-icons/fa";
 
 const FunctionalCriticalitySection: React.FC = () => {
@@ -12,12 +11,9 @@ const FunctionalCriticalitySection: React.FC = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="max-w-4xl mx-auto">
-                    <motion.div
-                        className="text-center mb-16"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <div
+      className="text-center mb-16"
+    >
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                             The Foundation of Quality: Delivering Software That <span className="text-brand-blue">Simply Works</span>
                         </h2>
@@ -25,7 +21,7 @@ const FunctionalCriticalitySection: React.FC = () => {
                         <p className="text-lg text-gray-600 leading-relaxed">
                             In today&apos;s competitive digital landscape, software applications are the backbone of business operations and customer engagement. Users expect flawless performance, intuitive functionality, and a seamless experience every single time.
                         </p>
-                    </motion.div>
+                    </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
@@ -45,14 +41,10 @@ const FunctionalCriticalitySection: React.FC = () => {
                                 text: "Every data flow aligns perfectly with your business requirements and user expectations."
                             }
                         ].map((card, idx) => (
-                            <motion.div
-                                key={idx}
-                                className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                            >
+                            <div
+      key={idx}
+      className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group"
+    >
                                 <div className="mb-6 p-4 rounded-2xl bg-blue-50 inline-block group-hover:scale-110 transition-transform duration-500">
                                     {card.icon}
                                 </div>
@@ -62,7 +54,7 @@ const FunctionalCriticalitySection: React.FC = () => {
                                 <p className="text-gray-600 text-base leading-relaxed">
                                     {card.text}
                                 </p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
