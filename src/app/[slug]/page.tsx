@@ -478,7 +478,14 @@ export default async function SlugPage({ params }: PageProps) {
       { name: "Case Studies", url: "https://www.testriq.com/case-studies" },
       { name: caseStudy.title, url: `https://www.testriq.com/${caseStudy.slug}` },
     ]);
-    const relatedCaseStudies = await sanityGetRelatedCaseStudies(caseStudy.slug, 2);
+    // Wrapped — failure here just hides the related-studies sidebar block
+    // rather than crashing the whole case-study page.
+    let relatedCaseStudies: Awaited<ReturnType<typeof sanityGetRelatedCaseStudies>> = [];
+    try {
+      relatedCaseStudies = await sanityGetRelatedCaseStudies(caseStudy.slug, 2);
+    } catch (err) {
+      console.error(`Sanity error fetching related case studies for "${caseStudy.slug}":`, err);
+    }
 
     return (
       <div>

@@ -35,10 +35,27 @@ const corePages: { slug: string; title: string }[] = [
 ];
 
 export default async function SitemapPage() {
-    // Fetch all content recursively
-    const posts = await getAllPosts();
-    const categories = await getAllCategories();
-    const tags = await getAllTags();
+    // Fetch all content recursively. Wrapped so Sanity outages don't crash
+    // the HTML sitemap — falls back to empty lists (sitemap will show only
+    // static + filesystem-discovered routes, no Sanity content).
+    let posts: Post[] = [];
+    let categories: Category[] = [];
+    try {
+        posts = await getAllPosts();
+    } catch (err) {
+        console.error('Sanity error fetching posts for /website-map:', err);
+    }
+    try {
+        categories = await getAllCategories();
+    } catch (err) {
+        console.error('Sanity error fetching categories for /website-map:', err);
+    }
+    let tags: Tag[] = [];
+    try {
+        tags = await getAllTags();
+    } catch (err) {
+        console.error('Sanity error fetching tags for /website-map:', err);
+    }
 
     // Group posts by category for better UX
     const postsByCategory: Record<string, Post[]> = {};

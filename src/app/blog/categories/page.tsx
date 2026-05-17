@@ -152,7 +152,16 @@ export const metadata: Metadata = {
 };
 
 export default async function CategoriesPage() {
-  const allCategories = await sanityGetCategories();
+  // Wrap in try/catch so Sanity outages (e.g. plan_limit_reached 402) don't
+  // crash prerender — fall back to empty list (page renders the hero +
+  // process sections but no category grid). ISR picks up real data on next
+  // request when Sanity recovers.
+  let allCategories: Awaited<ReturnType<typeof sanityGetCategories>> = [];
+  try {
+    allCategories = await sanityGetCategories();
+  } catch (err) {
+    console.error('Sanity error fetching categories for /blog/categories:', err);
+  }
   const categories = allCategories.filter(
     (cat: Category) => cat.postCount > 0
   );
