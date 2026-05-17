@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     createBreadcrumbSchema,
@@ -7,16 +8,43 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
+// F-94 — Above-fold Hero stays as a direct import for fast critical-path
+// render. The 9 below-fold sections are wrapped in `next/dynamic` so each
+// becomes its own async chunk that the client loads on demand (ssr: true
+// preserved by default — content stays server-rendered for SEO). This is
+// the same code-splitting pattern already used by `/` (Home) and
+// `/about-us` (12 + 7 dynamic imports respectively). Net effect: smaller
+// initial JS chunk for the route's critical path, then progressive
+// chunk-loading as the visitor scrolls.
 import ManualTestingHeroSection from "@/components/sections/ManualTestingHeroSection";
-import ManualTestingComprehensiveSlider from "@/components/sections/ManualTestingComprehensiveSlider";
-import ManualTestingHumanAdvantage from "@/components/sections/ManualTestingHumanAdvantage";
-import ManualTestingProvenTestingProcess from "@/components/sections/ManualTestingProvenTestingProcess";
-import ManualTestingWhyChooseTestriq from "@/components/sections/ManualTestingWhyChooseTestriq";
-import ManualTestingToolsFramework from "@/components/sections/ManualTestingToolsFramework";
-import ManualTestingGlobalReach from "@/components/sections/ManualTestingGlobalReach";
-import ManualTestingCaseStudies from "@/components/sections/ManualTestingCaseStudies";
-import ManualTestingFAQs from "@/components/sections/ManualTestingFAQs";
-import ManualTestingReadyToEnsureQuality from "@/components/sections/ManualTestingReadyToEnsureQuality";
+
+const ManualTestingComprehensiveSlider = dynamic(
+    () => import("@/components/sections/ManualTestingComprehensiveSlider"),
+);
+const ManualTestingHumanAdvantage = dynamic(
+    () => import("@/components/sections/ManualTestingHumanAdvantage"),
+);
+const ManualTestingProvenTestingProcess = dynamic(
+    () => import("@/components/sections/ManualTestingProvenTestingProcess"),
+);
+const ManualTestingWhyChooseTestriq = dynamic(
+    () => import("@/components/sections/ManualTestingWhyChooseTestriq"),
+);
+const ManualTestingToolsFramework = dynamic(
+    () => import("@/components/sections/ManualTestingToolsFramework"),
+);
+const ManualTestingGlobalReach = dynamic(
+    () => import("@/components/sections/ManualTestingGlobalReach"),
+);
+const ManualTestingCaseStudies = dynamic(
+    () => import("@/components/sections/ManualTestingCaseStudies"),
+);
+const ManualTestingFAQs = dynamic(
+    () => import("@/components/sections/ManualTestingFAQs"),
+);
+const ManualTestingReadyToEnsureQuality = dynamic(
+    () => import("@/components/sections/ManualTestingReadyToEnsureQuality"),
+);
 
 export const revalidate = 3600;
 
