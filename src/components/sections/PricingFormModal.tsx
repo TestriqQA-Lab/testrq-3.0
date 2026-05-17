@@ -4,8 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaUser, FaEnvelope, FaPhone, FaBuilding, FaPaperPlane, FaCheckCircle, FaShieldAlt } from "react-icons/fa";
-import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css";
+import PhoneInput from "@/components/ui/PhoneInput";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 

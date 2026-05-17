@@ -14,8 +14,7 @@ import {
   FaUser,
   FaComments,
 } from "react-icons/fa";
-import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css";
+import PhoneInput from "@/components/ui/PhoneInput";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 import Link from "next/link";
