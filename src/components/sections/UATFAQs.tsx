@@ -49,17 +49,11 @@ const UATFAQs: React.FC = () => {
                                     {activeIndex === i ? <FaMinus /> : <FaPlus />}
                                 </div>
                             </button>
-                            <div
-                                className={`grid transition-all duration-300 ease-out ${
-                                    activeIndex === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                                }`}
-                            >
-                                <div className="overflow-hidden">
-                                    <div className="px-6 lg:px-8 pb-8 text-gray-600 leading-relaxed font-medium">
-                                        {faq.a}
-                                    </div>
+                            {activeIndex === i && (
+                                <div className="px-6 lg:px-8 pb-8 text-gray-600 leading-relaxed font-medium">
+                                    {faq.a}
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>

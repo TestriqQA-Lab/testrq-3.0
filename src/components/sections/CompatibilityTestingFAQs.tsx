@@ -69,19 +69,13 @@ const CompatibilityTestingFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <div
-                                className={`grid transition-all duration-300 ease-out ${
-                                    openFAQ === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                                }`}
-                            >
-                                <div className="overflow-hidden">
-                                    <div className="px-8 pb-6">
-                                        <p className="text-gray-600 leading-relaxed italic border-l-2 border-brand-blue pl-4">
-                                            {faq.answer}
-                                        </p>
-                                    </div>
+                            {openFAQ === index && (
+                                <div className="px-8 pb-6">
+                                    <p className="text-gray-600 leading-relaxed italic border-l-2 border-brand-blue pl-4">
+                                        {faq.answer}
+                                    </p>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>
