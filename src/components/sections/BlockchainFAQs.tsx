@@ -57,14 +57,12 @@ const BlockchainFAQs: React.FC = () => {
                             </button>
 
                             <div
-                                className={`grid transition-all duration-300 ease-in-out ${
-                                    openIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                    openIndex === index ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
                                 }`}
                             >
-                                <div className="overflow-hidden">
-                                    <div className="p-6 pt-0 text-gray-600 leading-relaxed bg-white">
-                                        {faq.answer}
-                                    </div>
+                                <div className="p-6 pt-0 text-gray-600 leading-relaxed bg-white">
+                                    {faq.answer}
                                 </div>
                             </div>
                         </div>

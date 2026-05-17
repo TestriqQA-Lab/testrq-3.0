@@ -50,14 +50,12 @@ const UATFAQs: React.FC = () => {
                                 </div>
                             </button>
                             <div
-                                className={`grid transition-all duration-300 ease-out ${
-                                    activeIndex === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                className={`overflow-hidden transition-all duration-300 ease-out ${
+                                    activeIndex === i ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
                                 }`}
                             >
-                                <div className="overflow-hidden">
-                                    <div className="px-6 lg:px-8 pb-8 text-gray-600 leading-relaxed font-medium">
-                                        {faq.a}
-                                    </div>
+                                <div className="px-6 lg:px-8 pb-8 text-gray-600 leading-relaxed font-medium">
+                                    {faq.a}
                                 </div>
                             </div>
                         </div>

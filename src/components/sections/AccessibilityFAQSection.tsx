@@ -54,17 +54,15 @@ const AccessibilityFAQSection: React.FC = () => {
                                     </div>
                                 </button>
                                 <div
-                                    className={`grid transition-all duration-300 ease-out ${
-                                        activeIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                    className={`overflow-hidden transition-all duration-300 ease-out ${
+                                        activeIndex === index ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
                                     }`}
                                 >
-                                    <div className="overflow-hidden">
-                                        <div className="px-6 md:px-8 pb-8 pt-0">
-                                            <div className="h-px bg-gray-100 mb-6"></div>
-                                            <p className="text-lg text-gray-600 leading-relaxed italic">
-                                                &quot;{faq.answer}&quot;
-                                            </p>
-                                        </div>
+                                    <div className="px-6 md:px-8 pb-8 pt-0">
+                                        <div className="h-px bg-gray-100 mb-6"></div>
+                                        <p className="text-lg text-gray-600 leading-relaxed italic">
+                                            &quot;{faq.answer}&quot;
+                                        </p>
                                     </div>
                                 </div>
                             </div>
