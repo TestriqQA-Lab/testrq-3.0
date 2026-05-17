@@ -140,11 +140,43 @@ export const organizationSchema = {
     "@type": "PostalAddress",
     "addressCountry": "US"
   },
+  // F-58 Phase 1 — Entity authority sameAs. Each URL is a confirmed
+  // Testriq presence on a platform that Google's Knowledge Graph + AI
+  // search engines (Gemini / ChatGPT / Perplexity / Claude) use for
+  // B2B-software entity recognition. Adding these increases the entity
+  // graph density Google associates with the canonical Organization @id
+  // (https://www.testriq.com/#organization), feeding both ranking
+  // signals and AI answer-engine attribution.
+  //
+  // Verified 2026-05-16 via Chrome MCP — each URL returns HTTP 200 with
+  // active Testriq-branded content. Listings to add later (Phase 2 —
+  // user-blocked on account creation): Crunchbase company page,
+  // Wikidata entry, DesignRush listing.
   "sameAs": [
+    // Social — pre-existing
     "https://www.linkedin.com/company/testriq-qa-lab/",
     "https://x.com/testriq",
-    "https://github.com/TestriqQA-Lab"
+    "https://github.com/TestriqQA-Lab",
+    // Social — added Phase 1
+    "https://www.facebook.com/testriq.lab",
+    "https://www.instagram.com/testriq",
+    "https://www.youtube.com/@TestriqQALab",
+    // B2B review directories — added Phase 1
+    "https://clutch.co/profile/testriq-qa-lab",
+    "https://www.goodfirms.co/company/testriq-qa-lab",
+    "https://www.g2.com/products/testriq-qa-lab/reviews"
   ],
+  // F-58 Phase 1 — Founder Person reference. The founder's Crunchbase
+  // entry is a strong individual-authority signal that increases
+  // Testriq's E-E-A-T attribution via the founder relationship.
+  "founder": {
+    "@type": "Person",
+    "name": "Sandeep Maske",
+    "jobTitle": "Founder & CEO",
+    "sameAs": [
+      "https://www.crunchbase.com/person/sandeep-maske"
+    ]
+  },
   "award": [
     "ISTQB Certified Testing Professionals",
     "ISO 9001:2015 Certified — Quality Management System",
