@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
     FaMobileAlt,
     FaLaptop,
@@ -68,14 +67,10 @@ const UsabilityTestingServicesGrid: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="bg-white p-10 rounded-[3rem] border border-gray-100 hover:shadow-2xl transition-all group h-full flex flex-col"
-                        >
+                        <div
+      key={index}
+      className="bg-white p-10 rounded-[3rem] border border-gray-100 hover:shadow-2xl transition-all group h-full flex flex-col"
+    >
                             <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-6 transition-transform`}>
                                 {service.icon}
                             </div>
@@ -86,17 +81,13 @@ const UsabilityTestingServicesGrid: React.FC = () => {
                             <button className="flex items-center gap-2 text-brand-blue font-bold group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                                 Learn More <FaArrowRight />
                             </button>
-                        </motion.div>
+                        </div>
                     ))}
 
                     {/* Special Industry Card */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.5 }}
-                        viewport={{ once: true }}
-                        className="bg-brand-blue p-10 rounded-[3rem] text-white flex flex-col justify-between shadow-2xl"
-                    >
+                    <div
+      className="bg-brand-blue p-10 rounded-[3rem] text-white flex flex-col justify-between shadow-2xl"
+    >
                         <div>
                             <h3 className="text-2xl font-black mb-6">Specialized Industry Usability Testing</h3>
                             <div className="space-y-4">
@@ -111,7 +102,7 @@ const UsabilityTestingServicesGrid: React.FC = () => {
                         <p className="mt-8 text-sm text-blue-100 italic">
                             Tailored strategies for Healthcare, FinTech, and SaaS ecosystems.
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

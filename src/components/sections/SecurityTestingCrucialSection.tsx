@@ -8,8 +8,6 @@ import {
     FaMoneyBillWave,
     FaCheckCircle,
 } from "react-icons/fa";
-import { motion } from "framer-motion";
-
 const SecurityTestingCrucialSection: React.FC = () => {
     const reasons = [
         {
@@ -64,14 +62,10 @@ const SecurityTestingCrucialSection: React.FC = () => {
 
                     <div className="lg:w-1/2 grid gap-6">
                         {reasons.map((reason, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex items-start gap-5"
-                            >
+                            <div
+      key={index}
+      className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex items-start gap-5"
+    >
                                 <div className="flex-shrink-0 p-3 bg-gray-50 rounded-xl">
                                     {reason.icon}
                                 </div>
@@ -83,7 +77,7 @@ const SecurityTestingCrucialSection: React.FC = () => {
                                         {reason.description}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

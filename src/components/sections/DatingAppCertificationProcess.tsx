@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { Target, Eye, AlertTriangle, Zap, Award } from "lucide-react";
 import Link from "next/link";
 
@@ -70,14 +69,10 @@ const DatingAppCertificationProcess = () => {
           <div className="absolute left-8 top-16 bottom-16 w-0.5 bg-gradient-to-b from-[#25A8E0] to-[#1e90d4] z-0 md:hidden"></div>
 
           {processSteps.map((step, index) => (
-            <motion.div
-              key={index}
-              className="relative z-10"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
-            >
+            <div
+      key={index}
+      className="relative z-10"
+    >
               {/* Mobile Layout */}
               <div className="flex items-start gap-4 md:hidden">
                 {/* Step number circle */}
@@ -165,7 +160,7 @@ const DatingAppCertificationProcess = () => {
                   )}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

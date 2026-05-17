@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Shield,
   Lock,
@@ -136,13 +135,9 @@ const MatrimonialAppCertificationPillars = () => {
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Six Pillars We{" "}
             <span className="text-[#25A8E0]">Verify Before Certifying</span>
@@ -153,18 +148,14 @@ const MatrimonialAppCertificationPillars = () => {
             pillars. Only platforms that meet every requirement earn our
             certification.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`${pillar.color} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
-            >
+            <div
+      key={index}
+      className={`${pillar.color} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
+    >
               <div className={`${pillar.iconColor} mb-4`}>{pillar.icon}</div>
 
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -183,17 +174,13 @@ const MatrimonialAppCertificationPillars = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
+        <div
+      className="text-center mt-12"
+    >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">
               We Only Certify What Passes Our Six-Pillar Check
@@ -209,7 +196,7 @@ const MatrimonialAppCertificationPillars = () => {
               </button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

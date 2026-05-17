@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaUniversalAccess, FaChevronRight } from "react-icons/fa";
 
 const AccessibilityAnyQuestions: React.FC = () => {

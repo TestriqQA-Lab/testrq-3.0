@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaChartLine, FaHeartbeat, FaShoppingCart, FaExchangeAlt } from "react-icons/fa";
 
 const UATScenariosSection: React.FC = () => {
@@ -51,14 +50,10 @@ const UATScenariosSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {scenarios.map((item, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 }}
-                            className="flex gap-6 p-8 rounded-3xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:border-blue-400 transition-all group"
-                        >
+                        <div
+      key={idx}
+      className="flex gap-6 p-8 rounded-3xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:border-blue-400 transition-all group"
+    >
                             <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-3xl shadow-lg shadow-blue-200 group-hover:rotate-6 transition-transform">
                                 {item.icon}
                             </div>
@@ -81,7 +76,7 @@ const UATScenariosSection: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

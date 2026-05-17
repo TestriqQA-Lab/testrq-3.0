@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaCheckCircle, FaExclamationTriangle, FaUserGraduate, FaBalanceScale, FaAward } from "react-icons/fa";
 
 const FunctionalWhySection: React.FC = () => {
@@ -38,11 +37,7 @@ const FunctionalWhySection: React.FC = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     <div className="flex-1">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                        >
+                        <div>
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
                                 Why Functional Testing is <span className="text-brand-blue">Indispensable</span>
                             </h2>
@@ -53,14 +48,10 @@ const FunctionalWhySection: React.FC = () => {
 
                             <div className="space-y-6">
                                 {pillars.map((item, idx) => (
-                                    <motion.div
-                                        key={idx}
-                                        className="flex items-start gap-5 p-6 rounded-2xl hover:bg-blue-50/50 transition-all duration-300 border border-transparent hover:border-blue-100 group"
-                                        initial={{ opacity: 0, y: 10 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: idx * 0.1 }}
-                                    >
+                                    <div
+      key={idx}
+      className="flex items-start gap-5 p-6 rounded-2xl hover:bg-blue-50/50 transition-all duration-300 border border-transparent hover:border-blue-100 group"
+    >
                                         <div className="w-12 h-12 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
                                             {item.icon}
                                         </div>
@@ -72,19 +63,16 @@ const FunctionalWhySection: React.FC = () => {
                                                 {item.desc}
                                             </p>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                     <div className="flex-1 relative">
-                        <motion.div
-                            className="bg-brand-blue rounded-2xl p-12 text-white relative overflow-hidden"
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                        >
+                        <div
+      className="bg-brand-blue rounded-2xl p-12 text-white relative overflow-hidden"
+    >
                             {/* Decorative Blobs */}
                             <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
                             <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
@@ -106,7 +94,7 @@ const FunctionalWhySection: React.FC = () => {
                                     <span className="text-sm font-semibold uppercase tracking-wider text-blue-100">Critical Escaped Defects</span>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>

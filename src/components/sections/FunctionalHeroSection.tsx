@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
     FaArrowRight,
     FaCheckCircle,
@@ -32,11 +31,7 @@ const FunctionalHeroSection: React.FC = () => {
                 <div className="grid lg:grid-cols-2 gap-12">
                     {/* Left Content */}
                     <div className="space-y-4">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
+                        <div>
                             <div className="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-base md:text-sm mb-4">
                                 <FaCheckCircle className="mr-2" />
                                 15+ Years of QA Excellence
@@ -93,18 +88,14 @@ const FunctionalHeroSection: React.FC = () => {
                                     <div className="text-sm text-gray-600">Expert Support</div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                     {/* Right Content - Animation */}
                     <div className="relative">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.7, delay: 0.2 }}
-                        >
+                        <div>
                             <FunctionalAnimation />
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>

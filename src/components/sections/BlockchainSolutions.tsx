@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaFileCode, FaAppStoreIos, FaGem, FaWallet, FaExchangeAlt, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
@@ -66,14 +65,10 @@ const BlockchainSolutions: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {solutions.map((solution, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="group relative bg-slate-50 rounded-3xl p-8 hover:bg-white hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-blue-100"
-                        >
+                        <div
+      key={index}
+      className="group relative bg-slate-50 rounded-3xl p-8 hover:bg-white hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-blue-100"
+    >
                             <div className={`${solution.color} w-14 h-14 rounded-2xl flex items-center justify-center text-white text-2xl mb-8 group-hover:scale-110 transition-transform duration-300`}>
                                 {solution.icon}
                             </div>
@@ -89,16 +84,13 @@ const BlockchainSolutions: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
-                        </motion.div>
+                        </div>
                     ))}
 
                     {/* Custom Card for "Start Audit" */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                        className="bg-blue-600 rounded-3xl p-8 flex flex-col justify-center items-center text-center text-white"
-                    >
+                    <div
+      className="bg-blue-600 rounded-3xl p-8 flex flex-col justify-center items-center text-center text-white"
+    >
                         <h3 className="text-2xl font-bold mb-4">NFT Marketplace Security?</h3>
                         <p className="mb-8 opacity-90">We offer specialized audits for creators and collectors to ensure safe trading environments.</p>
                         <Link
@@ -107,7 +99,7 @@ const BlockchainSolutions: React.FC = () => {
                         >
                             Secure Your Marketplace
                         </Link>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

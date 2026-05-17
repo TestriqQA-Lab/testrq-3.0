@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaBolt, FaSun, FaGlobeAmericas, FaComments } from "react-icons/fa";
 
 const advantages = [
@@ -46,14 +45,10 @@ const TimezoneAdvantageSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {advantages.map((adv, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow group"
-                        >
+                        <div
+      key={index}
+      className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow group"
+    >
                             <div className={`text-2xl mb-6 inline-flex p-4 rounded-xl transition-colors
                 ${adv.color === 'blue' ? 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white' : ''}
                 ${adv.color === 'orange' ? 'bg-orange-50 text-orange-600 group-hover:bg-orange-600 group-hover:text-white' : ''}
@@ -66,7 +61,7 @@ const TimezoneAdvantageSection: React.FC = () => {
                             <p className="text-gray-600 leading-relaxed text-sm">
                                 {adv.description}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

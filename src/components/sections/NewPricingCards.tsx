@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaGlobe, FaMobileAlt, FaServer, FaShieldAlt, FaCheckCircle, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
@@ -151,14 +150,10 @@ const NewPricingCards: React.FC = () => {
                         const theme = colorMap[pkg.color];
 
                         return (
-                            <motion.div
-                                key={pkg.id}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-                                className={`flex flex-col bg-white/70 backdrop-blur-3xl rounded-[2.5rem] border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group relative`}
-                            >
+                            <div
+      key={pkg.id}
+      className={`flex flex-col bg-white/70 backdrop-blur-3xl rounded-[2.5rem] border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group relative`}
+    >
                                 {/* Inner glow and subtle gradient hover effect */}
                                 <div className={`absolute inset-0 bg-gradient-to-br from-${pkg.color}-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
@@ -276,7 +271,7 @@ const NewPricingCards: React.FC = () => {
                                     </Link>
                                 </div>
 
-                            </motion.div>
+                            </div>
                         );
                     })}
                 </div>

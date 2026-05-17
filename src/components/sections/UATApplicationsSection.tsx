@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaBuilding, FaRocket, FaMobileAlt, FaCloudUploadAlt, FaCogs, FaShieldAlt, FaShoppingCart, FaUniversity } from "react-icons/fa";
 
 const UATApplicationsSection: React.FC = () => {
@@ -71,14 +70,10 @@ const UATApplicationsSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {apps.map((app, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.05 }}
-                            className="bg-slate-50 border border-slate-200 rounded-3xl p-6 flex flex-col hover:bg-white hover:shadow-xl hover:border-blue-400 transition-all group"
-                        >
+                        <div
+      key={idx}
+      className="bg-slate-50 border border-slate-200 rounded-3xl p-6 flex flex-col hover:bg-white hover:shadow-xl hover:border-blue-400 transition-all group"
+    >
                             <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                 {app.icon}
                             </div>
@@ -90,7 +85,7 @@ const UATApplicationsSection: React.FC = () => {
                                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                                 Impact: {app.impact}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

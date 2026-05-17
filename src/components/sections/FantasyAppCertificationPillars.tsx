@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Shield,
   Scale,
@@ -112,13 +111,9 @@ const FantasyAppCertificationPillars = () => {
     <section className="py-20 px-8 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Star className="w-4 h-4" />
             Certification Standards
@@ -133,19 +128,15 @@ const FantasyAppCertificationPillars = () => {
             six core pillars. Only platforms meeting all standards receive our
             official certification.
           </p>
-        </motion.div>
+        </div>
 
         {/* Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`${pillar.bgColor} rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100`}
-            >
+            <div
+      key={index}
+      className={`${pillar.bgColor} rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100`}
+    >
               <div className={`${pillar.textColor} mb-6`}>{pillar.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {pillar.title}
@@ -164,18 +155,14 @@ const FantasyAppCertificationPillars = () => {
               <div
                 className={`h-1 bg-gradient-to-r ${pillar.color} rounded-full mt-6`}
               ></div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
+        <div
+      className="text-center mt-16"
+    >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
               Does Your App Pass All Six Pillars?
@@ -191,7 +178,7 @@ const FantasyAppCertificationPillars = () => {
               </button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

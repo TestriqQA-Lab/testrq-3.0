@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
     FaDraftingCompass,
     FaClipboardList,
@@ -57,14 +56,10 @@ const UsabilityTestingMethodology: React.FC = () => {
 
                     <div className="grid lg:grid-cols-5 gap-8 relative z-10">
                         {steps.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                className="flex flex-col items-center text-center group"
-                            >
+                            <div
+      key={index}
+      className="flex flex-col items-center text-center group"
+    >
                                 <div className="w-20 h-20 bg-white border-4 border-gray-50 shadow-xl rounded-full flex items-center justify-center text-3xl text-brand-blue mb-8 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 transform group-hover:scale-110">
                                     {step.icon}
                                 </div>
@@ -73,7 +68,7 @@ const UsabilityTestingMethodology: React.FC = () => {
                                     <h3 className="text-xl font-black text-gray-900 leading-tight">{step.title}</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed px-4">{step.desc}</p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

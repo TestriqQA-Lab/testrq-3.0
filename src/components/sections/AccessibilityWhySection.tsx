@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
     FaGavel,
     FaChartLine,
@@ -58,20 +57,16 @@ const AccessibilityWhySection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {benefits.map((benefit, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-blue-100 group"
-                        >
+                        <div
+      key={index}
+      className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-blue-100 group"
+    >
                             <div className={`w-14 h-14 rounded-2xl bg-${benefit.color}-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                                 <benefit.icon className={`text-2xl text-${benefit.color}-600`} />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
                             <p className="text-gray-600 leading-relaxed italic">&quot;{benefit.text}&quot;</p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

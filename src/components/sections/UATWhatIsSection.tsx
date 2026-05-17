@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaCheckCircle, FaUsers, FaArrowRight, FaBriefcase, FaLightbulb } from "react-icons/fa";
 
 const UATWhatIsSection: React.FC = () => {
@@ -21,12 +20,9 @@ const UATWhatIsSection: React.FC = () => {
             <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-4 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-                    <motion.div
-                        initial={{ opacity: 0, x: -25 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="space-y-6"
-                    >
+                    <div
+      className="space-y-6"
+    >
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 border-l-8 border-blue-600 pl-6">
                             What Is <span className="text-blue-600">User Acceptance Testing?</span>
                         </h2>
@@ -47,14 +43,11 @@ const UATWhatIsSection: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 25 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-white rounded-3xl p-8 shadow-2xl shadow-blue-900/10 border border-blue-50"
-                    >
+                    <div
+      className="bg-white rounded-3xl p-8 shadow-2xl shadow-blue-900/10 border border-blue-50"
+    >
                         <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                             <span className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center text-xl">QA</span>
                             The Final Validation Phase
@@ -92,7 +85,7 @@ const UATWhatIsSection: React.FC = () => {
                                 <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
                             </button>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

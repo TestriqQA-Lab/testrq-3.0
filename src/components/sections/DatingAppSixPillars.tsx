@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Shield,
   Users,
@@ -125,17 +124,12 @@ const DatingAppSixPillars = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificationFeatures.map((feature, index) => (
-            <motion.div
-              key={index}
-              className={`p-8 rounded-2xl border-2 ${feature.color} transition-all duration-300 cursor-pointer`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              onMouseEnter={() => setHoveredFeature(index)}
-              onMouseLeave={() => setHoveredFeature(null)}
-            >
+            <div
+      key={index}
+      className={`p-8 rounded-2xl border-2 ${feature.color} transition-all duration-300 cursor-pointer hover:scale-102 transition-transform`}
+      onMouseEnter={() => setHoveredFeature(index)}
+      onMouseLeave={() => setHoveredFeature(null)}
+    >
               <div className={`${feature.iconColor} mb-6`}>{feature.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {feature.title}
@@ -146,22 +140,16 @@ const DatingAppSixPillars = () => {
 
               <div className="space-y-2">
                 {feature.benefits.map((benefit, benefitIndex) => (
-                  <motion.div
-                    key={benefitIndex}
-                    className="flex items-center text-sm text-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{
-                      opacity: hoveredFeature === index ? 1 : 0.7,
-                      x: hoveredFeature === index ? 0 : -10,
-                    }}
-                    transition={{ delay: benefitIndex * 0.1 }}
-                  >
+                  <div
+      key={benefitIndex}
+      className="flex items-center text-sm text-gray-700"
+    >
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                     {benefit}
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

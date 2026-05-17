@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-
 const TDMMethodologySection: React.FC = () => {
     const steps = [
         {
@@ -50,14 +48,10 @@ const TDMMethodologySection: React.FC = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                         {steps.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="relative z-10 flex flex-col items-center text-center group"
-                            >
+                            <div
+      key={index}
+      className="relative z-10 flex flex-col items-center text-center group"
+    >
                                 <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold mb-8 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)]">
                                     {step.number}
                                 </div>
@@ -65,7 +59,7 @@ const TDMMethodologySection: React.FC = () => {
                                 <p className="text-slate-400 leading-relaxed text-sm">
                                     {step.description}
                                 </p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

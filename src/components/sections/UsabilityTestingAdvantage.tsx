@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaMicrochip, FaGlobeAmericas, FaAward, FaCalendarCheck } from "react-icons/fa";
 
 const UsabilityTestingAdvantage: React.FC = () => {
@@ -42,14 +41,10 @@ const UsabilityTestingAdvantage: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {advantages.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="bg-gray-50 p-10 rounded-[2.5rem] hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-transparent hover:border-gray-100 flex flex-col"
-                        >
+                        <div
+      key={index}
+      className="bg-gray-50 p-10 rounded-[2.5rem] hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-transparent hover:border-gray-100 flex flex-col"
+    >
                             <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-brand-blue text-2xl mb-8 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
@@ -57,7 +52,7 @@ const UsabilityTestingAdvantage: React.FC = () => {
                             <p className="text-gray-600 text-sm leading-relaxed flex-grow">
                                 {item.desc}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

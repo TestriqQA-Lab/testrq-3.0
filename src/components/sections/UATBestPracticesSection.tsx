@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaClock, FaBullseye, FaChartBar, FaGraduationCap, FaLayerGroup, FaFileSignature, FaSearchPlus } from "react-icons/fa";
 
 const UATBestPracticesSection: React.FC = () => {
@@ -67,14 +66,10 @@ const UATBestPracticesSection: React.FC = () => {
 
                     <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 w-full">
                         {practices.map((item, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className={`group p-6 md:p-8 rounded-3xl border transition-all duration-300 w-full ${idx === 0 ? 'sm:col-span-2 bg-blue-600 border-blue-500' : 'bg-slate-800/50 border-slate-700 hover:border-blue-500'}`}
-                            >
+                            <div
+      key={idx}
+      className={`group p-6 md:p-8 rounded-3xl border transition-all duration-300 w-full ${idx === 0 ? 'sm:col-span-2 bg-blue-600 border-blue-500' : 'bg-slate-800/50 border-slate-700 hover:border-blue-500'}`}
+    >
                                 <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-4 md:mb-6 transition-transform group-hover:scale-110 flex-shrink-0 ${idx === 0 ? 'bg-white text-blue-600' : 'bg-blue-600/20 text-blue-400'}`}>
                                     {item.icon}
                                 </div>
@@ -82,7 +77,7 @@ const UATBestPracticesSection: React.FC = () => {
                                 <p className={`text-sm leading-relaxed ${idx === 0 ? 'text-blue-50' : 'text-slate-400 font-medium'}`}>
                                     {item.desc}
                                 </p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

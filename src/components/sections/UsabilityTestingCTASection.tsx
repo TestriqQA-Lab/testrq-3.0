@@ -3,8 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { FaArrowRight, FaUsers } from "react-icons/fa";
-import { motion } from "framer-motion";
-
 const UsabilityTestingCTASection: React.FC = () => {
     return (
         <section className="py-24 px-8 md:px-12 lg:px-24 bg-white relative overflow-hidden">
@@ -13,13 +11,9 @@ const UsabilityTestingCTASection: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[120px] -ml-64 -mb-64"></div>
 
             <div className="max-w-6xl mx-auto relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="group bg-slate-900 rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl border border-white/5"
-                >
+                <div
+      className="group bg-slate-900 rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl border border-white/5"
+    >
                     {/* Background Texture */}
                     <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
@@ -51,7 +45,7 @@ const UsabilityTestingCTASection: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaGraduationCap, FaGlobe, FaCertificate, FaCrown, FaCheckDouble } from "react-icons/fa";
 
 const UATWhyChooseSection: React.FC = () => {
@@ -60,12 +59,9 @@ const UATWhyChooseSection: React.FC = () => {
                     </div>
 
                     <div className="relative">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="aspect-square bg-slate-800 rounded-[60px] border border-slate-700 p-12 flex flex-col justify-center text-center shadow-2xl relative overflow-hidden"
-                        >
+                        <div
+      className="aspect-square bg-slate-800 rounded-[60px] border border-slate-700 p-12 flex flex-col justify-center text-center shadow-2xl relative overflow-hidden"
+    >
                             <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-blue-600 -translate-x-4 -translate-y-4 rounded-tl-[60px]" />
 
                             <h3 className="text-6xl md:text-8xl font-black text-blue-500 mb-4 tracking-tighter italic">100%</h3>
@@ -83,7 +79,7 @@ const UATWhyChooseSection: React.FC = () => {
                                     <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest">Industry Legacy</p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>

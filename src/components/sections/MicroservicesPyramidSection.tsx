@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-
 const MicroservicesPyramidSection: React.FC = () => {
     const pyramidLayers = [
         {
@@ -56,14 +54,10 @@ const MicroservicesPyramidSection: React.FC = () => {
 
                 <div className="flex flex-col items-center">
                     {pyramidLayers.map((layer, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className={`relative mb-2 group cursor-default ${layer.width}`}
-                        >
+                        <div
+      key={index}
+      className={`relative mb-2 group cursor-default ${layer.width}`}
+    >
                             <div
                                 className={`${layer.color} text-white p-4 md:p-6 rounded-lg shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 text-center`}
                             >
@@ -76,7 +70,7 @@ const MicroservicesPyramidSection: React.FC = () => {
                                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 border-8 border-transparent border-t-gray-900"></div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
 
                     <div className="flex justify-between w-full mt-12 text-sm font-bold text-gray-500 border-t pt-4 italic">

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { FaChrome, FaFirefox, FaSafari, FaEdge, FaMobile, FaTablet, FaLaptop } from "react-icons/fa6";
 
 const CompatibilityTestingAnimation = () => {
@@ -45,12 +44,9 @@ const CompatibilityTestingAnimation = () => {
 
                 {/* --- Devices --- */}
                 {devices.map((device, idx) => (
-                    <motion.g
-                        key={device.id}
-                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: idx * 0.2 }}
-                    >
+                    <g
+      key={device.id}
+    >
                         {/* Device Frame */}
                         <rect
                             x={device.x}
@@ -75,14 +71,12 @@ const CompatibilityTestingAnimation = () => {
                         />
 
                         {/* Status Dots */}
-                        <motion.circle
-                            cx={device.x + device.width - 20}
-                            cy={device.y + device.height - 15}
-                            r="5"
-                            fill="#22c55e"
-                            animate={{ opacity: [0.3, 1, 0.3] }}
-                            transition={{ duration: 2, repeat: Infinity, delay: idx * 0.5 }}
-                        />
+                        <circle
+      cx={device.x + device.width - 20}
+      cy={device.y + device.height - 15}
+      r="5"
+      fill="#22c55e"
+     />
 
                         {/* Browser Icons on Screen */}
                         <g opacity="0.6">
@@ -112,61 +106,32 @@ const CompatibilityTestingAnimation = () => {
                         >
                             {device.name} Validation
                         </text>
-                    </motion.g>
+                    </g>
                 ))}
 
                 {/* --- Animation: Data Flow/Checkmark --- */}
-                <motion.circle
-                    cx="100"
-                    cy="100"
-                    r="3"
-                    fill="#3b82f6"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        opacity: [0, 1, 1, 0],
-                        cx: [100, 450, 450, 620],
-                        cy: [100, 150, 150, 200],
-                    }}
-                    transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        repeatDelay: 1,
-                        ease: "linear",
-                        times: [0, 0.3, 0.6, 1],
-                        delay: 1.5
-                    }}
-                />
+                <circle
+      cx="100"
+      cy="100"
+      r="3"
+      fill="#3b82f6"
+     />
 
                 {/* Success Indicator appearing at the end */}
-                <motion.g
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{
-                        opacity: [0, 1, 1, 0],
-                        scale: [0, 1, 1, 0]
-                    }}
-                    transition={{ 
-                        duration: 4, 
-                        repeat: Infinity, 
-                        repeatDelay: 1,
-                        times: [0, 0.2, 0.8, 1],
-                        delay: 3.5 
-                    }}
-                >
+                <g>
                     <rect x="300" y="380" width="200" height="40" rx="20" fill="#22c55e" />
                     <text x="400" y="405" textAnchor="middle" fill="white" fontSize="14" fontWeight="700">✓ Compatibility Verified</text>
-                </motion.g>
+                </g>
 
                 {/* Scanning Line */}
-                <motion.rect
-                    x="0"
-                    y="0"
-                    width="800"
-                    height="2"
-                    fill="url(#scanning-gradient)"
-                    opacity="0.3"
-                    animate={{ y: [0, 500, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                />
+                <rect
+      x="0"
+      y="0"
+      width="800"
+      height="2"
+      fill="url(#scanning-gradient)"
+      opacity="0.3"
+     />
                 <defs>
                     <linearGradient id="scanning-gradient" x1="0" y1="0" x2="1" y2="0">
                         <stop offset="0%" stopColor="transparent" />

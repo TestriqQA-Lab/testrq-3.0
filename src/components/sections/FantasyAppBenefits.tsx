@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   TrendingUp,
   Users,
@@ -114,13 +113,9 @@ const FantasyAppBenefits = () => {
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Benefits of{" "}
             <span className="text-brand-blue">Fantasy App Certification</span>
@@ -130,19 +125,15 @@ const FantasyAppBenefits = () => {
             certification process tailored for competitive fantasy sports
             applications.
           </p>
-        </motion.div>
+        </div>
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`${benefit.bgColor} ${benefit.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
-            >
+            <div
+      key={index}
+      className={`${benefit.bgColor} ${benefit.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
+    >
               <div className={`${benefit.color} mb-4`}>{benefit.icon}</div>
 
               <div className="mb-4">
@@ -161,32 +152,24 @@ const FantasyAppBenefits = () => {
               <p className="text-gray-600 leading-relaxed">
                 {benefit.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Business Impact Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-xl p-8 shadow-lg"
-        >
+        <div
+      className="bg-white rounded-xl p-8 shadow-lg"
+    >
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Business Impact Beyond Metrics
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {businessImpacts.map((impact, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300"
-              >
+              <div
+      key={index}
+      className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300"
+    >
                 <div className="text-[#25A8E0] mt-1">{impact.icon}</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">
@@ -196,19 +179,15 @@ const FantasyAppBenefits = () => {
                     {impact.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* ROI Calculator CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
+        <div
+      className="text-center mt-16"
+    >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">
               Measure Your Certification ROI
@@ -226,7 +205,7 @@ const FantasyAppBenefits = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

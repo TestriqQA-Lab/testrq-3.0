@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FaArrowsLeftRight } from "react-icons/fa6";
 
 const UATVsFunctionalSection = () => {
@@ -32,12 +31,9 @@ const UATVsFunctionalSection = () => {
                     </p>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 shadow-2xl shadow-blue-500/10"
-                >
+                <div
+      className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 shadow-2xl shadow-blue-500/10"
+    >
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
@@ -62,7 +58,7 @@ const UATVsFunctionalSection = () => {
                             </tbody>
                         </table>
                     </div>
-                </motion.div>
+                </div>
 
                 <div className="mt-12 flex justify-center">
                     <div className="inline-flex items-center gap-4 bg-slate-800 p-4 rounded-full border border-slate-700 text-sm text-slate-400">

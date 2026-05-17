@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaSearch, FaCode, FaVial, FaBug, FaFileAlt } from "react-icons/fa";
 
 const BlockchainMethodology: React.FC = () => {
@@ -51,14 +50,10 @@ const BlockchainMethodology: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
                         {steps.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                className="flex flex-col items-center text-center group"
-                            >
+                            <div
+      key={index}
+      className="flex flex-col items-center text-center group"
+    >
                                 <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center text-3xl mb-6 border-2 border-slate-700 group-hover:border-blue-400 group-hover:bg-blue-600 transition-all duration-300 relative">
                                     <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-slate-900">
                                         {index + 1}
@@ -71,7 +66,7 @@ const BlockchainMethodology: React.FC = () => {
                                 <p className="text-slate-400 text-sm leading-relaxed">
                                     {step.text}
                                 </p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
