@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 const pricingFaqs = [
@@ -50,12 +49,8 @@ const PricingFAQ = () => {
 
                 <div className="space-y-4">
                     {pricingFaqs.map((faq, idx) => (
-                        <motion.div
+                        <div
                             key={idx}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.05 }}
                             className="bg-slate-800/50 rounded-2xl border border-slate-700/50 overflow-hidden backdrop-blur-sm"
                         >
                             <button
@@ -70,21 +65,18 @@ const PricingFAQ = () => {
                                 </span>
                             </button>
 
-                            <AnimatePresence>
-                                {openIdx === idx && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <div className="px-8 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-700/50 pt-4">
-                                            {faq.answer}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.div>
+                            <div
+                                className={`grid transition-all duration-300 ease-out ${
+                                    openIdx === idx ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <div className="px-8 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-700/50 pt-4">
+                                        {faq.answer}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>
