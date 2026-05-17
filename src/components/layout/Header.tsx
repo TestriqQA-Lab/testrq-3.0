@@ -203,6 +203,7 @@ const Navbar = () => {
               alt="Testriq logo"
               height={100}
               width={120}
+              priority
             />
           </div>
         </Link>
