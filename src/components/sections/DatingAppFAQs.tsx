@@ -83,15 +83,11 @@ const DatingAppFAQs = () => {
                 />
               </button>
 
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-out ${
-                  expandedFAQ === index ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
+              {expandedFAQ === index && (
                 <div className="px-6 pb-6 text-gray-600 leading-relaxed">
                   {faq.answer}
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>

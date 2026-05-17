@@ -65,15 +65,11 @@ const PricingFAQ = () => {
                                 </span>
                             </button>
 
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-out ${
-                                    openIdx === idx ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                                }`}
-                            >
+                            {openIdx === idx && (
                                 <div className="px-8 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-700/50 pt-4">
                                     {faq.answer}
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>

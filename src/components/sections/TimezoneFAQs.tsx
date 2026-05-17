@@ -59,15 +59,11 @@ const TimezoneFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-out ${
-                                    activeIndex === index ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                                }`}
-                            >
+                            {activeIndex === index && (
                                 <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50">
                                     {faq.answer}
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>

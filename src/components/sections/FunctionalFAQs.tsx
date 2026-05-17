@@ -66,15 +66,11 @@ const FunctionalFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-out ${
-                                    activeIndex === idx ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                                }`}
-                            >
+                            {activeIndex === idx && (
                                 <div className="px-8 pb-6">
                                     <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>

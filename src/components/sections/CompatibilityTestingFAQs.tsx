@@ -69,17 +69,13 @@ const CompatibilityTestingFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-out ${
-                                    openFAQ === index ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                                }`}
-                            >
+                            {openFAQ === index && (
                                 <div className="px-8 pb-6">
                                     <p className="text-gray-600 leading-relaxed italic border-l-2 border-brand-blue pl-4">
                                         {faq.answer}
                                     </p>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>

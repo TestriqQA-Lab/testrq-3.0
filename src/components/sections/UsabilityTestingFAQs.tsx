@@ -52,15 +52,11 @@ const UsabilityTestingFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-out ${
-                                    openIndex === index ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                                }`}
-                            >
+                            {openIndex === index && (
                                 <div className="px-8 pb-8 text-gray-600 leading-relaxed pt-0 text-lg">
                                     {faq.answer}
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>

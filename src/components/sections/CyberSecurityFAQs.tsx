@@ -52,15 +52,11 @@ const CyberSecurityFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-out ${
-                                    openIndex === index ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                                }`}
-                            >
+                            {openIndex === index && (
                                 <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4">
                                     {faq.answer}
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>
