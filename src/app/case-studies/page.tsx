@@ -153,7 +153,15 @@ const CaseStudiesReadyToStartSection = dynamic(
 );
 
 export default async function CaseStudiesPage() {
-  const caseStudies = await sanityGetAllCaseStudies();
+  // Wrapped so Sanity outages (plan_limit_reached 402) don't crash the
+  // page — falls back to empty list (renders the page with hero + filter
+  // chips but no case-study cards). ISR picks up real data on next request.
+  let caseStudies: Awaited<ReturnType<typeof sanityGetAllCaseStudies>> = [];
+  try {
+    caseStudies = await sanityGetAllCaseStudies();
+  } catch (err) {
+    console.error('Sanity error fetching case studies for /case-studies:', err);
+  }
 
   const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
