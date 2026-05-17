@@ -34,7 +34,15 @@ const HomeInsightSection = async () => {
     };
 
     // F-75: server-side fetch with GROQ slice — pull only the 3 we render.
-    const blogPosts = await getPosts(3);
+    // Wrapped so Sanity outages (plan_limit_reached 402) don't crash the
+    // HOMEPAGE prerender — falls back to empty list (section renders header
+    // + empty grid). ISR picks up real data on next request when Sanity recovers.
+    let blogPosts: Awaited<ReturnType<typeof getPosts>> = [];
+    try {
+        blogPosts = await getPosts(3);
+    } catch (err) {
+        console.error('Sanity error fetching homepage insight posts:', err);
+    }
 
     return (
         <section className="flex flex-col w-full mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15">
