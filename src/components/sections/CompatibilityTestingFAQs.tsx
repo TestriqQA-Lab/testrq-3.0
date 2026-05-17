@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaQuestionCircle } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
 
 const CompatibilityTestingFAQs: React.FC = () => {
     const [openFAQ, setOpenFAQ] = useState<number | null>(0);
@@ -70,22 +69,19 @@ const CompatibilityTestingFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <AnimatePresence>
-                                {openFAQ === index && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <div className="px-8 pb-6">
-                                            <p className="text-gray-600 leading-relaxed italic border-l-2 border-brand-blue pl-4">
-                                                {faq.answer}
-                                            </p>
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                            <div
+                                className={`grid transition-all duration-300 ease-out ${
+                                    openFAQ === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <div className="px-8 pb-6">
+                                        <p className="text-gray-600 leading-relaxed italic border-l-2 border-brand-blue pl-4">
+                                            {faq.answer}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

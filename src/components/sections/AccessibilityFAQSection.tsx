@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus, FaQuestionCircle } from "react-icons/fa";
 
 const AccessibilityFAQSection: React.FC = () => {
@@ -54,23 +53,20 @@ const AccessibilityFAQSection: React.FC = () => {
                                         {activeIndex === index ? <FaMinus /> : <FaPlus />}
                                     </div>
                                 </button>
-                                <AnimatePresence>
-                                    {activeIndex === index && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3 }}
-                                        >
-                                            <div className="px-6 md:px-8 pb-8 pt-0">
-                                                <div className="h-px bg-gray-100 mb-6"></div>
-                                                <p className="text-lg text-gray-600 leading-relaxed italic">
-                                                    &quot;{faq.answer}&quot;
-                                                </p>
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
+                                <div
+                                    className={`grid transition-all duration-300 ease-out ${
+                                        activeIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                    }`}
+                                >
+                                    <div className="overflow-hidden">
+                                        <div className="px-6 md:px-8 pb-8 pt-0">
+                                            <div className="h-px bg-gray-100 mb-6"></div>
+                                            <p className="text-lg text-gray-600 leading-relaxed italic">
+                                                &quot;{faq.answer}&quot;
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
