@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -149,13 +148,7 @@ const ShoppingAppFAQs = () => {
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <span className="text-sm">● Frequently Asked Questions</span>
           </div>
@@ -173,16 +166,12 @@ const ShoppingAppFAQs = () => {
             platform’s trust and{" "}
             <Link href="/performance-testing-services">performance</Link>.
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-blue transition-colors duration-300"
             >
               <button
@@ -200,34 +189,18 @@ const ShoppingAppFAQs = () => {
                   )}
                 </div>
               </button>
-              <AnimatePresence>
-                {openFAQ === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-4">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+              {openFAQ === index && (
+                <div className="px-6 pb-4">
+                  <p className="text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              )}
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12">
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
@@ -248,7 +221,7 @@ const ShoppingAppFAQs = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
