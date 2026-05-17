@@ -154,8 +154,15 @@ export const metadata: Metadata = {
 
 
 const CareersPage = async () => {
-  // Fetch job openings from Sanity (server-side, with ISR)
-  const jobOpenings = await sanityGetAllJobOpenings();
+  // Fetch job openings from Sanity (server-side, with ISR). Wrapped so
+  // Sanity outages (plan_limit_reached 402) don't crash the page — falls
+  // back to empty list (renders the careers page without job postings).
+  let jobOpenings: Awaited<ReturnType<typeof sanityGetAllJobOpenings>> = [];
+  try {
+    jobOpenings = await sanityGetAllJobOpenings();
+  } catch (err) {
+    console.error('Sanity error fetching job openings for /careers:', err);
+  }
 
   const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },

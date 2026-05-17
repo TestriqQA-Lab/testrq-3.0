@@ -17,8 +17,16 @@ export const revalidate = 60; // Revalidate every minute
 export const dynamicParams = true; // Allow rendering of new posts not generated at build time
 
 export async function generateStaticParams() {
-  const slugs = await sanityGetAllPostSlugs();
-  return slugs.map((slug: string) => ({ slug }));
+  // Wrap in try/catch so Sanity outages (e.g. plan_limit_reached 402) don't
+  // crash the build. Return empty list to skip prerender; pages will be
+  // rendered on-demand at request time (dynamicParams = true).
+  try {
+    const slugs = await sanityGetAllPostSlugs();
+    return slugs.map((slug: string) => ({ slug }));
+  } catch (err) {
+    console.error('Sanity error fetching post slugs for generateStaticParams:', err);
+    return [];
+  }
 }
 
 const BlogPostContent = dynamic(
@@ -151,7 +159,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // F-64: when draftMode is enabled (editor preview session), fetch via the
   // preview client so the metadata matches the draft body the page renders.
   const { isEnabled: draft } = await draftMode();
-  const post = await sanityGetPostBySlug(slug, draft);
+  // Wrap in try/catch so Sanity outages (e.g. plan_limit_reached 402) don't
+  // crash prerender — fall back to "Post Not Found" metadata + noindex.
+  // ISR (revalidate: 60) will pick up real data on next request when Sanity recovers.
+  let post: Post | null = null;
+  try {
+    post = await sanityGetPostBySlug(slug, draft);
+  } catch (err) {
+    console.error(`Sanity error fetching post metadata for "${slug}":`, err);
+  }
 
   if (!post) {
     return {
@@ -209,15 +225,34 @@ export default async function BlogPostPage({ params }: Props) {
   // F-64: route through the preview client when in draftMode so editors see
   // the unpublished draft instead of (or in absence of) the published doc.
   const { isEnabled: isDraft } = await draftMode();
-  const post = await sanityGetPostBySlug(slug, isDraft);
+  // Wrap in try/catch so Sanity outages (e.g. plan_limit_reached 402) don't
+  // crash prerender — fall back to notFound(). ISR (revalidate: 60) will
+  // pick up real data on next request when Sanity recovers.
+  let post: Post | null = null;
+  try {
+    post = await sanityGetPostBySlug(slug, isDraft);
+  } catch (err) {
+    console.error(`Sanity error fetching post data for "${slug}":`, err);
+  }
 
   if (!post) {
     notFound();
   }
 
-  // Fetch sidebar data
-  const relatedPosts = await sanityGetRelatedPosts(post.id, 4);
-  const categories = await sanityGetCategories();
+  // Fetch sidebar data — wrapped so failure just hides the sidebar rather
+  // than crashing the whole page (main post content is more important).
+  let relatedPosts: Awaited<ReturnType<typeof sanityGetRelatedPosts>> = [];
+  let categories: Awaited<ReturnType<typeof sanityGetCategories>> = [];
+  try {
+    relatedPosts = await sanityGetRelatedPosts(post.id, 4);
+  } catch (err) {
+    console.error(`Sanity error fetching related posts for "${slug}":`, err);
+  }
+  try {
+    categories = await sanityGetCategories();
+  } catch (err) {
+    console.error(`Sanity error fetching categories for blog post sidebar:`, err);
+  }
 
   return (
     <div className="min-h-screen bg-slate-50">

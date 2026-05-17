@@ -72,7 +72,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // the same `normalizedTag` here for the Sanity lookup + canonical URL.
   const normalizedTag = normalizeBlogSlug(tag);
 
-  const tagData = await sanityGetPostsByTag(normalizedTag);
+  // Wrap in try/catch so Sanity outages (e.g. plan_limit_reached 402) don't
+  // crash prerender — fall back to "Tag Not Found" metadata + noindex.
+  // ISR (revalidate) will pick up the real data on next request when Sanity recovers.
+  let tagData: Awaited<ReturnType<typeof sanityGetPostsByTag>> = { tag: null, posts: [] };
+  try {
+    tagData = await sanityGetPostsByTag(normalizedTag);
+  } catch (err) {
+    console.error(`Sanity error fetching tag metadata for "${normalizedTag}":`, err);
+  }
 
   if (!tagData.tag) {
     return {
@@ -153,7 +161,15 @@ export default async function TagPage({ params }: Props) {
   if (normalizedTag !== tag) {
     permanentRedirect(`/blog/tag/${normalizedTag}`);
   }
-  const tagData = await sanityGetPostsByTag(normalizedTag);
+  // Wrap in try/catch so Sanity outages (e.g. plan_limit_reached 402) don't
+  // crash prerender — fall back to notFound(). ISR (revalidate) will pick up
+  // the real data on next request when Sanity recovers.
+  let tagData: Awaited<ReturnType<typeof sanityGetPostsByTag>> = { tag: null, posts: [] };
+  try {
+    tagData = await sanityGetPostsByTag(normalizedTag);
+  } catch (err) {
+    console.error(`Sanity error fetching tag data for "${normalizedTag}":`, err);
+  }
 
   // Only 404 if the tag itself doesn't exist in Sanity.
   // If the tag exists but has 0 posts, render an empty state page (preserves SEO equity).

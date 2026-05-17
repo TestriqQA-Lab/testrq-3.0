@@ -75,7 +75,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // the same `normalizedCategory` for the Sanity lookup + canonical URL.
   const normalizedCategory = normalizeBlogSlug(category);
 
-  const categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
+  // Wrap in try/catch so Sanity outages (e.g. plan_limit_reached 402) don't
+  // crash prerender — fall back to "Category Not Found" metadata + noindex.
+  // ISR (revalidate: 60) will pick up the real data on next request when Sanity recovers.
+  let categoryData: Awaited<ReturnType<typeof sanityGetAdaptedCategoryData>> = null;
+  try {
+    categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
+  } catch (err) {
+    console.error(`Sanity error fetching category metadata for "${normalizedCategory}":`, err);
+  }
 
   if (!categoryData) {
     return {
@@ -153,7 +161,15 @@ export default async function CategoryPage({ params }: Props) {
   if (normalizedCategory !== category) {
     permanentRedirect(`/blog/category/${normalizedCategory}`);
   }
-  const categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
+  // Wrap in try/catch so Sanity outages (e.g. plan_limit_reached 402) don't
+  // crash prerender — fall back to notFound(). ISR (revalidate: 60) will
+  // pick up the real data on next request when Sanity recovers.
+  let categoryData: Awaited<ReturnType<typeof sanityGetAdaptedCategoryData>> = null;
+  try {
+    categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
+  } catch (err) {
+    console.error(`Sanity error fetching category data for "${normalizedCategory}":`, err);
+  }
 
   if (!categoryData) {
     notFound();

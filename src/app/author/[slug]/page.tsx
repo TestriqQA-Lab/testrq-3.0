@@ -19,8 +19,16 @@ export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const slugs = await sanityGetAllAuthorSlugs();
-  return slugs.map((slug) => ({ slug }));
+  // Wrap in try/catch so Sanity outages (plan_limit_reached 402, network)
+  // don't crash the build. Returns empty list — pages render on-demand at
+  // request time via dynamicParams = true.
+  try {
+    const slugs = await sanityGetAllAuthorSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch (err) {
+    console.error('Sanity error fetching author slugs for generateStaticParams:', err);
+    return [];
+  }
 }
 
 type Props = {
@@ -65,7 +73,15 @@ function sameAsIcon(url: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const author = await sanityGetAuthorBySlug(slug);
+  // Wrap in try/catch so Sanity outages don't crash prerender — fall back
+  // to "Author Not Found" metadata + noindex. ISR picks up real data on
+  // next request when Sanity recovers.
+  let author: Author | null = null;
+  try {
+    author = await sanityGetAuthorBySlug(slug);
+  } catch (err) {
+    console.error(`Sanity error fetching author metadata for "${slug}":`, err);
+  }
 
   if (!author) {
     return {
@@ -213,12 +229,26 @@ function PostCard({ post }: { post: Post }) {
 
 export default async function AuthorPage({ params }: Props) {
   const { slug } = await params;
-  const author = await sanityGetAuthorBySlug(slug);
+  // Wrap in try/catch so Sanity outages don't crash prerender — fall back
+  // to notFound(). ISR picks up real data on next request when Sanity recovers.
+  let author: Author | null = null;
+  try {
+    author = await sanityGetAuthorBySlug(slug);
+  } catch (err) {
+    console.error(`Sanity error fetching author data for "${slug}":`, err);
+  }
   if (!author) {
     notFound();
   }
 
-  const posts = await sanityGetPostsByAuthor(author.slug);
+  // Posts list — wrapped so failure just shows empty list rather than
+  // crashing the whole author page.
+  let posts: Post[] = [];
+  try {
+    posts = await sanityGetPostsByAuthor(author.slug);
+  } catch (err) {
+    console.error(`Sanity error fetching posts by author "${author.slug}":`, err);
+  }
   const sameAs = buildSameAs(author);
   const heroImage = author.imageRaw
     ? sanityImage(author.imageRaw, { width: 320, height: 320, quality: 90 })
