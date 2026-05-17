@@ -55,17 +55,11 @@ const ArchitectureFAQs: React.FC = () => {
                                     {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
                                 </span>
                             </button>
-                            <div
-                                className={`grid transition-all duration-300 ease-out ${
-                                    activeIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                                }`}
-                            >
-                                <div className="overflow-hidden">
-                                    <div className="p-6 pt-0 text-gray-600 leading-relaxed">
-                                        {faq.answer}
-                                    </div>
+                            {activeIndex === index && (
+                                <div className="p-6 pt-0 text-gray-600 leading-relaxed">
+                                    {faq.answer}
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>
