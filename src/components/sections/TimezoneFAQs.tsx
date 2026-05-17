@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 const faqs = [
@@ -60,20 +59,17 @@ const TimezoneFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <AnimatePresence>
-                                {activeIndex === index && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50">
-                                            {faq.answer}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                            <div
+                                className={`grid transition-all duration-300 ease-out ${
+                                    activeIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50">
+                                        {faq.answer}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

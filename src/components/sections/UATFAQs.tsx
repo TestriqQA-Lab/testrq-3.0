@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus, FaQuestionCircle } from "react-icons/fa";
 
 const faqs = [
@@ -50,20 +49,17 @@ const UATFAQs: React.FC = () => {
                                     {activeIndex === i ? <FaMinus /> : <FaPlus />}
                                 </div>
                             </button>
-                            <AnimatePresence>
-                                {activeIndex === i && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <div className="px-6 lg:px-8 pb-8 text-gray-600 leading-relaxed font-medium">
-                                            {faq.a}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                            <div
+                                className={`grid transition-all duration-300 ease-out ${
+                                    activeIndex === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <div className="px-6 lg:px-8 pb-8 text-gray-600 leading-relaxed font-medium">
+                                        {faq.a}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

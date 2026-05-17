@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaQuestionCircle } from "react-icons/fa";
 
 const FunctionalFAQs: React.FC = () => {
@@ -67,20 +66,17 @@ const FunctionalFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <AnimatePresence>
-                                {activeIndex === idx && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <div className="px-8 pb-6">
-                                            <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                            <div
+                                className={`grid transition-all duration-300 ease-out ${
+                                    activeIndex === idx ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <div className="px-8 pb-6">
+                                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

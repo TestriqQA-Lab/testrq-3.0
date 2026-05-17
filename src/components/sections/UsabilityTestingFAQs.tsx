@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaQuestionCircle } from "react-icons/fa";
 
 const UsabilityTestingFAQs: React.FC = () => {
@@ -53,20 +52,17 @@ const UsabilityTestingFAQs: React.FC = () => {
                                 </div>
                             </button>
 
-                            <AnimatePresence>
-                                {openIndex === index && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <div className="px-8 pb-8 text-gray-600 leading-relaxed pt-0 text-lg">
-                                            {faq.answer}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                            <div
+                                className={`grid transition-all duration-300 ease-out ${
+                                    openIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <div className="px-8 pb-8 text-gray-600 leading-relaxed pt-0 text-lg">
+                                        {faq.answer}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
