@@ -1,14 +1,16 @@
 // components/sections/ManualTestingHumanAdvantage.tsx
 
-import { Inter } from 'next/font/google';
+// F-92 — Removed redundant `Inter` font import. Layout already loads
+// `Geist` via next/font/google with the `--font-geist-sans` CSS variable
+// applied site-wide; this section now inherits cleanly instead of
+// downloading a duplicate font subset.
+
 import Link from "next/link";
 import React from "react";
 
-const inter = Inter({ subsets: ['latin'] });
-
 const ManualTestingHumanAdvantage = () => {
     return (
-        <section className={`human-advantage bg-gradient-to-b from-white to-gray-50 py-12 ${inter.className}`}>
+        <section className="human-advantage bg-gradient-to-b from-white to-gray-50 py-12">
             <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
                 <h2 className="text-4xl font-extrabold text-gray-900 mb-8 text-center tracking-tight sm:text-5xl">
                     Comprehensive <span className="text-brand-blue">Manual Software Testing</span> Services
