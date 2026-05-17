@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { Shield, Lock, Award, Verified } from "lucide-react";
 
 const DatingAppCompliance = () => {
@@ -65,15 +64,10 @@ const DatingAppCompliance = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {complianceStandards.map((standard, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
+            <div
+      key={index}
+      className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center hover:scale-105 transition-transform"
+    >
               <div className="text-brand-blue mb-6 flex justify-center">
                 {standard.icon}
               </div>
@@ -91,7 +85,7 @@ const DatingAppCompliance = () => {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

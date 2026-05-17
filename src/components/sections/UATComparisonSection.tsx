@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-
 const UATComparisonSection: React.FC = () => {
     const data = [
         { factor: "Conducted By", uat: "End-users", system: "QA Pros", integration: "QA Pros", unit: "Developers" },
@@ -24,12 +22,9 @@ const UATComparisonSection: React.FC = () => {
                     </p>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="overflow-x-auto rounded-3xl border border-slate-200 shadow-sm"
-                >
+                <div
+      className="overflow-x-auto rounded-3xl border border-slate-200 shadow-sm"
+    >
                     <table className="w-full text-left border-collapse">
                         <thead>
                             <tr className="bg-slate-50 border-b border-slate-200">
@@ -52,7 +47,7 @@ const UATComparisonSection: React.FC = () => {
                             ))}
                         </tbody>
                     </table>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

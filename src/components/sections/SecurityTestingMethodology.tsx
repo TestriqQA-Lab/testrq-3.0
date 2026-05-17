@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaSearch, FaBug, FaUserSecret, FaTools, FaCertificate } from "react-icons/fa";
 
 const SecurityTestingMethodology: React.FC = () => {
@@ -64,14 +63,10 @@ const SecurityTestingMethodology: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
                     {steps.map((step, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="relative group h-full"
-                        >
+                        <div
+      key={index}
+      className="relative group h-full"
+    >
                             {/* Connector line for desktop */}
                             {index < steps.length - 1 && (
                                 <div className="hidden lg:block absolute top-12 left-[60%] w-full h-[2px] bg-gray-100 z-0">
@@ -99,7 +94,7 @@ const SecurityTestingMethodology: React.FC = () => {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

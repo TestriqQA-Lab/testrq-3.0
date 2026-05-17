@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   FileSearch,
   TestTube,
@@ -82,13 +81,9 @@ const FantasyAppCertificationProcess = () => {
       className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Our <span className="text-brand-blue">Certification Process</span>
           </h2>
@@ -97,20 +92,16 @@ const FantasyAppCertificationProcess = () => {
             fairness, security, and performance — executed within 12-18 working
             days.
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-8">
           {processSteps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className={`flex flex-col lg:flex-row items-center gap-8 ${
+            <div
+      key={index}
+      className={`flex flex-col lg:flex-row items-center gap-8 ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
-            >
+    >
               {/* Step Content */}
               <div className="flex-1">
                 <div
@@ -167,17 +158,13 @@ const FantasyAppCertificationProcess = () => {
                   </div>
                 </div>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
+        <div
+      className="text-center mt-16"
+    >
           <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Total Timeline: 12-18 Working Days
@@ -192,7 +179,7 @@ const FantasyAppCertificationProcess = () => {
               </button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

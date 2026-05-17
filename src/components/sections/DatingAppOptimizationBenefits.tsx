@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { TrendingUp, Users, CheckCircle, Sparkles } from "lucide-react";
 
 const DatingAppOptimizationBenefits = () => {
@@ -45,15 +44,10 @@ const DatingAppOptimizationBenefits = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {optimizationBenefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              className={`p-8 rounded-2xl border-2 ${benefit.color}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-            >
+            <div
+      key={index}
+      className={`p-8 rounded-2xl border-2 ${benefit.color} hover:scale-102 transition-transform`}
+    >
               <div className="text-brand-blue mb-6">{benefit.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {benefit.title}
@@ -69,7 +63,7 @@ const DatingAppOptimizationBenefits = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

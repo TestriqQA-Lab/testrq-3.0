@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { FaArrowRight, FaShieldAlt, FaRocket, FaClock } from "react-icons/fa";
 
 const CompatibilityTestingReadyToStart: React.FC = () => {
@@ -14,12 +13,9 @@ const CompatibilityTestingReadyToStart: React.FC = () => {
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10 text-center space-y-12">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="space-y-6"
-                >
+                <div
+      className="space-y-6"
+    >
                     <div className="inline-flex items-center px-4 py-2 bg-white/10 text-blue-400 rounded-full text-sm font-bold border border-white/20">
                         <FaRocket className="mr-2" />
                         Launch Readiness
@@ -30,15 +26,11 @@ const CompatibilityTestingReadyToStart: React.FC = () => {
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
                         Partner with Testriq for expert Compatibility Testing. Safeguard your brand reputation and deliver flawless user experiences everywhere.
                     </p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-6"
-                >
+                <div
+      className="flex flex-col sm:flex-row items-center justify-center gap-6"
+    >
                     <Link href="/contact-us" className="bg-brand-blue text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300 flex items-center group">
                         Start Your Free Consultation
                         <FaArrowRight className="ml-3 group-hover:translate-x-2 transition-transform h-5 w-5" />
@@ -46,7 +38,7 @@ const CompatibilityTestingReadyToStart: React.FC = () => {
                     <Link href="/roi-calculator" className="bg-white/5 text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all duration-300">
                         Calculate Testing ROI
                     </Link>
-                </motion.div>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-white/10">
                     <div className="flex items-center justify-center gap-4 text-gray-400">

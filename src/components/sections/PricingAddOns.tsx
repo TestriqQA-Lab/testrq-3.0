@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaShieldAlt, FaPlug, FaCheckCircle, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
@@ -59,45 +58,31 @@ const PricingAddOns: React.FC = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-block bg-purple-500/10 text-purple-400 text-sm font-bold px-4 py-2 rounded-full mb-4 border border-purple-500/20"
-                    >
+                    <span
+      className="inline-block bg-purple-500/10 text-purple-400 text-sm font-bold px-4 py-2 rounded-full mb-4 border border-purple-500/20"
+    >
                         ADD-ON SERVICES
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-white mb-4"
-                    >
+                    </span>
+                    <h2
+      className="text-3xl md:text-4xl font-bold text-white mb-4"
+    >
                         Specialized Testing Modules
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-slate-400 max-w-2xl mx-auto"
-                    >
+                    </h2>
+                    <p
+      className="text-slate-400 max-w-2xl mx-auto"
+    >
                         Complement your core QA package with specialized audits.
                         One-time engagements designed for maximum impact.
-                    </motion.p>
+                    </p>
                 </div>
 
                 {/* Add-on Cards */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {addOns.map((addon, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.15 }}
-                            className="relative group"
-                        >
+                        <div
+      key={index}
+      className="relative group"
+    >
                             <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10"
                                 style={{
                                     background: `linear-gradient(135deg, ${addon.gradient.includes("cyan") ? "#06b6d4" : "#a855f7"
@@ -147,17 +132,14 @@ const PricingAddOns: React.FC = () => {
                                     {addon.cta} <FaArrowRight className="w-4 h-4" />
                                 </Link>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
                 {/* Custom Add-on CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mt-12 text-center"
-                >
+                <div
+      className="mt-12 text-center"
+    >
                     <p className="text-slate-500 mb-4">
                         Need a custom testing module tailored to your industry?
                     </p>
@@ -167,7 +149,7 @@ const PricingAddOns: React.FC = () => {
                     >
                         Let&apos;s discuss your requirements <FaArrowRight className="w-4 h-4" />
                     </Link>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

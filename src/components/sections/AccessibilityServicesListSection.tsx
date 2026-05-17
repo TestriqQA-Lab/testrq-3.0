@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaCheckCircle, FaLaptopCode, FaMobileAlt, FaHandSparkles, FaSearch, FaCogs, FaUserCheck, FaShoppingCart, FaUserLock, FaHospital, FaShieldAlt, FaBookOpen, FaGlobe } from "react-icons/fa";
 
 const AccessibilityServicesListSection: React.FC = () => {
@@ -43,19 +42,15 @@ const AccessibilityServicesListSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.05 }}
-                            className="flex items-center gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-white hover:shadow-md transition-all duration-300"
-                        >
+                        <div
+      key={index}
+      className="flex items-center gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-white hover:shadow-md transition-all duration-300"
+    >
                             <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
                                 <FaCheckCircle className="text-brand-blue" />
                             </div>
                             <span className="font-semibold text-gray-800 text-lg">{service.name}</span>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

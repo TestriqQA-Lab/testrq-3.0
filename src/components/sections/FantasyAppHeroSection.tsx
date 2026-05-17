@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Trophy,
   Shield,
@@ -32,25 +31,19 @@ const FantasyAppHeroSection = () => {
 
       <div className="relative max-w-7xl mx-auto">
         {/* Trust Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8"
-        >
+        <div
+      className="text-center mb-8"
+    >
           <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium">
             <Trophy className="w-4 h-4" />
             Trusted Fantasy Sports Platform Certification
           </div>
-        </motion.div>
+        </div>
 
         {/* Main Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-12"
-        >
+        <div
+      className="text-center mb-12"
+    >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Fantasy Sports Apps{" "}
             <span className="text-brand-blue">Certification</span>
@@ -62,15 +55,12 @@ const FantasyAppHeroSection = () => {
             comprehensive testing that builds player trust and protects
             sensitive gaming data.
           </p>
-        </motion.div>
+        </div>
 
         {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-        >
+        <div
+      className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+    >
           <Link href="/contact-us">
             <button className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Get Certified Now
@@ -85,15 +75,12 @@ const FantasyAppHeroSection = () => {
             <Gamepad2 className="w-5 h-5" />
             View Certification Process
           </button>
-        </motion.div>
+        </div>
 
         {/* Certification Benefits */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
-        >
+        <div
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
+    >
           {[
             {
               icon: <Shield className="w-8 h-8" />,
@@ -120,13 +107,10 @@ const FantasyAppHeroSection = () => {
               color: "text-orange-600",
             },
           ].map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-              className="text-center bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
-            >
+            <div
+      key={index}
+      className="text-center bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
+    >
               <div className={`${benefit.color} mb-4 flex justify-center`}>
                 {benefit.icon}
               </div>
@@ -136,50 +120,23 @@ const FantasyAppHeroSection = () => {
               <p className="text-sm text-gray-600 leading-relaxed">
                 {benefit.desc}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Floating Elements */}
-      <motion.div
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 5, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/4 left-10 w-16 h-16 bg-gradient-to-r from-brand-blue to-purple-600 rounded-lg opacity-20 hidden lg:block"
-      ></motion.div>
+      <div
+      className="absolute top-1/4 left-10 w-16 h-16 bg-gradient-to-r from-brand-blue to-purple-600 rounded-lg opacity-20 hidden lg:block"
+    ></div>
 
-      <motion.div
-        animate={{
-          y: [0, 20, 0],
-          rotate: [0, -5, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/3 right-10 w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full opacity-20 hidden lg:block"
-      ></motion.div>
+      <div
+      className="absolute top-1/3 right-10 w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full opacity-20 hidden lg:block"
+    ></div>
 
-      <motion.div
-        animate={{
-          y: [0, -15, 0],
-          x: [0, 10, 0],
-        }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-1/4 left-1/4 w-8 h-8 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg opacity-20 hidden lg:block"
-      ></motion.div>
+      <div
+      className="absolute bottom-1/4 left-1/4 w-8 h-8 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg opacity-20 hidden lg:block"
+    ></div>
     </section>
   );
 };

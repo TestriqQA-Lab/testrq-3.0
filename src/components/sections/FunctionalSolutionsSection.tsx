@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaGlobe, FaMobileAlt, FaUsers, FaBuilding, FaRocket, FaExchangeAlt, FaShoppingCart, FaCloud, FaHospital, FaMoneyBillWave, FaCogs, FaProjectDiagram, FaServer, FaUndo, FaHandSparkles, FaMicrochip, FaDatabase, FaNetworkWired } from "react-icons/fa";
 
 const FunctionalSolutionsSection: React.FC = () => {
@@ -33,35 +32,24 @@ const FunctionalSolutionsSection: React.FC = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-16">
-                    <motion.h2
-                        className="text-3xl md:text-4xl font-bold text-white mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <h2
+      className="text-3xl md:text-4xl font-bold text-white mb-6"
+    >
                         Comprehensive <span className="text-brand-blue">Functional</span> Solutions
-                    </motion.h2>
-                    <motion.p
-                        className="text-gray-400 text-lg max-w-2xl mx-auto"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                    >
+                    </h2>
+                    <p
+      className="text-gray-400 text-lg max-w-2xl mx-auto"
+    >
                         We offer a holistic suite of services designed to integrate seamlessly into your development lifecycle, ensuring every aspect Functions perfectly.
-                    </motion.p>
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service, idx) => (
-                        <motion.div
-                            key={idx}
-                            className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: (idx % 3) * 0.1 }}
-                        >
+                        <div
+      key={idx}
+      className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300"
+    >
                             <div className="w-14 h-14 bg-brand-blue/10 text-brand-blue rounded-2xl flex items-center justify-center mb-6 text-2xl group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-xl shadow-brand-blue/0 group-hover:shadow-brand-blue/20">
                                 {service.icon}
                             </div>
@@ -71,7 +59,7 @@ const FunctionalSolutionsSection: React.FC = () => {
                             <p className="text-gray-400 text-base leading-relaxed">
                                 {service.desc}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

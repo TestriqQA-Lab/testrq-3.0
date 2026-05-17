@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaArrowRight, FaShieldAlt } from "react-icons/fa";
 
@@ -9,13 +8,9 @@ const BlockchainCTA: React.FC = () => {
     return (
         <section className="py-24 px-8 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="relative rounded-[2rem] bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 p-12 md:p-20 text-white overflow-hidden shadow-2xl"
-                >
+                <div
+      className="relative rounded-[2rem] bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 p-12 md:p-20 text-white overflow-hidden shadow-2xl"
+    >
                     {/* Decorative elements */}
                     <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] -mr-48 -mt-48" />
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-[100px] -ml-48 -mb-48" />
@@ -53,7 +48,7 @@ const BlockchainCTA: React.FC = () => {
                             Trusted by 150+ Leading Enterprises
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

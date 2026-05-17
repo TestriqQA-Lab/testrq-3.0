@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Search,
   TestTube,
@@ -86,13 +85,9 @@ const TradingAppCertificationProcess = () => {
       className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div
+      className="text-center mb-16"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Our <span className="text-brand-blue">Certification Process</span>
           </h2>
@@ -101,20 +96,16 @@ const TradingAppCertificationProcess = () => {
             highest standards of <Link href="/security-testing">security</Link>, <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">compliance</Link>, and <Link href="/performance-testing-services">performance</Link>.
             Typically completed in 20-29 working days.
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-8">
           {processSteps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className={`flex flex-col lg:flex-row items-center gap-8 ${
+            <div
+      key={index}
+      className={`flex flex-col lg:flex-row items-center gap-8 ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
-            >
+    >
               {/* Step Content */}
               <div className="flex-1 bg-white rounded-xl p-8 shadow-lg border border-gray-200">
                 <div className="flex items-center gap-4 mb-6">
@@ -165,18 +156,14 @@ const TradingAppCertificationProcess = () => {
                 </div>
               </div>
 
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Timeline Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8 mt-16"
-        >
+        <div
+      className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8 mt-16"
+    >
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">
               Total Timeline: 20-29 Working Days
@@ -192,7 +179,7 @@ const TradingAppCertificationProcess = () => {
               </button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

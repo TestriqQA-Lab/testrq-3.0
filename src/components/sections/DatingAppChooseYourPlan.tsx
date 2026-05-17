@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { CheckCircle, Clock, Sparkles } from "lucide-react";
 
 const DatingAppChooseYourPlan = () => {
@@ -79,19 +78,14 @@ const DatingAppChooseYourPlan = () => {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
-            <motion.div
-              key={index}
-              className={`relative p-8 rounded-2xl border-2 ${
+            <div
+      key={index}
+      className={`relative p-8 rounded-2xl border-2 ${
                 plan.color
               } transition-all duration-300 ${
                 plan.popular ? "scale-105 shadow-2xl" : "shadow-lg"
               }`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ scale: plan.popular ? 1.05 : 1.02 }}
-            >
+    >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center">
@@ -133,18 +127,16 @@ const DatingAppChooseYourPlan = () => {
                 ))}
               </div>
 
-              <motion.button
-                className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+              <button
+      className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
                   plan.popular
                     ? "bg-brand-blue text-white hover:bg-[#1e90d4]"
                     : "bg-gray-900 text-white hover:bg-gray-800"
-                }`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
+                } hover:scale-102 transition-transform active:scale-98`}
+    >
                 Get Started
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
           ))}
         </div>
       </div>

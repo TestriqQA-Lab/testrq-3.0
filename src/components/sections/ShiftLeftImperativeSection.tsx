@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaShieldAlt, FaRocket, FaUserCheck, FaCertificate } from "react-icons/fa";
 
 const ShiftLeftImperativeSection: React.FC = () => {
@@ -56,11 +55,10 @@ const ShiftLeftImperativeSection: React.FC = () => {
 
                     <div className="grid sm:grid-cols-1 gap-6">
                         {cards.map((card, index) => (
-                            <motion.div
-                                key={index}
-                                whileHover={{ x: 10 }}
-                                className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start"
-                            >
+                            <div
+      key={index}
+      className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start"
+    >
                                 <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
                                     {card.icon}
                                 </div>
@@ -68,7 +66,7 @@ const ShiftLeftImperativeSection: React.FC = () => {
                                     <h3 className="text-lg font-bold text-gray-900 mb-2">{card.title}</h3>
                                     <p className="text-gray-600 text-sm leading-relaxed">{card.description}</p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

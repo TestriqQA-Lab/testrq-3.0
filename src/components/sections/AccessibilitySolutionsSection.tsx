@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaGlobe, FaHandshake, FaBullseye } from "react-icons/fa";
 
 const AccessibilitySolutionsSection: React.FC = () => {
@@ -9,12 +8,7 @@ const AccessibilitySolutionsSection: React.FC = () => {
         <section className="py-10 lg:py-20 bg-white">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
+                    <div>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-8">
                             The Imperative of <span className="text-brand-blue">Digital Inclusion</span>: Making Technology Accessible to All
                         </h2>
@@ -24,15 +18,11 @@ const AccessibilitySolutionsSection: React.FC = () => {
                         <p className="text-lg text-gray-600 leading-relaxed">
                             This not only excludes a significant portion of the population but also exposes organizations to legal risks and missed market opportunities. This is where robust <span className="font-semibold text-brand-blue">Accessibility Testing Services</span> become paramount.
                         </p>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="bg-blue-50 rounded-3xl p-8 lg:p-12 border border-blue-100 relative overflow-hidden"
-                    >
+                    <div
+      className="bg-blue-50 rounded-3xl p-8 lg:p-12 border border-blue-100 relative overflow-hidden"
+    >
                         <div className="absolute top-0 right-0 p-4">
                             <FaGlobe className="text-8xl text-blue-100 opacity-50" />
                         </div>
@@ -51,7 +41,7 @@ const AccessibilitySolutionsSection: React.FC = () => {
                                 <span className="text-sm text-gray-600 uppercase tracking-wider font-semibold">QA House</span>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaNetworkWired, FaServer, FaCode, FaRocket, FaExchangeAlt } from "react-icons/fa";
 
 const ArchitectureServicesSection: React.FC = () => {
@@ -54,14 +53,10 @@ const ArchitectureServicesSection: React.FC = () => {
 
                     <div className="w-full lg:w-2/3 grid grid-cols-1 gap-12">
                         {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="group relative flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100 shadow-sm hover:shadow-md"
-                            >
+                            <div
+      key={index}
+      className="group relative flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100 shadow-sm hover:shadow-md"
+    >
                                 <div className="flex-shrink-0">
                                     <div className="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
                                         {service.icon}
@@ -71,7 +66,7 @@ const ArchitectureServicesSection: React.FC = () => {
                                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
                                     <p className="text-gray-600 leading-relaxed text-lg">{service.description}</p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

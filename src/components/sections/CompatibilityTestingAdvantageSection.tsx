@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaLayerGroup, FaMobileAlt, FaDraftingCompass, FaTools, FaCheckCircle, FaProjectDiagram } from "react-icons/fa";
 
 const CompatibilityTestingAdvantageSection: React.FC = () => {
@@ -46,12 +45,9 @@ const CompatibilityTestingAdvantageSection: React.FC = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="space-y-8"
-                    >
+                    <div
+      className="space-y-8"
+    >
                         <h2 className="text-3xl md:text-5xl font-bold leading-tight">
                             The Testriq <span className="text-blue-400">Advantage</span>: Expert Cross-Platform QA
                         </h2>
@@ -74,18 +70,14 @@ const CompatibilityTestingAdvantageSection: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     <div className="grid sm:grid-cols-2 gap-6">
                         {methodology.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/10 transition-colors duration-300"
-                            >
+                            <div
+      key={index}
+      className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/10 transition-colors duration-300"
+    >
                                 <div className="text-blue-400 text-2xl mb-4">
                                     {item.icon}
                                 </div>
@@ -93,7 +85,7 @@ const CompatibilityTestingAdvantageSection: React.FC = () => {
                                 <p className="text-sm text-blue-100/60 leading-relaxed">
                                     {item.desc}
                                 </p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

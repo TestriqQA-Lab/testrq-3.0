@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import { motion } from "framer-motion";
 import { FaCheckCircle, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import { pricingPackages, type PricingPackage } from "@/data/pricingPackages";
 import PricingFormModal from "@/components/sections/PricingFormModal";
@@ -65,13 +64,9 @@ const PricingCard: React.FC<PricingCardProps> = ({ pkg, index, onGetStarted }) =
     };
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.45, delay: index * 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className={`flex flex-col h-full bg-white rounded-2xl border border-gray-200 hover:border-brand-blue/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 min-w-[280px] lg:min-w-0 snap-start ${pkg.badge ? "ring-2 " + theme.ring : ""}`}
-        >
+        <div
+      className={`flex flex-col h-full bg-white rounded-2xl border border-gray-200 hover:border-brand-blue/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 min-w-[280px] lg:min-w-0 snap-start ${pkg.badge ? "ring-2 " + theme.ring : ""}`}
+    >
             {/* Card Header */}
             <div className="p-6 pb-5">
                 {pkg.badge && (
@@ -181,7 +176,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ pkg, index, onGetStarted }) =
                     <FaArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
             </div>
-        </motion.div>
+        </div>
     );
 };
 

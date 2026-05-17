@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaExclamationTriangle, FaUserAlt, FaDatabase, FaProjectDiagram, FaBalanceScale } from "react-icons/fa";
 
 const UATChallengesSection: React.FC = () => {
@@ -58,13 +57,10 @@ const UATChallengesSection: React.FC = () => {
 
                 <div className="space-y-6">
                     {challenges.map((item, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="group grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-50 border border-slate-200 p-6 lg:p-8 rounded-3xl hover:bg-white hover:shadow-2xl hover:border-blue-300 transition-all duration-500"
-                        >
+                        <div
+      key={idx}
+      className="group grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-50 border border-slate-200 p-6 lg:p-8 rounded-3xl hover:bg-white hover:shadow-2xl hover:border-blue-300 transition-all duration-500"
+    >
                             <div className="lg:col-span-1 flex items-center justify-center">
                                 <div className="text-4xl group-hover:scale-125 transition-transform duration-300">
                                     {item.icon}
@@ -89,7 +85,7 @@ const UATChallengesSection: React.FC = () => {
                                     {item.solution}
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

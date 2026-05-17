@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Shield,
@@ -53,13 +52,9 @@ const FantasyAppCTA = () => {
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div
+      className="text-center mb-12"
+    >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Ready to{" "}
             <span className="text-brand-blue">Certify Your Fantasy App?</span>
@@ -69,17 +64,13 @@ const FantasyAppCTA = () => {
             secure, and compliant certification. Stand out in the competitive
             fantasy gaming market.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Main CTA */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
+          <div
+      className="space-y-8"
+    >
             <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Get Started with Free Assessment
@@ -87,17 +78,13 @@ const FantasyAppCTA = () => {
 
               <div className="space-y-4 mb-8">
                 {ctaFeatures.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-3"
-                  >
+                  <div
+      key={index}
+      className="flex items-center gap-3"
+    >
                     <div className="text-brand-blue">{feature.icon}</div>
                     <span className="text-gray-700">{feature.text}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
@@ -123,15 +110,11 @@ const FantasyAppCTA = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {contactMethods.map((method, index) => (
-                  <motion.a
-                    key={index}
-                    href={method.action}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex flex-col items-center gap-2 p-3 bg-white rounded-lg hover:bg-[#25A8E0] hover:text-white transition-colors duration-300 group"
-                  >
+                  <a
+      key={index}
+      href={method.action}
+      className="flex flex-col items-center gap-2 p-3 bg-white rounded-lg hover:bg-[#25A8E0] hover:text-white transition-colors duration-300 group"
+    >
                     <div className="text-brand-blue group-hover:text-white">
                       {method.icon}
                     </div>
@@ -141,20 +124,16 @@ const FantasyAppCTA = () => {
                     <div className="text-sm font-medium text-gray-900 group-hover:text-white">
                       {method.value}
                     </div>
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Side - Benefits Summary */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
+          <div
+      className="space-y-6"
+    >
             <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-6">
                 Why Choose Testriq for Fantasy QA?
@@ -168,29 +147,21 @@ const FantasyAppCTA = () => {
                   "Compliance with ISO 27001, GDPR, CCPA, OWASP",
                   "Real-time load & live-match performance optimization",
                 ].map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3"
-                  >
+                  <div
+      key={index}
+      className="flex items-start gap-3"
+    >
                     <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-blue-100">{benefit}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
-            >
+            <div
+      className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
+    >
               <div className="text-center">
                 <h4 className="font-bold text-gray-900 mb-4">
                   Trusted by Industry Leaders
@@ -213,18 +184,14 @@ const FantasyAppCTA = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
+        <div
+      className="text-center mt-16"
+    >
           <div className="bg-gray-900 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">
               Don&apos;t Delay – Certify Your Fantasy App Today
@@ -241,7 +208,7 @@ const FantasyAppCTA = () => {
               </button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion";
 import { FaEnvelope, FaPhoneAlt, FaGlobeAmericas, FaArrowRight } from "react-icons/fa";
 
 const UATNextStepsSection: React.FC = () => {
@@ -25,19 +24,15 @@ const UATNextStepsSection: React.FC = () => {
                         </h2>
                         <div className="space-y-4">
                             {steps.map((step, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    className="flex items-center gap-4 group"
-                                >
+                                <div
+      key={idx}
+      className="flex items-center gap-4 group"
+    >
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center font-bold text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                         {idx + 1}
                                     </div>
                                     <p className="text-gray-700 font-medium">{step}</p>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     </div>

@@ -3,8 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { FaArrowRight, FaLock } from "react-icons/fa";
-import { motion } from "framer-motion";
-
 const CyberSecurityCTASection: React.FC = () => {
     return (
         <section className="py-24 px-8 md:px-12 lg:px-24 bg-white relative overflow-hidden">
@@ -13,13 +11,9 @@ const CyberSecurityCTASection: React.FC = () => {
             <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px]"></div>
 
             <div className="max-w-6xl mx-auto relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="bg-brand-blue rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl"
-                >
+                <div
+      className="bg-brand-blue rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl"
+    >
                     {/* Inner decorative icon */}
                     <div className="absolute top-0 right-0 p-12 text-[15rem] text-white/5 pointer-events-none">
                         <FaLock />
@@ -47,7 +41,7 @@ const CyberSecurityCTASection: React.FC = () => {
                             </p>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

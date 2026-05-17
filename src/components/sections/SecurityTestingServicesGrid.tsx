@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
     FaLaptopCode,
     FaNetworkWired,
@@ -57,20 +56,15 @@ const SecurityTestingServicesGrid: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {vaptServices.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                whileHover={{ y: -5 }}
-                                transition={{ duration: 0.3 }}
-                                viewport={{ once: true }}
-                                className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 group hover:border-brand-blue transition-all"
-                            >
+                            <div
+      key={index}
+      className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 group hover:border-brand-blue transition-all transition-transform"
+    >
                                 <div className="text-2xl text-brand-blue p-3 bg-blue-50 rounded-xl group-hover:bg-brand-blue group-hover:text-white transition-colors">
                                     {service.icon}
                                 </div>
                                 <h4 className="font-bold text-gray-800 leading-snug">{service.title}</h4>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
