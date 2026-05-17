@@ -1,13 +1,17 @@
 // components/sections/ManualTestingFrameworkArchitecture.tsx
 
-import { Inter } from 'next/font/google';
-import React from "react";
+// F-92 — Removed redundant `Inter` font import. Layout already loads
+// `Geist` via next/font/google with the `--font-geist-sans` CSS variable
+// applied site-wide on body (Tailwind `font-sans` class). Loading Inter
+// here downloaded a duplicate font subset (~50-100 KB) that visually
+// changed the section's font vs every other section. Using the inherited
+// layout font means: smaller bundle, faster LCP, visual consistency.
 
-const inter = Inter({ subsets: ['latin'] });
+import React from "react";
 
 const ManualTestingFrameworkArchitecture = () => {
     return (
-        <section className={`framework-architecture bg-gradient-to-b from-white to-gray-50 py-16 ${inter.className}`}>
+        <section className="framework-architecture bg-gradient-to-b from-white to-gray-50 py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-8 text-center tracking-tight sm:text-5xl md:text-4xl">
                     Why Our Frameworks Don&apos;t <span className="text-[rgb(37,168,224)]">Break</span> (Self-Healing Automation)
