@@ -8,7 +8,6 @@ import { extractHeadings } from "@/lib/utils";
 import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 import { Suspense } from "react";
-import RelatedPosts from "@/components/sections/RelatedPosts";
 import BlogPostHeroSection from "@/components/sections/BlogPostHeroSection";
 import ResourceSidebar from "@/components/sections/ResourceSidebar";
 import VisualTableOfContents from "@/components/sections/VisualTableOfContents";
