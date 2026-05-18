@@ -375,8 +375,22 @@ export async function sanityGetPostsBySlugs(slugs: string[]): Promise<Post[]> {
     return posts.map(adaptSanityPost);
 }
 
-export async function sanityGetAllPostSlugs() {
-    return await client.fetch(queries.postSlugsQuery);
+// Build-time snapshot (refreshed via `npm run sanity:snapshot`). Reading from
+// this committed JSON eliminates Sanity API calls during Vercel build for
+// `generateStaticParams` — the dominant source of free-tier 402 quota burn.
+// Falls back to live Sanity if snapshot is empty (first run / pre-snapshot).
+import buildSnapshot from './sanity-build-snapshot.json';
+
+export async function sanityGetAllPostSlugs(): Promise<string[]> {
+    if (buildSnapshot.postSlugs && buildSnapshot.postSlugs.length > 0) {
+        return buildSnapshot.postSlugs;
+    }
+    try {
+        return (await client.fetch<string[]>(queries.postSlugsQuery)) || [];
+    } catch (err) {
+        console.error('Error fetching post slugs (snapshot empty, live Sanity failed):', err);
+        return [];
+    }
 }
 
 // =============================================
@@ -422,10 +436,13 @@ export async function sanityGetAuthorBySlug(slug: string): Promise<Author | null
 }
 
 export async function sanityGetAllAuthorSlugs(): Promise<string[]> {
+    if (buildSnapshot.authorSlugs && buildSnapshot.authorSlugs.length > 0) {
+        return buildSnapshot.authorSlugs;
+    }
     try {
-        return (await client.fetch(queries.authorSlugsQuery)) || [];
+        return (await client.fetch<string[]>(queries.authorSlugsQuery)) || [];
     } catch (error) {
-        console.error("Error fetching author slugs:", error);
+        console.error("Error fetching author slugs (snapshot empty, live Sanity failed):", error);
         return [];
     }
 }
@@ -838,7 +855,15 @@ export async function sanityGetCaseStudyBySlug(slug: string): Promise<CaseStudy 
 }
 
 export async function sanityGetAllCaseStudySlugs(): Promise<string[]> {
-    return await client.fetch(queries.caseStudySlugsQuery);
+    if (buildSnapshot.caseStudySlugs && buildSnapshot.caseStudySlugs.length > 0) {
+        return buildSnapshot.caseStudySlugs;
+    }
+    try {
+        return (await client.fetch<string[]>(queries.caseStudySlugsQuery)) || [];
+    } catch (err) {
+        console.error('Error fetching case study slugs (snapshot empty, live Sanity failed):', err);
+        return [];
+    }
 }
 
 export async function sanityGetRelatedCaseStudies(
