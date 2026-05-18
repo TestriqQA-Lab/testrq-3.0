@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true NODE_OPTIONS='--max-old-space-size=4096' next build --webpack",
+    "sanity:snapshot": "tsx src/scripts/snapshot-sanity-slugs.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },
