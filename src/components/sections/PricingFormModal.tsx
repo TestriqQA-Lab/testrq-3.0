@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaUser, FaEnvelope, FaPhone, FaBuilding, FaPaperPlane, FaCheckCircle, FaShieldAlt } from "react-icons/fa";
 import PhoneInput from "@/components/ui/PhoneInput";
 import { isValidPhoneNumber } from "libphonenumber-js";
@@ -194,30 +193,19 @@ const PricingFormModal: React.FC<PricingFormModalProps> = ({
         );
     };
 
+    if (!isOpen) return null;
     return (
-        <AnimatePresence>
-            {isOpen && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-                    onClick={(e) => {
-                        if (e.target === e.currentTarget) onClose();
-                    }}
-                >
-                    {/* Backdrop */}
-                    <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+        <div
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+            onClick={(e) => {
+                if (e.target === e.currentTarget) onClose();
+            }}
+        >
+                {/* Backdrop */}
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
-                    {/* Modal */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-                        className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
-                    >
+                {/* Modal */}
+                <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
                         {/* Header */}
                         <div className={`bg-gradient-to-r ${gradient} px-6 py-5 relative`}>
                             <button
@@ -242,11 +230,7 @@ const PricingFormModal: React.FC<PricingFormModalProps> = ({
                         {/* Body */}
                         <div className="overflow-y-auto flex-1 px-6 py-5">
                             {isSubmitted ? (
-                                <motion.div
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className="text-center py-10"
-                                >
+                                <div className="text-center py-10">
                                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
                                         <FaCheckCircle className="w-8 h-8 text-green-500" />
                                     </div>
@@ -266,7 +250,7 @@ const PricingFormModal: React.FC<PricingFormModalProps> = ({
                                     >
                                         Close
                                     </button>
-                                </motion.div>
+                                </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                                     {/* Package Info Chip */}
@@ -451,10 +435,8 @@ const PricingFormModal: React.FC<PricingFormModalProps> = ({
                                 </form>
                             )}
                         </div>
-                    </motion.div>
-                </motion.div>
-            )}
-        </AnimatePresence>
+                </div>
+        </div>
     );
 };
 

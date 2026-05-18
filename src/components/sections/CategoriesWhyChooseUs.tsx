@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import {
     Award,
     BadgeCheck,
@@ -64,19 +63,13 @@ const features: FeatureItem[] = [
 ];
 
 const CategoriesWhyChooseUs: React.FC = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    return (
+    const ref = useRef(null);    return (
         <section ref={ref} className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
-                >
+                <div
+      className="text-center mb-16"
+    >
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-600 rounded-full text-sm font-semibold mb-4">
                         <Award className="w-4 h-4" />
                         Why Choose Us
@@ -90,18 +83,15 @@ const CategoriesWhyChooseUs: React.FC = () => {
                     <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                         What sets us apart as your trusted software testing partner
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Features Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
-                        <motion.div
-                            key={feature.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative"
-                        >
+                        <div
+      key={feature.title}
+      className="group relative"
+    >
                             {/* Hover glow effect */}
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
 
@@ -120,7 +110,7 @@ const CategoriesWhyChooseUs: React.FC = () => {
                                     {feature.description}
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

@@ -1,17 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-
-const IoTApplianceTestingAnimation = () => {
-    const controls = useAnimation();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // Corporate Color Palette - IoT / Connectivity Theme
+const IoTApplianceTestingAnimation = () => {    // Corporate Color Palette - IoT / Connectivity Theme
     const colors = {
         bg: "#ecfeff",
         primary: "#25A8E0", // Testriq Brand Blue
@@ -27,44 +17,6 @@ const IoTApplianceTestingAnimation = () => {
     };
 
     // Animation Sequence
-    useEffect(() => {
-        if (!mounted) return;
-
-        let isMounted = true;
-        const sequence = async () => {
-            await new Promise((resolve) => setTimeout(resolve, 500));
-
-            while (isMounted) {
-                await controls.start("reset");
-                await controls.start("envInit");
-                await controls.start("qaAppear");
-                await controls.start("devicesActivate");
-                await controls.start("connectivity");
-                await controls.start("sensorValidate");
-                await controls.start("securityScan");
-                await controls.start("defectDetect");
-                await controls.start("retest");
-                await controls.start("complete");
-                await new Promise((resolve) => setTimeout(resolve, 3000));
-            }
-        };
-        sequence();
-
-        return () => {
-            isMounted = false;
-        };
-    }, [controls, mounted]);
-
-    // Static fallback for SSR/initial mount
-    if (!mounted) {
-        return (
-            <div
-                className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 shadow-xl border border-cyan-200"
-                role="img"
-                aria-label="IoT Appliance Testing Illustration"
-            />
-        );
-    }
 
     return (
         <div
@@ -92,22 +44,7 @@ const IoTApplianceTestingAnimation = () => {
                 </defs>
 
                 {/* === SMART HOME ENVIRONMENT === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        envInit: { opacity: 1, transition: { duration: 0.5 } },
-                        qaAppear: { opacity: 1 },
-                        devicesActivate: { opacity: 1 },
-                        connectivity: { opacity: 1 },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 1 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* House Outline */}
                     <path
                         d="M 400 80 L 600 180 L 600 380 L 200 380 L 200 180 Z"
@@ -123,25 +60,10 @@ const IoTApplianceTestingAnimation = () => {
                         stroke="#94a3b8"
                         strokeWidth="3"
                     />
-                </motion.g>
+                </g>
 
                 {/* === CLOUD HUB === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, y: -20 },
-                        envInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        devicesActivate: { opacity: 0.5 },
-                        connectivity: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 1 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Cloud Shape */}
                     <ellipse cx="400" cy="35" rx="70" ry="25" fill="url(#cloud-gradient)" filter="url(#iot-shadow)" />
                     <circle cx="350" cy="35" r="18" fill="url(#cloud-gradient)" />
@@ -149,25 +71,10 @@ const IoTApplianceTestingAnimation = () => {
                     <text x="400" y="40" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">
                         ☁ Cloud Hub
                     </text>
-                </motion.g>
+                </g>
 
                 {/* === QA ENGINEER WORKSTATION === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, x: -30 },
-                        envInit: { opacity: 0 },
-                        qaAppear: { opacity: 1, x: 0, transition: { duration: 0.4 } },
-                        devicesActivate: { opacity: 1 },
-                        connectivity: { opacity: 1 },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 1 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Desk */}
                     <rect x="30" y="320" width="140" height="10" rx="3" fill="#cbd5e1" />
                     {/* Monitor */}
@@ -185,26 +92,12 @@ const IoTApplianceTestingAnimation = () => {
                     <circle cx="100" cy="310" r="16" fill={colors.primary} />
                     {/* Headset */}
                     <path d="M 86 305 Q 100 290 114 305" stroke={colors.secondary} strokeWidth="3" fill="none" />
-                </motion.g>
+                </g>
 
                 {/* === IOT DEVICES === */}
 
                 {/* Thermostat */}
-                <motion.g
-                    variants={{
-                        reset: { opacity: 0, scale: 0.8 },
-                        envInit: { opacity: 0.3 },
-                        qaAppear: { opacity: 0.3 },
-                        devicesActivate: { opacity: 1, scale: 1, transition: { delay: 0 } },
-                        connectivity: { opacity: 1 },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 0.7 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <circle cx="280" cy="200" r="35" fill="white" filter="url(#iot-shadow)" stroke="#e2e8f0" strokeWidth="2" />
                     <circle cx="280" cy="200" r="25" fill={colors.deviceBg} />
                     <text x="280" y="205" textAnchor="middle" fontSize="12" fill={colors.secondary} fontWeight="bold">
@@ -213,48 +106,20 @@ const IoTApplianceTestingAnimation = () => {
                     <text x="280" y="250" textAnchor="middle" fontSize="8" fill={colors.textSecondary}>
                         Thermostat
                     </text>
-                </motion.g>
+                </g>
 
                 {/* Smart Light */}
-                <motion.g
-                    variants={{
-                        reset: { opacity: 0, scale: 0.8 },
-                        envInit: { opacity: 0.3 },
-                        qaAppear: { opacity: 0.3 },
-                        devicesActivate: { opacity: 1, scale: 1, transition: { delay: 0.15 } },
-                        connectivity: { opacity: 1 },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 0.7 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="360" y="165" width="50" height="70" rx="8" fill="white" filter="url(#iot-shadow)" stroke="#e2e8f0" strokeWidth="2" />
                     <ellipse cx="385" cy="195" rx="15" ry="20" fill={colors.warning} opacity="0.8" />
                     <path d="M 375 220 L 395 220 L 390 235 L 380 235 Z" fill="#94a3b8" />
                     <text x="385" y="260" textAnchor="middle" fontSize="8" fill={colors.textSecondary}>
                         Smart Light
                     </text>
-                </motion.g>
+                </g>
 
                 {/* Smart Fridge */}
-                <motion.g
-                    variants={{
-                        reset: { opacity: 0, scale: 0.8 },
-                        envInit: { opacity: 0.3 },
-                        qaAppear: { opacity: 0.3 },
-                        devicesActivate: { opacity: 1, scale: 1, transition: { delay: 0.3 } },
-                        connectivity: { opacity: 1 },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 0.7 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="450" y="140" width="60" height="100" rx="6" fill="white" filter="url(#iot-shadow)" stroke="#e2e8f0" strokeWidth="2" />
                     <rect x="455" y="145" width="50" height="55" rx="3" fill={colors.deviceBg} />
                     <rect x="455" y="205" width="50" height="30" rx="3" fill="#475569" />
@@ -262,24 +127,10 @@ const IoTApplianceTestingAnimation = () => {
                     <text x="480" y="260" textAnchor="middle" fontSize="8" fill={colors.textSecondary}>
                         Smart Fridge
                     </text>
-                </motion.g>
+                </g>
 
                 {/* Security Camera */}
-                <motion.g
-                    variants={{
-                        reset: { opacity: 0, scale: 0.8 },
-                        envInit: { opacity: 0.3 },
-                        qaAppear: { opacity: 0.3 },
-                        devicesActivate: { opacity: 1, scale: 1, transition: { delay: 0.45 } },
-                        connectivity: { opacity: 1 },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 0.7 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="545" y="175" width="55" height="40" rx="6" fill="white" filter="url(#iot-shadow)" stroke="#e2e8f0" strokeWidth="2" />
                     <circle cx="572" cy="195" r="12" fill={colors.deviceBg} />
                     <circle cx="572" cy="195" r="6" fill={colors.secondary} />
@@ -287,24 +138,10 @@ const IoTApplianceTestingAnimation = () => {
                     <text x="572" y="260" textAnchor="middle" fontSize="8" fill={colors.textSecondary}>
                         Camera
                     </text>
-                </motion.g>
+                </g>
 
                 {/* Washing Machine - This one will have a defect */}
-                <motion.g
-                    variants={{
-                        reset: { opacity: 0, scale: 0.8 },
-                        envInit: { opacity: 0.3 },
-                        qaAppear: { opacity: 0.3 },
-                        devicesActivate: { opacity: 1, scale: 1, transition: { delay: 0.6 } },
-                        connectivity: { opacity: 1 },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 0.7 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="630" y="155" width="55" height="75" rx="6" fill="white" filter="url(#iot-shadow)" stroke="#e2e8f0" strokeWidth="2" />
                     <circle cx="657" cy="195" r="22" fill={colors.deviceBg} />
                     <circle cx="657" cy="195" r="15" fill="#475569" />
@@ -313,136 +150,27 @@ const IoTApplianceTestingAnimation = () => {
                     <text x="657" y="260" textAnchor="middle" fontSize="8" fill={colors.textSecondary}>
                         Washer
                     </text>
-                </motion.g>
+                </g>
 
                 {/* === CONNECTIVITY LINES === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        envInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        devicesActivate: { opacity: 0 },
-                        connectivity: { opacity: 1, transition: { duration: 0.5 } },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 0.5 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Lines from devices to cloud */}
-                    <motion.path
-                        d="M 280 165 Q 280 100 400 55"
-                        stroke={colors.secondary}
-                        strokeWidth="2"
-                        strokeDasharray="6 3"
-                        fill="none"
-                        variants={{
-                            connectivity: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.4 } },
-                        }}
-                        animate={controls}
-                    />
-                    <motion.path
-                        d="M 385 165 Q 385 100 400 55"
-                        stroke={colors.secondary}
-                        strokeWidth="2"
-                        strokeDasharray="6 3"
-                        fill="none"
-                        variants={{
-                            connectivity: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.4, delay: 0.1 } },
-                        }}
-                        animate={controls}
-                    />
-                    <motion.path
-                        d="M 480 140 Q 480 90 400 55"
-                        stroke={colors.secondary}
-                        strokeWidth="2"
-                        strokeDasharray="6 3"
-                        fill="none"
-                        variants={{
-                            connectivity: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.4, delay: 0.2 } },
-                        }}
-                        animate={controls}
-                    />
-                    <motion.path
-                        d="M 572 175 Q 572 100 400 55"
-                        stroke={colors.secondary}
-                        strokeWidth="2"
-                        strokeDasharray="6 3"
-                        fill="none"
-                        variants={{
-                            connectivity: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.4, delay: 0.3 } },
-                        }}
-                        animate={controls}
-                    />
-                    <motion.path
-                        d="M 657 155 Q 620 100 400 55"
-                        stroke={colors.secondary}
-                        strokeWidth="2"
-                        strokeDasharray="6 3"
-                        fill="none"
-                        variants={{
-                            connectivity: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.4, delay: 0.4 } },
-                        }}
-                        animate={controls}
-                    />
-                </motion.g>
+                    <path d="M 280 165 Q 280 100 400 55" stroke={colors.secondary} strokeWidth="2" strokeDasharray="6 3" fill="none" />
+                    <path d="M 385 165 Q 385 100 400 55" stroke={colors.secondary} strokeWidth="2" strokeDasharray="6 3" fill="none" />
+                    <path d="M 480 140 Q 480 90 400 55" stroke={colors.secondary} strokeWidth="2" strokeDasharray="6 3" fill="none" />
+                    <path d="M 572 175 Q 572 100 400 55" stroke={colors.secondary} strokeWidth="2" strokeDasharray="6 3" fill="none" />
+                    <path d="M 657 155 Q 620 100 400 55" stroke={colors.secondary} strokeWidth="2" strokeDasharray="6 3" fill="none" />
+                </g>
 
                 {/* === SENSOR DATA PULSES === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        envInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        devicesActivate: { opacity: 0 },
-                        connectivity: { opacity: 0 },
-                        sensorValidate: { opacity: 1, transition: { duration: 0.3 } },
-                        securityScan: { opacity: 0.5 },
-                        defectDetect: { opacity: 0.5 },
-                        retest: { opacity: 0.5 },
-                        complete: { opacity: 0.8 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {[280, 385, 480, 572, 657].map((x, i) => (
-                        <motion.circle
-                            key={`pulse-${i}`}
-                            cx={x}
-                            cy={i === 2 ? 130 : i === 4 ? 145 : 155}
-                            r="6"
-                            fill={colors.success}
-                            variants={{
-                                sensorValidate: {
-                                    r: [4, 8, 4],
-                                    opacity: [0.5, 1, 0.5],
-                                    transition: { duration: 0.6, delay: i * 0.1, repeat: 1 },
-                                },
-                            }}
-                            animate={controls}
-                        />
+                        <circle key={`pulse-${i}`} cx={x} cy={i === 2 ? 130 : i === 4 ? 145 : 155} r="6" fill={colors.success} />
                     ))}
-                </motion.g>
+                </g>
 
                 {/* === SECURITY SCAN SHIELD === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, x: 150 },
-                        envInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        devicesActivate: { opacity: 0 },
-                        connectivity: { opacity: 0 },
-                        sensorValidate: { opacity: 0 },
-                        securityScan: { opacity: 1, x: [150, 500], transition: { duration: 1.2, ease: "easeInOut" } },
-                        defectDetect: { opacity: 0, x: 700 },
-                        retest: { opacity: 0 },
-                        complete: { opacity: 0 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <path
                         d="M 0 -25 L 20 -15 L 20 10 L 0 25 L -20 10 L -20 -15 Z"
                         fill={colors.primary}
@@ -451,25 +179,10 @@ const IoTApplianceTestingAnimation = () => {
                     <text x="280" y="305" textAnchor="middle" fontSize="14" fill="white">
                         🛡
                     </text>
-                </motion.g>
+                </g>
 
                 {/* === DEFECT DETECTION ON WASHER === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, scale: 0 },
-                        envInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        devicesActivate: { opacity: 0 },
-                        connectivity: { opacity: 0 },
-                        sensorValidate: { opacity: 0 },
-                        securityScan: { opacity: 0 },
-                        defectDetect: { opacity: 1, scale: 1, transition: { type: "spring" } },
-                        retest: { opacity: 0.5 },
-                        complete: { opacity: 0 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <circle cx="685" cy="165" r="14" fill={colors.error} opacity="0.2" />
                     <circle cx="685" cy="165" r="10" fill={colors.error} />
                     <text x="685" y="170" textAnchor="middle" fontSize="12" fill="white" fontWeight="bold">
@@ -479,25 +192,10 @@ const IoTApplianceTestingAnimation = () => {
                     <text x="665" y="290" textAnchor="middle" fontSize="9" fill="white" fontWeight="600">
                         ⚠ Firmware Error
                     </text>
-                </motion.g>
+                </g>
 
                 {/* === SUCCESS INDICATORS AFTER RETEST === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        envInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        devicesActivate: { opacity: 0 },
-                        connectivity: { opacity: 0 },
-                        sensorValidate: { opacity: 0 },
-                        securityScan: { opacity: 0 },
-                        defectDetect: { opacity: 0 },
-                        retest: { opacity: 0 },
-                        complete: { opacity: 1, transition: { duration: 0.5 } },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Success checkmarks on all devices */}
                     {[
                         { x: 305, y: 180 },
@@ -506,32 +204,17 @@ const IoTApplianceTestingAnimation = () => {
                         { x: 595, y: 180 },
                         { x: 680, y: 165 },
                     ].map((pos, i) => (
-                        <motion.g key={`check-${i}`}>
+                        <g key={`check-${i}`}>
                             <circle cx={pos.x} cy={pos.y} r="10" fill={colors.success} />
                             <text x={pos.x} y={pos.y + 4} textAnchor="middle" fontSize="10" fill="white">
                                 ✓
                             </text>
-                        </motion.g>
+                        </g>
                     ))}
-                </motion.g>
+                </g>
 
                 {/* === COMPLETION SUCCESS BADGE === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, scale: 0.8 },
-                        envInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        devicesActivate: { opacity: 0 },
-                        connectivity: { opacity: 0 },
-                        sensorValidate: { opacity: 0 },
-                        securityScan: { opacity: 0 },
-                        defectDetect: { opacity: 0 },
-                        retest: { opacity: 0 },
-                        complete: { opacity: 1, scale: 1, transition: { delay: 0.3, type: "spring" } },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect
                         x="230"
                         y="560"
@@ -551,25 +234,10 @@ const IoTApplianceTestingAnimation = () => {
                     >
                         ✓ All Devices Verified - Ecosystem Ready!
                     </text>
-                </motion.g>
+                </g>
 
                 {/* === TESTING PHASES PANEL === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        envInit: { opacity: 1, transition: { delay: 0.3 } },
-                        qaAppear: { opacity: 1 },
-                        devicesActivate: { opacity: 1 },
-                        connectivity: { opacity: 1 },
-                        sensorValidate: { opacity: 1 },
-                        securityScan: { opacity: 1 },
-                        defectDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="30" y="400" width="140" height="150" rx="10" fill="white" filter="url(#iot-shadow)" />
                     <text x="100" y="425" textAnchor="middle" fontSize="10" fontWeight="bold" fill={colors.textPrimary}>
                         Testing Phase
@@ -582,24 +250,14 @@ const IoTApplianceTestingAnimation = () => {
                         { label: "Security", phase: "securityScan" },
                         { label: "Firmware", phase: "defectDetect" },
                     ].map((item, i) => (
-                        <motion.g key={item.phase}>
-                            <motion.circle
-                                cx="50"
-                                cy={450 + i * 25}
-                                r="6"
-                                fill="#e2e8f0"
-                                variants={{
-                                    [item.phase]: { fill: colors.primary },
-                                    complete: { fill: colors.success },
-                                }}
-                                animate={controls}
-                            />
+                        <g key={item.phase}>
+                            <circle cx="50" cy={450 + i * 25} r="6" fill="#e2e8f0" />
                             <text x="62" y={454 + i * 25} fontSize="9" fill={colors.textSecondary}>
                                 {item.label}
                             </text>
-                        </motion.g>
+                        </g>
                     ))}
-                </motion.g>
+                </g>
             </svg>
         </div>
     );

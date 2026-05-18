@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { Calendar, Briefcase, Users, Globe } from "lucide-react";
 
 interface StatItem {
@@ -75,12 +74,9 @@ const StatCard: React.FC<{ stat: StatItem; index: number; shouldAnimate: boolean
     const count = useCountUp(stat.value, 2000, shouldAnimate);
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={shouldAnimate ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex items-center gap-4 px-6 py-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-blue-500/30 hover:bg-white/10 transition-all duration-300 group"
-        >
+        <div
+      className="flex items-center gap-4 px-6 py-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-blue-500/30 hover:bg-white/10 transition-all duration-300 group"
+    >
             <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
                 {stat.icon}
             </div>
@@ -91,15 +87,12 @@ const StatCard: React.FC<{ stat: StatItem; index: number; shouldAnimate: boolean
                 </div>
                 <div className="text-sm text-slate-400 font-medium">{stat.label}</div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 
 const CategoriesTrustStrip: React.FC = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    return (
+    const ref = useRef(null);    return (
         <section
             ref={ref}
             className="relative py-8 bg-gradient-to-r from-slate-900 via-blue-950/50 to-slate-900 border-y border-white/10"
@@ -120,7 +113,7 @@ const CategoriesTrustStrip: React.FC = () => {
                             key={stat.label}
                             stat={stat}
                             index={index}
-                            shouldAnimate={isInView}
+                            shouldAnimate={true}
                         />
                     ))}
                 </div>
