@@ -1,0 +1,9 @@
+{
+  "generatedAt": null,
+  "note": "Run `npm run sanity:snapshot` to populate. Until then, adapter falls back to live Sanity (which may hit 402 on free tier — same as pre-snapshot behavior).",
+  "postSlugs": [],
+  "caseStudySlugs": [],
+  "authorSlugs": [],
+  "categorySlugs": [],
+  "tagSlugs": []
+}
