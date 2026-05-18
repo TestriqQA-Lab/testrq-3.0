@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Star, TrendingUp } from "lucide-react";
 import { Category } from "@/lib/sanity-data-adapter";
@@ -14,21 +13,15 @@ interface FeaturedCategoriesSectionProps {
 const FeaturedCategoriesSection: React.FC<FeaturedCategoriesSectionProps> = ({
     categories,
 }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    // Take top 3 categories
+    const ref = useRef(null);    // Take top 3 categories
     const featured = categories.slice(0, 3);
 
     return (
         <section ref={ref} className="py-10">
             {/* Section Header */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5 }}
-                className="flex items-center gap-3 mb-8"
-            >
+            <div
+      className="flex items-center gap-3 mb-8"
+    >
                 <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl text-white shadow-lg shadow-amber-500/25">
                     <Star className="w-5 h-5" />
                 </div>
@@ -40,18 +33,15 @@ const FeaturedCategoriesSection: React.FC<FeaturedCategoriesSectionProps> = ({
                         Most popular testing topics
                     </p>
                 </div>
-            </motion.div>
+            </div>
 
             {/* Featured Cards Grid */}
             <div className="grid lg:grid-cols-3 gap-6">
                 {featured.map((category, index) => (
-                    <motion.div
-                        key={category.id}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group relative"
-                    >
+                    <div
+      key={category.id}
+      className="group relative"
+    >
                         {/* Hover glow */}
                         <div
                             className={`absolute -inset-1 bg-gradient-to-br ${category.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-all duration-500`}
@@ -129,7 +119,7 @@ const FeaturedCategoriesSection: React.FC<FeaturedCategoriesSectionProps> = ({
                                 </div>
                             </div>
                         </Link>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </section>

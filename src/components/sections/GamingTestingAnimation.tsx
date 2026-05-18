@@ -1,17 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-
-const GamingTestingAnimation = () => {
-    const controls = useAnimation();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // Corporate Color Palette - Testriq Brand
+const GamingTestingAnimation = () => {    // Corporate Color Palette - Testriq Brand
     const colors = {
         bg: "#f0f9ff",
         primary: "#25A8E0", // Testriq Brand Blue
@@ -27,44 +17,6 @@ const GamingTestingAnimation = () => {
     };
 
     // Animation Sequence
-    useEffect(() => {
-        if (!mounted) return;
-
-        let isMounted = true;
-        const sequence = async () => {
-            await new Promise((resolve) => setTimeout(resolve, 500));
-
-            while (isMounted) {
-                await controls.start("reset");
-                await controls.start("gameInit");
-                await controls.start("qaAppear");
-                await controls.start("gameplay");
-                await controls.start("controlTest");
-                await controls.start("perfMonitor");
-                await controls.start("deviceView");
-                await controls.start("bugDetect");
-                await controls.start("retest");
-                await controls.start("complete");
-                await new Promise((resolve) => setTimeout(resolve, 3000));
-            }
-        };
-        sequence();
-
-        return () => {
-            isMounted = false;
-        };
-    }, [controls, mounted]);
-
-    // Static fallback for SSR/initial mount
-    if (!mounted) {
-        return (
-            <div
-                className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 shadow-xl border border-sky-200"
-                role="img"
-                aria-label="Gaming App Testing Illustration"
-            />
-        );
-    }
 
     return (
         <div
@@ -92,22 +44,7 @@ const GamingTestingAnimation = () => {
                 </defs>
 
                 {/* === MAIN GAME SCREEN === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, scale: 0.9 },
-                        gameInit: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-                        qaAppear: { opacity: 1 },
-                        gameplay: { opacity: 1 },
-                        controlTest: { opacity: 1 },
-                        perfMonitor: { opacity: 1 },
-                        deviceView: { opacity: 0.3, transition: { duration: 0.3 } },
-                        bugDetect: { opacity: 0.3 },
-                        retest: { opacity: 0.3 },
-                        complete: { opacity: 0.3 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Game Screen Frame */}
                     <rect
                         x="180"
@@ -142,24 +79,7 @@ const GamingTestingAnimation = () => {
                     <rect x="400" y="220" width="100" height="60" rx="4" fill="#64748b" />
 
                     {/* Game Character - Simple Player */}
-                    <motion.g
-                        variants={{
-                            reset: { x: 0 },
-                            gameInit: { x: 0 },
-                            qaAppear: { x: 0 },
-                            gameplay: {
-                                x: [0, 50, 100, 150, 180],
-                                transition: { duration: 1.5, ease: "easeInOut" },
-                            },
-                            controlTest: { x: 180 },
-                            perfMonitor: { x: 180 },
-                            deviceView: { x: 180 },
-                            bugDetect: { x: 180 },
-                            retest: { x: 180 },
-                            complete: { x: 180 },
-                        }}
-                        animate={controls}
-                    >
+                    <g>
                         {/* Player Body */}
                         <rect x="220" y="230" width="25" height="35" rx="6" fill={colors.primary} />
                         {/* Player Head */}
@@ -167,53 +87,24 @@ const GamingTestingAnimation = () => {
                         {/* Player Eyes */}
                         <circle cx="228" cy="216" r="2" fill="white" />
                         <circle cx="236" cy="216" r="2" fill="white" />
-                    </motion.g>
+                    </g>
 
                     {/* Collectible Items */}
-                    <motion.g
-                        variants={{
-                            reset: { opacity: 0 },
-                            gameInit: { opacity: 1 },
-                            qaAppear: { opacity: 1 },
-                            gameplay: { opacity: [1, 1, 0.5, 0], transition: { duration: 1.5 } },
-                            controlTest: { opacity: 0 },
-                            perfMonitor: { opacity: 0 },
-                            deviceView: { opacity: 0 },
-                            bugDetect: { opacity: 0 },
-                            retest: { opacity: 0 },
-                            complete: { opacity: 0 },
-                        }}
-                        animate={controls}
-                    >
+                    <g>
                         <circle cx="320" cy="200" r="8" fill={colors.warning} />
                         <circle cx="380" cy="180" r="8" fill={colors.warning} />
                         <circle cx="440" cy="200" r="8" fill={colors.warning} />
-                    </motion.g>
+                    </g>
 
                     {/* Score Display */}
                     <rect x="540" y="85" width="70" height="25" rx="5" fill="#1e293b" />
                     <text x="575" y="102" textAnchor="middle" fontSize="12" fill={colors.warning} fontWeight="bold">
                         ⭐ 2450
                     </text>
-                </motion.g>
+                </g>
 
                 {/* === QA ENGINEER WORKSTATION === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, y: 20 },
-                        gameInit: { opacity: 0, y: 20 },
-                        qaAppear: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-                        gameplay: { opacity: 1 },
-                        controlTest: { opacity: 1 },
-                        perfMonitor: { opacity: 1 },
-                        deviceView: { opacity: 1 },
-                        bugDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Desk */}
                     <rect x="30" y="260" width="120" height="8" rx="2" fill="#cbd5e1" />
                     {/* Monitor */}
@@ -232,25 +123,10 @@ const GamingTestingAnimation = () => {
                         strokeWidth="3"
                         fill="none"
                     />
-                </motion.g>
+                </g>
 
                 {/* === GAME CONTROLLER === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        gameInit: { opacity: 0.3 },
-                        qaAppear: { opacity: 0.5 },
-                        gameplay: { opacity: 0.7 },
-                        controlTest: { opacity: 1, transition: { duration: 0.3 } },
-                        perfMonitor: { opacity: 0.7 },
-                        deviceView: { opacity: 0.5 },
-                        bugDetect: { opacity: 0.5 },
-                        retest: { opacity: 0.5 },
-                        complete: { opacity: 0.7 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Controller Body */}
                     <rect x="650" y="80" width="120" height="70" rx="20" fill="#334155" filter="url(#gaming-shadow)" />
                     {/* D-Pad */}
@@ -258,82 +134,19 @@ const GamingTestingAnimation = () => {
                     <rect x="671" y="99" width="8" height="20" rx="2" fill="#475569" />
 
                     {/* Action Buttons */}
-                    <motion.circle
-                        cx="740"
-                        cy="100"
-                        r="8"
-                        fill={colors.success}
-                        variants={{
-                            controlTest: {
-                                fill: [colors.success, "#fff", colors.success],
-                                transition: { duration: 0.2, delay: 0.1 },
-                            },
-                        }}
-                        animate={controls}
-                    />
-                    <motion.circle
-                        cx="755"
-                        cy="115"
-                        r="8"
-                        fill={colors.error}
-                        variants={{
-                            controlTest: {
-                                fill: [colors.error, "#fff", colors.error],
-                                transition: { duration: 0.2, delay: 0.3 },
-                            },
-                        }}
-                        animate={controls}
-                    />
-                    <motion.circle
-                        cx="725"
-                        cy="115"
-                        r="8"
-                        fill={colors.warning}
-                        variants={{
-                            controlTest: {
-                                fill: [colors.warning, "#fff", colors.warning],
-                                transition: { duration: 0.2, delay: 0.5 },
-                            },
-                        }}
-                        animate={controls}
-                    />
-                    <motion.circle
-                        cx="740"
-                        cy="130"
-                        r="8"
-                        fill={colors.secondary}
-                        variants={{
-                            controlTest: {
-                                fill: [colors.secondary, "#fff", colors.secondary],
-                                transition: { duration: 0.2, delay: 0.7 },
-                            },
-                        }}
-                        animate={controls}
-                    />
+                    <circle cx="740" cy="100" r="8" fill={colors.success} />
+                    <circle cx="755" cy="115" r="8" fill={colors.error} />
+                    <circle cx="725" cy="115" r="8" fill={colors.warning} />
+                    <circle cx="740" cy="130" r="8" fill={colors.secondary} />
 
                     {/* Label */}
                     <text x="710" y="165" textAnchor="middle" fontSize="9" fill={colors.textSecondary}>
                         Input Testing
                     </text>
-                </motion.g>
+                </g>
 
                 {/* === FPS PERFORMANCE METER === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        gameInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        gameplay: { opacity: 0 },
-                        controlTest: { opacity: 0 },
-                        perfMonitor: { opacity: 1, transition: { duration: 0.3 } },
-                        deviceView: { opacity: 0.5 },
-                        bugDetect: { opacity: 0.5 },
-                        retest: { opacity: 0.5 },
-                        complete: { opacity: 0.7 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Meter Background */}
                     <rect x="650" y="200" width="120" height="80" rx="10" fill="white" filter="url(#gaming-shadow)" />
                     <text x="710" y="220" textAnchor="middle" fontSize="10" fontWeight="bold" fill={colors.textPrimary}>
@@ -342,63 +155,16 @@ const GamingTestingAnimation = () => {
 
                     {/* FPS Bar */}
                     <rect x="665" y="235" width="90" height="12" rx="4" fill="#e2e8f0" />
-                    <motion.rect
-                        x="665"
-                        y="235"
-                        width="0"
-                        height="12"
-                        rx="4"
-                        fill={colors.success}
-                        variants={{
-                            perfMonitor: { width: [0, 85], transition: { duration: 0.8 } },
-                            deviceView: { width: 85 },
-                            bugDetect: { width: 85 },
-                            retest: { width: 85 },
-                            complete: { width: 85 },
-                        }}
-                        animate={controls}
-                    />
+                    <rect x="665" y="235" width="0" height="12" rx="4" fill={colors.success} />
 
                     {/* FPS Value */}
-                    <motion.text
-                        x="710"
-                        y="263"
-                        textAnchor="middle"
-                        fontSize="14"
-                        fontWeight="bold"
-                        fill={colors.success}
-                        variants={{
-                            reset: { opacity: 0 },
-                            perfMonitor: { opacity: 1 },
-                            deviceView: { opacity: 1 },
-                            bugDetect: { opacity: 1 },
-                            retest: { opacity: 1 },
-                            complete: { opacity: 1 },
-                        }}
-                        initial={{ opacity: 0 }}
-                        animate={controls}
-                    >
+                    <text x="710" y="263" textAnchor="middle" fontSize="14" fontWeight="bold" fill={colors.success}>
                         60 FPS ✓
-                    </motion.text>
-                </motion.g>
+                    </text>
+                </g>
 
                 {/* === CROSS-DEVICE VIEW === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, y: 30 },
-                        gameInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        gameplay: { opacity: 0 },
-                        controlTest: { opacity: 0 },
-                        perfMonitor: { opacity: 0 },
-                        deviceView: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-                        bugDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Mobile Device */}
                     <rect x="120" y="360" width="100" height="180" rx="12" fill="#1e293b" filter="url(#gaming-shadow)" />
                     <rect x="128" y="375" width="84" height="145" rx="4" fill="#0f172a" />
@@ -426,16 +192,7 @@ const GamingTestingAnimation = () => {
                     </text>
 
                     {/* Bug Indicator on Tablet */}
-                    <motion.g
-                        variants={{
-                            reset: { opacity: 0, scale: 0 },
-                            deviceView: { opacity: 0 },
-                            bugDetect: { opacity: 1, scale: 1, transition: { type: "spring" } },
-                            retest: { opacity: 0.5 },
-                            complete: { opacity: 0 },
-                        }}
-                        animate={controls}
-                    >
+                    <g>
                         <circle cx="410" cy="400" r="18" fill={colors.error} opacity="0.2" />
                         <circle cx="410" cy="400" r="12" fill={colors.error} />
                         <text x="410" y="405" textAnchor="middle" fontSize="12" fill="white" fontWeight="bold">
@@ -445,19 +202,10 @@ const GamingTestingAnimation = () => {
                         <text x="410" y="439" textAnchor="middle" fontSize="9" fill="white" fontWeight="600">
                             ⚠ UI Glitch Found
                         </text>
-                    </motion.g>
+                    </g>
 
                     {/* Success Indicators */}
-                    <motion.g
-                        variants={{
-                            reset: { opacity: 0 },
-                            deviceView: { opacity: 0 },
-                            bugDetect: { opacity: 0 },
-                            retest: { opacity: 0 },
-                            complete: { opacity: 1, transition: { duration: 0.5, staggerChildren: 0.1 } },
-                        }}
-                        animate={controls}
-                    >
+                    <g>
                         {/* Mobile Success */}
                         <circle cx="170" cy="420" r="15" fill={colors.success} />
                         <text x="170" y="425" textAnchor="middle" fontSize="14" fill="white">
@@ -473,26 +221,11 @@ const GamingTestingAnimation = () => {
                         <text x="590" y="425" textAnchor="middle" fontSize="14" fill="white">
                             ✓
                         </text>
-                    </motion.g>
-                </motion.g>
+                    </g>
+                </g>
 
                 {/* === SUCCESS COMPLETION BADGE === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, scale: 0.8 },
-                        gameInit: { opacity: 0 },
-                        qaAppear: { opacity: 0 },
-                        gameplay: { opacity: 0 },
-                        controlTest: { opacity: 0 },
-                        perfMonitor: { opacity: 0 },
-                        deviceView: { opacity: 0 },
-                        bugDetect: { opacity: 0 },
-                        retest: { opacity: 0 },
-                        complete: { opacity: 1, scale: 1, transition: { delay: 0.3, type: "spring" } },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect
                         x="250"
                         y="560"
@@ -512,25 +245,10 @@ const GamingTestingAnimation = () => {
                     >
                         ✓ All Platforms Verified - Ready for Launch!
                     </text>
-                </motion.g>
+                </g>
 
                 {/* === TESTING PHASES INDICATOR === */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        gameInit: { opacity: 1, transition: { delay: 0.3 } },
-                        qaAppear: { opacity: 1 },
-                        gameplay: { opacity: 1 },
-                        controlTest: { opacity: 1 },
-                        perfMonitor: { opacity: 1 },
-                        deviceView: { opacity: 1 },
-                        bugDetect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 },
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="30" y="40" width="120" height="140" rx="10" fill="white" filter="url(#gaming-shadow)" />
                     <text x="90" y="60" textAnchor="middle" fontSize="10" fontWeight="bold" fill={colors.textPrimary}>
                         Testing Phase
@@ -543,24 +261,14 @@ const GamingTestingAnimation = () => {
                         { label: "Performance", phase: "perfMonitor" },
                         { label: "Cross-Device", phase: "deviceView" },
                     ].map((item, i) => (
-                        <motion.g key={item.phase}>
-                            <motion.circle
-                                cx="50"
-                                cy={82 + i * 25}
-                                r="6"
-                                fill="#e2e8f0"
-                                variants={{
-                                    [item.phase]: { fill: colors.primary },
-                                    complete: { fill: colors.success },
-                                }}
-                                animate={controls}
-                            />
+                        <g key={item.phase}>
+                            <circle cx="50" cy={82 + i * 25} r="6" fill="#e2e8f0" />
                             <text x="62" y={86 + i * 25} fontSize="9" fill={colors.textSecondary}>
                                 {item.label}
                             </text>
-                        </motion.g>
+                        </g>
                     ))}
-                </motion.g>
+                </g>
             </svg>
         </div>
     );

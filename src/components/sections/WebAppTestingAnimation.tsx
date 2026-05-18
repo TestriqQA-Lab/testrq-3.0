@@ -1,17 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-
-const WebAppTestingAnimation = () => {
-    const controls = useAnimation();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // Corporate Color Palette (Web/Browser theme - Blue/Teal/Gray)
+const WebAppTestingAnimation = () => {    // Corporate Color Palette (Web/Browser theme - Blue/Teal/Gray)
     const colors = {
         bg: "#f0f9ff",
         primary: "#2563eb",
@@ -35,36 +25,7 @@ const WebAppTestingAnimation = () => {
         { id: "edge", x: 420, y: 190, color: colors.edge, label: "Edge" },
     ];
 
-    // Animation Sequence
-    useEffect(() => {
-        if (!mounted) return;
-
-        let isMounted = true;
-        const sequence = async () => {
-            await new Promise(resolve => setTimeout(resolve, 500));
-
-            while (isMounted) {
-                await controls.start("reset");
-                await controls.start("init");
-                await controls.start("engineer");
-                await controls.start("browsers");
-                await controls.start("functional");
-                await controls.start("uicheck");
-                await controls.start("performance");
-                await controls.start("defect");
-                await controls.start("retest");
-                await controls.start("complete");
-                await new Promise(resolve => setTimeout(resolve, 3000));
-            }
-        };
-        sequence();
-
-        return () => { isMounted = false; };
-    }, [controls, mounted]);
-
-    if (!mounted) return <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-50 to-sky-100 shadow-xl border border-blue-200" />;
-
-    return (
+    // Animation Sequence    return (
         <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-50 to-sky-100 overflow-hidden relative shadow-xl border border-blue-200">
             <svg viewBox="0 0 640 480" className="w-full h-full relative z-10">
                 <defs>
@@ -85,22 +46,7 @@ const WebAppTestingAnimation = () => {
                 </defs>
 
                 {/* --- MAIN BROWSER WINDOW --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, y: -20 },
-                        init: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-                        engineer: { opacity: 1 },
-                        browsers: { opacity: 1 },
-                        functional: { opacity: 1 },
-                        uicheck: { opacity: 1 },
-                        performance: { opacity: 1 },
-                        defect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Browser chrome */}
                     <rect x="50" y="30" width="240" height="200" rx="10" fill="white" filter="url(#web-shadow)" />
                     <rect x="50" y="30" width="240" height="30" rx="10" fill="url(#web-gradient)" />
@@ -123,27 +69,11 @@ const WebAppTestingAnimation = () => {
                     {/* Form field */}
                     <rect x="150" y="145" width="100" height="22" rx="4" fill="#f1f5f9" stroke="#e2e8f0" />
                     <text x="200" y="159" textAnchor="middle" fontSize="7" fill={colors.textSecondary}>Email input</text>
-                </motion.g>
+                </g>
 
                 {/* --- CROSS-BROWSER VIEW --- */}
                 {browsers.map((browser, i) => (
-                    <motion.g
-                        key={browser.id}
-                        initial="reset"
-                        variants={{
-                            reset: { opacity: 0, scale: 0 },
-                            init: { opacity: 0 },
-                            engineer: { opacity: 0 },
-                            browsers: { opacity: 1, scale: 1, transition: { delay: i * 0.15, type: "spring" } },
-                            functional: { opacity: 1 },
-                            uicheck: { opacity: 1 },
-                            performance: { opacity: 1 },
-                            defect: i === 2 ? { opacity: 1 } : { opacity: 1 },
-                            retest: { opacity: 1 },
-                            complete: { opacity: 1 }
-                        }}
-                        animate={controls}
-                    >
+                    <g key={browser.id}>
                         <circle cx={browser.x} cy={browser.y} r="28" fill="white" filter="url(#web-shadow)" />
                         <circle cx={browser.x} cy={browser.y} r="20" fill={browser.color} />
                         <text x={browser.x} y={browser.y + 4} textAnchor="middle" fontSize="14" fill="white">
@@ -152,181 +82,49 @@ const WebAppTestingAnimation = () => {
                         <text x={browser.x} y={browser.y + 45} textAnchor="middle" fontSize="9" fontWeight="500" fill={colors.textPrimary}>{browser.label}</text>
 
                         {/* Check marks appear on browsers */}
-                        <motion.circle
-                            cx={browser.x + 20}
-                            cy={browser.y - 20}
-                            r="10"
-                            fill={colors.success}
-                            variants={{
-                                reset: { scale: 0 },
-                                browsers: { scale: 0 },
-                                functional: { scale: 0 },
-                                uicheck: { scale: 1, transition: { delay: i * 0.1 } },
-                                performance: { scale: 1 },
-                                defect: i === 2 ? { scale: 0 } : { scale: 1 },
-                                retest: { scale: 1 },
-                                complete: { scale: 1 }
-                            }}
-                            animate={controls}
-                        />
-                        <motion.text
-                            x={browser.x + 20}
-                            y={browser.y - 16}
-                            textAnchor="middle"
-                            fontSize="10"
-                            fill="white"
-                            variants={{
-                                reset: { opacity: 0 },
-                                uicheck: { opacity: 1, transition: { delay: i * 0.1 } },
-                                defect: i === 2 ? { opacity: 0 } : { opacity: 1 },
-                                retest: { opacity: 1 },
-                                complete: { opacity: 1 }
-                            }}
-                            animate={controls}
-                        >
+                        <circle cx={browser.x + 20} cy={browser.y - 20} r="10" fill={colors.success} />
+                        <text x={browser.x + 20} y={browser.y - 16} textAnchor="middle" fontSize="10" fill="white">
                             ✓
-                        </motion.text>
-                    </motion.g>
+                        </text>
+                    </g>
                 ))}
 
                 {/* --- FUNCTIONAL FLOW INDICATORS --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        init: { opacity: 0 },
-                        engineer: { opacity: 0 },
-                        browsers: { opacity: 0 },
-                        functional: { opacity: 1, transition: { duration: 0.5 } },
-                        uicheck: { opacity: 0.5 },
-                        performance: { opacity: 0.3 },
-                        defect: { opacity: 0.3 },
-                        retest: { opacity: 0.3 },
-                        complete: { opacity: 0.3 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Click indicator on button */}
-                    <motion.circle
-                        cx="100"
-                        cy="156"
-                        r="15"
-                        fill="none"
-                        stroke={colors.accent}
-                        strokeWidth="2"
-                        variants={{
-                            functional: {
-                                r: [15, 25, 15],
-                                opacity: [1, 0, 1],
-                                transition: { duration: 1, repeat: 1 }
-                            }
-                        }}
-                        animate={controls}
-                    />
+                    <circle cx="100" cy="156" r="15" fill="none" stroke={colors.accent} strokeWidth="2" />
                     <text x="170" y="180" fontSize="9" fill={colors.accent}>🖱️ Click Flow Testing</text>
-                </motion.g>
+                </g>
 
                 {/* --- PERFORMANCE METER --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, x: 30 },
-                        init: { opacity: 0 },
-                        engineer: { opacity: 0 },
-                        browsers: { opacity: 0 },
-                        functional: { opacity: 0 },
-                        uicheck: { opacity: 0 },
-                        performance: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-                        defect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 0.5 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="320" y="260" width="160" height="80" rx="10" fill="white" filter="url(#web-shadow)" />
                     <text x="400" y="285" textAnchor="middle" fontSize="11" fontWeight="700" fill={colors.textPrimary}>⚡ Performance</text>
 
                     {/* Speed meter arc */}
                     <path d="M 360 330 A 40 40 0 0 1 440 330" fill="none" stroke="#e2e8f0" strokeWidth="8" strokeLinecap="round" />
-                    <motion.path
-                        d="M 360 330 A 40 40 0 0 1 440 330"
-                        fill="none"
-                        stroke={colors.success}
-                        strokeWidth="8"
-                        strokeLinecap="round"
-                        variants={{
-                            performance: {
-                                pathLength: [0, 0.85],
-                                transition: { duration: 1 }
-                            }
-                        }}
-                        animate={controls}
-                    />
+                    <path d="M 360 330 A 40 40 0 0 1 440 330" fill="none" stroke={colors.success} strokeWidth="8" strokeLinecap="round" />
                     <text x="400" y="325" textAnchor="middle" fontSize="12" fontWeight="700" fill={colors.success}>85ms</text>
-                </motion.g>
+                </g>
 
                 {/* --- DEFECT INDICATOR --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, scale: 0 },
-                        init: { opacity: 0 },
-                        engineer: { opacity: 0 },
-                        browsers: { opacity: 0 },
-                        functional: { opacity: 0 },
-                        uicheck: { opacity: 0 },
-                        performance: { opacity: 0 },
-                        defect: { opacity: 1, scale: 1, transition: { type: "spring" } },
-                        retest: { opacity: 0, scale: 0 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <circle cx="520" cy="120" r="12" fill={colors.error} />
                     <text x="520" y="125" textAnchor="middle" fontSize="12" fill="white">!</text>
                     <rect x="490" y="140" width="80" height="24" rx="4" fill={colors.error} />
                     <text x="530" y="156" textAnchor="middle" fontSize="9" fontWeight="600" fill="white">Safari Issue</text>
-                </motion.g>
+                </g>
 
                 {/* --- RETEST SUCCESS --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, scale: 0 },
-                        init: { opacity: 0 },
-                        engineer: { opacity: 0 },
-                        browsers: { opacity: 0 },
-                        functional: { opacity: 0 },
-                        uicheck: { opacity: 0 },
-                        performance: { opacity: 0 },
-                        defect: { opacity: 0 },
-                        retest: { opacity: 1, scale: 1, transition: { type: "spring" } },
-                        complete: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <circle cx="520" cy="120" r="12" fill={colors.success} />
                     <text x="520" y="125" textAnchor="middle" fontSize="10" fill="white">✓</text>
                     <rect x="485" y="140" width="90" height="24" rx="4" fill={colors.success} />
                     <text x="530" y="156" textAnchor="middle" fontSize="9" fontWeight="600" fill="white">Fixed & Verified</text>
-                </motion.g>
+                </g>
 
                 {/* --- QA ENGINEER --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, x: -30 },
-                        init: { opacity: 0 },
-                        engineer: { opacity: 1, x: 0, transition: { duration: 0.5, type: "spring" } },
-                        browsers: { opacity: 1 },
-                        functional: { opacity: 1 },
-                        uicheck: { opacity: 1 },
-                        performance: { opacity: 1 },
-                        defect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Desk */}
                     <rect x="30" y="420" width="580" height="12" rx="4" fill="#dbeafe" />
                     {/* Engineer Body */}
@@ -335,25 +133,10 @@ const WebAppTestingAnimation = () => {
                     {/* Laptop */}
                     <rect x="75" y="395" width="50" height="30" rx="4" fill="#334155" />
                     <rect x="78" y="398" width="44" height="24" rx="2" fill={colors.accent} opacity="0.3" />
-                </motion.g>
+                </g>
 
                 {/* --- TEST RESULTS PANEL --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, y: 20 },
-                        init: { opacity: 0 },
-                        engineer: { opacity: 0 },
-                        browsers: { opacity: 0 },
-                        functional: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-                        uicheck: { opacity: 1 },
-                        performance: { opacity: 1 },
-                        defect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="50" y="255" width="140" height="100" rx="8" fill="white" filter="url(#web-shadow)" />
                     <text x="120" y="280" textAnchor="middle" fontSize="10" fontWeight="700" fill={colors.textPrimary}>Test Coverage</text>
 
@@ -365,91 +148,29 @@ const WebAppTestingAnimation = () => {
                         <React.Fragment key={`bar-${i}`}>
                             <text x="60" y={bar.y + 4} fontSize="8" fill={colors.textSecondary}>{bar.label}</text>
                             <rect x="60" y={bar.y + 8} width="115" height="6" rx="3" fill="#e2e8f0" />
-                            <motion.rect
-                                x="60"
-                                y={bar.y + 8}
-                                height="6"
-                                rx="3"
-                                fill={bar.color}
-                                variants={{
-                                    functional: { width: [0, bar.w], transition: { duration: 0.5, delay: i * 0.15 } }
-                                }}
-                                animate={controls}
-                            />
+                            <rect x="60" y={bar.y + 8} height="6" rx="3" fill={bar.color} />
                         </React.Fragment>
                     ))}
-                </motion.g>
+                </g>
 
                 {/* --- UI CONSISTENCY BADGE --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        init: { opacity: 0 },
-                        engineer: { opacity: 0 },
-                        browsers: { opacity: 0 },
-                        functional: { opacity: 0 },
-                        uicheck: { opacity: 1, transition: { duration: 0.5 } },
-                        performance: { opacity: 1 },
-                        defect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 0.5 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="50" y="185" width="110" height="28" rx="6" fill={colors.accent} />
                     <text x="105" y="204" textAnchor="middle" fontSize="9" fontWeight="600" fill="white">✓ UI Consistent</text>
-                </motion.g>
+                </g>
 
                 {/* --- SUCCESS BANNER --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        init: { opacity: 0 },
-                        engineer: { opacity: 0 },
-                        browsers: { opacity: 0 },
-                        functional: { opacity: 0 },
-                        uicheck: { opacity: 0 },
-                        performance: { opacity: 0 },
-                        defect: { opacity: 0 },
-                        retest: { opacity: 0 },
-                        complete: { opacity: 1, transition: { delay: 0.5 } }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="200" y="370" width="240" height="40" rx="10" fill={colors.success} filter="url(#web-shadow)" />
                     <text x="320" y="396" textAnchor="middle" fontSize="12" fontWeight="700" fill="white">✓ Web App Fully Validated</text>
-                </motion.g>
+                </g>
 
                 {/* --- LIVE INDICATOR --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        init: { opacity: 1, transition: { delay: 0.5 } },
-                        engineer: { opacity: 1 },
-                        browsers: { opacity: 1 },
-                        functional: { opacity: 1 },
-                        uicheck: { opacity: 1 },
-                        performance: { opacity: 1 },
-                        defect: { opacity: 1 },
-                        retest: { opacity: 1 },
-                        complete: { opacity: 0 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="510" y="260" width="90" height="24" rx="12" fill={colors.primary} />
-                    <motion.circle
-                        cx="525"
-                        cy="272"
-                        r="5"
-                        fill="white"
-                        animate={{ opacity: [1, 0.4, 1] }}
-                        transition={{ duration: 1, repeat: Infinity }}
-                    />
+                    <circle cx="525" cy="272" r="5" fill="white" />
                     <text x="565" y="277" textAnchor="middle" fontSize="9" fontWeight="600" fill="white">TESTING</text>
-                </motion.g>
+                </g>
 
             </svg>
         </div>

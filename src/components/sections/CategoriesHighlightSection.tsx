@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Category } from "@/lib/sanity-data-adapter";
@@ -24,10 +23,7 @@ const categoryBenefits: Record<string, string[]> = {
 const CategoriesHighlightSection: React.FC<CategoriesHighlightSectionProps> = ({
     categories,
 }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    // Take top 4 categories for highlights
+    const ref = useRef(null);    // Take top 4 categories for highlights
     const highlightCategories = categories.slice(0, 4);
 
     const getBenefits = (categoryName: string): string[] => {
@@ -38,12 +34,9 @@ const CategoriesHighlightSection: React.FC<CategoriesHighlightSectionProps> = ({
         <section ref={ref} className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
-                >
+                <div
+      className="text-center mb-16"
+    >
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-full text-sm font-semibold mb-4">
                         Featured Expertise
                     </span>
@@ -57,19 +50,16 @@ const CategoriesHighlightSection: React.FC<CategoriesHighlightSectionProps> = ({
                         Deep expertise across key testing domains to ensure comprehensive
                         quality assurance
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Highlight Cards */}
                 <div className="space-y-16">
                     {highlightCategories.map((category, index) => (
-                        <motion.div
-                            key={category.id}
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: index * 0.15 }}
-                            className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                        <div
+      key={category.id}
+      className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
                                 }`}
-                        >
+    >
                             {/* Content Side */}
                             <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                                 {/* Category Icon */}
@@ -161,7 +151,7 @@ const CategoriesHighlightSection: React.FC<CategoriesHighlightSectionProps> = ({
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

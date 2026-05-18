@@ -1,18 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-
 const BlockchainAnimation = () => {
-    const [mounted, setMounted] = useState(false);
-    const controls = useAnimation();
-
-    useEffect(() => {
-        setMounted(true);
-        controls.start("animate");
-    }, [controls]);
-
-    if (!mounted) return <div className="w-full h-full bg-slate-50" />;
 
     const colors = {
         primary: "#2563eb", // blue-600
@@ -40,13 +29,11 @@ const BlockchainAnimation = () => {
                     { x1: 600, y1: 150, x2: 500, y2: 300 },
                     { x1: 300, y1: 300, x2: 500, y2: 300 },
                 ].map((line, i) => (
-                    <motion.line
+                    <line
                         key={i}
                         stroke={colors.connection}
                         strokeWidth="2"
                         strokeDasharray="10,10"
-                        animate={{ strokeDashoffset: [0, -20] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                         {...line}
                     />
                 ))}
@@ -59,24 +46,8 @@ const BlockchainAnimation = () => {
                     { x: 300, y: 300, label: "Smart Contract" },
                     { x: 500, y: 300, label: "dApp Logic" },
                 ].map((block, i) => (
-                    <motion.g
-                        key={i}
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: i * 0.2, type: "spring" }}
-                    >
-                        <motion.rect
-                            x={block.x - 50}
-                            y={block.y - 30}
-                            width="100"
-                            height="60"
-                            rx="8"
-                            fill="white"
-                            stroke={colors.primary}
-                            strokeWidth="2"
-                            whileHover={{ y: -5 }}
-                            className="shadow-md"
-                        />
+                    <g key={i}>
+                        <rect x={block.x - 50} y={block.y - 30} width="100" height="60" rx="8" fill="white" stroke={colors.primary} strokeWidth="2" className="shadow-md" />
                         <text
                             x={block.x}
                             y={block.y + 5}
@@ -85,22 +56,12 @@ const BlockchainAnimation = () => {
                         >
                             {block.label}
                         </text>
-                        <motion.circle
-                            cx={block.x + 40}
-                            cy={block.y - 20}
-                            r="6"
-                            fill={colors.success}
-                            animate={{ opacity: [0.4, 1, 0.4] }}
-                            transition={{ duration: 1.5, repeat: Infinity }}
-                        />
-                    </motion.g>
+                        <circle cx={block.x + 40} cy={block.y - 20} r="6" fill={colors.success} />
+                    </g>
                 ))}
 
                 {/* Security Shield Overlay */}
-                <motion.g
-                    animate={{ scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                >
+                <g>
                     <path
                         d="M 400 200 L 440 220 V 260 C 440 280 400 300 400 300 C 400 300 360 280 360 260 V 220 L 400 200 Z"
                         fill="none"
@@ -109,7 +70,7 @@ const BlockchainAnimation = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                     />
-                </motion.g>
+                </g>
             </svg>
 
             {/* HUD overlays */}
@@ -122,20 +83,12 @@ const BlockchainAnimation = () => {
             </div>
 
             <div className="absolute bottom-4 right-4 space-y-2 transition-all duration-300">
-                <motion.div
-                    animate={{ x: [0, -10, 0] }}
-                    transition={{ duration: 5, repeat: Infinity }}
-                    className="bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full shadow-lg"
-                >
+                <div className="bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full shadow-lg">
                     Smart Contract Verified
-                </motion.div>
-                <motion.div
-                    animate={{ x: [0, 10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                    className="bg-indigo-600 text-white text-[10px] px-3 py-1 rounded-full shadow-lg"
-                >
+                </div>
+                <div className="bg-indigo-600 text-white text-[10px] px-3 py-1 rounded-full shadow-lg">
                     Vulnerability: Zero
-                </motion.div>
+                </div>
             </div>
         </div>
     );

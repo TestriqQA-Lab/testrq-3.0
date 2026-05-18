@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Check, Info, ArrowRight, Zap, Star, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
@@ -145,19 +144,14 @@ const PricingPlans = () => {
 
                 {/* Plans Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <AnimatePresence mode="wait">
-                        {plans[model].map((plan, i) => (
-                            <motion.div
-                                key={`${model}-${plan.name}`}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 0.3, delay: i * 0.1 }}
-                                className={`relative p-8 rounded-3xl border-2 flex flex-col transition-all duration-500 ${plan.popular
-                                    ? "bg-white border-brand-blue shadow-2xl scale-105 z-10"
-                                    : "bg-white border-transparent hover:border-gray-200 shadow-xl"
-                                    }`}
-                            >
+                    {plans[model].map((plan) => (
+                        <div
+                            key={`${model}-${plan.name}`}
+                            className={`relative p-8 rounded-3xl border-2 flex flex-col transition-all duration-500 ${plan.popular
+                                ? "bg-white border-brand-blue shadow-2xl scale-105 z-10"
+                                : "bg-white border-transparent hover:border-gray-200 shadow-xl"
+                                }`}
+                        >
                                 {plan.popular && (
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-blue text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
                                         RECOMMENDED
@@ -200,12 +194,11 @@ const PricingPlans = () => {
                                         : "bg-gray-900 text-white hover:bg-black"
                                         }`}
                                 >
-                                    {plan.cta}
-                                    <ArrowRight className="w-5 h-5" />
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
+                                {plan.cta}
+                                <ArrowRight className="w-5 h-5" />
+                            </Link>
+                        </div>
+                    ))}
                 </div>
 
                 {/* Custom Solution */}

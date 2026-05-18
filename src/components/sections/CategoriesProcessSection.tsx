@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import {
     ClipboardList,
     FileText,
@@ -58,19 +57,13 @@ const processSteps: ProcessStep[] = [
 ];
 
 const CategoriesProcessSection: React.FC = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    return (
+    const ref = useRef(null);    return (
         <section ref={ref} className="py-20 bg-slate-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
-                >
+                <div
+      className="text-center mb-16"
+    >
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-4">
                         <RefreshCw className="w-4 h-4" />
                         Our Process
@@ -85,7 +78,7 @@ const CategoriesProcessSection: React.FC = () => {
                         Our systematic approach ensures comprehensive coverage and reliable
                         results for every project.
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Process Steps - Desktop */}
                 <div className="hidden lg:block relative">
@@ -94,13 +87,10 @@ const CategoriesProcessSection: React.FC = () => {
 
                     <div className="grid grid-cols-6 gap-4">
                         {processSteps.map((step, index) => (
-                            <motion.div
-                                key={step.title}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="relative group"
-                            >
+                            <div
+      key={step.title}
+      className="relative group"
+    >
                                 {/* Step Number Badge */}
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white rounded-full border-2 border-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 z-10 group-hover:border-blue-500 group-hover:text-blue-600 transition-colors">
                                     {index + 1}
@@ -122,7 +112,7 @@ const CategoriesProcessSection: React.FC = () => {
                                         {step.description}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -130,13 +120,10 @@ const CategoriesProcessSection: React.FC = () => {
                 {/* Process Steps - Mobile/Tablet */}
                 <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {processSteps.map((step, index) => (
-                        <motion.div
-                            key={step.title}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                            animate={isInView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative group"
-                        >
+                        <div
+      key={step.title}
+      className="relative group"
+    >
                             <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex items-start gap-4">
                                 {/* Step Number */}
                                 <div className="flex-shrink-0 w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center text-sm font-bold text-slate-600 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
@@ -159,7 +146,7 @@ const CategoriesProcessSection: React.FC = () => {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
