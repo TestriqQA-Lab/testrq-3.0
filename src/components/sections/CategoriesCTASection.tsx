@@ -1,15 +1,11 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { MessageCircle, FileText, ArrowRight, Sparkles } from "lucide-react";
 
 const CategoriesCTASection: React.FC = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    return (
+    const ref = useRef(null);    return (
         <section
             ref={ref}
             className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900"
@@ -36,47 +32,35 @@ const CategoriesCTASection: React.FC = () => {
 
             <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 {/* Badge */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-blue-300 text-sm font-medium mb-8"
-                >
+                <div
+      className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-blue-300 text-sm font-medium mb-8"
+    >
                     <Sparkles className="w-4 h-4" />
                     Ready to Get Started?
-                </motion.div>
+                </div>
 
                 {/* Heading */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-4xl lg:text-5xl font-bold text-white mb-6"
-                >
+                <h2
+      className="text-4xl lg:text-5xl font-bold text-white mb-6"
+    >
                     Let&apos;s Make Your Software{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400">
                         Flawless
                     </span>
-                </motion.h2>
+                </h2>
 
                 {/* Description */}
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto"
-                >
+                <p
+      className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto"
+    >
                     Partner with our ISTQB-certified experts and experience enterprise-grade
                     quality assurance that delivers results.
-                </motion.p>
+                </p>
 
                 {/* CTA Buttons */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center"
-                >
+                <div
+      className="flex flex-col sm:flex-row gap-4 justify-center"
+    >
                     {/* Primary CTA */}
                     <Link
                         href="/contact-us"
@@ -97,15 +81,12 @@ const CategoriesCTASection: React.FC = () => {
                         <span>Request Quote</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                </motion.div>
+                </div>
 
                 {/* Trust indicators */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.5, delay: 0.5 }}
-                    className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400"
-                >
+                <div
+      className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400"
+    >
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-emerald-400 rounded-full" />
                         <span>Free Consultation</span>
@@ -118,7 +99,7 @@ const CategoriesCTASection: React.FC = () => {
                         <div className="w-2 h-2 bg-violet-400 rounded-full" />
                         <span>No Commitment Required</span>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

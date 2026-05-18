@@ -1,17 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-
-const SmartDeviceTestingAnimation = () => {
-    const controls = useAnimation();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // Corporate Color Palette
+const SmartDeviceTestingAnimation = () => {    // Corporate Color Palette
     const colors = {
         bg: "#f0fdf4",
         hubBg: "#16a34a",
@@ -42,34 +32,7 @@ const SmartDeviceTestingAnimation = () => {
     // Connections from hub to all devices
     const connections = devices.filter(d => d.id !== "hub").map(d => ({ from: "hub", to: d.id }));
 
-    // Animation Sequence
-    useEffect(() => {
-        if (!mounted) return;
-
-        let isMounted = true;
-        const sequence = async () => {
-            await new Promise(resolve => setTimeout(resolve, 500));
-
-            while (isMounted) {
-                await controls.start("reset");
-                await controls.start("init");
-                await controls.start("connect");
-                await controls.start("test");
-                await controls.start("validate");
-                await controls.start("anomaly");
-                await controls.start("log");
-                await controls.start("resolve");
-                await new Promise(resolve => setTimeout(resolve, 3000));
-            }
-        };
-        sequence();
-
-        return () => { isMounted = false; };
-    }, [controls, mounted]);
-
-    if (!mounted) return <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-green-50 to-blue-50 shadow-xl border border-green-200" />;
-
-    const getDevicePos = (id: string) => devices.find(d => d.id === id)!;
+    // Animation Sequence    const getDevicePos = (id: string) => devices.find(d => d.id === id)!;
 
     return (
         <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-green-50 to-blue-50 overflow-hidden relative shadow-xl border border-green-200">
@@ -92,26 +55,7 @@ const SmartDeviceTestingAnimation = () => {
                     const from = getDevicePos(conn.from);
                     const to = getDevicePos(conn.to);
                     return (
-                        <motion.line
-                            key={`conn-${i}`}
-                            x1={from.x} y1={from.y}
-                            x2={to.x} y2={to.y}
-                            stroke={colors.connection}
-                            strokeWidth="2"
-                            strokeDasharray="6 6"
-                            initial="reset"
-                            variants={{
-                                reset: { opacity: 0, pathLength: 0 },
-                                init: { opacity: 0.2 },
-                                connect: { opacity: 1, pathLength: 1, transition: { duration: 0.5, delay: i * 0.1 } },
-                                test: { opacity: 1 },
-                                validate: { opacity: 1 },
-                                anomaly: conn.to === "camera" ? { stroke: colors.error, opacity: 1 } : { opacity: 1 },
-                                log: { opacity: 1 },
-                                resolve: { stroke: colors.connection, opacity: 1 }
-                            }}
-                            animate={controls}
-                        />
+                        <line key={`conn-${i}`} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke={colors.connection} strokeWidth="2" strokeDasharray="6 6" />
                     );
                 })}
 
@@ -120,65 +64,15 @@ const SmartDeviceTestingAnimation = () => {
                     const from = getDevicePos(conn.from);
                     const to = getDevicePos(conn.to);
                     return (
-                        <motion.circle
-                            key={`packet-${i}`}
-                            r="5"
-                            fill={colors.wifi}
-                            filter="url(#hub-glow)"
-                            initial="reset"
-                            variants={{
-                                reset: { opacity: 0 },
-                                connect: {
-                                    opacity: [0, 1, 1, 0],
-                                    cx: [from.x, to.x],
-                                    cy: [from.y, to.y],
-                                    transition: { duration: 0.8, delay: 0.5 + i * 0.2 }
-                                },
-                                test: { opacity: 0 },
-                                validate: { opacity: 0 },
-                                anomaly: { opacity: 0 },
-                                log: { opacity: 0 },
-                                resolve: { opacity: 0 }
-                            }}
-                            animate={controls}
-                        />
+                        <circle key={`packet-${i}`} r="5" fill={colors.wifi} filter="url(#hub-glow)" />
                     );
                 })}
 
                 {/* --- SMART DEVICES --- */}
                 {devices.map((device, i) => (
-                    <motion.g
-                        key={device.id}
-                        initial="reset"
-                        variants={{
-                            reset: { opacity: 0, scale: 0 },
-                            init: { opacity: 1, scale: 1, transition: { delay: i * 0.08, type: "spring" } },
-                            connect: { opacity: 1 },
-                            test: { opacity: 1 },
-                            validate: { opacity: 1 },
-                            anomaly: { opacity: 1 },
-                            log: { opacity: 1 },
-                            resolve: { opacity: 1 }
-                        }}
-                        animate={controls}
-                    >
+                    <g key={device.id}>
                         {/* Device Circle */}
-                        <motion.circle
-                            cx={device.x}
-                            cy={device.y}
-                            r={device.size}
-                            fill="white"
-                            stroke={device.color}
-                            strokeWidth={device.id === "hub" ? 4 : 3}
-                            filter={device.id === "hub" ? "url(#hub-glow)" : "url(#device-shadow)"}
-                            variants={{
-                                validate: { stroke: colors.success, transition: { delay: 0.5 + i * 0.1 } },
-                                anomaly: device.id === "camera" ? { stroke: colors.error, strokeWidth: 4 } : { stroke: colors.success },
-                                log: device.id === "camera" ? { stroke: colors.warning } : { stroke: colors.success },
-                                resolve: { stroke: colors.success, transition: { delay: i * 0.08 } }
-                            }}
-                            animate={controls}
-                        />
+                        <circle cx={device.x} cy={device.y} r={device.size} fill="white" stroke={device.color} strokeWidth={device.id === "hub" ? 4 : 3} filter={device.id === "hub" ? "url(#hub-glow)" : "url(#device-shadow)"} />
 
                         {/* Device Emoji/Icon */}
                         <text
@@ -204,130 +98,47 @@ const SmartDeviceTestingAnimation = () => {
 
                         {/* Status Indicator */}
                         {device.id !== "hub" && (
-                            <motion.circle
-                                cx={device.x + device.size * 0.7}
-                                cy={device.y - device.size * 0.7}
-                                r="8"
-                                fill={colors.success}
-                                stroke="white"
-                                strokeWidth="2"
-                                variants={{
-                                    reset: { scale: 0 },
-                                    validate: { scale: 1, transition: { delay: 0.8 + i * 0.1, type: "spring" } },
-                                    anomaly: device.id === "camera" ? { fill: colors.error, scale: 1 } : { fill: colors.success, scale: 1 },
-                                    log: device.id === "camera" ? { fill: colors.warning } : { fill: colors.success },
-                                    resolve: { fill: colors.success, scale: 1 }
-                                }}
-                                animate={controls}
-                            />
+                            <circle cx={device.x + device.size * 0.7} cy={device.y - device.size * 0.7} r="8" fill={colors.success} stroke="white" strokeWidth="2" />
                         )}
-                    </motion.g>
+                    </g>
                 ))}
 
                 {/* --- HUB PULSE EFFECT --- */}
-                <motion.circle
-                    cx={400} cy={230} r="55"
-                    fill="none"
-                    stroke={colors.hubGlow}
-                    strokeWidth="6"
-                    animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                />
+                <circle cx={400} cy={230} r="55" fill="none" stroke={colors.hubGlow} strokeWidth="6" />
 
                 {/* --- QA ENGINEER --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, y: 30 },
-                        init: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } },
-                        connect: { opacity: 1 },
-                        test: { opacity: 1 },
-                        validate: { opacity: 1 },
-                        anomaly: { opacity: 1 },
-                        log: { opacity: 1 },
-                        resolve: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="50" y="450" width="700" height="12" rx="4" fill="#bbf7d0" />
                     <ellipse cx="400" cy="440" rx="30" ry="10" fill="#16a34a" />
                     <circle cx="400" cy="420" r="18" fill="#22c55e" />
-                </motion.g>
+                </g>
 
                 {/* --- TESTING ACTIVITY PANEL --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, x: 30 },
-                        init: { opacity: 0 },
-                        connect: { opacity: 0 },
-                        test: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-                        validate: { opacity: 1 },
-                        anomaly: { opacity: 1 },
-                        log: { opacity: 1 },
-                        resolve: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="620" y="380" width="160" height="90" rx="10" fill="white" filter="url(#device-shadow)" />
                     <text x="700" y="405" textAnchor="middle" fontSize="11" fontWeight="700" fill={colors.textPrimary}>Testing Status</text>
 
                     <text x="635" y="430" fontSize="9" fill={colors.textSecondary}>WiFi:</text>
-                    <motion.rect x="665" y="422" width="100" height="8" rx="4" fill={colors.wifi}
-                        variants={{ test: { width: [0, 100], transition: { duration: 0.5 } } }}
-                        animate={controls}
-                    />
+                    <rect x="665" y="422" width="100" height="8" rx="4" fill={colors.wifi} />
 
                     <text x="635" y="452" fontSize="9" fill={colors.textSecondary}>BLE:</text>
-                    <motion.rect x="665" y="444" width="90" height="8" rx="4" fill={colors.bluetooth}
-                        variants={{ test: { width: [0, 90], transition: { duration: 0.5, delay: 0.2 } } }}
-                        animate={controls}
-                    />
+                    <rect x="665" y="444" width="90" height="8" rx="4" fill={colors.bluetooth} />
 
                     <text x="635" y="474" fontSize="9" fill={colors.textSecondary}>Sync:</text>
-                    <motion.rect x="665" y="466" width="95" height="8" rx="4" fill={colors.success}
-                        variants={{ test: { width: [0, 95], transition: { duration: 0.5, delay: 0.4 } } }}
-                        animate={controls}
-                    />
-                </motion.g>
+                    <rect x="665" y="466" width="95" height="8" rx="4" fill={colors.success} />
+                </g>
 
                 {/* --- ANOMALY ALERT --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, scale: 0 },
-                        init: { opacity: 0 },
-                        connect: { opacity: 0 },
-                        test: { opacity: 0 },
-                        validate: { opacity: 0 },
-                        anomaly: { opacity: 1, scale: 1, transition: { type: "spring" } },
-                        log: { opacity: 1 },
-                        resolve: { opacity: 0, scale: 0 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="560" y="230" width="150" height="35" rx="8" fill={colors.error} />
                     <text x="635" y="252" textAnchor="middle" fontSize="11" fontWeight="600" fill="white">⚠ Camera Offline</text>
-                </motion.g>
+                </g>
 
                 {/* --- SUCCESS BADGE --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        init: { opacity: 0 },
-                        connect: { opacity: 0 },
-                        test: { opacity: 0 },
-                        validate: { opacity: 0 },
-                        anomaly: { opacity: 0 },
-                        log: { opacity: 0 },
-                        resolve: { opacity: 1, transition: { delay: 0.5 } }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="280" y="40" width="240" height="45" rx="10" fill={colors.success} filter="url(#device-shadow)" />
                     <text x="400" y="68" textAnchor="middle" fontSize="14" fontWeight="700" fill="white">✓ All Devices Validated</text>
-                </motion.g>
+                </g>
 
             </svg>
         </div>

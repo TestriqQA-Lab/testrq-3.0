@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { Search, SlidersHorizontal, ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { Category } from "@/lib/sanity-data-adapter";
@@ -14,10 +13,7 @@ interface CategoriesGridProps {
 const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("popular");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  const sortOptions = [
+  const ref = useRef(null);  const sortOptions = [
     { value: "popular", label: "Most Popular" },
     { value: "posts", label: "Most Articles" },
     { value: "name", label: "Alphabetical" },
@@ -55,12 +51,9 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
   return (
     <section ref={ref} id="categories" className="scroll-mt-20">
       {/* Search & Filter Bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
-        className="mb-10"
-      >
+      <div
+      className="mb-10"
+    >
         <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
           {/* Search */}
           <div className="relative flex-1 max-w-md">
@@ -116,18 +109,15 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
             </span>
           )}
         </div>
-      </motion.div>
+      </div>
 
       {/* Categories Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {sortedCategories.map((category, index) => (
-          <motion.div
-            key={category.id}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.5) }}
-            className="group relative"
-          >
+          <div
+      key={category.id}
+      className="group relative"
+    >
             {/* Hover glow effect */}
             <div
               className={`absolute -inset-0.5 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
@@ -198,17 +188,15 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
                 </div>
               </div>
             </Link>
-          </motion.div>
+          </div>
         ))}
       </div>
 
       {/* Empty State */}
       {sortedCategories.length === 0 && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-center py-16"
-        >
+        <div
+      className="text-center py-16"
+    >
           <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <Search className="w-8 h-8 text-slate-400" />
           </div>
@@ -224,16 +212,13 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
           >
             Clear Search
           </button>
-        </motion.div>
+        </div>
       )}
 
       {/* Bottom CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-center text-white"
-      >
+      <div
+      className="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-center text-white"
+    >
         <h3 className="text-2xl font-bold mb-3">
           Can&apos;t find what you&apos;re looking for?
         </h3>
@@ -248,7 +233,7 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
           Browse All Articles
           <ArrowRight className="w-4 h-4" />
         </Link>
-      </motion.div>
+      </div>
     </section>
   );
 };

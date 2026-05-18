@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaCheck, FaMinus, FaArrowRight, FaStar, FaUserTie, FaRocket } from "react-icons/fa";
 import { HiOutlineScale } from "react-icons/hi";
 import Link from "next/link";
@@ -149,24 +148,19 @@ const PricingPacksTable: React.FC = () => {
                                             <p className="text-slate-500 text-xs mb-4">
                                                 {plans[key].tagline}
                                             </p>
-                                            <AnimatePresence mode="wait">
-                                                <motion.div
-                                                    key={billingCycle}
-                                                    initial={{ opacity: 0, y: -10 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    exit={{ opacity: 0, y: 10 }}
-                                                    className="text-3xl font-black text-white"
-                                                >
-                                                    {billingCycle === "monthly"
-                                                        ? plans[key].price
-                                                        : plans[key].quarterlyPrice}
-                                                    {plans[key].price !== "Custom" && (
-                                                        <span className="text-sm font-normal text-slate-400">
-                                                            /{billingCycle === "monthly" ? "mo" : "qtr"}
-                                                        </span>
-                                                    )}
-                                                </motion.div>
-                                            </AnimatePresence>
+                                            <div
+                                                key={billingCycle}
+                                                className="text-3xl font-black text-white"
+                                            >
+                                                {billingCycle === "monthly"
+                                                    ? plans[key].price
+                                                    : plans[key].quarterlyPrice}
+                                                {plans[key].price !== "Custom" && (
+                                                    <span className="text-sm font-normal text-slate-400">
+                                                        /{billingCycle === "monthly" ? "mo" : "qtr"}
+                                                    </span>
+                                                )}
+                                            </div>
                                         </div>
                                     </th>
                                 ))}

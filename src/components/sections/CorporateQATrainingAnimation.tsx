@@ -1,17 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-
-const CorporateQATrainingAnimation = () => {
-    const controls = useAnimation();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // Corporate Color Palette (Blue/Purple for Training)
+const CorporateQATrainingAnimation = () => {    // Corporate Color Palette (Blue/Purple for Training)
     const colors = {
         bg: "#eff6ff",
         primary: "#2563eb",
@@ -46,35 +36,7 @@ const CorporateQATrainingAnimation = () => {
         { id: "m3", x: 460, y: 130, label: "Performance", color: colors.success },
     ];
 
-    // Animation Sequence
-    useEffect(() => {
-        if (!mounted) return;
-
-        let isMounted = true;
-        const sequence = async () => {
-            await new Promise(resolve => setTimeout(resolve, 500));
-
-            while (isMounted) {
-                await controls.start("reset");
-                await controls.start("init");
-                await controls.start("instructor");
-                await controls.start("trainees");
-                await controls.start("modules");
-                await controls.start("practice");
-                await controls.start("collaborate");
-                await controls.start("assess");
-                await controls.start("certify");
-                await new Promise(resolve => setTimeout(resolve, 3000));
-            }
-        };
-        sequence();
-
-        return () => { isMounted = false; };
-    }, [controls, mounted]);
-
-    if (!mounted) return <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100 shadow-xl border border-blue-200" />;
-
-    return (
+    // Animation Sequence    return (
         <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden relative shadow-xl border border-blue-200">
             <svg viewBox="0 0 640 480" className="w-full h-full relative z-10">
                 <defs>
@@ -95,45 +57,17 @@ const CorporateQATrainingAnimation = () => {
                 </defs>
 
                 {/* --- CLASSROOM BACKGROUND --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        init: { opacity: 1, transition: { duration: 0.5 } },
-                        instructor: { opacity: 1 },
-                        trainees: { opacity: 1 },
-                        modules: { opacity: 1 },
-                        practice: { opacity: 1 },
-                        collaborate: { opacity: 1 },
-                        assess: { opacity: 1 },
-                        certify: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Whiteboard/Screen */}
                     <rect x="100" y="60" width="440" height="120" rx="8" fill="url(#board-gradient)" filter="url(#training-shadow)" />
                     <rect x="110" y="70" width="420" height="100" rx="4" fill="#0f172a" />
 
                     {/* Floor */}
                     <rect x="50" y="440" width="540" height="15" rx="4" fill="#cbd5e1" />
-                </motion.g>
+                </g>
 
                 {/* --- INSTRUCTOR --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, y: 30 },
-                        init: { opacity: 0 },
-                        instructor: { opacity: 1, y: 0, transition: { duration: 0.5, type: "spring" } },
-                        trainees: { opacity: 1 },
-                        modules: { opacity: 1 },
-                        practice: { opacity: 1 },
-                        collaborate: { opacity: 1 },
-                        assess: { opacity: 1 },
-                        certify: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     {/* Podium */}
                     <rect x="280" y="200" width="80" height="50" rx="6" fill={colors.primary} filter="url(#training-shadow)" />
                     <rect x="290" y="210" width="60" height="30" rx="4" fill="#1e40af" />
@@ -143,39 +77,12 @@ const CorporateQATrainingAnimation = () => {
                     <circle cx="320" cy="175" r="18" fill={colors.secondary} />
 
                     {/* Instructor pointer animation */}
-                    <motion.line
-                        x1="340"
-                        y1="180"
-                        x2="380"
-                        y2="140"
-                        stroke={colors.accent}
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        variants={{
-                            modules: { x2: [380, 250, 380], transition: { duration: 2, repeat: 1 } }
-                        }}
-                        animate={controls}
-                    />
-                </motion.g>
+                    <line x1="340" y1="180" x2="380" y2="140" stroke={colors.accent} strokeWidth="3" strokeLinecap="round" />
+                </g>
 
                 {/* --- TRAINING MODULES ON SCREEN --- */}
                 {modules.map((module, i) => (
-                    <motion.g
-                        key={module.id}
-                        initial="reset"
-                        variants={{
-                            reset: { opacity: 0, scale: 0 },
-                            init: { opacity: 0 },
-                            instructor: { opacity: 0 },
-                            trainees: { opacity: 0 },
-                            modules: { opacity: 1, scale: 1, transition: { delay: i * 0.2, type: "spring" } },
-                            practice: { opacity: 1 },
-                            collaborate: { opacity: 1 },
-                            assess: { opacity: 1 },
-                            certify: { opacity: 1 }
-                        }}
-                        animate={controls}
-                    >
+                    <g key={module.id}>
                         <rect
                             x={module.x - 50}
                             y={module.y - 30}
@@ -191,39 +98,13 @@ const CorporateQATrainingAnimation = () => {
 
                         {/* Progress bar */}
                         <rect x={module.x - 40} y={module.y + 8} width="80" height="6" rx="3" fill="rgba(255,255,255,0.3)" />
-                        <motion.rect
-                            x={module.x - 40}
-                            y={module.y + 8}
-                            height="6"
-                            rx="3"
-                            fill="rgba(255,255,255,0.9)"
-                            variants={{
-                                practice: { width: 80, transition: { duration: 1, delay: i * 0.3 } }
-                            }}
-                            initial={{ width: 0 }}
-                            animate={controls}
-                        />
-                    </motion.g>
+                        <rect x={module.x - 40} y={module.y + 8} height="6" rx="3" fill="rgba(255,255,255,0.9)" />
+                    </g>
                 ))}
 
                 {/* --- TRAINEES --- */}
                 {trainees.map((trainee, i) => (
-                    <motion.g
-                        key={trainee.id}
-                        initial="reset"
-                        variants={{
-                            reset: { opacity: 0, y: 20 },
-                            init: { opacity: 0 },
-                            instructor: { opacity: 0 },
-                            trainees: { opacity: 1, y: 0, transition: { delay: i * 0.08, type: "spring" } },
-                            modules: { opacity: 1 },
-                            practice: { opacity: 1 },
-                            collaborate: { opacity: 1 },
-                            assess: { opacity: 1 },
-                            certify: { opacity: 1 }
-                        }}
-                        animate={controls}
-                    >
+                    <g key={trainee.id}>
                         {/* Desk */}
                         <rect
                             x={trainee.x - 30}
@@ -236,60 +117,20 @@ const CorporateQATrainingAnimation = () => {
                         />
 
                         {/* Laptop */}
-                        <motion.rect
-                            x={trainee.x - 20}
-                            y={trainee.y + 5}
-                            width="40"
-                            height="25"
-                            rx="3"
-                            fill="#334155"
-                            variants={{
-                                practice: { fill: colors.module, transition: { delay: i * 0.1 } },
-                                assess: { fill: colors.warning, transition: { delay: i * 0.1 } },
-                                certify: { fill: colors.success, transition: { delay: i * 0.1 } }
-                            }}
-                            animate={controls}
-                        />
+                        <rect x={trainee.x - 20} y={trainee.y + 5} width="40" height="25" rx="3" fill="#334155" />
 
                         {/* Laptop screen glow */}
-                        <motion.rect
-                            x={trainee.x - 17}
-                            y={trainee.y + 8}
-                            width="34"
-                            height="18"
-                            rx="2"
-                            fill="#0ea5e9"
-                            opacity="0.3"
-                            variants={{
-                                practice: { opacity: [0.3, 0.7, 0.3], transition: { duration: 1, repeat: 2, delay: i * 0.1 } }
-                            }}
-                            animate={controls}
-                        />
+                        <rect x={trainee.x - 17} y={trainee.y + 8} width="34" height="18" rx="2" fill="#0ea5e9" opacity="0.3" />
 
                         {/* Trainee Body */}
                         <ellipse cx={trainee.x} cy={trainee.y} rx="15" ry="5" fill={colors.trainee} />
                         <circle cx={trainee.x} cy={trainee.y - 12} r="10" fill="#818cf8" />
-                    </motion.g>
+                    </g>
                 ))}
 
                 {/* --- COLLABORATION BUBBLES --- */}
                 {[trainees[1], trainees[2], trainees[5]].map((trainee, i) => (
-                    <motion.g
-                        key={`bubble-${i}`}
-                        initial="reset"
-                        variants={{
-                            reset: { opacity: 0, scale: 0 },
-                            init: { opacity: 0 },
-                            instructor: { opacity: 0 },
-                            trainees: { opacity: 0 },
-                            modules: { opacity: 0 },
-                            practice: { opacity: 0 },
-                            collaborate: { opacity: 1, scale: 1, transition: { delay: i * 0.15, type: "spring" } },
-                            assess: { opacity: 0.3 },
-                            certify: { opacity: 0 }
-                        }}
-                        animate={controls}
-                    >
+                    <g key={`bubble-${i}`}>
                         <ellipse
                             cx={trainee.x + 25}
                             cy={trainee.y - 30}
@@ -300,25 +141,11 @@ const CorporateQATrainingAnimation = () => {
                             strokeWidth="2"
                         />
                         <text x={trainee.x + 25} y={trainee.y - 27} textAnchor="middle" fontSize="12">💬</text>
-                    </motion.g>
+                    </g>
                 ))}
 
                 {/* --- ASSESSMENT PANEL --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0, x: 30 },
-                        init: { opacity: 0 },
-                        instructor: { opacity: 0 },
-                        trainees: { opacity: 0 },
-                        modules: { opacity: 0 },
-                        practice: { opacity: 0 },
-                        collaborate: { opacity: 0 },
-                        assess: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-                        certify: { opacity: 1 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="520" y="280" width="100" height="120" rx="8" fill="white" filter="url(#training-shadow)" />
                     <text x="570" y="305" textAnchor="middle" fontSize="10" fontWeight="700" fill={colors.textPrimary}>Assessment</text>
 
@@ -331,39 +158,14 @@ const CorporateQATrainingAnimation = () => {
                         <React.Fragment key={`bar-${i}`}>
                             <text x="530" y={bar.y + 4} fontSize="8" fill={colors.textSecondary}>{bar.label}</text>
                             <rect x="530" y={bar.y + 8} width="80" height="8" rx="4" fill="#e2e8f0" />
-                            <motion.rect
-                                x="530"
-                                y={bar.y + 8}
-                                height="8"
-                                rx="4"
-                                fill={bar.color}
-                                variants={{
-                                    assess: { width: [0, bar.w], transition: { duration: 0.5, delay: 0.2 + i * 0.1 } }
-                                }}
-                                animate={controls}
-                            />
+                            <rect x="530" y={bar.y + 8} height="8" rx="4" fill={bar.color} />
                         </React.Fragment>
                     ))}
-                </motion.g>
+                </g>
 
                 {/* --- CERTIFICATION BADGES --- */}
                 {trainees.slice(0, 5).map((trainee, i) => (
-                    <motion.g
-                        key={`cert-${i}`}
-                        initial="reset"
-                        variants={{
-                            reset: { opacity: 0, scale: 0 },
-                            init: { opacity: 0 },
-                            instructor: { opacity: 0 },
-                            trainees: { opacity: 0 },
-                            modules: { opacity: 0 },
-                            practice: { opacity: 0 },
-                            collaborate: { opacity: 0 },
-                            assess: { opacity: 0 },
-                            certify: { opacity: 1, scale: 1, transition: { delay: i * 0.12, type: "spring" } }
-                        }}
-                        animate={controls}
-                    >
+                    <g key={`cert-${i}`}>
                         <circle
                             cx={trainee.x}
                             cy={trainee.y - 35}
@@ -380,56 +182,21 @@ const CorporateQATrainingAnimation = () => {
                         >
                             ✓
                         </text>
-                    </motion.g>
+                    </g>
                 ))}
 
                 {/* --- SUCCESS BANNER --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        init: { opacity: 0 },
-                        instructor: { opacity: 0 },
-                        trainees: { opacity: 0 },
-                        modules: { opacity: 0 },
-                        practice: { opacity: 0 },
-                        collaborate: { opacity: 0 },
-                        assess: { opacity: 0 },
-                        certify: { opacity: 1, transition: { delay: 0.8 } }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="170" y="15" width="300" height="35" rx="8" fill={colors.success} filter="url(#training-shadow)" />
                     <text x="320" y="38" textAnchor="middle" fontSize="13" fontWeight="700" fill="white">🎓 Training Completed Successfully!</text>
-                </motion.g>
+                </g>
 
                 {/* --- LIVE INDICATOR --- */}
-                <motion.g
-                    initial="reset"
-                    variants={{
-                        reset: { opacity: 0 },
-                        init: { opacity: 1, transition: { delay: 0.5 } },
-                        instructor: { opacity: 1 },
-                        trainees: { opacity: 1 },
-                        modules: { opacity: 1 },
-                        practice: { opacity: 1 },
-                        collaborate: { opacity: 1 },
-                        assess: { opacity: 1 },
-                        certify: { opacity: 0 }
-                    }}
-                    animate={controls}
-                >
+                <g>
                     <rect x="555" y="65" width="70" height="22" rx="11" fill={colors.error} />
-                    <motion.circle
-                        cx="570"
-                        cy="76"
-                        r="5"
-                        fill="white"
-                        animate={{ opacity: [1, 0.5, 1] }}
-                        transition={{ duration: 1, repeat: Infinity }}
-                    />
+                    <circle cx="570" cy="76" r="5" fill="white" />
                     <text x="595" y="80" textAnchor="middle" fontSize="10" fontWeight="600" fill="white">LIVE</text>
-                </motion.g>
+                </g>
 
             </svg>
         </div>
