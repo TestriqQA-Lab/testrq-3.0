@@ -7,11 +7,9 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
     try {
-        // F-60.1 — reports both new (seoFields) and legacy
-        // (metaTitle/metaDescription) shapes so we can audit migration
-        // progress per-document. `hasMetaTitle`/`hasMetaDescription`
-        // report the *legacy* fields; `hasSeoTitle`/`hasSeoDescription`
-        // report the *new* shared seoFields shape.
+        // F-60.1 cleanup — legacy metaTitle/metaDescription probe paths
+        // dropped now that migration is complete. Reports only the new
+        // shared seoFields shape (`{title, description, keywords[]}`).
         const query = groq`*[_type == "post"][0...10] {
       title,
       slug,
@@ -19,8 +17,7 @@ export async function GET() {
       seo,
       "hasSeoTitle": defined(seo.title),
       "hasSeoDescription": defined(seo.description),
-      "hasMetaTitle": defined(seo.metaTitle),
-      "hasMetaDescription": defined(seo.metaDescription)
+      "hasSeoKeywords": defined(seo.keywords) && count(seo.keywords) > 0
     }`;
 
         const posts = await client.fetch(query);

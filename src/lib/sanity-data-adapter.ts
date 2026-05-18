@@ -274,16 +274,15 @@ export function adaptSanityPost(sanityPost: any): Post {
         tags: sanityPost.tags?.filter((t: any) => t).map((t: any) => t.title) || [],
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         tagsData: sanityPost.tags?.filter((t: any) => t).map((t: any) => ({ name: t.title, slug: t.slug?.current })) || [],
-        // F-60.1 — read the new shared `seoFields` shape with fallback to
-        // the legacy {metaTitle, metaDescription, metaKeywords-string} shape
-        // for posts whose dataset hasn't been migrated yet. After the
-        // migration script runs and the dataset is fully converted, the
-        // legacy fallbacks can be removed in a cleanup PR.
+        // F-60.1 cleanup — legacy `{metaTitle, metaDescription, metaKeywords}` shape
+        // fallbacks dropped now that all 359 posts have been migrated to the
+        // shared `seoFields` shape (`{title, description, keywords[]}`).
+        // Migration verified via /api/debug-seo: all sample posts show
+        // hasSeoTitle: true + hasMetaTitle: false.
         seo: {
-            title: sanityPost.seo?.title || sanityPost.seo?.metaTitle || sanityPost.title,
+            title: sanityPost.seo?.title || sanityPost.title,
             description: (() => {
                 if (sanityPost.seo?.description) return sanityPost.seo.description;
-                if (sanityPost.seo?.metaDescription) return sanityPost.seo.metaDescription;
                 if (sanityPost.excerpt) return sanityPost.excerpt;
 
                 const rawText = extractTextFromContent(sanityPost.body || sanityPost.bodyHtml);
@@ -295,12 +294,10 @@ export function adaptSanityPost(sanityPost: any): Post {
             })(),
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             keywords: (() => {
-                // New shape: keywords is an array of strings → join to csv
+                // seoFields.keywords is an array of strings → join to csv
                 if (Array.isArray(sanityPost.seo?.keywords) && sanityPost.seo.keywords.length > 0) {
                     return sanityPost.seo.keywords.join(', ');
                 }
-                // Legacy shape: metaKeywords is a comma-separated string
-                if (sanityPost.seo?.metaKeywords) return sanityPost.seo.metaKeywords;
                 if (sanityPost.tags && sanityPost.tags.length > 0) {
                     return sanityPost.tags.map((t: any) => t.title).join(', ');
                 }
@@ -482,12 +479,12 @@ export function adaptSanityPage(sanityPage: any): Page {
             day: 'numeric'
         }) : '',
         image: sanityPage.mainImage ? sanityImage(sanityPage.mainImage) : null,
-        // F-60.1 — read new seoFields shape with legacy fallback. Note: no
-        // `page` document type exists in the schema currently; this adapter
-        // is kept for defensive future use.
+        // F-60.1 cleanup — seoFields shape only. Note: no `page` document
+        // type exists in the schema currently; this adapter is kept for
+        // defensive future use.
         seo: {
-            title: sanityPage.seo?.title || sanityPage.seo?.metaTitle || sanityPage.title || '',
-            description: sanityPage.seo?.description || sanityPage.seo?.metaDescription || '',
+            title: sanityPage.seo?.title || sanityPage.title || '',
+            description: sanityPage.seo?.description || '',
             keywords: ''
         }
     };
@@ -711,17 +708,13 @@ export function adaptSanityCaseStudy(raw: any): CaseStudy {
         duration: raw.duration || '',
         description: raw.description || '',
         image: raw.image || '',
-        // F-60.1 — case studies migrated from `seoMetadata` (with nested
-        // openGraph/twitter) to `seo` (seoFields shape) + sibling
-        // `openGraph` and `twitter` fields on caseStudy. Read both shapes
-        // with fallback so the adapter works regardless of whether a given
-        // document has been migrated yet. After the migration script runs
-        // and the dataset is fully converted, the seoMetadata.* fallbacks
-        // can be removed in a cleanup PR.
+        // F-60.1 cleanup — legacy `seoMetadata` fallback paths dropped now
+        // that all case studies have been migrated to `seo` (seoFields shape)
+        // + sibling `openGraph` / `twitter` fields. Migration verified.
         metadata: (() => {
-            const seoBase = raw.seo || raw.seoMetadata || {};
-            const og = raw.openGraph || raw.seoMetadata?.openGraph || {};
-            const tw = raw.twitter || raw.seoMetadata?.twitter || {};
+            const seoBase = raw.seo || {};
+            const og = raw.openGraph || {};
+            const tw = raw.twitter || {};
             const canonical = seoBase.canonicalUrl || `https://www.testriq.com/${slug}`;
             return {
                 title: seoBase.title || raw.title || '',
