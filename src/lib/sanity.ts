@@ -1,5 +1,12 @@
-
-import { createClient } from 'next-sanity';
+// 2026-05-19 follow-up hotfix — switched from `next-sanity` createClient to
+// `@sanity/client` directly because `next-sanity@12` appears to apply
+// production-mode defaults that override explicit `useCdn: false`. After our
+// first hotfix (PR #124/#125) flipped useCdn:false, /api/debug-seo on prod
+// still returned `API CDN Requests quota limit reached` (the CDN-specific
+// error string), proving the deployed code was still hitting apicdn.sanity.io
+// despite the explicit setting. Direct @sanity/client respects useCdn without
+// next-sanity's defaults layer.
+import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '';
@@ -10,19 +17,8 @@ export const client = createClient({
     projectId,
     dataset,
     apiVersion,
-    // 2026-05-19 — flipped to false because the CDN endpoint
-    // (`apicdn.sanity.io`) periodically hits its free-tier daily quota
-    // (HTTP 402 plan_limit_reached) causing blog/case-study reads to fail
-    // even though the non-CDN endpoint (`api.sanity.io`) has separate
-    // quota that we don't otherwise touch. With ISR (revalidate=60-3600
-    // per route) the runtime hit rate to Sanity is low — non-CDN can
-    // handle the traffic. Combined with the build snapshot system
-    // (PR #122/#123), Sanity calls during build are zero, so non-CDN
-    // quota is only spent on per-request ISR revalidations.
-    //
-    // If non-CDN quota also exhausts under traffic spikes: build the
-    // full-content snapshot extension (post bodies + case study bodies
-    // cached in JSON) so runtime never depends on Sanity.
+    // CRITICAL: false to bypass the 402-locked apicdn.sanity.io endpoint.
+    // Non-CDN api.sanity.io has separate quota and is healthy.
     useCdn: false,
 });
 
