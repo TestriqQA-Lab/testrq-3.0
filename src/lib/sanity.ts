@@ -10,7 +10,20 @@ export const client = createClient({
     projectId,
     dataset,
     apiVersion,
-    useCdn: true, // Enabled for production performance
+    // 2026-05-19 — flipped to false because the CDN endpoint
+    // (`apicdn.sanity.io`) periodically hits its free-tier daily quota
+    // (HTTP 402 plan_limit_reached) causing blog/case-study reads to fail
+    // even though the non-CDN endpoint (`api.sanity.io`) has separate
+    // quota that we don't otherwise touch. With ISR (revalidate=60-3600
+    // per route) the runtime hit rate to Sanity is low — non-CDN can
+    // handle the traffic. Combined with the build snapshot system
+    // (PR #122/#123), Sanity calls during build are zero, so non-CDN
+    // quota is only spent on per-request ISR revalidations.
+    //
+    // If non-CDN quota also exhausts under traffic spikes: build the
+    // full-content snapshot extension (post bodies + case study bodies
+    // cached in JSON) so runtime never depends on Sanity.
+    useCdn: false,
 });
 
 const builder = imageUrlBuilder(client);
